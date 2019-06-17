@@ -57,8 +57,8 @@ class MasterViewController: UITableViewController {
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
             print("I hate coding on an airplane!!!!!")
-            let icaos = ["KBAB","KSFO","KAPA","KDFW","KRND"]
-            let notams = NotamDownLoader(icaos: icaos, delagate: self)
+//            let icaos = ["KBAB","KSFO","KAPA","KDFW","KRND"]
+//            let notams = NotamDownLoader(icaos: icaos, delagate: self)
         default:
             print("No segue for you!!")
         }

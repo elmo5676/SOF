@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		52277ACA22AEF78A00CD45BE /* ArrayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52277AC922AEF78A00CD45BE /* ArrayPicker.swift */; };
 		52277ACE22AEF83900CD45BE /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52277ACD22AEF83900CD45BE /* PickerTextField.swift */; };
+		5242112622B7EA570066FB88 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242112522B7EA570066FB88 /* API.swift */; };
+		5242112922B7F4620066FB88 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5242112822B7F4620066FB88 /* awsconfiguration.json */; };
 		529630D922AC37E600CAD9BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529630D822AC37E600CAD9BC /* Main.storyboard */; };
 		529630DB22AC382400CAD9BC /* Split.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529630DA22AC382400CAD9BC /* Split.storyboard */; };
 		529630DD22AC3A5300CAD9BC /* EmergencyTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */; };
@@ -128,6 +130,7 @@
 		52F3BDBB22B6295A00F7F367 /* TafDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BDB422B6295A00F7F367 /* TafDownloader.swift */; };
 		52F3BDBC22B6295A00F7F367 /* TafParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BDB522B6295A00F7F367 /* TafParser.swift */; };
 		52F3BDBE22B62B9900F7F367 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BDBD22B62B9900F7F367 /* Observable.swift */; };
+		A0F29026F28889D03B301A51 /* Pods_SOF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03899E28C8B7450084EDFE48 /* Pods_SOF.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -145,8 +148,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03899E28C8B7450084EDFE48 /* Pods_SOF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SOF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52277AC922AEF78A00CD45BE /* ArrayPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayPicker.swift; sourceTree = "<group>"; };
 		52277ACD22AEF83900CD45BE /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
+		5242112522B7EA570066FB88 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
+		5242112822B7F4620066FB88 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		529630D822AC37E600CAD9BC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		529630DA22AC382400CAD9BC /* Split.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Split.storyboard; sourceTree = "<group>"; };
 		529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyTabModel.swift; sourceTree = "<group>"; };
@@ -267,6 +273,8 @@
 		52F3BDB422B6295A00F7F367 /* TafDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TafDownloader.swift; sourceTree = "<group>"; };
 		52F3BDB522B6295A00F7F367 /* TafParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TafParser.swift; sourceTree = "<group>"; };
 		52F3BDBD22B62B9900F7F367 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		5F3D044F1D26955BCA7B57EC /* Pods-SOF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SOF.debug.xcconfig"; path = "Target Support Files/Pods-SOF/Pods-SOF.debug.xcconfig"; sourceTree = "<group>"; };
+		CA44E6E9A49FCF06641DA7A9 /* Pods-SOF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SOF.release.xcconfig"; path = "Target Support Files/Pods-SOF/Pods-SOF.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,12 +283,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F3BDA822B6281A00F7F367 /* Zip.framework in Frameworks */,
+				A0F29026F28889D03B301A51 /* Pods_SOF.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5242112422B7EA420066FB88 /* AWS */ = {
+			isa = PBXGroup;
+			children = (
+				5242112522B7EA570066FB88 /* API.swift */,
+			);
+			path = AWS;
+			sourceTree = "<group>";
+		};
 		529630E622AC878300CAD9BC /* Status */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,9 +321,12 @@
 		52D0951E22AC3649008A236B = {
 			isa = PBXGroup;
 			children = (
+				5242112822B7F4620066FB88 /* awsconfiguration.json */,
 				52F3BDA722B6281A00F7F367 /* Zip.framework */,
 				52D0952922AC3649008A236B /* SOF */,
 				52D0952822AC3649008A236B /* Products */,
+				58F43ACA28CD83E78A43674C /* Pods */,
+				A2B8D271A340F2BE676A1AAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -334,6 +354,7 @@
 		52D0954D22AC373C008A236B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5242112422B7EA420066FB88 /* AWS */,
 				52AD6D1F22B7DDDC0077FC91 /* Notams */,
 				52F3BDAC22B6295A00F7F367 /* Weather */,
 				52F3BCF222B6267300F7F367 /* DAFIF Processor */,
@@ -547,6 +568,23 @@
 			path = TAF;
 			sourceTree = "<group>";
 		};
+		58F43ACA28CD83E78A43674C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F3D044F1D26955BCA7B57EC /* Pods-SOF.debug.xcconfig */,
+				CA44E6E9A49FCF06641DA7A9 /* Pods-SOF.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A2B8D271A340F2BE676A1AAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03899E28C8B7450084EDFE48 /* Pods_SOF.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -554,11 +592,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D0953C22AC364A008A236B /* Build configuration list for PBXNativeTarget "SOF" */;
 			buildPhases = (
+				5FC15E6E618CED9A9DE93661 /* [CP] Check Pods Manifest.lock */,
 				52D0952322AC3649008A236B /* Sources */,
 				52D0952422AC3649008A236B /* Frameworks */,
 				52D0952522AC3649008A236B /* Resources */,
 				52F3BDAA22B6281B00F7F367 /* Embed Frameworks */,
 				52F3BDAB22B6282800F7F367 /* ShellScript */,
+				28B908868D9F51D03BA0E065 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -607,6 +647,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5242112922B7F4620066FB88 /* awsconfiguration.json in Resources */,
 				529630D922AC37E600CAD9BC /* Main.storyboard in Resources */,
 				52D0953822AC364A008A236B /* LaunchScreen.storyboard in Resources */,
 				52D0953522AC364A008A236B /* Assets.xcassets in Resources */,
@@ -617,6 +658,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		28B908868D9F51D03BA0E065 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SOF/Pods-SOF-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SOF/Pods-SOF-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SOF/Pods-SOF-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		52F3BDAB22B6282800F7F367 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -634,6 +692,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+		5FC15E6E618CED9A9DE93661 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SOF-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -656,6 +736,7 @@
 				52F3BD9A22B6276B00F7F367 /* Rwy_CD+CoreDataProperties.swift in Sources */,
 				52F3BD9622B6276B00F7F367 /* Gen_CD+CoreDataProperties.swift in Sources */,
 				52F3BD3C22B6275A00F7F367 /* ArptCDU.swift in Sources */,
+				5242112622B7EA570066FB88 /* API.swift in Sources */,
 				52F3BD5322B6275A00F7F367 /* TrmMin.swift in Sources */,
 				52F3BD4C22B6275A00F7F367 /* AgearCDU.swift in Sources */,
 				52F3BD5522B6275A00F7F367 /* Gen.swift in Sources */,
@@ -892,6 +973,7 @@
 		};
 		52D0953D22AC364A008A236B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F3D044F1D26955BCA7B57EC /* Pods-SOF.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -914,6 +996,7 @@
 		};
 		52D0953E22AC364A008A236B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA44E6E9A49FCF06641DA7A9 /* Pods-SOF.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
