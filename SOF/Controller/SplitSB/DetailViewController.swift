@@ -56,6 +56,7 @@ class DetailViewController: UIViewController, DeviceOrientationDelegate {
     
     func setStatus() {
         print("SetStatus")
+//        let ep = CreateEmergencyInput(id: <#T##GraphQLID?#>, startDate: <#T##Int?#>, startTime: <#T##Int?#>, terminationDate: <#T##Int?#>, terminationTime: <#T##Int?#>, callSign: <#T##String?#>, aircraftType: <#T##String?#>, tailNumber: <#T##String?#>, soulsOnBoard: <#T##String?#>, fuelRemainingTimeInMinutes: <#T##Int?#>, systemAffected: <#T##String?#>, details: <#T##String?#>)
         let status = CreateSOFStatusInput(id: nil,
                                           u2Status: "Restricted",
                                           t38Status: "Unrestricted",
@@ -90,7 +91,7 @@ class DetailViewController: UIViewController, DeviceOrientationDelegate {
             }
             let end = result?.data?.listSofStatuss?.items
             print(end?.count)
-            result?.data?.listSofStatuss?.items?.forEach { print(($0?.testOutThisMf)! + " " + ($0?.activeRunway)!) }
+//            result?.data?.listSofStatuss?.items?.forEach { print(($0?.testOutThisMf)! + " " + ($0?.activeRunway)? ?? <#default value#> ?? "") }
         }
     }
     

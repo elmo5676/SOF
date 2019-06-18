@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     var appSyncClient: AWSAppSyncClient?
     var deviceOrientationDelegate: DeviceOrientationDelegate?
     var window: UIWindow?
-    let titles = ["Normal","Emergency", "Static"]
+    let titles = ["Normal","Emergency", "Normal"]
     
     func didRotate(_ notification: Notification) -> Void {
         switch UIDevice.current.orientation {
@@ -45,12 +45,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func loadSplitView(tabBarController: UITabBarController) {
         let splitViewController = tabBarController.viewControllers?[0] as! UISplitViewController
-        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
-        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+//        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+//        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
-        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
-        let masterController = masterNavigationController.topViewController as! MasterViewController
-        masterController.initialSetupOfContent()
+//        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
+//        let masterController = masterNavigationController.topViewController as! MasterViewController
+//        masterController.initialSetupOfContent()
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

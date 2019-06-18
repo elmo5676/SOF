@@ -11,6 +11,9 @@
 		52277ACE22AEF83900CD45BE /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52277ACD22AEF83900CD45BE /* PickerTextField.swift */; };
 		5242112622B7EA570066FB88 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242112522B7EA570066FB88 /* API.swift */; };
 		5242112922B7F4620066FB88 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5242112822B7F4620066FB88 /* awsconfiguration.json */; };
+		5242112B22B899810066FB88 /* EmergencyTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5242112A22B899810066FB88 /* EmergencyTab.storyboard */; };
+		5242112D22B899E50066FB88 /* NormalOpsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5242112C22B899E50066FB88 /* NormalOpsTab.storyboard */; };
+		5242113222B89BEA0066FB88 /* NormalOpsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */; };
 		529630D922AC37E600CAD9BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529630D822AC37E600CAD9BC /* Main.storyboard */; };
 		529630DB22AC382400CAD9BC /* Split.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529630DA22AC382400CAD9BC /* Split.storyboard */; };
 		529630DD22AC3A5300CAD9BC /* EmergencyTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */; };
@@ -153,6 +156,9 @@
 		52277ACD22AEF83900CD45BE /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		5242112522B7EA570066FB88 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
 		5242112822B7F4620066FB88 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		5242112A22B899810066FB88 /* EmergencyTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmergencyTab.storyboard; sourceTree = "<group>"; };
+		5242112C22B899E50066FB88 /* NormalOpsTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NormalOpsTab.storyboard; sourceTree = "<group>"; };
+		5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalOpsTabTableViewController.swift; sourceTree = "<group>"; };
 		529630D822AC37E600CAD9BC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		529630DA22AC382400CAD9BC /* Split.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Split.storyboard; sourceTree = "<group>"; };
 		529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyTabModel.swift; sourceTree = "<group>"; };
@@ -298,6 +304,31 @@
 			path = AWS;
 			sourceTree = "<group>";
 		};
+		5242112E22B89ACE0066FB88 /* SplitSB */ = {
+			isa = PBXGroup;
+			children = (
+				52D0954122AC3714008A236B /* DetailViewController.swift */,
+				52D0953F22AC3714008A236B /* MasterViewController.swift */,
+				52D9504622B08CFF00174571 /* SetStatusTableViewController.swift */,
+			);
+			path = SplitSB;
+			sourceTree = "<group>";
+		};
+		5242112F22B89AE10066FB88 /* NormalOpsTabSB */ = {
+			isa = PBXGroup;
+			children = (
+				5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */,
+			);
+			path = NormalOpsTabSB;
+			sourceTree = "<group>";
+		};
+		5242113022B89AF10066FB88 /* EmergencyTabSB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EmergencyTabSB;
+			sourceTree = "<group>";
+		};
 		529630E622AC878300CAD9BC /* Status */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,11 +405,11 @@
 		52D0954E22AC374D008A236B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				52D0954122AC3714008A236B /* DetailViewController.swift */,
 				52D0954022AC3714008A236B /* MainTabBarController.swift */,
-				52D0953F22AC3714008A236B /* MasterViewController.swift */,
 				52D0954222AC3714008A236B /* TabDetailContentController.swift */,
-				52D9504622B08CFF00174571 /* SetStatusTableViewController.swift */,
+				5242113022B89AF10066FB88 /* EmergencyTabSB */,
+				5242112F22B89AE10066FB88 /* NormalOpsTabSB */,
+				5242112E22B89ACE0066FB88 /* SplitSB */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -395,6 +426,8 @@
 			isa = PBXGroup;
 			children = (
 				529630D822AC37E600CAD9BC /* Main.storyboard */,
+				5242112C22B899E50066FB88 /* NormalOpsTab.storyboard */,
+				5242112A22B899810066FB88 /* EmergencyTab.storyboard */,
 				529630DA22AC382400CAD9BC /* Split.storyboard */,
 				52D0953622AC364A008A236B /* LaunchScreen.storyboard */,
 			);
@@ -647,10 +680,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5242112B22B899810066FB88 /* EmergencyTab.storyboard in Resources */,
 				5242112922B7F4620066FB88 /* awsconfiguration.json in Resources */,
 				529630D922AC37E600CAD9BC /* Main.storyboard in Resources */,
 				52D0953822AC364A008A236B /* LaunchScreen.storyboard in Resources */,
 				52D0953522AC364A008A236B /* Assets.xcassets in Resources */,
+				5242112D22B899E50066FB88 /* NormalOpsTab.storyboard in Resources */,
 				529630DB22AC382400CAD9BC /* Split.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -830,6 +865,7 @@
 				52F3BD8D22B6276B00F7F367 /* TrmClb_CD+CoreDataClass.swift in Sources */,
 				52F3BD8522B6276B00F7F367 /* Arpt_CD+CoreDataClass.swift in Sources */,
 				52F3BD9322B6276B00F7F367 /* Fueloil_CD+CoreDataClass.swift in Sources */,
+				5242113222B89BEA0066FB88 /* NormalOpsTabTableViewController.swift in Sources */,
 				52277ACA22AEF78A00CD45BE /* ArrayPicker.swift in Sources */,
 				52F3BD5B22B6275A00F7F367 /* TrmMsa.swift in Sources */,
 				52F3BD4322B6275A00F7F367 /* AcomCDU.swift in Sources */,
