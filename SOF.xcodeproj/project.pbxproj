@@ -14,8 +14,13 @@
 		5242112B22B899810066FB88 /* EmergencyTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5242112A22B899810066FB88 /* EmergencyTab.storyboard */; };
 		5242112D22B899E50066FB88 /* NormalOpsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5242112C22B899E50066FB88 /* NormalOpsTab.storyboard */; };
 		5242113222B89BEA0066FB88 /* NormalOpsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */; };
+		5265457422BA979C00EA210E /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265457322BA979C00EA210E /* CheckInViewController.swift */; };
+		5265457722BA99DF00EA210E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265457622BA99DF00EA210E /* UIViewController+Extension.swift */; };
+		5294100F22BA9B6E008F05A0 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294100E22BA9B6E008F05A0 /* Double+Extension.swift */; };
+		5294101122BA9BAD008F05A0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */; };
+		5294101322BA9BC9008F05A0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */; };
+		5294101522BA9BE3008F05A0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101422BA9BE3008F05A0 /* UIView+Extension.swift */; };
 		529630D922AC37E600CAD9BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529630D822AC37E600CAD9BC /* Main.storyboard */; };
-		529630DB22AC382400CAD9BC /* Split.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529630DA22AC382400CAD9BC /* Split.storyboard */; };
 		529630DD22AC3A5300CAD9BC /* EmergencyTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */; };
 		529630DF22AC3AFB00CAD9BC /* NormalTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630DE22AC3AFB00CAD9BC /* NormalTabModel.swift */; };
 		529630E122AC876100CAD9BC /* U2Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630E022AC876100CAD9BC /* U2Status.swift */; };
@@ -28,12 +33,9 @@
 		52D0953322AC3649008A236B /* SOF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52D0953122AC3649008A236B /* SOF.xcdatamodeld */; };
 		52D0953522AC364A008A236B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D0953422AC364A008A236B /* Assets.xcassets */; };
 		52D0953822AC364A008A236B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0953622AC364A008A236B /* LaunchScreen.storyboard */; };
-		52D0954322AC3714008A236B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0953F22AC3714008A236B /* MasterViewController.swift */; };
 		52D0954422AC3714008A236B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954022AC3714008A236B /* MainTabBarController.swift */; };
 		52D0954522AC3714008A236B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954122AC3714008A236B /* DetailViewController.swift */; };
-		52D0954622AC3714008A236B /* TabDetailContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954222AC3714008A236B /* TabDetailContentController.swift */; };
 		52D0954B22AC372D008A236B /* OtherMasterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954822AC372D008A236B /* OtherMasterModel.swift */; };
-		52D9504722B08CFF00174571 /* SetStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D9504622B08CFF00174571 /* SetStatusTableViewController.swift */; };
 		52F3BCFD22B6268600F7F367 /* CoreDataXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BCF322B6268500F7F367 /* CoreDataXML.swift */; };
 		52F3BCFE22B6268600F7F367 /* SwiftDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BCF422B6268500F7F367 /* SwiftDecoders.swift */; };
 		52F3BCFF22B6268600F7F367 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BCF522B6268500F7F367 /* Enums.swift */; };
@@ -47,7 +49,6 @@
 		52F3BD0B22B6269500F7F367 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD0722B6269500F7F367 /* String+Extension.swift */; };
 		52F3BD0C22B6269500F7F367 /* FileNames+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD0822B6269500F7F367 /* FileNames+Extension.swift */; };
 		52F3BD0D22B6269500F7F367 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD0922B6269500F7F367 /* URL+Extension.swift */; };
-		52F3BD0E22B6269500F7F367 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD0A22B6269500F7F367 /* UIViewController+Extension.swift */; };
 		52F3BD3922B6275A00F7F367 /* DAFIF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD1022B6275A00F7F367 /* DAFIF.xcdatamodeld */; };
 		52F3BD3A22B6275A00F7F367 /* DAFIFCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD1222B6275A00F7F367 /* DAFIFCDStack.swift */; };
 		52F3BD3B22B6275A00F7F367 /* NavCDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD1422B6275A00F7F367 /* NavCDU.swift */; };
@@ -158,8 +159,13 @@
 		5242112A22B899810066FB88 /* EmergencyTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmergencyTab.storyboard; sourceTree = "<group>"; };
 		5242112C22B899E50066FB88 /* NormalOpsTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NormalOpsTab.storyboard; sourceTree = "<group>"; };
 		5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalOpsTabTableViewController.swift; sourceTree = "<group>"; };
+		5265457322BA979C00EA210E /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
+		5265457622BA99DF00EA210E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		5294100E22BA9B6E008F05A0 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		5294101422BA9BE3008F05A0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		529630D822AC37E600CAD9BC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		529630DA22AC382400CAD9BC /* Split.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Split.storyboard; sourceTree = "<group>"; };
 		529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyTabModel.swift; sourceTree = "<group>"; };
 		529630DE22AC3AFB00CAD9BC /* NormalTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTabModel.swift; sourceTree = "<group>"; };
 		529630E022AC876100CAD9BC /* U2Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = U2Status.swift; sourceTree = "<group>"; };
@@ -174,12 +180,9 @@
 		52D0953422AC364A008A236B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52D0953722AC364A008A236B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D0953922AC364A008A236B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52D0953F22AC3714008A236B /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		52D0954022AC3714008A236B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		52D0954122AC3714008A236B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		52D0954222AC3714008A236B /* TabDetailContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabDetailContentController.swift; sourceTree = "<group>"; };
 		52D0954822AC372D008A236B /* OtherMasterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherMasterModel.swift; sourceTree = "<group>"; };
-		52D9504622B08CFF00174571 /* SetStatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetStatusTableViewController.swift; sourceTree = "<group>"; };
 		52F3BCF322B6268500F7F367 /* CoreDataXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataXML.swift; sourceTree = "<group>"; };
 		52F3BCF422B6268500F7F367 /* SwiftDecoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDecoders.swift; sourceTree = "<group>"; };
 		52F3BCF522B6268500F7F367 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -193,7 +196,6 @@
 		52F3BD0722B6269500F7F367 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		52F3BD0822B6269500F7F367 /* FileNames+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileNames+Extension.swift"; sourceTree = "<group>"; };
 		52F3BD0922B6269500F7F367 /* URL+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
-		52F3BD0A22B6269500F7F367 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		52F3BD1122B6275A00F7F367 /* DAFIF.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DAFIF.xcdatamodel; sourceTree = "<group>"; };
 		52F3BD1222B6275A00F7F367 /* DAFIFCDStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAFIFCDStack.swift; path = SOF/DAFIF_JSON/DAFIFCDStack.swift; sourceTree = SOURCE_ROOT; };
 		52F3BD1422B6275A00F7F367 /* NavCDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavCDU.swift; sourceTree = "<group>"; };
@@ -302,20 +304,12 @@
 			path = AWS;
 			sourceTree = "<group>";
 		};
-		5242112E22B89ACE0066FB88 /* SplitSB */ = {
-			isa = PBXGroup;
-			children = (
-				52D0954122AC3714008A236B /* DetailViewController.swift */,
-				52D0953F22AC3714008A236B /* MasterViewController.swift */,
-				52D9504622B08CFF00174571 /* SetStatusTableViewController.swift */,
-			);
-			path = SplitSB;
-			sourceTree = "<group>";
-		};
 		5242112F22B89AE10066FB88 /* NormalOpsTabSB */ = {
 			isa = PBXGroup;
 			children = (
+				52D0954122AC3714008A236B /* DetailViewController.swift */,
 				5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */,
+				5265457322BA979C00EA210E /* CheckInViewController.swift */,
 			);
 			path = NormalOpsTabSB;
 			sourceTree = "<group>";
@@ -325,6 +319,27 @@
 			children = (
 			);
 			path = EmergencyTabSB;
+			sourceTree = "<group>";
+		};
+		5265457222BA588C00EA210E /* PickerSpecial */ = {
+			isa = PBXGroup;
+			children = (
+				52277AC922AEF78A00CD45BE /* ArrayPicker.swift */,
+				52277ACD22AEF83900CD45BE /* PickerTextField.swift */,
+			);
+			path = PickerSpecial;
+			sourceTree = "<group>";
+		};
+		5265457522BA99C600EA210E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5265457622BA99DF00EA210E /* UIViewController+Extension.swift */,
+				5294100E22BA9B6E008F05A0 /* Double+Extension.swift */,
+				5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */,
+				5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */,
+				5294101422BA9BE3008F05A0 /* UIView+Extension.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		529630E622AC878300CAD9BC /* Status */ = {
@@ -370,6 +385,7 @@
 		52D0952922AC3649008A236B /* SOF */ = {
 			isa = PBXGroup;
 			children = (
+				5265457522BA99C600EA210E /* Utilities */,
 				52D0952A22AC3649008A236B /* AppDelegate.swift */,
 				52D0953922AC364A008A236B /* Info.plist */,
 				52D0953422AC364A008A236B /* Assets.xcassets */,
@@ -388,8 +404,6 @@
 				52F3BDAC22B6295A00F7F367 /* Weather */,
 				52F3BCF222B6267300F7F367 /* DAFIF Processor */,
 				52F3BCF022B6260600F7F367 /* CoreData */,
-				52277AC922AEF78A00CD45BE /* ArrayPicker.swift */,
-				52277ACD22AEF83900CD45BE /* PickerTextField.swift */,
 				52D0954822AC372D008A236B /* OtherMasterModel.swift */,
 				529630DE22AC3AFB00CAD9BC /* NormalTabModel.swift */,
 				529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */,
@@ -403,10 +417,9 @@
 			isa = PBXGroup;
 			children = (
 				52D0954022AC3714008A236B /* MainTabBarController.swift */,
-				52D0954222AC3714008A236B /* TabDetailContentController.swift */,
+				5265457222BA588C00EA210E /* PickerSpecial */,
 				5242113022B89AF10066FB88 /* EmergencyTabSB */,
 				5242112F22B89AE10066FB88 /* NormalOpsTabSB */,
-				5242112E22B89ACE0066FB88 /* SplitSB */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -425,7 +438,6 @@
 				529630D822AC37E600CAD9BC /* Main.storyboard */,
 				5242112C22B899E50066FB88 /* NormalOpsTab.storyboard */,
 				5242112A22B899810066FB88 /* EmergencyTab.storyboard */,
-				529630DA22AC382400CAD9BC /* Split.storyboard */,
 				52D0953622AC364A008A236B /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -510,7 +522,6 @@
 			children = (
 				52F3BD0822B6269500F7F367 /* FileNames+Extension.swift */,
 				52F3BD0722B6269500F7F367 /* String+Extension.swift */,
-				52F3BD0A22B6269500F7F367 /* UIViewController+Extension.swift */,
 				52F3BD0922B6269500F7F367 /* URL+Extension.swift */,
 			);
 			path = Extensions;
@@ -683,7 +694,6 @@
 				52D0953822AC364A008A236B /* LaunchScreen.storyboard in Resources */,
 				52D0953522AC364A008A236B /* Assets.xcassets in Resources */,
 				5242112D22B899E50066FB88 /* NormalOpsTab.storyboard in Resources */,
-				529630DB22AC382400CAD9BC /* Split.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,7 +770,6 @@
 				52F3BD4F22B6275A00F7F367 /* SvcRmk.swift in Sources */,
 				52F3BD0522B6268600F7F367 /* DPCopier.swift in Sources */,
 				52F3BD0C22B6269500F7F367 /* FileNames+Extension.swift in Sources */,
-				52D0954622AC3714008A236B /* TabDetailContentController.swift in Sources */,
 				52F3BD3A22B6275A00F7F367 /* DAFIFCDStack.swift in Sources */,
 				52F3BD3922B6275A00F7F367 /* DAFIF.xcdatamodeld in Sources */,
 				52F3BD5722B6275A00F7F367 /* Fueloil.swift in Sources */,
@@ -772,8 +781,8 @@
 				52F3BD5322B6275A00F7F367 /* TrmMin.swift in Sources */,
 				52F3BD4C22B6275A00F7F367 /* AgearCDU.swift in Sources */,
 				52F3BD5522B6275A00F7F367 /* Gen.swift in Sources */,
-				52D0954322AC3714008A236B /* MasterViewController.swift in Sources */,
 				52F3BDA022B6276B00F7F367 /* AcomRmk_CD+CoreDataProperties.swift in Sources */,
+				5294101522BA9BE3008F05A0 /* UIView+Extension.swift in Sources */,
 				52F3BD9722B6276B00F7F367 /* Nav_CD+CoreDataClass.swift in Sources */,
 				52F3BDBA22B6295A00F7F367 /* Taf.swift in Sources */,
 				52F3BDA522B6276B00F7F367 /* AddRwy_CD+CoreDataClass.swift in Sources */,
@@ -794,12 +803,12 @@
 				52F3BDA322B6276B00F7F367 /* TrmMsa_CD+CoreDataClass.swift in Sources */,
 				52F3BD8B22B6276B00F7F367 /* Acom_CD+CoreDataClass.swift in Sources */,
 				52F3BDBB22B6295A00F7F367 /* TafDownloader.swift in Sources */,
+				5294100F22BA9B6E008F05A0 /* Double+Extension.swift in Sources */,
 				52F3BD8F22B6276B00F7F367 /* TrmMin_CD+CoreDataClass.swift in Sources */,
 				52F3BD5822B6275A00F7F367 /* Nav.swift in Sources */,
 				529630DF22AC3AFB00CAD9BC /* NormalTabModel.swift in Sources */,
 				52F3BD8622B6276B00F7F367 /* Arpt_CD+CoreDataProperties.swift in Sources */,
 				52F3BD4222B6275A00F7F367 /* AddRwyCDU.swift in Sources */,
-				52F3BD0E22B6269500F7F367 /* UIViewController+Extension.swift in Sources */,
 				52F3BD9122B6276B00F7F367 /* Anav_CD+CoreDataClass.swift in Sources */,
 				529630E522AC877B00CAD9BC /* RQ4Status.swift in Sources */,
 				52F3BD4422B6275A00F7F367 /* AcomRmkCDU.swift in Sources */,
@@ -809,11 +818,13 @@
 				52F3BD0622B6268600F7F367 /* JSONFromDAFFIF.swift in Sources */,
 				52F3BD9522B6276B00F7F367 /* Gen_CD+CoreDataClass.swift in Sources */,
 				52F3BD0022B6268600F7F367 /* UnzipDAFIF8.swift in Sources */,
+				5265457722BA99DF00EA210E /* UIViewController+Extension.swift in Sources */,
 				52F3BD5D22B6275A00F7F367 /* Acom.swift in Sources */,
 				52F3BDA422B6276B00F7F367 /* TrmMsa_CD+CoreDataProperties.swift in Sources */,
 				52F3BD4B22B6275A00F7F367 /* TrmMinCDU.swift in Sources */,
 				52F3BDB922B6295A00F7F367 /* Metar.swift in Sources */,
 				52D0954522AC3714008A236B /* DetailViewController.swift in Sources */,
+				5265457422BA979C00EA210E /* CheckInViewController.swift in Sources */,
 				52F3BD4122B6275A00F7F367 /* RwyCDU.swift in Sources */,
 				529630E122AC876100CAD9BC /* U2Status.swift in Sources */,
 				529630DD22AC3A5300CAD9BC /* EmergencyTabModel.swift in Sources */,
@@ -829,13 +840,13 @@
 				52F3BD8C22B6276B00F7F367 /* Acom_CD+CoreDataProperties.swift in Sources */,
 				52F3BD9922B6276B00F7F367 /* Rwy_CD+CoreDataClass.swift in Sources */,
 				52F3BD8E22B6276B00F7F367 /* TrmClb_CD+CoreDataProperties.swift in Sources */,
+				5294101322BA9BC9008F05A0 /* UIColor+Extension.swift in Sources */,
 				52F3BD5A22B6275A00F7F367 /* Arpt.swift in Sources */,
 				52F3BDA622B6276B00F7F367 /* AddRwy_CD+CoreDataProperties.swift in Sources */,
 				52277ACE22AEF83900CD45BE /* PickerTextField.swift in Sources */,
 				52F3BD4D22B6275A00F7F367 /* TrmRmk.swift in Sources */,
 				52F3BD0422B6268600F7F367 /* DAFIFDataController.swift in Sources */,
 				52F3BDBE22B62B9900F7F367 /* Observable.swift in Sources */,
-				52D9504722B08CFF00174571 /* SetStatusTableViewController.swift in Sources */,
 				52F3BDA122B6276B00F7F367 /* TrmSeg_CD+CoreDataClass.swift in Sources */,
 				52F3BD0D22B6269500F7F367 /* URL+Extension.swift in Sources */,
 				52F3BD8722B6276B00F7F367 /* TrmPar_CD+CoreDataClass.swift in Sources */,
@@ -852,6 +863,7 @@
 				52F3BDB822B6295A00F7F367 /* MetarDownLoader.swift in Sources */,
 				52F3BD9B22B6276B00F7F367 /* SvcRmk_CD+CoreDataClass.swift in Sources */,
 				52D0952B22AC3649008A236B /* AppDelegate.swift in Sources */,
+				5294101122BA9BAD008F05A0 /* UIButton+Extension.swift in Sources */,
 				52F3BDB722B6295A00F7F367 /* MetarParser.swift in Sources */,
 				52D0953322AC3649008A236B /* SOF.xcdatamodeld in Sources */,
 				52F3BD5022B6275A00F7F367 /* Rwy.swift in Sources */,

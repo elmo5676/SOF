@@ -11,27 +11,13 @@ import CoreData
 import AWSAppSync
 
 
-protocol DeviceOrientationDelegate {
-    func getOrientation(_ orientation: DeviceOrientation)
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     
     var appSyncClient: AWSAppSyncClient?
-    var deviceOrientationDelegate: DeviceOrientationDelegate?
     var window: UIWindow?
     let titles = ["Normal","Emergency", "Normal"]
     
-    func didRotate(_ notification: Notification) -> Void {
-        switch UIDevice.current.orientation {
-        case .landscapeLeft, .landscapeRight:
-            deviceOrientationDelegate?.getOrientation(.landscape)
-        case .portrait, .portraitUpsideDown:
-            deviceOrientationDelegate?.getOrientation(.portrait)
-        default:
-            print("other")
-        }}
     
     
     func customizeTabBarItems(tabBar: UITabBar) {
@@ -57,10 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         //AWS
         do {
-            // You can choose the directory in which AppSync stores its persistent cache databases
             let cacheConfiguration = try AWSAppSyncCacheConfiguration()
-            
-            // AppSync configuration & client initialization
             let appSyncServiceConfig = try AWSAppSyncServiceConfig()
             let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncServiceConfig: appSyncServiceConfig,
                                                                   cacheConfiguration: cacheConfiguration)
@@ -70,11 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }
         
         
-        
-        NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification,
-                                               object: nil,
-                                               queue: .main,
-                                               using: didRotate)
         
         let tabBarController = self.window!.rootViewController as! UITabBarController
         tabBarController.selectedIndex = 0
