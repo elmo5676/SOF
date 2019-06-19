@@ -24,7 +24,6 @@
 		52AD6D1A22B7C1DB0077FC91 /* NotamAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1922B7C1DB0077FC91 /* NotamAPI.swift */; };
 		52AD6D1C22B7C5C10077FC91 /* NotamDownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1B22B7C5C10077FC91 /* NotamDownLoader.swift */; };
 		52AD6D1E22B7C6770077FC91 /* Notam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1D22B7C6770077FC91 /* Notam.swift */; };
-		52B2D64522B02E5D00EB3550 /* DeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B2D64422B02E5D00EB3550 /* DeviceOrientation.swift */; };
 		52D0952B22AC3649008A236B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0952A22AC3649008A236B /* AppDelegate.swift */; };
 		52D0953322AC3649008A236B /* SOF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52D0953122AC3649008A236B /* SOF.xcdatamodeld */; };
 		52D0953522AC364A008A236B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D0953422AC364A008A236B /* Assets.xcassets */; };
@@ -169,7 +168,6 @@
 		52AD6D1922B7C1DB0077FC91 /* NotamAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotamAPI.swift; sourceTree = "<group>"; };
 		52AD6D1B22B7C5C10077FC91 /* NotamDownLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotamDownLoader.swift; sourceTree = "<group>"; };
 		52AD6D1D22B7C6770077FC91 /* Notam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notam.swift; sourceTree = "<group>"; };
-		52B2D64422B02E5D00EB3550 /* DeviceOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientation.swift; sourceTree = "<group>"; };
 		52D0952722AC3649008A236B /* SOF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D0952A22AC3649008A236B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52D0953222AC3649008A236B /* SOF.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SOF.xcdatamodel; sourceTree = "<group>"; };
@@ -396,7 +394,6 @@
 				529630DE22AC3AFB00CAD9BC /* NormalTabModel.swift */,
 				529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */,
 				529630E622AC878300CAD9BC /* Status */,
-				52B2D64422B02E5D00EB3550 /* DeviceOrientation.swift */,
 				52F3BDBD22B62B9900F7F367 /* Observable.swift */,
 			);
 			path = Model;
@@ -821,7 +818,6 @@
 				529630E122AC876100CAD9BC /* U2Status.swift in Sources */,
 				529630DD22AC3A5300CAD9BC /* EmergencyTabModel.swift in Sources */,
 				52F3BD9422B6276B00F7F367 /* Fueloil_CD+CoreDataProperties.swift in Sources */,
-				52B2D64522B02E5D00EB3550 /* DeviceOrientation.swift in Sources */,
 				52F3BD3D22B6275A00F7F367 /* TrmSegCDU.swift in Sources */,
 				52F3BD5122B6275A00F7F367 /* AcomRmk.swift in Sources */,
 				52F3BDBC22B6295A00F7F367 /* TafParser.swift in Sources */,

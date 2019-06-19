@@ -29,13 +29,13 @@ class DetailViewController: UIViewController, DeviceOrientationDelegate {
     var tempLabelText = "" {didSet {print(self.tempLabelText)}}
     
     
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+//    @IBOutlet weak var detailDescriptionLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailDescriptionLabel.text = tempLabelText
-        let pv = PickerTextField<U2Status.Status>(hostTextField: testItOut)
-        testItOut.inputView = pv
+//        detailDescriptionLabel.text = tempLabelText
+//        let pv = PickerTextField<U2Status.Status>(hostTextField: testItOut)
+//        testItOut.inputView = pv
         appDelegate.deviceOrientationDelegate = self
         appSyncClient = appDelegate.appSyncClient
         
@@ -43,7 +43,7 @@ class DetailViewController: UIViewController, DeviceOrientationDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getStatus()
+        setStatus()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
