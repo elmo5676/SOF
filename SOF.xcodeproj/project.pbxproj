@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5223959B22BB73EA00EFEDD1 /* SetStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5223959A22BB73EA00EFEDD1 /* SetStatusViewController.swift */; };
+		5223959D22BB7DD800EFEDD1 /* SetStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5223959C22BB7DD800EFEDD1 /* SetStatusModel.swift */; };
 		52277ACA22AEF78A00CD45BE /* ArrayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52277AC922AEF78A00CD45BE /* ArrayPicker.swift */; };
 		52277ACE22AEF83900CD45BE /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52277ACD22AEF83900CD45BE /* PickerTextField.swift */; };
 		5242112622B7EA570066FB88 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242112522B7EA570066FB88 /* API.swift */; };
@@ -20,6 +22,7 @@
 		5294101122BA9BAD008F05A0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */; };
 		5294101322BA9BC9008F05A0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */; };
 		5294101522BA9BE3008F05A0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101422BA9BE3008F05A0 /* UIView+Extension.swift */; };
+		5294101822BA9F1C008F05A0 /* RankPV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101722BA9F1C008F05A0 /* RankPV.swift */; };
 		529630D922AC37E600CAD9BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529630D822AC37E600CAD9BC /* Main.storyboard */; };
 		529630DD22AC3A5300CAD9BC /* EmergencyTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */; };
 		529630DF22AC3AFB00CAD9BC /* NormalTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630DE22AC3AFB00CAD9BC /* NormalTabModel.swift */; };
@@ -152,6 +155,8 @@
 
 /* Begin PBXFileReference section */
 		03899E28C8B7450084EDFE48 /* Pods_SOF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SOF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5223959A22BB73EA00EFEDD1 /* SetStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetStatusViewController.swift; sourceTree = "<group>"; };
+		5223959C22BB7DD800EFEDD1 /* SetStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetStatusModel.swift; sourceTree = "<group>"; };
 		52277AC922AEF78A00CD45BE /* ArrayPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayPicker.swift; sourceTree = "<group>"; };
 		52277ACD22AEF83900CD45BE /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		5242112522B7EA570066FB88 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
@@ -165,6 +170,7 @@
 		5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		5294101422BA9BE3008F05A0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		5294101722BA9F1C008F05A0 /* RankPV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankPV.swift; sourceTree = "<group>"; };
 		529630D822AC37E600CAD9BC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyTabModel.swift; sourceTree = "<group>"; };
 		529630DE22AC3AFB00CAD9BC /* NormalTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTabModel.swift; sourceTree = "<group>"; };
@@ -310,6 +316,7 @@
 				52D0954122AC3714008A236B /* DetailViewController.swift */,
 				5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */,
 				5265457322BA979C00EA210E /* CheckInViewController.swift */,
+				5223959A22BB73EA00EFEDD1 /* SetStatusViewController.swift */,
 			);
 			path = NormalOpsTabSB;
 			sourceTree = "<group>";
@@ -342,12 +349,21 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		5294101622BA9EFA008F05A0 /* PckerViewDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5294101722BA9F1C008F05A0 /* RankPV.swift */,
+			);
+			path = PckerViewDataModel;
+			sourceTree = "<group>";
+		};
 		529630E622AC878300CAD9BC /* Status */ = {
 			isa = PBXGroup;
 			children = (
 				529630E022AC876100CAD9BC /* U2Status.swift */,
 				529630E222AC876E00CAD9BC /* T38Status.swift */,
 				529630E422AC877B00CAD9BC /* RQ4Status.swift */,
+				5223959C22BB7DD800EFEDD1 /* SetStatusModel.swift */,
 			);
 			path = Status;
 			sourceTree = "<group>";
@@ -399,6 +415,7 @@
 		52D0954D22AC373C008A236B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5294101622BA9EFA008F05A0 /* PckerViewDataModel */,
 				5242112422B7EA420066FB88 /* AWS */,
 				52AD6D1F22B7DDDC0077FC91 /* Notams */,
 				52F3BDAC22B6295A00F7F367 /* Weather */,
@@ -785,6 +802,7 @@
 				5294101522BA9BE3008F05A0 /* UIView+Extension.swift in Sources */,
 				52F3BD9722B6276B00F7F367 /* Nav_CD+CoreDataClass.swift in Sources */,
 				52F3BDBA22B6295A00F7F367 /* Taf.swift in Sources */,
+				5294101822BA9F1C008F05A0 /* RankPV.swift in Sources */,
 				52F3BDA522B6276B00F7F367 /* AddRwy_CD+CoreDataClass.swift in Sources */,
 				52F3BD4722B6275A00F7F367 /* TrmClbCDU.swift in Sources */,
 				52D0954B22AC372D008A236B /* OtherMasterModel.swift in Sources */,
@@ -803,6 +821,7 @@
 				52F3BDA322B6276B00F7F367 /* TrmMsa_CD+CoreDataClass.swift in Sources */,
 				52F3BD8B22B6276B00F7F367 /* Acom_CD+CoreDataClass.swift in Sources */,
 				52F3BDBB22B6295A00F7F367 /* TafDownloader.swift in Sources */,
+				5223959D22BB7DD800EFEDD1 /* SetStatusModel.swift in Sources */,
 				5294100F22BA9B6E008F05A0 /* Double+Extension.swift in Sources */,
 				52F3BD8F22B6276B00F7F367 /* TrmMin_CD+CoreDataClass.swift in Sources */,
 				52F3BD5822B6275A00F7F367 /* Nav.swift in Sources */,
@@ -818,6 +837,7 @@
 				52F3BD0622B6268600F7F367 /* JSONFromDAFFIF.swift in Sources */,
 				52F3BD9522B6276B00F7F367 /* Gen_CD+CoreDataClass.swift in Sources */,
 				52F3BD0022B6268600F7F367 /* UnzipDAFIF8.swift in Sources */,
+				5223959B22BB73EA00EFEDD1 /* SetStatusViewController.swift in Sources */,
 				5265457722BA99DF00EA210E /* UIViewController+Extension.swift in Sources */,
 				52F3BD5D22B6275A00F7F367 /* Acom.swift in Sources */,
 				52F3BDA422B6276B00F7F367 /* TrmMsa_CD+CoreDataProperties.swift in Sources */,

@@ -13,6 +13,7 @@ class CheckInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        initialSetup()
     }
         
         
@@ -20,13 +21,29 @@ class CheckInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lastNameTextFieldOutlet: UITextField!
     @IBOutlet weak var firstNameTextFieldOutlet: UITextField!
     @IBOutlet var textFields: [UITextField]!
+    @IBOutlet weak var sofView: UIView!
+    @IBOutlet weak var sofViewBlur: UIVisualEffectView!
     
     
     func initialSetup(){
-        
+        setFormatting()
+        let pv = PickerTextField<RankPV.Rank>(hostTextField: rankTextFieldOutlet)
+        rankTextFieldOutlet.inputView = pv
         for textField in textFields {
             textField.delegate = self
         }
+    }
+    
+    func setFormatting(){
+        let bgColor: CGColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        let bdColor: CGColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        let bdWidth: CGFloat = 1
+        let cornerRadius: CGFloat = 10
+//        sofView.layer.backgroundColor = bgColor
+        sofView.layer.borderColor = bdColor
+        sofView.layer.borderWidth = bdWidth
+        sofView.layer.cornerRadius = cornerRadius
+        sofViewBlur.layer.cornerRadius = cornerRadius
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
