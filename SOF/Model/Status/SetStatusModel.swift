@@ -187,7 +187,7 @@ struct SetStatusModel {
     
 //    public enum <#here#>: String, PickerType, CaseIterable {
 //        public var description: String { return self.rawValue}
-//        
+//
 //        case <#here#> = "<#here#>"
 //        case <#here#> = "<#here#>"
 //        case <#here#> = "<#here#>"
