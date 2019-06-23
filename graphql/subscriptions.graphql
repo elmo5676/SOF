@@ -1,0 +1,175 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateSofStatus {
+  onCreateSOFStatus {
+    id
+    u2Status
+    t38Status
+    u2Restrictions
+    t38Restrictions
+    u2Alternates
+    t38Alternates
+    navaids
+    approachLights
+    localAirfields
+    birdStatus
+    fits
+    activeRunway
+    runwayConditions
+    date
+    time
+    sofOnDuty
+  }
+}
+subscription OnUpdateSofStatus {
+  onUpdateSOFStatus {
+    id
+    u2Status
+    t38Status
+    u2Restrictions
+    t38Restrictions
+    u2Alternates
+    t38Alternates
+    navaids
+    approachLights
+    localAirfields
+    birdStatus
+    fits
+    activeRunway
+    runwayConditions
+    date
+    time
+    sofOnDuty
+  }
+}
+subscription OnDeleteSofStatus {
+  onDeleteSOFStatus {
+    id
+    u2Status
+    t38Status
+    u2Restrictions
+    t38Restrictions
+    u2Alternates
+    t38Alternates
+    navaids
+    approachLights
+    localAirfields
+    birdStatus
+    fits
+    activeRunway
+    runwayConditions
+    date
+    time
+    sofOnDuty
+  }
+}
+subscription OnCreateChecklist {
+  onCreateChecklist {
+    id
+    name
+    items
+  }
+}
+subscription OnUpdateChecklist {
+  onUpdateChecklist {
+    id
+    name
+    items
+  }
+}
+subscription OnDeleteChecklist {
+  onDeleteChecklist {
+    id
+    name
+    items
+  }
+}
+subscription OnCreateNotes {
+  onCreateNotes {
+    note
+  }
+}
+subscription OnUpdateNotes {
+  onUpdateNotes {
+    note
+  }
+}
+subscription OnDeleteNotes {
+  onDeleteNotes {
+    note
+  }
+}
+subscription OnCreateContacts {
+  onCreateContacts {
+    category
+    name
+    phoneNumber
+    email
+    dsn
+  }
+}
+subscription OnUpdateContacts {
+  onUpdateContacts {
+    category
+    name
+    phoneNumber
+    email
+    dsn
+  }
+}
+subscription OnDeleteContacts {
+  onDeleteContacts {
+    category
+    name
+    phoneNumber
+    email
+    dsn
+  }
+}
+subscription OnCreateEmergency {
+  onCreateEmergency {
+    id
+    startDate
+    startTime
+    terminationDate
+    terminationTime
+    callSign
+    aircraftType
+    tailNumber
+    soulsOnBoard
+    fuelRemainingTimeInMinutes
+    systemAffected
+    details
+  }
+}
+subscription OnUpdateEmergency {
+  onUpdateEmergency {
+    id
+    startDate
+    startTime
+    terminationDate
+    terminationTime
+    callSign
+    aircraftType
+    tailNumber
+    soulsOnBoard
+    fuelRemainingTimeInMinutes
+    systemAffected
+    details
+  }
+}
+subscription OnDeleteEmergency {
+  onDeleteEmergency {
+    id
+    startDate
+    startTime
+    terminationDate
+    terminationTime
+    callSign
+    aircraftType
+    tailNumber
+    soulsOnBoard
+    fuelRemainingTimeInMinutes
+    systemAffected
+    details
+  }
+}
