@@ -4,7 +4,7 @@
 //
 //  Created by Matthew Elmore on 6/8/19.
 //  Copyright © 2019 Matthew Elmore. All rights reserved.
-//
+// SwiftyBeaver - https://docs.swiftybeaver.com/article/6-basic-setup
 
 import UIKit
 import CoreData
@@ -15,6 +15,7 @@ import AWSAppSync
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     
     var appSyncClient: AWSAppSyncClient?
+    let log = SwiftyBeaver.self
     var window: UIWindow?
     let titles = ["Normal","Emergency", "Normal"]
     
@@ -51,6 +52,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         } catch {
             print("Error initializing appsync client. \(error)")
         }
+        
+        //SwiftyBeaver Logger
+        // add log destinations. at least one is needed!
+        let console = ConsoleDestination()  // log to Xcode Console
+        let file = FileDestination()  // log to default swiftybeaver.log file
+        log.addDestination(console)
+        log.addDestination(file)
         
         
         

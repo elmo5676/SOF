@@ -13,7 +13,8 @@ import AWSAppSync
 class SetStatusViewController: UIViewController, UITextFieldDelegate {
     
     var appSyncClient: AWSAppSyncClient?
-    
+    let log = SwiftyBeaver.self
+    let console = ConsoleDestination()
     var u2Status = U2Status()
     
     override func viewDidLoad() {
@@ -120,10 +121,10 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate {
                                           sofOnDuty: "\(sofOnDutyOutlet.text ?? "")")
         appSyncClient?.perform(mutation: CreateSofStatusMutation(input: status)) { (result, error) in
             if let error = error as? AWSAppSyncClientError {
-                print("Error occurred: \(error.localizedDescription )")
+                self.log.error("Error occurred: \(error.localizedDescription )")
             }
             if let resultError = result?.errors {
-                print("Error saving the item on server: \(resultError)")
+                self.log.error("Error saving the item on server: \(resultError)")
                 return
             }
         }

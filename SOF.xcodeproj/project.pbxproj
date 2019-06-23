@@ -7,10 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5205743122BDF52400B79425 /* TimeCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205743022BDF52400B79425 /* TimeCalculations.swift */; };
+		5205743522BDF57C00B79425 /* Supporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205743222BDF57C00B79425 /* Supporting.swift */; };
+		5205743622BDF57C00B79425 /* EngineOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205743322BDF57C00B79425 /* EngineOut.swift */; };
+		5205743722BDF57C00B79425 /* U2Told.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205743422BDF57C00B79425 /* U2Told.swift */; };
 		5223959B22BB73EA00EFEDD1 /* SetStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5223959A22BB73EA00EFEDD1 /* SetStatusViewController.swift */; };
 		5223959D22BB7DD800EFEDD1 /* SetStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5223959C22BB7DD800EFEDD1 /* SetStatusModel.swift */; };
 		52277ACA22AEF78A00CD45BE /* ArrayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52277AC922AEF78A00CD45BE /* ArrayPicker.swift */; };
 		52277ACE22AEF83900CD45BE /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52277ACD22AEF83900CD45BE /* PickerTextField.swift */; };
+		522BE34422BFD19100D31E36 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE33A22BFD19100D31E36 /* Extensions.swift */; };
+		522BE34522BFD19100D31E36 /* FileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE33B22BFD19100D31E36 /* FileDestination.swift */; };
+		522BE34622BFD19100D31E36 /* GoogleCloudDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE33C22BFD19100D31E36 /* GoogleCloudDestination.swift */; };
+		522BE34722BFD19100D31E36 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE33D22BFD19100D31E36 /* Filter.swift */; };
+		522BE34822BFD19100D31E36 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE33E22BFD19100D31E36 /* Base64.swift */; };
+		522BE34922BFD19100D31E36 /* SBPlatformDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE33F22BFD19100D31E36 /* SBPlatformDestination.swift */; };
+		522BE34A22BFD19100D31E36 /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE34022BFD19100D31E36 /* SwiftyBeaver.swift */; };
+		522BE34B22BFD19100D31E36 /* BaseDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE34122BFD19100D31E36 /* BaseDestination.swift */; };
+		522BE34C22BFD19100D31E36 /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE34222BFD19100D31E36 /* AES256CBC.swift */; };
+		522BE34D22BFD19100D31E36 /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE34322BFD19100D31E36 /* ConsoleDestination.swift */; };
 		5242112622B7EA570066FB88 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242112522B7EA570066FB88 /* API.swift */; };
 		5242112922B7F4620066FB88 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5242112822B7F4620066FB88 /* awsconfiguration.json */; };
 		5242112B22B899810066FB88 /* EmergencyTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5242112A22B899810066FB88 /* EmergencyTab.storyboard */; };
@@ -155,10 +169,24 @@
 
 /* Begin PBXFileReference section */
 		03899E28C8B7450084EDFE48 /* Pods_SOF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SOF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5205743022BDF52400B79425 /* TimeCalculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCalculations.swift; sourceTree = "<group>"; };
+		5205743222BDF57C00B79425 /* Supporting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supporting.swift; sourceTree = "<group>"; };
+		5205743322BDF57C00B79425 /* EngineOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineOut.swift; sourceTree = "<group>"; };
+		5205743422BDF57C00B79425 /* U2Told.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = U2Told.swift; sourceTree = "<group>"; };
 		5223959A22BB73EA00EFEDD1 /* SetStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetStatusViewController.swift; sourceTree = "<group>"; };
 		5223959C22BB7DD800EFEDD1 /* SetStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetStatusModel.swift; sourceTree = "<group>"; };
 		52277AC922AEF78A00CD45BE /* ArrayPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayPicker.swift; sourceTree = "<group>"; };
 		52277ACD22AEF83900CD45BE /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
+		522BE33A22BFD19100D31E36 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		522BE33B22BFD19100D31E36 /* FileDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDestination.swift; sourceTree = "<group>"; };
+		522BE33C22BFD19100D31E36 /* GoogleCloudDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudDestination.swift; sourceTree = "<group>"; };
+		522BE33D22BFD19100D31E36 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		522BE33E22BFD19100D31E36 /* Base64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
+		522BE33F22BFD19100D31E36 /* SBPlatformDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBPlatformDestination.swift; sourceTree = "<group>"; };
+		522BE34022BFD19100D31E36 /* SwiftyBeaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyBeaver.swift; sourceTree = "<group>"; };
+		522BE34122BFD19100D31E36 /* BaseDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDestination.swift; sourceTree = "<group>"; };
+		522BE34222BFD19100D31E36 /* AES256CBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
+		522BE34322BFD19100D31E36 /* ConsoleDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleDestination.swift; sourceTree = "<group>"; };
 		5242112522B7EA570066FB88 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
 		5242112822B7F4620066FB88 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		5242112A22B899810066FB88 /* EmergencyTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmergencyTab.storyboard; sourceTree = "<group>"; };
@@ -302,6 +330,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5205742F22BDF51500B79425 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5265457622BA99DF00EA210E /* UIViewController+Extension.swift */,
+				5294100E22BA9B6E008F05A0 /* Double+Extension.swift */,
+				5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */,
+				5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */,
+				5294101422BA9BE3008F05A0 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5205743822BDF58700B79425 /* Calculations */ = {
+			isa = PBXGroup;
+			children = (
+				5205743322BDF57C00B79425 /* EngineOut.swift */,
+				5205743222BDF57C00B79425 /* Supporting.swift */,
+				5205743422BDF57C00B79425 /* U2Told.swift */,
+				5205743022BDF52400B79425 /* TimeCalculations.swift */,
+			);
+			path = Calculations;
+			sourceTree = "<group>";
+		};
+		522BE33822BFD17100D31E36 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				522BE33922BFD19100D31E36 /* SwiftyBeaver */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		522BE33922BFD19100D31E36 /* SwiftyBeaver */ = {
+			isa = PBXGroup;
+			children = (
+				522BE33A22BFD19100D31E36 /* Extensions.swift */,
+				522BE33B22BFD19100D31E36 /* FileDestination.swift */,
+				522BE33C22BFD19100D31E36 /* GoogleCloudDestination.swift */,
+				522BE33D22BFD19100D31E36 /* Filter.swift */,
+				522BE33E22BFD19100D31E36 /* Base64.swift */,
+				522BE33F22BFD19100D31E36 /* SBPlatformDestination.swift */,
+				522BE34022BFD19100D31E36 /* SwiftyBeaver.swift */,
+				522BE34122BFD19100D31E36 /* BaseDestination.swift */,
+				522BE34222BFD19100D31E36 /* AES256CBC.swift */,
+				522BE34322BFD19100D31E36 /* ConsoleDestination.swift */,
+			);
+			path = SwiftyBeaver;
+			sourceTree = "<group>";
+		};
 		5242112422B7EA420066FB88 /* AWS */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,11 +416,9 @@
 		5265457522BA99C600EA210E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				5265457622BA99DF00EA210E /* UIViewController+Extension.swift */,
-				5294100E22BA9B6E008F05A0 /* Double+Extension.swift */,
-				5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */,
-				5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */,
-				5294101422BA9BE3008F05A0 /* UIView+Extension.swift */,
+				522BE33822BFD17100D31E36 /* Logging */,
+				5205743822BDF58700B79425 /* Calculations */,
+				5205742F22BDF51500B79425 /* Extensions */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -401,10 +475,10 @@
 		52D0952922AC3649008A236B /* SOF */ = {
 			isa = PBXGroup;
 			children = (
-				5265457522BA99C600EA210E /* Utilities */,
 				52D0952A22AC3649008A236B /* AppDelegate.swift */,
 				52D0953922AC364A008A236B /* Info.plist */,
 				52D0953422AC364A008A236B /* Assets.xcassets */,
+				5265457522BA99C600EA210E /* Utilities */,
 				52D0954D22AC373C008A236B /* Model */,
 				52D0954E22AC374D008A236B /* Controller */,
 				52D0955022AC3774008A236B /* View */,
@@ -434,9 +508,9 @@
 			isa = PBXGroup;
 			children = (
 				52D0954022AC3714008A236B /* MainTabBarController.swift */,
+				5242112F22B89AE10066FB88 /* NormalOpsTabSB */,
 				5265457222BA588C00EA210E /* PickerSpecial */,
 				5242113022B89AF10066FB88 /* EmergencyTabSB */,
-				5242112F22B89AE10066FB88 /* NormalOpsTabSB */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -785,10 +859,12 @@
 				52F3BD5222B6275A00F7F367 /* Anav.swift in Sources */,
 				52F3BD4A22B6275A00F7F367 /* IlsCDU.swift in Sources */,
 				52F3BD4F22B6275A00F7F367 /* SvcRmk.swift in Sources */,
+				522BE34A22BFD19100D31E36 /* SwiftyBeaver.swift in Sources */,
 				52F3BD0522B6268600F7F367 /* DPCopier.swift in Sources */,
 				52F3BD0C22B6269500F7F367 /* FileNames+Extension.swift in Sources */,
 				52F3BD3A22B6275A00F7F367 /* DAFIFCDStack.swift in Sources */,
 				52F3BD3922B6275A00F7F367 /* DAFIF.xcdatamodeld in Sources */,
+				5205743622BDF57C00B79425 /* EngineOut.swift in Sources */,
 				52F3BD5722B6275A00F7F367 /* Fueloil.swift in Sources */,
 				52F3BCFF22B6268600F7F367 /* Enums.swift in Sources */,
 				52F3BD9A22B6276B00F7F367 /* Rwy_CD+CoreDataProperties.swift in Sources */,
@@ -813,10 +889,12 @@
 				52F3BD8A22B6276B00F7F367 /* TrmRmk_CD+CoreDataProperties.swift in Sources */,
 				52F3BD5E22B6275A00F7F367 /* Agear.swift in Sources */,
 				52F3BD9F22B6276B00F7F367 /* AcomRmk_CD+CoreDataClass.swift in Sources */,
+				522BE34B22BFD19100D31E36 /* BaseDestination.swift in Sources */,
 				52F3BD0322B6268600F7F367 /* CoreDataStackCreator.swift in Sources */,
 				52F3BD9222B6276B00F7F367 /* Anav_CD+CoreDataProperties.swift in Sources */,
 				52F3BD9822B6276B00F7F367 /* Nav_CD+CoreDataProperties.swift in Sources */,
 				52F3BD0B22B6269500F7F367 /* String+Extension.swift in Sources */,
+				522BE34722BFD19100D31E36 /* Filter.swift in Sources */,
 				52F3BD5422B6275A00F7F367 /* TrmPar.swift in Sources */,
 				52F3BDA322B6276B00F7F367 /* TrmMsa_CD+CoreDataClass.swift in Sources */,
 				52F3BD8B22B6276B00F7F367 /* Acom_CD+CoreDataClass.swift in Sources */,
@@ -826,6 +904,7 @@
 				52F3BD8F22B6276B00F7F367 /* TrmMin_CD+CoreDataClass.swift in Sources */,
 				52F3BD5822B6275A00F7F367 /* Nav.swift in Sources */,
 				529630DF22AC3AFB00CAD9BC /* NormalTabModel.swift in Sources */,
+				522BE34922BFD19100D31E36 /* SBPlatformDestination.swift in Sources */,
 				52F3BD8622B6276B00F7F367 /* Arpt_CD+CoreDataProperties.swift in Sources */,
 				52F3BD4222B6275A00F7F367 /* AddRwyCDU.swift in Sources */,
 				52F3BD9122B6276B00F7F367 /* Anav_CD+CoreDataClass.swift in Sources */,
@@ -835,6 +914,7 @@
 				52D0954422AC3714008A236B /* MainTabBarController.swift in Sources */,
 				52F3BCFD22B6268600F7F367 /* CoreDataXML.swift in Sources */,
 				52F3BD0622B6268600F7F367 /* JSONFromDAFFIF.swift in Sources */,
+				522BE34422BFD19100D31E36 /* Extensions.swift in Sources */,
 				52F3BD9522B6276B00F7F367 /* Gen_CD+CoreDataClass.swift in Sources */,
 				52F3BD0022B6268600F7F367 /* UnzipDAFIF8.swift in Sources */,
 				5223959B22BB73EA00EFEDD1 /* SetStatusViewController.swift in Sources */,
@@ -856,16 +936,21 @@
 				52F3BD4522B6275A00F7F367 /* GenCDU.swift in Sources */,
 				52F3BD8322B6276B00F7F367 /* Agear_CD+CoreDataClass.swift in Sources */,
 				52F3BDA222B6276B00F7F367 /* TrmSeg_CD+CoreDataProperties.swift in Sources */,
+				522BE34622BFD19100D31E36 /* GoogleCloudDestination.swift in Sources */,
+				5205743722BDF57C00B79425 /* U2Told.swift in Sources */,
 				52F3BD5922B6275A00F7F367 /* TrmClb.swift in Sources */,
 				52F3BD8C22B6276B00F7F367 /* Acom_CD+CoreDataProperties.swift in Sources */,
 				52F3BD9922B6276B00F7F367 /* Rwy_CD+CoreDataClass.swift in Sources */,
 				52F3BD8E22B6276B00F7F367 /* TrmClb_CD+CoreDataProperties.swift in Sources */,
 				5294101322BA9BC9008F05A0 /* UIColor+Extension.swift in Sources */,
+				5205743122BDF52400B79425 /* TimeCalculations.swift in Sources */,
 				52F3BD5A22B6275A00F7F367 /* Arpt.swift in Sources */,
 				52F3BDA622B6276B00F7F367 /* AddRwy_CD+CoreDataProperties.swift in Sources */,
+				522BE34822BFD19100D31E36 /* Base64.swift in Sources */,
 				52277ACE22AEF83900CD45BE /* PickerTextField.swift in Sources */,
 				52F3BD4D22B6275A00F7F367 /* TrmRmk.swift in Sources */,
 				52F3BD0422B6268600F7F367 /* DAFIFDataController.swift in Sources */,
+				522BE34522BFD19100D31E36 /* FileDestination.swift in Sources */,
 				52F3BDBE22B62B9900F7F367 /* Observable.swift in Sources */,
 				52F3BDA122B6276B00F7F367 /* TrmSeg_CD+CoreDataClass.swift in Sources */,
 				52F3BD0D22B6269500F7F367 /* URL+Extension.swift in Sources */,
@@ -890,13 +975,16 @@
 				52AD6D1E22B7C6770077FC91 /* Notam.swift in Sources */,
 				52F3BD9C22B6276B00F7F367 /* SvcRmk_CD+CoreDataProperties.swift in Sources */,
 				52F3BD4022B6275A00F7F367 /* AnavCDU.swift in Sources */,
+				522BE34C22BFD19100D31E36 /* AES256CBC.swift in Sources */,
 				52F3BD8D22B6276B00F7F367 /* TrmClb_CD+CoreDataClass.swift in Sources */,
 				52F3BD8522B6276B00F7F367 /* Arpt_CD+CoreDataClass.swift in Sources */,
 				52F3BD9322B6276B00F7F367 /* Fueloil_CD+CoreDataClass.swift in Sources */,
 				5242113222B89BEA0066FB88 /* NormalOpsTabTableViewController.swift in Sources */,
 				52277ACA22AEF78A00CD45BE /* ArrayPicker.swift in Sources */,
 				52F3BD5B22B6275A00F7F367 /* TrmMsa.swift in Sources */,
+				5205743522BDF57C00B79425 /* Supporting.swift in Sources */,
 				52F3BD4322B6275A00F7F367 /* AcomCDU.swift in Sources */,
+				522BE34D22BFD19100D31E36 /* ConsoleDestination.swift in Sources */,
 				52F3BD3E22B6275A00F7F367 /* SvcRmkCDU.swift in Sources */,
 				52F3BD5C22B6275A00F7F367 /* Ils.swift in Sources */,
 				52F3BD0222B6268600F7F367 /* Downloader.swift in Sources */,
@@ -1041,7 +1129,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VR6Z5GU2W7;
+				DEVELOPMENT_TEAM = KG653N5ES4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1064,7 +1152,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VR6Z5GU2W7;
+				DEVELOPMENT_TEAM = KG653N5ES4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

@@ -12,13 +12,12 @@ import AWSAppSync
 class DetailViewController: UIViewController {
     
     var appSyncClient: AWSAppSyncClient?
-    
+    let console = ConsoleDestination()
+    let log = SwiftyBeaver.self
     var u2Status = U2Status()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let pv = PickerTextField<U2Status.Status>(hostTextField: testItOut)
-//        testItOut.inputView = pv
         appSyncClient = appDelegate.appSyncClient
     }
     
@@ -53,7 +52,9 @@ class DetailViewController: UIViewController {
                                           runwayConditions: "Dry")
         appSyncClient?.perform(mutation: CreateSofStatusMutation(input: status)) { (result, error) in
             if let error = error as? AWSAppSyncClientError {
-                print("Error occurred: \(error.localizedDescription )")
+                self.log.addDestination(self.console)
+                self.log.verbose("Error occurred: \(error.localizedDescription )")
+//                print("Error occurred: \(error.localizedDescription )")
             }
             if let resultError = result?.errors {
                 print("Error saving the item on server: \(resultError)")
@@ -66,11 +67,12 @@ class DetailViewController: UIViewController {
         print("getStatus")
         appSyncClient?.fetch(query: ListSofStatussQuery(), cachePolicy: .returnCacheDataAndFetch){(result, error) in
             if error != nil {
+                
                 print(error?.localizedDescription ?? "")
                 return
             }
             let end = result?.data?.listSofStatuss?.items
-            print(end?.count)
+            print(end?.count ?? 0)
 //            result?.data?.listSofStatuss?.items?.forEach { print(($0?.testOutThisMf)! + " " + ($0?.activeRunway)? ?? <#default value#> ?? "") }
         }
     }
