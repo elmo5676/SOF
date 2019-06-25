@@ -58,10 +58,25 @@ class CheckInViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    
+    let uds = UserDefaultSetup()
+    @IBAction func add(_ sender: Any) {
+        let newNormalChecklist: [String] = ["Step 1", "Step 2", "Step 3"]
+        
+        uds.add(checkListName: "Normal 2", checklistItems: newNormalChecklist, to: .normalChecklists)
+        
+//        let newSof = "rnk, Guy, New, newGuy"
+//        uds.addToList(item: newSof, withKey: .listOfSOF)
+    }
+    @IBAction func printSof(_ sender: Any) {
+//        log.info(uds.getListOf(withKey: .listOfSOF))
+        log.info(uds.getChecklists().normal)
+//        log.info(uds.getListOfSof())
+    }
+    
+    
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
 
 }

@@ -25,6 +25,7 @@
 		522BE34B22BFD19100D31E36 /* BaseDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE34122BFD19100D31E36 /* BaseDestination.swift */; };
 		522BE34C22BFD19100D31E36 /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE34222BFD19100D31E36 /* AES256CBC.swift */; };
 		522BE34D22BFD19100D31E36 /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE34322BFD19100D31E36 /* ConsoleDestination.swift */; };
+		523BAFBB22C07BCA00F667B3 /* UserDefaultSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */; };
 		5242112622B7EA570066FB88 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242112522B7EA570066FB88 /* API.swift */; };
 		5242112922B7F4620066FB88 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5242112822B7F4620066FB88 /* awsconfiguration.json */; };
 		5242112B22B899810066FB88 /* EmergencyTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5242112A22B899810066FB88 /* EmergencyTab.storyboard */; };
@@ -187,6 +188,7 @@
 		522BE34122BFD19100D31E36 /* BaseDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDestination.swift; sourceTree = "<group>"; };
 		522BE34222BFD19100D31E36 /* AES256CBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
 		522BE34322BFD19100D31E36 /* ConsoleDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleDestination.swift; sourceTree = "<group>"; };
+		523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultSetup.swift; sourceTree = "<group>"; };
 		5242112522B7EA570066FB88 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
 		5242112822B7F4620066FB88 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		5242112A22B899810066FB88 /* EmergencyTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmergencyTab.storyboard; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 				529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */,
 				529630E622AC878300CAD9BC /* Status */,
 				52F3BDBD22B62B9900F7F367 /* Observable.swift */,
+				523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -949,6 +952,7 @@
 				522BE34822BFD19100D31E36 /* Base64.swift in Sources */,
 				52277ACE22AEF83900CD45BE /* PickerTextField.swift in Sources */,
 				52F3BD4D22B6275A00F7F367 /* TrmRmk.swift in Sources */,
+				523BAFBB22C07BCA00F667B3 /* UserDefaultSetup.swift in Sources */,
 				52F3BD0422B6268600F7F367 /* DAFIFDataController.swift in Sources */,
 				522BE34522BFD19100D31E36 /* FileDestination.swift in Sources */,
 				52F3BDBE22B62B9900F7F367 /* Observable.swift in Sources */,

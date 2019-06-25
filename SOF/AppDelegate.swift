@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import AWSAppSync
 
+let log = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
