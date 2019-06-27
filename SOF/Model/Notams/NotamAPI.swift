@@ -27,7 +27,6 @@ struct NotamAPI {
     private static let apiKey = "228201c0-90fa-11e9-850f-0b8452f7ba7b"
     enum EndPoint {
         case notams
-        case taf
     }
     enum Format: String {
         case json = "json"

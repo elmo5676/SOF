@@ -39,9 +39,9 @@ import Foundation
 
 public class SBPlatformDestination: BaseDestination {
 
-    public var appID = ""
-    public var appSecret = ""
-    public var encryptionKey = ""
+    public var appID = "0G8El1"
+    public var appSecret = "aygqlbHflrCpv9ecimhkrvbatrgqiapJ"
+    public var encryptionKey = "UUxflcvH1fEljoe8qRjknQz6hdxIkNaw"
     public var analyticsUserName = "" // user email, ID, name, etc.
     public var analyticsUUID: String { return uuid }
 

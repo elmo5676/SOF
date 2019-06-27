@@ -47,6 +47,7 @@
 		52AD6D1A22B7C1DB0077FC91 /* NotamAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1922B7C1DB0077FC91 /* NotamAPI.swift */; };
 		52AD6D1C22B7C5C10077FC91 /* NotamDownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1B22B7C5C10077FC91 /* NotamDownLoader.swift */; };
 		52AD6D1E22B7C6770077FC91 /* Notam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1D22B7C6770077FC91 /* Notam.swift */; };
+		52AF2E6422C20FB200B5EE43 /* BealChecklistDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF2E6322C20FB200B5EE43 /* BealChecklistDefaults.swift */; };
 		52D0952B22AC3649008A236B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0952A22AC3649008A236B /* AppDelegate.swift */; };
 		52D0953322AC3649008A236B /* SOF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52D0953122AC3649008A236B /* SOF.xcdatamodeld */; };
 		52D0953522AC364A008A236B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D0953422AC364A008A236B /* Assets.xcassets */; };
@@ -54,6 +55,11 @@
 		52D0954422AC3714008A236B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954022AC3714008A236B /* MainTabBarController.swift */; };
 		52D0954522AC3714008A236B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954122AC3714008A236B /* DetailViewController.swift */; };
 		52D0954B22AC372D008A236B /* OtherMasterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954822AC372D008A236B /* OtherMasterModel.swift */; };
+		52E3BB6C22C477E60062E8F4 /* AHASInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */; };
+		52E3BB6E22C47DF90062E8F4 /* AhasAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */; };
+		52E3BB7022C483B00062E8F4 /* AhasDownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */; };
+		52E3BB7222C484060062E8F4 /* Ahas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB7122C484060062E8F4 /* Ahas.swift */; };
+		52E3BB7422C484180062E8F4 /* AhasParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB7322C484180062E8F4 /* AhasParser.swift */; };
 		52F3BCFD22B6268600F7F367 /* CoreDataXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BCF322B6268500F7F367 /* CoreDataXML.swift */; };
 		52F3BCFE22B6268600F7F367 /* SwiftDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BCF422B6268500F7F367 /* SwiftDecoders.swift */; };
 		52F3BCFF22B6268600F7F367 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BCF522B6268500F7F367 /* Enums.swift */; };
@@ -210,6 +216,7 @@
 		52AD6D1922B7C1DB0077FC91 /* NotamAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotamAPI.swift; sourceTree = "<group>"; };
 		52AD6D1B22B7C5C10077FC91 /* NotamDownLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotamDownLoader.swift; sourceTree = "<group>"; };
 		52AD6D1D22B7C6770077FC91 /* Notam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notam.swift; sourceTree = "<group>"; };
+		52AF2E6322C20FB200B5EE43 /* BealChecklistDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BealChecklistDefaults.swift; sourceTree = "<group>"; };
 		52D0952722AC3649008A236B /* SOF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D0952A22AC3649008A236B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52D0953222AC3649008A236B /* SOF.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SOF.xcdatamodel; sourceTree = "<group>"; };
@@ -219,6 +226,11 @@
 		52D0954022AC3714008A236B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		52D0954122AC3714008A236B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		52D0954822AC372D008A236B /* OtherMasterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherMasterModel.swift; sourceTree = "<group>"; };
+		52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHASInputs.swift; sourceTree = "<group>"; };
+		52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasAPI.swift; sourceTree = "<group>"; };
+		52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasDownLoader.swift; sourceTree = "<group>"; };
+		52E3BB7122C484060062E8F4 /* Ahas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ahas.swift; sourceTree = "<group>"; };
+		52E3BB7322C484180062E8F4 /* AhasParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasParser.swift; sourceTree = "<group>"; };
 		52F3BCF322B6268500F7F367 /* CoreDataXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataXML.swift; sourceTree = "<group>"; };
 		52F3BCF422B6268500F7F367 /* SwiftDecoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDecoders.swift; sourceTree = "<group>"; };
 		52F3BCF522B6268500F7F367 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -491,6 +503,7 @@
 		52D0954D22AC373C008A236B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52E3BB6A22C477C70062E8F4 /* AHAS */,
 				5294101622BA9EFA008F05A0 /* PckerViewDataModel */,
 				5242112422B7EA420066FB88 /* AWS */,
 				52AD6D1F22B7DDDC0077FC91 /* Notams */,
@@ -503,6 +516,7 @@
 				529630E622AC878300CAD9BC /* Status */,
 				52F3BDBD22B62B9900F7F367 /* Observable.swift */,
 				523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */,
+				52AF2E6322C20FB200B5EE43 /* BealChecklistDefaults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -535,6 +549,18 @@
 				52D0953622AC364A008A236B /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		52E3BB6A22C477C70062E8F4 /* AHAS */ = {
+			isa = PBXGroup;
+			children = (
+				52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */,
+				52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */,
+				52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */,
+				52E3BB7122C484060062E8F4 /* Ahas.swift */,
+				52E3BB7322C484180062E8F4 /* AhasParser.swift */,
+			);
+			path = AHAS;
 			sourceTree = "<group>";
 		};
 		52F3BCF022B6260600F7F367 /* CoreData */ = {
@@ -915,6 +941,7 @@
 				52F3BD4422B6275A00F7F367 /* AcomRmkCDU.swift in Sources */,
 				52F3BD9E22B6276B00F7F367 /* Ils_CD+CoreDataProperties.swift in Sources */,
 				52D0954422AC3714008A236B /* MainTabBarController.swift in Sources */,
+				52E3BB6C22C477E60062E8F4 /* AHASInputs.swift in Sources */,
 				52F3BCFD22B6268600F7F367 /* CoreDataXML.swift in Sources */,
 				52F3BD0622B6268600F7F367 /* JSONFromDAFFIF.swift in Sources */,
 				522BE34422BFD19100D31E36 /* Extensions.swift in Sources */,
@@ -940,7 +967,9 @@
 				52F3BD8322B6276B00F7F367 /* Agear_CD+CoreDataClass.swift in Sources */,
 				52F3BDA222B6276B00F7F367 /* TrmSeg_CD+CoreDataProperties.swift in Sources */,
 				522BE34622BFD19100D31E36 /* GoogleCloudDestination.swift in Sources */,
+				52E3BB6E22C47DF90062E8F4 /* AhasAPI.swift in Sources */,
 				5205743722BDF57C00B79425 /* U2Told.swift in Sources */,
+				52AF2E6422C20FB200B5EE43 /* BealChecklistDefaults.swift in Sources */,
 				52F3BD5922B6275A00F7F367 /* TrmClb.swift in Sources */,
 				52F3BD8C22B6276B00F7F367 /* Acom_CD+CoreDataProperties.swift in Sources */,
 				52F3BD9922B6276B00F7F367 /* Rwy_CD+CoreDataClass.swift in Sources */,
@@ -958,11 +987,13 @@
 				52F3BDBE22B62B9900F7F367 /* Observable.swift in Sources */,
 				52F3BDA122B6276B00F7F367 /* TrmSeg_CD+CoreDataClass.swift in Sources */,
 				52F3BD0D22B6269500F7F367 /* URL+Extension.swift in Sources */,
+				52E3BB7022C483B00062E8F4 /* AhasDownLoader.swift in Sources */,
 				52F3BD8722B6276B00F7F367 /* TrmPar_CD+CoreDataClass.swift in Sources */,
 				52F3BD9D22B6276B00F7F367 /* Ils_CD+CoreDataClass.swift in Sources */,
 				52AD6D1C22B7C5C10077FC91 /* NotamDownLoader.swift in Sources */,
 				52F3BD0122B6268600F7F367 /* CDUCreator.swift in Sources */,
 				52AD6D1A22B7C1DB0077FC91 /* NotamAPI.swift in Sources */,
+				52E3BB7422C484180062E8F4 /* AhasParser.swift in Sources */,
 				52F3BD5622B6275A00F7F367 /* TrmSeg.swift in Sources */,
 				52F3BD4822B6275A00F7F367 /* TrmMsaCDU.swift in Sources */,
 				52F3BD3B22B6275A00F7F367 /* NavCDU.swift in Sources */,
@@ -980,6 +1011,7 @@
 				52F3BD9C22B6276B00F7F367 /* SvcRmk_CD+CoreDataProperties.swift in Sources */,
 				52F3BD4022B6275A00F7F367 /* AnavCDU.swift in Sources */,
 				522BE34C22BFD19100D31E36 /* AES256CBC.swift in Sources */,
+				52E3BB7222C484060062E8F4 /* Ahas.swift in Sources */,
 				52F3BD8D22B6276B00F7F367 /* TrmClb_CD+CoreDataClass.swift in Sources */,
 				52F3BD8522B6276B00F7F367 /* Arpt_CD+CoreDataClass.swift in Sources */,
 				52F3BD9322B6276B00F7F367 /* Fueloil_CD+CoreDataClass.swift in Sources */,

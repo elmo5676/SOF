@@ -11,6 +11,7 @@ import CoreData
 import AWSAppSync
 
 let log = SwiftyBeaver.self
+let platform = SBPlatformDestination(appID: "0G8El1", appSecret: "aygqlbHflrCpv9ecimhkrvbatrgqiapJ", encryptionKey: "UUxflcvH1fEljoe8qRjknQz6hdxIkNaw")
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -60,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let file = FileDestination()  // log to default swiftybeaver.log file
         log.addDestination(console)
         log.addDestination(file)
+        log.addDestination(platform)
         
         
         

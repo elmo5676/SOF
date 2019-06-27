@@ -72,6 +72,9 @@ class CheckInViewController: UIViewController, UITextFieldDelegate {
 //        log.info(uds.getListOf(withKey: .listOfSOF))
         log.info(uds.getChecklists().normal)
 //        log.info(uds.getListOfSof())
+        log.error(uds.getChecklists().normal)
+        log.warning(	uds.getChecklists().normal)
+        
     }
     
     
