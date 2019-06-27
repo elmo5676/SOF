@@ -167,7 +167,7 @@
                                     <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t59-V8-QvB">
                                         <rect key="frame" x="0.0" y="0.0" width="593.5" height="167"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="e2b-mE-QUh">
-                                            <rect key="frame" x="0.0" y="0.0" width="593" height="167"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="593.5" height="167"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="dark"/>
@@ -241,28 +241,42 @@
                                     <constraint firstItem="Hvq-RJ-AyQ" firstAttribute="centerX" secondItem="a06-ss-XDL" secondAttribute="centerX" id="usj-ku-TUt"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGb-PH-Ehj">
-                                <rect key="frame" x="381" y="383" width="30" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="k7B-WX-730">
+                                <rect key="frame" x="381" y="383" width="46" height="154"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Add">
-                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="add:" destination="5NM-cY-yDw" eventType="touchUpInside" id="QN3-B6-rTu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXW-fT-hpN">
-                                <rect key="frame" x="380" y="440" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Print">
-                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="printSof:" destination="5NM-cY-yDw" eventType="touchUpInside" id="sd4-eu-xoN"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGb-PH-Ehj">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="add:" destination="5NM-cY-yDw" eventType="touchUpInside" id="QN3-B6-rTu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXW-fT-hpN">
+                                        <rect key="frame" x="0.0" y="62" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Print">
+                                            <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="printSof:" destination="5NM-cY-yDw" eventType="touchUpInside" id="sd4-eu-xoN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uB-a2-rcw">
+                                        <rect key="frame" x="0.0" y="124" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getBirdCondition:" destination="5NM-cY-yDw" eventType="touchUpInside" id="qc0-JH-DzB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -308,7 +322,7 @@
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKZ-hM-GSg">
                                         <rect key="frame" x="0.0" y="0.0" width="633.5" height="667"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qcK-Fe-pjJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="633" height="667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="633.5" height="667"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="dark"/>

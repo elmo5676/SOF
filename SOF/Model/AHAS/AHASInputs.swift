@@ -8,11 +8,13 @@
 
 import Foundation
 
+protocol AhasArea: PickerType, CaseIterable, RawRepresentable {
+}
 
 struct AHASInputs {
     
     
-    public enum VR_Route: String, PickerType, CaseIterable {
+    public enum VR_Route: String, AhasArea {
         public var description: String { return self.rawValue}
         case VR025 = "VR025"
         case VR041 = "VR041"
@@ -317,7 +319,7 @@ struct AHASInputs {
         case VR1939 = "VR1939"
     }
     
-    public enum IR_Route: String, PickerType, CaseIterable {
+    public enum IR_Route: String, AhasArea {
         public var description: String { return self.rawValue}
         case IR002 = "IR002"
         case IR012 = "IR012"
@@ -547,7 +549,7 @@ struct AHASInputs {
         case IR953 = "IR953"
     }
     
-    public enum Slow_Route: String, PickerType, CaseIterable {
+    public enum Slow_Route: String, AhasArea {
         public var description: String { return self.rawValue}
         case SR038 = "SR038"
         case SR039 = "SR039"
@@ -719,7 +721,7 @@ struct AHASInputs {
         case SR1010 = "SR1010"
     }
     
-    public enum Moa: String, PickerType, CaseIterable {
+    public enum Moa: String, AhasArea {
         public var description: String { return self.rawValue}
         case ABEL_MOA_CA = "ABEL MOA, CA"
         case ADA_MOA_KS = "ADA MOA, KS"
@@ -935,7 +937,7 @@ struct AHASInputs {
         
     }
     
-    public enum AlertArea: String, PickerType, CaseIterable {
+    public enum AlertArea: String, AhasArea {
         public var description: String { return self.rawValue}
         case ALBEMARLE_NC = "ALBEMARLE, NC"
         case CHERRY_POINT_NC = "CHERRY POINT, NC"
@@ -966,7 +968,7 @@ struct AHASInputs {
         case WICHITA_MCCONNELL_AFB_KS = "WICHITA MCCONNELL AFB, KS"
     }
     
-    public enum Range: String, PickerType, CaseIterable {
+    public enum Range: String, AhasArea {
         public var description: String { return self.rawValue}
         case ABERDEEN_MD = "ABERDEEN, MD"
         case ADMIRALTY_INLET_WA = "ADMIRALTY INLET, WA"
@@ -1126,7 +1128,7 @@ struct AHASInputs {
     }
     
     
-    public enum MilitaryAirfields: String, PickerType, CaseIterable {
+    public enum MilitaryAirfields: String, AhasArea {
         public var description: String { return self.rawValue}
         case A_P_HILL_AAF = "A P HILL AAF"
         case ABERDEEN_FLD = "ABERDEEN FLD"
@@ -1759,7 +1761,7 @@ struct AHASInputs {
     }
     
     
-    public enum Unit_01: String, PickerType, CaseIterable {
+    public enum Unit_01: String, AhasArea {
         public var description: String { return self.rawValue}
         case _1HS = "1HS"
         case _1stFW = "1stFW"
@@ -1947,7 +1949,7 @@ struct AHASInputs {
         case UTTR = "UTTR"
     }
     
-    public enum Unit_02: String, PickerType, CaseIterable {
+    public enum Unit_02: String, AhasArea {
         public var description: String { return self.rawValue}
         case _3MAW = "3MAW"
         case _17RSQN = "17RSQN"
@@ -1966,7 +1968,7 @@ struct AHASInputs {
     }
     
     
-    public enum Icao_01: String, PickerType, CaseIterable {
+    public enum Icao_01: String, AhasArea {
         public var description: String { return self.rawValue}
         case _12NC = "12NC"
         case _13NC = "13NC"
@@ -2595,7 +2597,7 @@ struct AHASInputs {
         case Z = "Z"
     }
     
-    public enum Icao_02: String, PickerType, CaseIterable {
+    public enum Icao_02: String, AhasArea {
         public var description: String { return self.rawValue}
         
         case ATLANTIC_MCOLF = "ATLANTIC MCOLF"
@@ -3234,10 +3236,111 @@ struct AHASInputs {
         
     }
     
-    let month = ["1...12"]
+    public enum Month: String, AhasArea {
+        public var description: String { return self.rawValue}
+        case january = "January"
+        case february = "February"
+        case march = "March"
+        case april = "April"
+        case may = "May"
+        case june = "June"
+        case july = "July"
+        case august = "August"
+        case september = "September"
+        case october = "October"
+        case november = "November"
+        case december = "December"
+    }
     
-    let day = ["1...31"]
+    func monthIntReturn(_ month: Month) -> String {
+        switch month {
+        case .january:
+            return "1"
+        case .february:
+            return "2"
+        case .march:
+            return "3"
+        case .april:
+            return "4"
+        case .may:
+            return "5"
+        case .june:
+            return "6"
+        case .july:
+            return "7"
+        case .august:
+            return "8"
+        case .september:
+            return "9"
+        case .october:
+            return "10"
+        case .november:
+            return "11"
+        case .december:
+            return "12"
+        }}
     
-    let hour = ["0...23"]
+    public enum Day: String, AhasArea {
+        public var description: String { return self.rawValue}
+        case _1 = "1"
+        case _2 = "2"
+        case _3 = "3"
+        case _4 = "4"
+        case _5 = "5"
+        case _6 = "6"
+        case _7 = "7"
+        case _8 = "8"
+        case _9 = "9"
+        case _10 = "10"
+        case _11 = "11"
+        case _12 = "12"
+        case _13 = "13"
+        case _14 = "14"
+        case _15 = "15"
+        case _16 = "16"
+        case _17 = "17"
+        case _18 = "18"
+        case _19 = "19"
+        case _20 = "20"
+        case _21 = "21"
+        case _22 = "22"
+        case _23 = "23"
+        case _24 = "24"
+        case _25 = "25"
+        case _26 = "26"
+        case _27 = "27"
+        case _28 = "28"
+        case _29 = "29"
+        case _30 = "30"
+        case _31 = "31"
+    }
     
+    public enum Hour: String, AhasArea {
+        public var description: String { return self.rawValue}
+        case _0 = "0"
+        case _1 = "1"
+        case _2 = "2"
+        case _3 = "3"
+        case _4 = "4"
+        case _5 = "5"
+        case _6 = "6"
+        case _7 = "7"
+        case _8 = "8"
+        case _9 = "9"
+        case _10 = "10"
+        case _11 = "11"
+        case _12 = "12"
+        case _13 = "13"
+        case _14 = "14"
+        case _15 = "15"
+        case _16 = "16"
+        case _17 = "17"
+        case _18 = "18"
+        case _19 = "19"
+        case _20 = "20"
+        case _21 = "21"
+        case _22 = "22"
+        case _23 = "23"
+        case _24 = "24"
+    }
 }

@@ -77,6 +77,10 @@ class CheckInViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func getBirdCondition(_ sender: Any) {
+        let ahas = AhasDownLoader(area: AHASInputs.MilitaryAirfields.BEALE_AFB, month: .june, day: ._27, hourZ: ._17, duration: 1)
+        print(ahas)
+    }
     
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
