@@ -26,7 +26,7 @@ class TafDownloader {
     }()
     
     func getTafFor(icao: String) {
-        let url = AddsWeatherAPI.weatherURL(type: .taf, icao: "\(icao)", parameters: nil)
+        let url = AddsWeatherAPI().weatherURL(type: .taf, icao: "\(icao)", parameters: nil)
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) { (data, response, error) -> Void in
             if let XMLData = data {

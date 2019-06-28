@@ -15,7 +15,6 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate {
     var appSyncClient: AWSAppSyncClient?
     let log = SwiftyBeaver.self
     let console = ConsoleDestination()
-    var u2Status = U2Status()
     
     override func viewDidLoad() {
         super.viewDidLoad()

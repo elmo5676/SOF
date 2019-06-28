@@ -33,6 +33,7 @@
 		5242113222B89BEA0066FB88 /* NormalOpsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */; };
 		5265457422BA979C00EA210E /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265457322BA979C00EA210E /* CheckInViewController.swift */; };
 		5265457722BA99DF00EA210E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265457622BA99DF00EA210E /* UIViewController+Extension.swift */; };
+		527BE79422C650F200CCC6F9 /* DateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527BE79322C650F200CCC6F9 /* DateHandler.swift */; };
 		5294100F22BA9B6E008F05A0 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294100E22BA9B6E008F05A0 /* Double+Extension.swift */; };
 		5294101122BA9BAD008F05A0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */; };
 		5294101322BA9BC9008F05A0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */; };
@@ -41,9 +42,6 @@
 		529630D922AC37E600CAD9BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529630D822AC37E600CAD9BC /* Main.storyboard */; };
 		529630DD22AC3A5300CAD9BC /* EmergencyTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */; };
 		529630DF22AC3AFB00CAD9BC /* NormalTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630DE22AC3AFB00CAD9BC /* NormalTabModel.swift */; };
-		529630E122AC876100CAD9BC /* U2Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630E022AC876100CAD9BC /* U2Status.swift */; };
-		529630E322AC876E00CAD9BC /* T38Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630E222AC876E00CAD9BC /* T38Status.swift */; };
-		529630E522AC877B00CAD9BC /* RQ4Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630E422AC877B00CAD9BC /* RQ4Status.swift */; };
 		52AD6D1A22B7C1DB0077FC91 /* NotamAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1922B7C1DB0077FC91 /* NotamAPI.swift */; };
 		52AD6D1C22B7C5C10077FC91 /* NotamDownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1B22B7C5C10077FC91 /* NotamDownLoader.swift */; };
 		52AD6D1E22B7C6770077FC91 /* Notam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1D22B7C6770077FC91 /* Notam.swift */; };
@@ -53,7 +51,6 @@
 		52D0953522AC364A008A236B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D0953422AC364A008A236B /* Assets.xcassets */; };
 		52D0953822AC364A008A236B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0953622AC364A008A236B /* LaunchScreen.storyboard */; };
 		52D0954422AC3714008A236B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954022AC3714008A236B /* MainTabBarController.swift */; };
-		52D0954522AC3714008A236B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954122AC3714008A236B /* DetailViewController.swift */; };
 		52D0954B22AC372D008A236B /* OtherMasterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954822AC372D008A236B /* OtherMasterModel.swift */; };
 		52E3BB6C22C477E60062E8F4 /* AHASInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */; };
 		52E3BB6E22C47DF90062E8F4 /* AhasAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */; };
@@ -202,6 +199,7 @@
 		5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalOpsTabTableViewController.swift; sourceTree = "<group>"; };
 		5265457322BA979C00EA210E /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		5265457622BA99DF00EA210E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		527BE79322C650F200CCC6F9 /* DateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHandler.swift; sourceTree = "<group>"; };
 		5294100E22BA9B6E008F05A0 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -210,9 +208,6 @@
 		529630D822AC37E600CAD9BC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyTabModel.swift; sourceTree = "<group>"; };
 		529630DE22AC3AFB00CAD9BC /* NormalTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTabModel.swift; sourceTree = "<group>"; };
-		529630E022AC876100CAD9BC /* U2Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = U2Status.swift; sourceTree = "<group>"; };
-		529630E222AC876E00CAD9BC /* T38Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T38Status.swift; sourceTree = "<group>"; };
-		529630E422AC877B00CAD9BC /* RQ4Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ4Status.swift; sourceTree = "<group>"; };
 		52AD6D1922B7C1DB0077FC91 /* NotamAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotamAPI.swift; sourceTree = "<group>"; };
 		52AD6D1B22B7C5C10077FC91 /* NotamDownLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotamDownLoader.swift; sourceTree = "<group>"; };
 		52AD6D1D22B7C6770077FC91 /* Notam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notam.swift; sourceTree = "<group>"; };
@@ -224,7 +219,6 @@
 		52D0953722AC364A008A236B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D0953922AC364A008A236B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D0954022AC3714008A236B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		52D0954122AC3714008A236B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		52D0954822AC372D008A236B /* OtherMasterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherMasterModel.swift; sourceTree = "<group>"; };
 		52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHASInputs.swift; sourceTree = "<group>"; };
 		52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasAPI.swift; sourceTree = "<group>"; };
@@ -403,7 +397,6 @@
 		5242112F22B89AE10066FB88 /* NormalOpsTabSB */ = {
 			isa = PBXGroup;
 			children = (
-				52D0954122AC3714008A236B /* DetailViewController.swift */,
 				5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */,
 				5265457322BA979C00EA210E /* CheckInViewController.swift */,
 				5223959A22BB73EA00EFEDD1 /* SetStatusViewController.swift */,
@@ -441,19 +434,9 @@
 			isa = PBXGroup;
 			children = (
 				5294101722BA9F1C008F05A0 /* RankPV.swift */,
-			);
-			path = PckerViewDataModel;
-			sourceTree = "<group>";
-		};
-		529630E622AC878300CAD9BC /* Status */ = {
-			isa = PBXGroup;
-			children = (
-				529630E022AC876100CAD9BC /* U2Status.swift */,
-				529630E222AC876E00CAD9BC /* T38Status.swift */,
-				529630E422AC877B00CAD9BC /* RQ4Status.swift */,
 				5223959C22BB7DD800EFEDD1 /* SetStatusModel.swift */,
 			);
-			path = Status;
+			path = PckerViewDataModel;
 			sourceTree = "<group>";
 		};
 		52AD6D1F22B7DDDC0077FC91 /* Notams */ = {
@@ -503,9 +486,12 @@
 		52D0954D22AC373C008A236B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				527BE79322C650F200CCC6F9 /* DateHandler.swift */,
+				523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */,
+				52F3BDBD22B62B9900F7F367 /* Observable.swift */,
+				5242112422B7EA420066FB88 /* AWS */,
 				52E3BB6A22C477C70062E8F4 /* AHAS */,
 				5294101622BA9EFA008F05A0 /* PckerViewDataModel */,
-				5242112422B7EA420066FB88 /* AWS */,
 				52AD6D1F22B7DDDC0077FC91 /* Notams */,
 				52F3BDAC22B6295A00F7F367 /* Weather */,
 				52F3BCF222B6267300F7F367 /* DAFIF Processor */,
@@ -513,9 +499,6 @@
 				52D0954822AC372D008A236B /* OtherMasterModel.swift */,
 				529630DE22AC3AFB00CAD9BC /* NormalTabModel.swift */,
 				529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */,
-				529630E622AC878300CAD9BC /* Status */,
-				52F3BDBD22B62B9900F7F367 /* Observable.swift */,
-				523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */,
 				52AF2E6322C20FB200B5EE43 /* BealChecklistDefaults.swift */,
 			);
 			path = Model;
@@ -525,8 +508,8 @@
 			isa = PBXGroup;
 			children = (
 				52D0954022AC3714008A236B /* MainTabBarController.swift */,
-				5242112F22B89AE10066FB88 /* NormalOpsTabSB */,
 				5265457222BA588C00EA210E /* PickerSpecial */,
+				5242112F22B89AE10066FB88 /* NormalOpsTabSB */,
 				5242113022B89AF10066FB88 /* EmergencyTabSB */,
 			);
 			path = Controller;
@@ -914,7 +897,6 @@
 				52F3BD9022B6276B00F7F367 /* TrmMin_CD+CoreDataProperties.swift in Sources */,
 				52F3BDB622B6295A00F7F367 /* AddsWeatherAPI.swift in Sources */,
 				52F3BD8922B6276B00F7F367 /* TrmRmk_CD+CoreDataClass.swift in Sources */,
-				529630E322AC876E00CAD9BC /* T38Status.swift in Sources */,
 				52F3BD8A22B6276B00F7F367 /* TrmRmk_CD+CoreDataProperties.swift in Sources */,
 				52F3BD5E22B6275A00F7F367 /* Agear.swift in Sources */,
 				52F3BD9F22B6276B00F7F367 /* AcomRmk_CD+CoreDataClass.swift in Sources */,
@@ -937,7 +919,6 @@
 				52F3BD8622B6276B00F7F367 /* Arpt_CD+CoreDataProperties.swift in Sources */,
 				52F3BD4222B6275A00F7F367 /* AddRwyCDU.swift in Sources */,
 				52F3BD9122B6276B00F7F367 /* Anav_CD+CoreDataClass.swift in Sources */,
-				529630E522AC877B00CAD9BC /* RQ4Status.swift in Sources */,
 				52F3BD4422B6275A00F7F367 /* AcomRmkCDU.swift in Sources */,
 				52F3BD9E22B6276B00F7F367 /* Ils_CD+CoreDataProperties.swift in Sources */,
 				52D0954422AC3714008A236B /* MainTabBarController.swift in Sources */,
@@ -953,10 +934,8 @@
 				52F3BDA422B6276B00F7F367 /* TrmMsa_CD+CoreDataProperties.swift in Sources */,
 				52F3BD4B22B6275A00F7F367 /* TrmMinCDU.swift in Sources */,
 				52F3BDB922B6295A00F7F367 /* Metar.swift in Sources */,
-				52D0954522AC3714008A236B /* DetailViewController.swift in Sources */,
 				5265457422BA979C00EA210E /* CheckInViewController.swift in Sources */,
 				52F3BD4122B6275A00F7F367 /* RwyCDU.swift in Sources */,
-				529630E122AC876100CAD9BC /* U2Status.swift in Sources */,
 				529630DD22AC3A5300CAD9BC /* EmergencyTabModel.swift in Sources */,
 				52F3BD9422B6276B00F7F367 /* Fueloil_CD+CoreDataProperties.swift in Sources */,
 				52F3BD3D22B6275A00F7F367 /* TrmSegCDU.swift in Sources */,
@@ -988,6 +967,7 @@
 				52F3BDA122B6276B00F7F367 /* TrmSeg_CD+CoreDataClass.swift in Sources */,
 				52F3BD0D22B6269500F7F367 /* URL+Extension.swift in Sources */,
 				52E3BB7022C483B00062E8F4 /* AhasDownLoader.swift in Sources */,
+				527BE79422C650F200CCC6F9 /* DateHandler.swift in Sources */,
 				52F3BD8722B6276B00F7F367 /* TrmPar_CD+CoreDataClass.swift in Sources */,
 				52F3BD9D22B6276B00F7F367 /* Ils_CD+CoreDataClass.swift in Sources */,
 				52AD6D1C22B7C5C10077FC91 /* NotamDownLoader.swift in Sources */,

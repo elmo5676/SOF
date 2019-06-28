@@ -24,15 +24,29 @@ import UIKit
 struct AddsWeatherAPI {
     private static let baseURLString = "https://www.aviationweather.gov/adds/dataserver_current/httpparam?"
     private static let apiKey = "___"
+    private let dateHandler = DateHandler()
     enum EndPoint {
         case metar
         case taf
     }
-    static func weatherURL(type: EndPoint,
+    
+    //Creates Strings to plug in to the TAF websit for start and end times
+    private func getTafStartAndEndTimes(timeIntervalHrs: Int) -> (start: String, end: String) {
+        let times = dateHandler.getDateForTaf(nowPlusHours: timeIntervalHrs)
+        let df = DateFormatter()
+        df.dateFormat = DateSource.reference.rawValue
+        let start = "\(Int(times.now!.timeIntervalSince1970.rounded()))"
+        let end = "\(Int(times.endTime!.timeIntervalSince1970.rounded()))"
+        print(start)
+        print(end)
+        return (start: start, end: end)
+    }
+    
+    func weatherURL(type: EndPoint,
                            icao: String,
                            parameters: [String: String]?) -> URL {
         
-        var components = URLComponents(string: baseURLString)!
+        var components = URLComponents(string: AddsWeatherAPI.baseURLString)!
         var queryItems = [URLQueryItem]()
         var baseParams: [String: String] = [:]
         switch type {
@@ -45,12 +59,13 @@ struct AddsWeatherAPI {
                 "stationString" : icao
             ]
         case .taf:
+            let times = getTafStartAndEndTimes(timeIntervalHrs: 8)
             baseParams = [
                 "dataSource"    : "tafs",
                 "requestType"   : "retrieve",
                 "format"        : "xml",
-                "startTime"     : "1553270000",
-                "endTime"       : "1553270000",
+                "startTime"     : "\(times.start)", //seconds since jan 1, 1970
+                "endTime"       : "\(times.end)",
                 "stationString" : icao
             ]
         }
