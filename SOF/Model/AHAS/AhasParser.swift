@@ -10,4 +10,8 @@ import Foundation
 import UIKit
 
 
-//class AhasParser: NSObject, XMLParserDelegate
+class AhasParser: NSObject, XMLParserDelegate {
+    private let ahasKeys = AhasField.allCases.map { $0.rawValue }
+    
+    
+}

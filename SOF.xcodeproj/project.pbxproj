@@ -51,7 +51,6 @@
 		52D0953522AC364A008A236B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D0953422AC364A008A236B /* Assets.xcassets */; };
 		52D0953822AC364A008A236B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0953622AC364A008A236B /* LaunchScreen.storyboard */; };
 		52D0954422AC3714008A236B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954022AC3714008A236B /* MainTabBarController.swift */; };
-		52D0954B22AC372D008A236B /* OtherMasterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954822AC372D008A236B /* OtherMasterModel.swift */; };
 		52E3BB6C22C477E60062E8F4 /* AHASInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */; };
 		52E3BB6E22C47DF90062E8F4 /* AhasAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */; };
 		52E3BB7022C483B00062E8F4 /* AhasDownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */; };
@@ -219,7 +218,6 @@
 		52D0953722AC364A008A236B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D0953922AC364A008A236B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D0954022AC3714008A236B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		52D0954822AC372D008A236B /* OtherMasterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherMasterModel.swift; sourceTree = "<group>"; };
 		52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHASInputs.swift; sourceTree = "<group>"; };
 		52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasAPI.swift; sourceTree = "<group>"; };
 		52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasDownLoader.swift; sourceTree = "<group>"; };
@@ -489,14 +487,13 @@
 				527BE79322C650F200CCC6F9 /* DateHandler.swift */,
 				523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */,
 				52F3BDBD22B62B9900F7F367 /* Observable.swift */,
+				5294101622BA9EFA008F05A0 /* PckerViewDataModel */,
 				5242112422B7EA420066FB88 /* AWS */,
 				52E3BB6A22C477C70062E8F4 /* AHAS */,
-				5294101622BA9EFA008F05A0 /* PckerViewDataModel */,
 				52AD6D1F22B7DDDC0077FC91 /* Notams */,
 				52F3BDAC22B6295A00F7F367 /* Weather */,
 				52F3BCF222B6267300F7F367 /* DAFIF Processor */,
 				52F3BCF022B6260600F7F367 /* CoreData */,
-				52D0954822AC372D008A236B /* OtherMasterModel.swift */,
 				529630DE22AC3AFB00CAD9BC /* NormalTabModel.swift */,
 				529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */,
 				52AF2E6322C20FB200B5EE43 /* BealChecklistDefaults.swift */,
@@ -893,7 +890,6 @@
 				5294101822BA9F1C008F05A0 /* RankPV.swift in Sources */,
 				52F3BDA522B6276B00F7F367 /* AddRwy_CD+CoreDataClass.swift in Sources */,
 				52F3BD4722B6275A00F7F367 /* TrmClbCDU.swift in Sources */,
-				52D0954B22AC372D008A236B /* OtherMasterModel.swift in Sources */,
 				52F3BD9022B6276B00F7F367 /* TrmMin_CD+CoreDataProperties.swift in Sources */,
 				52F3BDB622B6295A00F7F367 /* AddsWeatherAPI.swift in Sources */,
 				52F3BD8922B6276B00F7F367 /* TrmRmk_CD+CoreDataClass.swift in Sources */,
