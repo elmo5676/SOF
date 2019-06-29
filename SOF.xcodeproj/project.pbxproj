@@ -487,6 +487,7 @@
 				527BE79322C650F200CCC6F9 /* DateHandler.swift */,
 				523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */,
 				52F3BDBD22B62B9900F7F367 /* Observable.swift */,
+				5265457222BA588C00EA210E /* PickerSpecial */,
 				5294101622BA9EFA008F05A0 /* PckerViewDataModel */,
 				5242112422B7EA420066FB88 /* AWS */,
 				52E3BB6A22C477C70062E8F4 /* AHAS */,
@@ -505,7 +506,6 @@
 			isa = PBXGroup;
 			children = (
 				52D0954022AC3714008A236B /* MainTabBarController.swift */,
-				5265457222BA588C00EA210E /* PickerSpecial */,
 				5242112F22B89AE10066FB88 /* NormalOpsTabSB */,
 				5242113022B89AF10066FB88 /* EmergencyTabSB */,
 			);
