@@ -115,8 +115,8 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate {
                                           fits: "\(fitsOutlet.text ?? "")",
                                           activeRunway: "\(activeRunwayOutlet.text ?? "")",
                                           runwayConditions: "\(runwayConditionsOutlet.text ?? "")",
-                                          date: Int(dateOutlet.text ?? "9999.5"),
-                                          time: Int(timeOutlet.text ?? "9999.5"),
+                                          date: dateOutlet.text ?? "9999.5",
+                                          time: timeOutlet.text ?? "9999.5",
                                           sofOnDuty: "\(sofOnDutyOutlet.text ?? "")")
         appSyncClient?.perform(mutation: CreateSofStatusMutation(input: status)) { (result, error) in
             if let error = error as? AWSAppSyncClientError {

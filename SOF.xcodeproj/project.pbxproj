@@ -27,13 +27,13 @@
 		522BE34D22BFD19100D31E36 /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE34322BFD19100D31E36 /* ConsoleDestination.swift */; };
 		523BAFBB22C07BCA00F667B3 /* UserDefaultSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */; };
 		5242112622B7EA570066FB88 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242112522B7EA570066FB88 /* API.swift */; };
-		5242112922B7F4620066FB88 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5242112822B7F4620066FB88 /* awsconfiguration.json */; };
 		5242112B22B899810066FB88 /* EmergencyTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5242112A22B899810066FB88 /* EmergencyTab.storyboard */; };
 		5242112D22B899E50066FB88 /* NormalOpsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5242112C22B899E50066FB88 /* NormalOpsTab.storyboard */; };
 		5242113222B89BEA0066FB88 /* NormalOpsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */; };
 		5265457422BA979C00EA210E /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265457322BA979C00EA210E /* CheckInViewController.swift */; };
 		5265457722BA99DF00EA210E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265457622BA99DF00EA210E /* UIViewController+Extension.swift */; };
 		527BE79422C650F200CCC6F9 /* DateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527BE79322C650F200CCC6F9 /* DateHandler.swift */; };
+		528C915322C90DA200740CF4 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 528C915222C90DA100740CF4 /* awsconfiguration.json */; };
 		5294100F22BA9B6E008F05A0 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294100E22BA9B6E008F05A0 /* Double+Extension.swift */; };
 		5294101122BA9BAD008F05A0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */; };
 		5294101322BA9BC9008F05A0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */; };
@@ -192,13 +192,13 @@
 		522BE34322BFD19100D31E36 /* ConsoleDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleDestination.swift; sourceTree = "<group>"; };
 		523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultSetup.swift; sourceTree = "<group>"; };
 		5242112522B7EA570066FB88 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
-		5242112822B7F4620066FB88 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		5242112A22B899810066FB88 /* EmergencyTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmergencyTab.storyboard; sourceTree = "<group>"; };
 		5242112C22B899E50066FB88 /* NormalOpsTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NormalOpsTab.storyboard; sourceTree = "<group>"; };
 		5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalOpsTabTableViewController.swift; sourceTree = "<group>"; };
 		5265457322BA979C00EA210E /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		5265457622BA99DF00EA210E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		527BE79322C650F200CCC6F9 /* DateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHandler.swift; sourceTree = "<group>"; };
+		528C915222C90DA100740CF4 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		5294100E22BA9B6E008F05A0 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -450,7 +450,7 @@
 		52D0951E22AC3649008A236B = {
 			isa = PBXGroup;
 			children = (
-				5242112822B7F4620066FB88 /* awsconfiguration.json */,
+				528C915222C90DA100740CF4 /* awsconfiguration.json */,
 				52F3BDA722B6281A00F7F367 /* Zip.framework */,
 				52D0952922AC3649008A236B /* SOF */,
 				52D0952822AC3649008A236B /* Products */,
@@ -789,8 +789,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5242112B22B899810066FB88 /* EmergencyTab.storyboard in Resources */,
-				5242112922B7F4620066FB88 /* awsconfiguration.json in Resources */,
 				529630D922AC37E600CAD9BC /* Main.storyboard in Resources */,
+				528C915322C90DA200740CF4 /* awsconfiguration.json in Resources */,
 				52D0953822AC364A008A236B /* LaunchScreen.storyboard in Resources */,
 				52D0953522AC364A008A236B /* Assets.xcassets in Resources */,
 				5242112D22B899E50066FB88 /* NormalOpsTab.storyboard in Resources */,
