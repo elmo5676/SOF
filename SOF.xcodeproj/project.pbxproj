@@ -43,8 +43,8 @@
 		529630DD22AC3A5300CAD9BC /* EmergencyTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */; };
 		529630DF22AC3AFB00CAD9BC /* NormalTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529630DE22AC3AFB00CAD9BC /* NormalTabModel.swift */; };
 		52A7454322C9FB280056F736 /* SignInAWSAuthNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7454222C9FB280056F736 /* SignInAWSAuthNavController.swift */; };
-		52A7454522CA042B0056F736 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52A7454422CA042B0056F736 /* Assets.xcassets */; };
 		52A7454822CA05EE0056F736 /* SignedInStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7454722CA05EE0056F736 /* SignedInStatusViewController.swift */; };
+		52A7454A22CA5F5B0056F736 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52A7454922CA5F5A0056F736 /* Assets.xcassets */; };
 		52AD6D1A22B7C1DB0077FC91 /* NotamAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1922B7C1DB0077FC91 /* NotamAPI.swift */; };
 		52AD6D1C22B7C5C10077FC91 /* NotamDownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1B22B7C5C10077FC91 /* NotamDownLoader.swift */; };
 		52AD6D1E22B7C6770077FC91 /* Notam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1D22B7C6770077FC91 /* Notam.swift */; };
@@ -210,8 +210,8 @@
 		529630DC22AC3A5300CAD9BC /* EmergencyTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyTabModel.swift; sourceTree = "<group>"; };
 		529630DE22AC3AFB00CAD9BC /* NormalTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTabModel.swift; sourceTree = "<group>"; };
 		52A7454222C9FB280056F736 /* SignInAWSAuthNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAWSAuthNavController.swift; sourceTree = "<group>"; };
-		52A7454422CA042B0056F736 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52A7454722CA05EE0056F736 /* SignedInStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInStatusViewController.swift; sourceTree = "<group>"; };
+		52A7454922CA5F5A0056F736 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52AD6D1922B7C1DB0077FC91 /* NotamAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotamAPI.swift; sourceTree = "<group>"; };
 		52AD6D1B22B7C5C10077FC91 /* NotamDownLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotamDownLoader.swift; sourceTree = "<group>"; };
 		52AD6D1D22B7C6770077FC91 /* Notam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notam.swift; sourceTree = "<group>"; };
@@ -478,7 +478,7 @@
 			children = (
 				52D0952A22AC3649008A236B /* AppDelegate.swift */,
 				52D0953922AC364A008A236B /* Info.plist */,
-				52A7454422CA042B0056F736 /* Assets.xcassets */,
+				52A7454922CA5F5A0056F736 /* Assets.xcassets */,
 				5265457522BA99C600EA210E /* Utilities */,
 				52D0954D22AC373C008A236B /* Model */,
 				52D0954E22AC374D008A236B /* Controller */,
@@ -806,7 +806,7 @@
 				529630D922AC37E600CAD9BC /* Main.storyboard in Resources */,
 				52E19DC522C9C76900A06C54 /* awsconfiguration.json in Resources */,
 				52D0953822AC364A008A236B /* LaunchScreen.storyboard in Resources */,
-				52A7454522CA042B0056F736 /* Assets.xcassets in Resources */,
+				52A7454A22CA5F5B0056F736 /* Assets.xcassets in Resources */,
 				5242112D22B899E50066FB88 /* NormalOpsTab.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
