@@ -1,0 +1,6 @@
+framework module Pods_SOF {
+  umbrella header "Pods-SOF-umbrella.h"
+
+  export *
+  module * { export * }
+}

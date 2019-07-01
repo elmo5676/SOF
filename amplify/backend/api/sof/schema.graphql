@@ -1,0 +1,52 @@
+type SOFStatus @model {
+  id: ID!
+  u2Status: String
+  t38Status: String
+  u2Restrictions: String
+  t38Restrictions: String
+  u2Alternates: String
+  t38Alternates: String
+  navaids: String
+  approachLights: String
+  localAirfields: String
+  birdStatus: String
+  fits: String
+  activeRunway: String
+  runwayConditions: String
+  date: Int
+  time: Int
+  sofOnDuty: String
+}
+
+type Checklist @model {
+	id: ID!
+	name: String
+	items: [String]
+}
+
+type Notes @model {
+	note: String
+}
+
+type Contacts @model {
+	category: String
+	name: String
+	phoneNumber: String
+	email: String
+	dsn: Boolean
+}
+
+type Emergency @model {
+	id: ID!
+	startDate: Int
+	startTime: Int
+	terminationDate: Int
+	terminationTime: Int
+	callSign: String
+	aircraftType: String
+	tailNumber: String
+	soulsOnBoard: String
+	fuelRemainingTimeInMinutes: Int
+	systemAffected: String
+	details: String
+}
