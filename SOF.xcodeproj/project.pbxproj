@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -51,6 +51,8 @@
 		52D0953522AC364A008A236B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D0953422AC364A008A236B /* Assets.xcassets */; };
 		52D0953822AC364A008A236B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0953622AC364A008A236B /* LaunchScreen.storyboard */; };
 		52D0954422AC3714008A236B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954022AC3714008A236B /* MainTabBarController.swift */; };
+		52E19DC522C9C76900A06C54 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 52E19DC422C9C76800A06C54 /* awsconfiguration.json */; };
+		52E19DC722C9CE8200A06C54 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E19DC622C9CE8200A06C54 /* API.swift */; };
 		52E3BB6C22C477E60062E8F4 /* AHASInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */; };
 		52E3BB6E22C47DF90062E8F4 /* AhasAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */; };
 		52E3BB7022C483B00062E8F4 /* AhasDownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */; };
@@ -151,6 +153,7 @@
 		52F3BDBB22B6295A00F7F367 /* TafDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BDB422B6295A00F7F367 /* TafDownloader.swift */; };
 		52F3BDBC22B6295A00F7F367 /* TafParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BDB522B6295A00F7F367 /* TafParser.swift */; };
 		52F3BDBE22B62B9900F7F367 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BDBD22B62B9900F7F367 /* Observable.swift */; };
+		A3D2B0C6F7AC39F909970D60 /* Pods_SOF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34012C13C8083677EA0F564D /* Pods_SOF.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -168,6 +171,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		34012C13C8083677EA0F564D /* Pods_SOF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SOF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51F22F38579AD3D26977C4DC /* Pods-SOF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SOF.debug.xcconfig"; path = "Target Support Files/Pods-SOF/Pods-SOF.debug.xcconfig"; sourceTree = "<group>"; };
 		5205743022BDF52400B79425 /* TimeCalculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCalculations.swift; sourceTree = "<group>"; };
 		5205743222BDF57C00B79425 /* Supporting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supporting.swift; sourceTree = "<group>"; };
 		5205743322BDF57C00B79425 /* EngineOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineOut.swift; sourceTree = "<group>"; };
@@ -213,6 +218,8 @@
 		52D0953722AC364A008A236B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D0953922AC364A008A236B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D0954022AC3714008A236B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		52E19DC422C9C76800A06C54 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		52E19DC622C9CE8200A06C54 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
 		52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHASInputs.swift; sourceTree = "<group>"; };
 		52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasAPI.swift; sourceTree = "<group>"; };
 		52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasDownLoader.swift; sourceTree = "<group>"; };
@@ -313,6 +320,7 @@
 		52F3BDB422B6295A00F7F367 /* TafDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TafDownloader.swift; sourceTree = "<group>"; };
 		52F3BDB522B6295A00F7F367 /* TafParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TafParser.swift; sourceTree = "<group>"; };
 		52F3BDBD22B62B9900F7F367 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		948DCF9DA868595C5DD85133 /* Pods-SOF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SOF.release.xcconfig"; path = "Target Support Files/Pods-SOF/Pods-SOF.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5210A77D22C9C30F00C69248 /* Zip.framework in Frameworks */,
+				A3D2B0C6F7AC39F909970D60 /* Pods_SOF.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,10 +442,12 @@
 		52D0951E22AC3649008A236B = {
 			isa = PBXGroup;
 			children = (
+				52E19DC422C9C76800A06C54 /* awsconfiguration.json */,
 				5210A77C22C9C30F00C69248 /* Zip.framework */,
 				52D0952922AC3649008A236B /* SOF */,
 				52D0952822AC3649008A236B /* Products */,
 				58F43ACA28CD83E78A43674C /* Pods */,
+				8FEE98FC4FFBEDB9B7F7DD5E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -465,6 +476,7 @@
 		52D0954D22AC373C008A236B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52E19DC322C9C74B00A06C54 /* AWS */,
 				527BE79322C650F200CCC6F9 /* DateHandler.swift */,
 				523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */,
 				52F3BDBD22B62B9900F7F367 /* Observable.swift */,
@@ -509,6 +521,14 @@
 				52D0953622AC364A008A236B /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		52E19DC322C9C74B00A06C54 /* AWS */ = {
+			isa = PBXGroup;
+			children = (
+				52E19DC622C9CE8200A06C54 /* API.swift */,
+			);
+			path = AWS;
 			sourceTree = "<group>";
 		};
 		52E3BB6A22C477C70062E8F4 /* AHAS */ = {
@@ -692,8 +712,18 @@
 		58F43ACA28CD83E78A43674C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				51F22F38579AD3D26977C4DC /* Pods-SOF.debug.xcconfig */,
+				948DCF9DA868595C5DD85133 /* Pods-SOF.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8FEE98FC4FFBEDB9B7F7DD5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34012C13C8083677EA0F564D /* Pods_SOF.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -703,11 +733,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D0953C22AC364A008A236B /* Build configuration list for PBXNativeTarget "SOF" */;
 			buildPhases = (
+				9A317D994FF7071673319A64 /* [CP] Check Pods Manifest.lock */,
 				52D0952322AC3649008A236B /* Sources */,
 				52D0952422AC3649008A236B /* Frameworks */,
 				52D0952522AC3649008A236B /* Resources */,
 				52F3BDAA22B6281B00F7F367 /* Embed Frameworks */,
 				52F3BDAB22B6282800F7F367 /* ShellScript */,
+				A74ECA575A55E39D117EC651 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -758,6 +790,7 @@
 			files = (
 				5242112B22B899810066FB88 /* EmergencyTab.storyboard in Resources */,
 				529630D922AC37E600CAD9BC /* Main.storyboard in Resources */,
+				52E19DC522C9C76900A06C54 /* awsconfiguration.json in Resources */,
 				52D0953822AC364A008A236B /* LaunchScreen.storyboard in Resources */,
 				52D0953522AC364A008A236B /* Assets.xcassets in Resources */,
 				5242112D22B899E50066FB88 /* NormalOpsTab.storyboard in Resources */,
@@ -784,6 +817,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+		9A317D994FF7071673319A64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SOF-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A74ECA575A55E39D117EC651 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SOF/Pods-SOF-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SOF/Pods-SOF-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SOF/Pods-SOF-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -922,6 +994,7 @@
 				52277ACA22AEF78A00CD45BE /* ArrayPicker.swift in Sources */,
 				52F3BD5B22B6275A00F7F367 /* TrmMsa.swift in Sources */,
 				5205743522BDF57C00B79425 /* Supporting.swift in Sources */,
+				52E19DC722C9CE8200A06C54 /* API.swift in Sources */,
 				52F3BD4322B6275A00F7F367 /* AcomCDU.swift in Sources */,
 				522BE34D22BFD19100D31E36 /* ConsoleDestination.swift in Sources */,
 				52F3BD3E22B6275A00F7F367 /* SvcRmkCDU.swift in Sources */,
@@ -1064,6 +1137,7 @@
 		};
 		52D0953D22AC364A008A236B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51F22F38579AD3D26977C4DC /* Pods-SOF.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1086,6 +1160,7 @@
 		};
 		52D0953E22AC364A008A236B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 948DCF9DA868595C5DD85133 /* Pods-SOF.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
