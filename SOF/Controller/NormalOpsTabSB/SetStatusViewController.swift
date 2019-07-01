@@ -8,11 +8,11 @@
 
 
 import UIKit
-import AWSAppSync
+//import AWSAppSync
 
 class SetStatusViewController: UIViewController, UITextFieldDelegate {
     
-    var appSyncClient: AWSAppSyncClient?
+//    var appSyncClient: AWSAppSyncClient?
     let log = SwiftyBeaver.self
     let console = ConsoleDestination()
     
@@ -20,7 +20,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         initialSetup()
         setFormatting()
-        appSyncClient = appDelegate.appSyncClient
+//        appSyncClient = appDelegate.appSyncClient
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +53,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var updateStatusButtonOutlet: UIButton!
     @IBAction func updateStatusButton(_ sender: UIButton) {
         updateStatusButtonOutlet.showPressed()
-        setStatus()
+//        setStatus()
     }
     
     let statusModel = SetStatusModel()
@@ -100,46 +100,46 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate {
             allTextFields[i! + 1].becomeFirstResponder()}
         return true}
     
-    func setStatus() {
-        print("SetStatus")
-        let status = CreateSOFStatusInput(u2Status: "\(u2StatusOutlet.text ?? "")",
-                                          t38Status: "\(t38StatusOutlet.text ?? "")",
-                                          u2Restrictions: "\(u2RestrictionsOutlet.text ?? "")",
-                                          t38Restrictions: "\(t38RestrictionsOutlet.text ?? "")",
-                                          u2Alternates: "\(u2AlternatesOutlet.text ?? "")",
-                                          t38Alternates: "\(t38AlternatesOutlet.text ?? "")",
-                                          navaids: "\(navaidsOutlet.text ?? "")",
-                                          approachLights: "\(approachLightsOutlet.text ?? "")",
-                                          localAirfields: "\(localAirfieldsOutlet.text ?? "")",
-                                          birdStatus: "\(birdStatusOutlet.text ?? "")",
-                                          fits: "\(fitsOutlet.text ?? "")",
-                                          activeRunway: "\(activeRunwayOutlet.text ?? "")",
-                                          runwayConditions: "\(runwayConditionsOutlet.text ?? "")",
-                                          date: dateOutlet.text ?? "9999.5",
-                                          time: timeOutlet.text ?? "9999.5",
-                                          sofOnDuty: "\(sofOnDutyOutlet.text ?? "")")
-        appSyncClient?.perform(mutation: CreateSofStatusMutation(input: status)) { (result, error) in
-            if let error = error as? AWSAppSyncClientError {
-                self.log.error("Error occurred: \(error.localizedDescription )")
-            }
-            if let resultError = result?.errors {
-                self.log.error("Error saving the item on server: \(resultError)")
-                return
-            }
-        }
-    }
-    
-    func getStatus() {
-        print("getStatus")
-        appSyncClient?.fetch(query: ListSofStatussQuery(), cachePolicy: .returnCacheDataAndFetch){(result, error) in
-            if error != nil {
-                print(error?.localizedDescription ?? "")
-                return
-            }
-            _ = result?.data?.listSofStatuss?.items
-            //            result?.data?.listSofStatuss?.items?.forEach { print(($0?.testOutThisMf)! + " " + ($0?.activeRunway)? ?? <#default value#> ?? "") }
-        }
-    }
+//    func setStatus() {
+//        print("SetStatus")
+//        let status = CreateSOFStatusInput(u2Status: "\(u2StatusOutlet.text ?? "")",
+//                                          t38Status: "\(t38StatusOutlet.text ?? "")",
+//                                          u2Restrictions: "\(u2RestrictionsOutlet.text ?? "")",
+//                                          t38Restrictions: "\(t38RestrictionsOutlet.text ?? "")",
+//                                          u2Alternates: "\(u2AlternatesOutlet.text ?? "")",
+//                                          t38Alternates: "\(t38AlternatesOutlet.text ?? "")",
+//                                          navaids: "\(navaidsOutlet.text ?? "")",
+//                                          approachLights: "\(approachLightsOutlet.text ?? "")",
+//                                          localAirfields: "\(localAirfieldsOutlet.text ?? "")",
+//                                          birdStatus: "\(birdStatusOutlet.text ?? "")",
+//                                          fits: "\(fitsOutlet.text ?? "")",
+//                                          activeRunway: "\(activeRunwayOutlet.text ?? "")",
+//                                          runwayConditions: "\(runwayConditionsOutlet.text ?? "")",
+//                                          date: dateOutlet.text ?? "9999.5",
+//                                          time: timeOutlet.text ?? "9999.5",
+//                                          sofOnDuty: "\(sofOnDutyOutlet.text ?? "")")
+//        appSyncClient?.perform(mutation: CreateSofStatusMutation(input: status)) { (result, error) in
+//            if let error = error as? AWSAppSyncClientError {
+//                self.log.error("Error occurred: \(error.localizedDescription )")
+//            }
+//            if let resultError = result?.errors {
+//                self.log.error("Error saving the item on server: \(resultError)")
+//                return
+//            }
+//        }
+//    }
+//    
+//    func getStatus() {
+//        print("getStatus")
+//        appSyncClient?.fetch(query: ListSofStatussQuery(), cachePolicy: .returnCacheDataAndFetch){(result, error) in
+//            if error != nil {
+//                print(error?.localizedDescription ?? "")
+//                return
+//            }
+//            _ = result?.data?.listSofStatuss?.items
+//            //            result?.data?.listSofStatuss?.items?.forEach { print(($0?.testOutThisMf)! + " " + ($0?.activeRunway)? ?? <#default value#> ?? "") }
+//        }
+//    }
     
     
 }

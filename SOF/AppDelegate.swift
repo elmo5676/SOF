@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-import AWSAppSync
+//import AWSAppSync
 
 let log = SwiftyBeaver.self
 let platform = SBPlatformDestination(appID: "0G8El1", appSecret: "aygqlbHflrCpv9ecimhkrvbatrgqiapJ", encryptionKey: "UUxflcvH1fEljoe8qRjknQz6hdxIkNaw")
@@ -16,7 +16,7 @@ let platform = SBPlatformDestination(appID: "0G8El1", appSecret: "aygqlbHflrCpv9
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     
-    var appSyncClient: AWSAppSyncClient?
+//    var appSyncClient: AWSAppSyncClient?
     let log = SwiftyBeaver.self
     var window: UIWindow?
     let titles = ["Normal","Emergency", "Normal"]
@@ -44,16 +44,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        //AWS
-        do {
-            let cacheConfiguration = try AWSAppSyncCacheConfiguration()
-            let appSyncServiceConfig = try AWSAppSyncServiceConfig()
-            let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncServiceConfig: appSyncServiceConfig,
-                                                                  cacheConfiguration: cacheConfiguration)
-            appSyncClient = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
-        } catch {
-            print("Error initializing appsync client. \(error)")
-        }
+//        //AWS
+//        do {
+//            let cacheConfiguration = try AWSAppSyncCacheConfiguration()
+//            let appSyncServiceConfig = try AWSAppSyncServiceConfig()
+//            let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncServiceConfig: appSyncServiceConfig,
+//                                                                  cacheConfiguration: cacheConfiguration)
+//            appSyncClient = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
+//        } catch {
+//            print("Error initializing appsync client. \(error)")
+//        }
         
         //SwiftyBeaver Logger
         // add log destinations. at least one is needed!
