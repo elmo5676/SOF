@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import AWSAppSync
+import AWSMobileClient
 
 let log = SwiftyBeaver.self
 let platform = SBPlatformDestination(appID: "0G8El1", appSecret: "aygqlbHflrCpv9ecimhkrvbatrgqiapJ", encryptionKey: "UUxflcvH1fEljoe8qRjknQz6hdxIkNaw")
@@ -40,6 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //AWS
+        AWSMobileClient.sharedInstance().initialize { (userState, error) in
+            if let userState = userState {
+                print("UserState: \(userState.rawValue)")
+            } else if let error = error {
+                print("error: \(error.localizedDescription)")
+            }
+        }
+        
         do {
             let cacheConfiguration = try AWSAppSyncCacheConfiguration()
             let appSyncServiceConfig = try AWSAppSyncServiceConfig()
@@ -49,6 +58,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         } catch {
             print("Error initializing appsync client. \(error)")
         }
+        
+        
+        
+        
+        
+        
         
         //SwiftyBeaver Logger
         // add log destinations. at least one is needed!
@@ -75,6 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
+        AWSMobileClient.sharedInstance().signOut()
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -85,15 +101,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
+        AWSMobileClient.sharedInstance().signOut()
         self.saveContext()
     }
-    
-    // MARK: - Split view
-//    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
-//        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-//        guard (secondaryAsNavController.topViewController as? DetailViewController) != nil else { return false }
-//        return false
-//    }
 
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {

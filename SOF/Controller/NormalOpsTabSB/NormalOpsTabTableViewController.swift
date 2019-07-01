@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import AWSMobileClient
 
 class NormalOpsTabTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    let aws = AWSMobileClient.sharedInstance()
     
     func setCellBGColors(nonSelctedCells: [UITableViewCell?], nsBgColor: UIColor, nsTextColor: UIColor, sCell: UITableViewCell?, sBgColor: UIColor, sTextColor: UIColor) {
         for cell in nonSelctedCells {
@@ -37,7 +43,6 @@ class NormalOpsTabTableViewController: UITableViewController {
                         sTextColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
         
     }
-
 
 
 }

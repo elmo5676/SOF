@@ -53,7 +53,8 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var updateStatusButtonOutlet: UIButton!
     @IBAction func updateStatusButton(_ sender: UIButton) {
         updateStatusButtonOutlet.showPressed()
-//        setStatus()
+        setStatus()
+        getStatus()
     }
     
     let statusModel = SetStatusModel()
@@ -131,14 +132,25 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate {
     
     func getStatus() {
         print("getStatus")
-        appSyncClient?.fetch(query: ListSofStatussQuery(), cachePolicy: .returnCacheDataAndFetch){(result, error) in
+        appSyncClient?.fetch(query: ListSofStatussQuery(), cachePolicy: .fetchIgnoringCacheData) {(result, error) in
             if error != nil {
-                print(error?.localizedDescription ?? "")
+                self.log.error(error)
                 return
             }
-            _ = result?.data?.listSofStatuss?.items
-            //            result?.data?.listSofStatuss?.items?.forEach { print(($0?.testOutThisMf)! + " " + ($0?.activeRunway)? ?? <#default value#> ?? "") }
+            if result != nil {
+                self.log.debug(result?.data?.listSofStatuss?.items?.forEach { print($0?.activeRunway)})
+            }
         }
+//        appSyncClient?.fetch(query: ListSofStatussQuery(), cachePolicy: .returnCacheDataAndFetch){(result, error) in
+//            if error != nil {
+//                print(error?.localizedDescription ?? "")
+//                return
+//            }
+//            print(_ = result?.data?.listSofStatuss?.items)
+//            result?.data?.listSofStatuss?.items?.forEach { print($0?.activeRunway)}
+//
+////            result?.data?.listSofStatuss?.items?.forEach { print(($0?)! + " " + ($0?.activeRunway)? ?? <#default value#> ?? "") }
+//        }
     }
     
     
