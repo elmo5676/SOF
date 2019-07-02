@@ -22,10 +22,12 @@ struct AhasDownLoader {
     
     
     init<T: AhasArea>(area: T,
-         month: AHASInputs.Month,
-         day: AHASInputs.Day,
-         hourZ: AHASInputs.Hour,
-         duration: Int) {
+                      delegate: UIViewController,
+                      month: AHASInputs.Month,
+                      day: AHASInputs.Day,
+                      hourZ: AHASInputs.Hour,
+                      duration: Int) {
+        self.delegate = delegate as? AhasDelegate
         self.area = area.rawValue as! String
         self.month = month
         self.day = day
@@ -45,11 +47,9 @@ struct AhasDownLoader {
         let request = URLRequest(url: url)
         let task = self.session.dataTask(with: request) { (data, response, error) -> Void in
             if let XMLData = data {
-                let birdCondition = XMLData
-                var result: [Ahas] = []
-                log.info(String(data: birdCondition, encoding: .utf8))
+                let birdCondition = AhasParser(data: XMLData).ahas
                 DispatchQueue.main.async {
-                    self.delegate?.getBirdCondition(result)
+                    self.delegate?.getBirdCondition(birdCondition)
                 }
             } else if let requestError = error {
                 log.error("Error fetching metar: \(requestError)")

@@ -69,17 +69,21 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     
     // MARK: - Bird Condition
     func getBirdCondition(_ ahas: [Ahas]) {
-        log.debug("NOTHING TO SEE HERE")
+        for a in ahas {
+            log.debug(a.ahasRisk)
+        }
+        log.debug("\(ahas)")
     }
     
     func getBirdCondition() {
         let beale = AHASInputs.MilitaryAirfields.BEALE_AFB
-        birdCondition = AhasDownLoader(area: beale, month: .july, day: ._2, hourZ: ._13, duration: 5)
+        let ll = AHASInputs.VR_Route.VR058
+        birdCondition = AhasDownLoader(area: ll, delegate: self, month: .july, day: ._2, hourZ: ._13, duration: 5)
     }
     
     // MARK: - Weather
     func getCurrentMetar(_ metar: [Metar]?, metarLoc: MetarLoc, refreshUI: Bool) {
-        log.debug("\(metar)")
+//        log.debug("\(metar)")
     }
     
     func updateWx(){

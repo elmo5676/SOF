@@ -44,6 +44,7 @@ struct MetarDownLoader {
     
     private func getMetarFor(icao: String) {
         let url = AddsWeatherAPI().weatherURL(type: .metar, icao: "\(icao)", parameters: nil)
+        log.debug(url)
         let request = URLRequest(url: url)
         let task = self.session.dataTask(with: request) { (data, response, error) -> Void in
             if let XMLData = data {
