@@ -1,6 +1,6 @@
 {
     "identityPoolName": "sof2c3d5e5e_identitypool_2c3d5e5e",
-    "allowUnauthenticatedIdentities": true,
+    "allowUnauthenticatedIdentities": false,
     "lambdaLogPolicy": "sof2c3_2c3d5e5e_lambda_log_policy",
     "openIdLambdaRoleName": "sof2c3_2c3d5e5e_openid_lambda_role",
     "openIdRolePolicy": "sof2c3_2c3d5e5e_openid_pass_role_policy",
@@ -29,7 +29,7 @@
     ],
     "userpoolClientName": "sof2c32c3d5e5e_app_client",
     "userpoolClientGenerateSecret": true,
-    "userpoolClientRefreshTokenValidity": "360",
+    "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
         "email"
     ],
@@ -64,11 +64,6 @@
             "Arn"
         ]
     },
-    "useDefault": "manual",
-    "thirdPartyAuth": false,
-    "hostedUI": true,
-    "hostedUIDomainName": "sof8e627fad-8e627fad",
-    "authProvidersUserPool": [],
-    "hostedUIProviderMeta": "[]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.beale.af.mil/\"],\"LogoutURLs\":[\"https://www.beale.af.mil/\"]}"
+    "useDefault": "default",
+    "hostedUI": true
 }

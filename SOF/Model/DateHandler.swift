@@ -14,6 +14,7 @@ enum DateSource: String {
     case tafStartEnd = "yyyy'-'MM'-'dd' 'HH':'mm':'ss' +'Z"
     case ahas = "yyyy'-'MM'-'dd' 'HH':'mm':'ss.sss"
     case reference = "yyyyMMddHHmmss"
+    case aws = "yyyy'-'MM'-'dd'T'HH':'mm':'sssss'Z'" //"2019-07-02T07:59:59.303Z"
 }
 
 struct DateHandler {

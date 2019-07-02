@@ -9,12 +9,14 @@
 
 import UIKit
 import AWSAppSync
+import AWSMobileClient
 
 class SetStatusViewController: UIViewController, UITextFieldDelegate {
     
     var appSyncClient: AWSAppSyncClient?
     let log = SwiftyBeaver.self
     let console = ConsoleDestination()
+    let aws = AWSMobileClient.sharedInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,23 +105,12 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate {
     
     func setStatus() {
         print("SetStatus")
-        let status = CreateSOFStatusInput(u2Status: "\(u2StatusOutlet.text ?? "")",
-                                          t38Status: "\(t38StatusOutlet.text ?? "")",
-                                          u2Restrictions: "\(u2RestrictionsOutlet.text ?? "")",
-                                          t38Restrictions: "\(t38RestrictionsOutlet.text ?? "")",
-                                          u2Alternates: "\(u2AlternatesOutlet.text ?? "")",
-                                          t38Alternates: "\(t38AlternatesOutlet.text ?? "")",
-                                          navaids: "\(navaidsOutlet.text ?? "")",
-                                          approachLights: "\(approachLightsOutlet.text ?? "")",
-                                          localAirfields: "\(localAirfieldsOutlet.text ?? "")",
-                                          birdStatus: "\(birdStatusOutlet.text ?? "")",
-                                          fits: "\(fitsOutlet.text ?? "")",
-                                          activeRunway: "\(activeRunwayOutlet.text ?? "")",
-                                          runwayConditions: "\(runwayConditionsOutlet.text ?? "")",
-                                          date: Int(dateOutlet.text ?? "9999.5"),
-                                          time: Int(timeOutlet.text ?? "9999.5"),
-                                          sofOnDuty: "\(sofOnDutyOutlet.text ?? "")")
-        appSyncClient?.perform(mutation: CreateSofStatusMutation(input: status)) { (result, error) in
+        let now = Date()
+        let newStatus = CreateSOFStatusInput(u2Status: "\(aws.identityId)", t38Status: "\(aws.username)", u2Restrictions: "\(aws.credentials())", t38Restrictions: "\(aws.currentUserState)", u2Alternates: "\(aws.deviceOperations)", t38Alternates: "\(aws.getCredentialsProvider())", navaids: "\(now)", approachLights: "\(now)", localAirfields: "\(now)", birdStatus: "\(now)", fits: "\(now)", activeRunway: "\(now)", runwayConditions: "\(now)", date: 5, time: 5, sofOnDuty: "\(aws.username)")
+        
+        
+        
+        appSyncClient?.perform(mutation: CreateSofStatusMutation(input: newStatus)){ (result, error) in
             if let error = error as? AWSAppSyncClientError {
                 self.log.error("Error occurred: \(error.localizedDescription )")
             }
@@ -128,6 +119,33 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate {
                 return
             }
         }
+        
+        
+//        let status = CreateSOFStatusInput(u2Status: "\(u2StatusOutlet.text ?? "")",
+//                                          t38Status: "\(t38StatusOutlet.text ?? "")",
+//                                          u2Restrictions: "\(u2RestrictionsOutlet.text ?? "")",
+//                                          t38Restrictions: "\(t38RestrictionsOutlet.text ?? "")",
+//                                          u2Alternates: "\(u2AlternatesOutlet.text ?? "")",
+//                                          t38Alternates: "\(t38AlternatesOutlet.text ?? "")",
+//                                          navaids: "\(navaidsOutlet.text ?? "")",
+//                                          approachLights: "\(approachLightsOutlet.text ?? "")",
+//                                          localAirfields: "\(localAirfieldsOutlet.text ?? "")",
+//                                          birdStatus: "\(birdStatusOutlet.text ?? "")",
+//                                          fits: "\(fitsOutlet.text ?? "")",
+//                                          activeRunway: "\(activeRunwayOutlet.text ?? "")",
+//                                          runwayConditions: "\(runwayConditionsOutlet.text ?? "")",
+//                                          date: Int(dateOutlet.text ?? "9999.5"),
+//                                          time: Int(timeOutlet.text ?? "9999.5"),
+//                                          sofOnDuty: "\(sofOnDutyOutlet.text ?? "")")
+//        appSyncClient?.perform(mutation: CreateSofStatusMutation(input: status)) { (result, error) in
+//            if let error = error as? AWSAppSyncClientError {
+//                self.log.error("Error occurred: \(error.localizedDescription )")
+//            }
+//            if let resultError = result?.errors {
+//                self.log.error("Error saving the item on server: \(resultError)")
+//                return
+//            }
+//        }
     }
     
     func getStatus() {

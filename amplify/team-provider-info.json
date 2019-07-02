@@ -12,9 +12,7 @@
         },
         "categories": {
             "auth": {
-                "sof2c3d5e5e": {
-                    "hostedUIProviderCreds": "[]"
-                }
+                "sof2c3d5e5e": {}
             }
         }
     }
