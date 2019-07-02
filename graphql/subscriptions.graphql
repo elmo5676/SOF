@@ -15,8 +15,7 @@ subscription OnCreateSofStatus {
     fits
     activeRunway
     runwayConditions
-    date
-    time
+    timeStamp
     sofOnDuty
   }
 }
@@ -36,8 +35,7 @@ subscription OnUpdateSofStatus {
     fits
     activeRunway
     runwayConditions
-    date
-    time
+    timeStamp
     sofOnDuty
   }
 }
@@ -57,8 +55,7 @@ subscription OnDeleteSofStatus {
     fits
     activeRunway
     runwayConditions
-    date
-    time
+    timeStamp
     sofOnDuty
   }
 }

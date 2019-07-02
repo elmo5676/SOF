@@ -15,8 +15,7 @@ query GetSofStatus($id: ID!) {
     fits
     activeRunway
     runwayConditions
-    date
-    time
+    timeStamp
     sofOnDuty
   }
 }
@@ -41,8 +40,7 @@ query ListSofStatuss(
       fits
       activeRunway
       runwayConditions
-      date
-      time
+      timeStamp
       sofOnDuty
     }
     nextToken

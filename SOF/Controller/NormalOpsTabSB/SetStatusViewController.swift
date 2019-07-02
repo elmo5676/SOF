@@ -11,18 +11,25 @@ import UIKit
 import AWSAppSync
 import AWSMobileClient
 
-class SetStatusViewController: UIViewController, UITextFieldDelegate {
+class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDelegate, AhasDelegate {
     
     var appSyncClient: AWSAppSyncClient?
     let log = SwiftyBeaver.self
     let console = ConsoleDestination()
     let aws = AWSMobileClient.sharedInstance()
+    var metarStore: MetarDownLoader?
+    var birdCondition: AhasDownLoader?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
         setFormatting()
         appSyncClient = appDelegate.appSyncClient
+        metarStore?.delagate = self
+        birdCondition?.delegate = self
+        updateWx()
+        getBirdCondition()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +64,26 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate {
         updateStatusButtonOutlet.showPressed()
         setStatus()
         getStatus()
+    }
+    
+    
+    // MARK: - Bird Condition
+    func getBirdCondition(_ ahas: [Ahas]) {
+        log.debug("NOTHING TO SEE HERE")
+    }
+    
+    func getBirdCondition() {
+        let beale = AHASInputs.MilitaryAirfields.BEALE_AFB
+        birdCondition = AhasDownLoader(area: beale, month: .july, day: ._2, hourZ: ._13, duration: 5)
+    }
+    
+    // MARK: - Weather
+    func getCurrentMetar(_ metar: [Metar]?, metarLoc: MetarLoc, refreshUI: Bool) {
+        log.debug("\(metar)")
+    }
+    
+    func updateWx(){
+        metarStore = MetarDownLoader(icao: "KBAB", delagate: self, metarLoc: .icao, refreshUI: false)
     }
     
     let statusModel = SetStatusModel()
@@ -106,7 +133,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate {
     func setStatus() {
         print("SetStatus")
         let now = Date()
-        let newStatus = CreateSOFStatusInput(u2Status: "\(aws.identityId)", t38Status: "\(aws.username)", u2Restrictions: "\(aws.credentials())", t38Restrictions: "\(aws.currentUserState)", u2Alternates: "\(aws.deviceOperations)", t38Alternates: "\(aws.getCredentialsProvider())", navaids: "\(now)", approachLights: "\(now)", localAirfields: "\(now)", birdStatus: "\(now)", fits: "\(now)", activeRunway: "\(now)", runwayConditions: "\(now)", date: 5, time: 5, sofOnDuty: "\(aws.username)")
+        let newStatus = CreateSOFStatusInput(u2Status: "\(aws.identityId)", t38Status: "\(aws.username)", u2Restrictions: "\(aws.credentials())", t38Restrictions: "\(aws.currentUserState)", u2Alternates: "\(aws.deviceOperations)", t38Alternates: "\(aws.getCredentialsProvider())", navaids: "\(now)", approachLights: "\(now)", localAirfields: "\(now)", birdStatus: "\(now)", fits: "\(now)", activeRunway: "\(now)", runwayConditions: "\(now)", timeStamp: "\(now)", sofOnDuty: "\(aws.username)")
         
         
         

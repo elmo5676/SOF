@@ -13,8 +13,7 @@ type SOFStatus @model {
   fits: String
   activeRunway: String
   runwayConditions: String
-  date: Int
-  time: Int
+  timeStamp: String
   sofOnDuty: String
 }
 

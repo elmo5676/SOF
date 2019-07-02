@@ -46,16 +46,15 @@ struct AhasDownLoader {
         let task = self.session.dataTask(with: request) { (data, response, error) -> Void in
             if let XMLData = data {
                 let birdCondition = XMLData
+                var result: [Ahas] = []
                 log.info(String(data: birdCondition, encoding: .utf8))
                 DispatchQueue.main.async {
-//                    self.delagate.getBirdCondition(area: )
+                    self.delegate?.getBirdCondition(result)
                 }
             } else if let requestError = error {
                 log.error("Error fetching metar: \(requestError)")
-//                print("Error fetching metar: \(requestError)")
             } else {
                 log.warning("Unexpected error with request")
-//                print("Unexpected error with request")
             }
         }
         task.resume()

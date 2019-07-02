@@ -15,8 +15,7 @@ mutation CreateSofStatus($input: CreateSOFStatusInput!) {
     fits
     activeRunway
     runwayConditions
-    date
-    time
+    timeStamp
     sofOnDuty
   }
 }
@@ -36,8 +35,7 @@ mutation UpdateSofStatus($input: UpdateSOFStatusInput!) {
     fits
     activeRunway
     runwayConditions
-    date
-    time
+    timeStamp
     sofOnDuty
   }
 }
@@ -57,8 +55,7 @@ mutation DeleteSofStatus($input: DeleteSOFStatusInput!) {
     fits
     activeRunway
     runwayConditions
-    date
-    time
+    timeStamp
     sofOnDuty
   }
 }
