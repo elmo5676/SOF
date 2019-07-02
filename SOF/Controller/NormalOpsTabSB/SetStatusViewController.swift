@@ -14,12 +14,15 @@ import AWSMobileClient
 class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDelegate, AhasDelegate {
     
     var appSyncClient: AWSAppSyncClient?
+    let aws = AWSMobileClient.sharedInstance()
     let log = SwiftyBeaver.self
     let console = ConsoleDestination()
-    let aws = AWSMobileClient.sharedInstance()
     var metarStore: MetarDownLoader?
-    var birdCondition: AhasDownLoader?
-    
+    var ahasDownloader: AhasDownLoader?
+    var ahas: [Ahas]? = []
+    var metar: Metar? = nil
+    var tafs: [Taf]? = []
+    var notams: [Notam]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +30,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         setFormatting()
         appSyncClient = appDelegate.appSyncClient
         metarStore?.delagate = self
-        birdCondition?.delegate = self
+        ahasDownloader?.delegate = self
         updateWx()
         getBirdCondition()
     }
@@ -69,21 +72,21 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     
     // MARK: - Bird Condition
     func getBirdCondition(_ ahas: [Ahas]) {
-        for a in ahas {
-            log.debug(a.ahasRisk)
-        }
-        log.debug("\(ahas)")
+        self.ahas = ahas
     }
     
     func getBirdCondition() {
         let beale = AHASInputs.MilitaryAirfields.BEALE_AFB
-        let ll = AHASInputs.VR_Route.VR058
-        birdCondition = AhasDownLoader(area: ll, delegate: self, month: .july, day: ._2, hourZ: ._13, duration: 5)
+        let now = Date()
+        let calender = Calendar.current
+        let month = String(calender.component(.month, from: now))
+        let day = String(calender.component(.day, from: now))
+        let hourZ = String(calender.component(.hour, from: now))
+        ahasDownloader = AhasDownLoader(area: beale, delegate: self, month: month, day: day, hourZ: hourZ, duration: 5)
     }
     
     // MARK: - Weather
     func getCurrentMetar(_ metar: [Metar]?, metarLoc: MetarLoc, refreshUI: Bool) {
-//        log.debug("\(metar)")
     }
     
     func updateWx(){
@@ -135,9 +138,25 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         return true}
     
     func setStatus() {
+        let placeHolderText = "UNK"
         print("SetStatus")
         let now = Date()
-        let newStatus = CreateSOFStatusInput(u2Status: "\(aws.identityId)", t38Status: "\(aws.username)", u2Restrictions: "\(aws.credentials())", t38Restrictions: "\(aws.currentUserState)", u2Alternates: "\(aws.deviceOperations)", t38Alternates: "\(aws.getCredentialsProvider())", navaids: "\(now)", approachLights: "\(now)", localAirfields: "\(now)", birdStatus: "\(now)", fits: "\(now)", activeRunway: "\(now)", runwayConditions: "\(now)", timeStamp: "\(now)", sofOnDuty: "\(aws.username)")
+        let newStatus = CreateSOFStatusInput(
+            u2Status: "\(placeHolderText)",
+            t38Status: "\(placeHolderText)",
+            u2Restrictions: "\(placeHolderText))",
+            t38Restrictions: "\(placeHolderText)",
+            u2Alternates: "\(placeHolderText)",
+            t38Alternates: "\(placeHolderText))",
+            navaids: "\(placeHolderText)",
+            approachLights: "\(placeHolderText)",
+            localAirfields: "\(placeHolderText)",
+            birdStatus: "\(ahas?.first?.ahasRisk ?? placeHolderText)",
+            fits: "\(now)",
+            activeRunway: "\(now)",
+            runwayConditions: "\(now)",
+            timeStamp: "\(now)",
+            sofOnDuty: "\(aws.username ?? placeHolderText)")
         
         
         
@@ -150,56 +169,19 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
                 return
             }
         }
-        
-        
-//        let status = CreateSOFStatusInput(u2Status: "\(u2StatusOutlet.text ?? "")",
-//                                          t38Status: "\(t38StatusOutlet.text ?? "")",
-//                                          u2Restrictions: "\(u2RestrictionsOutlet.text ?? "")",
-//                                          t38Restrictions: "\(t38RestrictionsOutlet.text ?? "")",
-//                                          u2Alternates: "\(u2AlternatesOutlet.text ?? "")",
-//                                          t38Alternates: "\(t38AlternatesOutlet.text ?? "")",
-//                                          navaids: "\(navaidsOutlet.text ?? "")",
-//                                          approachLights: "\(approachLightsOutlet.text ?? "")",
-//                                          localAirfields: "\(localAirfieldsOutlet.text ?? "")",
-//                                          birdStatus: "\(birdStatusOutlet.text ?? "")",
-//                                          fits: "\(fitsOutlet.text ?? "")",
-//                                          activeRunway: "\(activeRunwayOutlet.text ?? "")",
-//                                          runwayConditions: "\(runwayConditionsOutlet.text ?? "")",
-//                                          date: Int(dateOutlet.text ?? "9999.5"),
-//                                          time: Int(timeOutlet.text ?? "9999.5"),
-//                                          sofOnDuty: "\(sofOnDutyOutlet.text ?? "")")
-//        appSyncClient?.perform(mutation: CreateSofStatusMutation(input: status)) { (result, error) in
-//            if let error = error as? AWSAppSyncClientError {
-//                self.log.error("Error occurred: \(error.localizedDescription )")
-//            }
-//            if let resultError = result?.errors {
-//                self.log.error("Error saving the item on server: \(resultError)")
-//                return
-//            }
-//        }
     }
     
     func getStatus() {
         print("getStatus")
         appSyncClient?.fetch(query: ListSofStatussQuery(), cachePolicy: .fetchIgnoringCacheData) {(result, error) in
             if error != nil {
-                self.log.error(error)
+                self.log.error(error as Any)
                 return
             }
             if result != nil {
-                self.log.debug(result?.data?.listSofStatuss?.items?.forEach { print($0?.activeRunway)})
+                self.log.debug(result?.data?.listSofStatuss?.items?.forEach { print($0?.activeRunway as Any)} as Any)
             }
         }
-//        appSyncClient?.fetch(query: ListSofStatussQuery(), cachePolicy: .returnCacheDataAndFetch){(result, error) in
-//            if error != nil {
-//                print(error?.localizedDescription ?? "")
-//                return
-//            }
-//            print(_ = result?.data?.listSofStatuss?.items)
-//            result?.data?.listSofStatuss?.items?.forEach { print($0?.activeRunway)}
-//
-////            result?.data?.listSofStatuss?.items?.forEach { print(($0?)! + " " + ($0?.activeRunway)? ?? <#default value#> ?? "") }
-//        }
     }
     
     

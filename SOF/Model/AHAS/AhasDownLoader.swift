@@ -16,10 +16,6 @@ protocol AhasDelegate {
 struct AhasDownLoader {
     var delegate: AhasDelegate?
     var area: String
-    var month: AHASInputs.Month
-    var day: AHASInputs.Day
-    var hourZ: AHASInputs.Hour
-    
     
     init<T: AhasArea>(area: T,
                       delegate: UIViewController,
@@ -29,11 +25,18 @@ struct AhasDownLoader {
                       duration: Int) {
         self.delegate = delegate as? AhasDelegate
         self.area = area.rawValue as! String
-        self.month = month
-        self.day = day
-        self.hourZ = hourZ
         getBirdCondition(area: area, month: month, day: day, hourZ: hourZ, duration: nil)
-        
+    }
+    
+    init<T: AhasArea>(area: T,
+                      delegate: UIViewController,
+                      month: String,
+                      day: String,
+                      hourZ: String,
+                      duration: Int) {
+        self.delegate = delegate as? AhasDelegate
+        self.area = area.rawValue as! String
+        getBirdCondition(area: area, month: month, day: day, hourZ: hourZ, duration: nil)
     }
     
     private let session: URLSession = {
@@ -55,8 +58,25 @@ struct AhasDownLoader {
                 log.error("Error fetching metar: \(requestError)")
             } else {
                 log.warning("Unexpected error with request")
-            }
-        }
+            }}
+        task.resume()
+    }
+    
+    private func getBirdCondition<T: AhasArea>(area: T, month: String, day: String, hourZ: String, duration: Int?) {
+        let url = AhasAPI.AhasURL(area: area.rawValue as! String, month: month, day: day, hour: hourZ, parameters: nil)
+        log.info(url)
+        let request = URLRequest(url: url)
+        let task = self.session.dataTask(with: request) { (data, response, error) -> Void in
+            if let XMLData = data {
+                let birdCondition = AhasParser(data: XMLData).ahas
+                DispatchQueue.main.async {
+                    self.delegate?.getBirdCondition(birdCondition)
+                }
+            } else if let requestError = error {
+                log.error("Error fetching metar: \(requestError)")
+            } else {
+                log.warning("Unexpected error with request")
+            }}
         task.resume()
     }
     
