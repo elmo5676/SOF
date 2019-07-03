@@ -38,6 +38,11 @@ struct UserDefaultSetup {
         defaults.setValue(currentList, forKey: withKey.rawValue)
     }
     
+    func clearAllListItems(withKey: KeyForDefaults) {
+        let currentList: [String] = []
+        defaults.setValue(currentList, forKey: withKey.rawValue)
+    }
+    
     func getListOf(withKey: KeyForDefaults) -> [String] {
         var result: [String] = []
         if let listOfSof = defaults.object(forKey: withKey.rawValue) {

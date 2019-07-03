@@ -847,18 +847,18 @@
                                 <rect key="frame" x="0.0" y="10" width="791.5" height="834"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opd-cc-b2C">
-                                <rect key="frame" x="79" y="93.5" width="633.5" height="667"/>
+                                <rect key="frame" x="79" y="114.5" width="633.5" height="625.5"/>
                                 <subviews>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPN-lW-Cin">
-                                        <rect key="frame" x="0.0" y="0.0" width="633.5" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="633.5" height="625.5"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hGw-xN-6wb">
-                                            <rect key="frame" x="0.0" y="0.0" width="633.5" height="667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="633" height="626"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="dark"/>
                                     </visualEffectView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GjI-aB-Qjg">
-                                        <rect key="frame" x="0.0" y="0.0" width="633.5" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="633.5" height="625.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -922,6 +922,13 @@
                                     <constraint firstItem="cPN-lW-Cin" firstAttribute="centerY" secondItem="opd-cc-b2C" secondAttribute="centerY" id="hHc-2h-UDk"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75Q-Uc-oH1">
+                                <rect key="frame" x="629.5" y="784" width="142" height="30"/>
+                                <state key="normal" title="Clear All Restrictions"/>
+                                <connections>
+                                    <action selector="clearAllRestrictionsButton:" destination="fd8-rJ-aDw" eventType="touchUpInside" id="Djd-gm-r4P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -929,14 +936,17 @@
                             <constraint firstItem="sL8-RA-zJK" firstAttribute="centerX" secondItem="wtz-al-tim" secondAttribute="centerX" id="3kI-hB-Hti"/>
                             <constraint firstItem="sL8-RA-zJK" firstAttribute="width" secondItem="hG8-X5-gLk" secondAttribute="width" id="4ev-Ar-a2O"/>
                             <constraint firstItem="sL8-RA-zJK" firstAttribute="height" secondItem="hG8-X5-gLk" secondAttribute="height" id="A9V-AT-Lfd"/>
-                            <constraint firstItem="opd-cc-b2C" firstAttribute="height" secondItem="hG8-X5-gLk" secondAttribute="height" multiplier="0.8" id="PuC-Hf-T3t"/>
+                            <constraint firstItem="opd-cc-b2C" firstAttribute="height" secondItem="hG8-X5-gLk" secondAttribute="height" multiplier="0.75" id="PuC-Hf-T3t"/>
+                            <constraint firstItem="wtz-al-tim" firstAttribute="bottom" secondItem="75Q-Uc-oH1" secondAttribute="bottom" constant="20" id="Sm8-0B-mdz"/>
                             <constraint firstItem="opd-cc-b2C" firstAttribute="centerY" secondItem="wtz-al-tim" secondAttribute="centerY" id="WrJ-kr-y43"/>
                             <constraint firstItem="opd-cc-b2C" firstAttribute="width" secondItem="hG8-X5-gLk" secondAttribute="width" multiplier="0.8" id="Wza-Ab-PVG"/>
+                            <constraint firstItem="wtz-al-tim" firstAttribute="trailing" secondItem="75Q-Uc-oH1" secondAttribute="trailing" constant="20" id="Y6m-kK-lUU"/>
                             <constraint firstItem="opd-cc-b2C" firstAttribute="centerX" secondItem="wtz-al-tim" secondAttribute="centerX" id="zRa-Zm-99m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wtz-al-tim"/>
                     </view>
                     <connections>
+                        <outlet property="clearAllRestrictionsOutlet" destination="75Q-Uc-oH1" id="POF-RU-Wwe"/>
                         <outlet property="restrictionsTableView" destination="GjI-aB-Qjg" id="flu-z8-34a"/>
                     </connections>
                 </viewController>

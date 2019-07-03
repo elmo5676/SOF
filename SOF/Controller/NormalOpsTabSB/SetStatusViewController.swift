@@ -17,6 +17,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     let aws = AWSMobileClient.sharedInstance()
     let log = SwiftyBeaver.self
     let console = ConsoleDestination()
+    let uds = UserDefaultSetup()
     var metarStore: MetarDownLoader?
     var ahasDownloader: AhasDownLoader?
     var ahas: [Ahas]? = []
@@ -137,6 +138,15 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
             allTextFields[i! + 1].becomeFirstResponder()}
         return true}
     
+    func getRestrictions() -> String {
+        var result = ""
+        let restricionArray = uds.getListOf(withKey: .listOfRestrictions)
+        for r in restricionArray {
+            result += r
+        }
+        return result
+    }
+    
     func setStatus() {
         let placeHolderText = "UNK"
         print("SetStatus")
@@ -144,7 +154,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         let newStatus = CreateSOFStatusInput(
             u2Status: "\(placeHolderText)",
             t38Status: "\(placeHolderText)",
-            u2Restrictions: "\(placeHolderText))",
+            u2Restrictions: "\(getRestrictions()))",
             t38Restrictions: "\(placeHolderText)",
             u2Alternates: "\(placeHolderText)",
             t38Alternates: "\(placeHolderText))",

@@ -14,6 +14,7 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        inititialFormatting()
         restrictionsTableView.rowHeight = 50
     }
     
@@ -21,6 +22,21 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
     let u2Rest = SetStatusModel.U2Restrictions.allCases.self
     let t38Rest = SetStatusModel.T38Restrictions.allCases.self
     let combRest = SetStatusModel.CombinedRestrictions.allCases.self
+    let uds = UserDefaultSetup()
+    
+    @IBOutlet weak var clearAllRestrictionsOutlet: UIButton!
+    @IBAction func clearAllRestrictionsButton(_ sender: UIButton) {
+        clearAllRestrictionsOutlet.showPressed()
+        uds.clearAllListItems(withKey: .listOfRestrictions)
+        restrictionsTableView.reloadData()
+    }
+    
+    
+    func inititialFormatting() {
+        clearAllRestrictionsOutlet.standardButtonFormatting()
+    }
+    
+    
     
     //TableView
     @IBOutlet weak var restrictionsTableView: UITableView!
@@ -40,10 +56,10 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "restrictionCell", for: indexPath) as! RestrictionsTableViewCell
+        let restrictions = uds.getListOf(withKey: .listOfRestrictions)
         switch indexPath.section {
         case 0:
             cell.restrictionLabel.text = combRest[indexPath.row].rawValue
-            cell.restrictSwitch(cell.restrictSwitchOutlet)
         case 1:
             cell.restrictionLabel.text = u2Rest[indexPath.row].rawValue
         case 2:
@@ -52,6 +68,11 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
             cell.restrictionLabel.text = "testing"
         }
         
+        if restrictions.contains(cell.restrictionLabel.text!) {
+                cell.restrictSwitchOutlet.isOn = true
+            } else {
+                cell.restrictSwitchOutlet.isOn = false
+        }
         return cell
     }
     
