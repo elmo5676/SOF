@@ -32,7 +32,7 @@ struct SetStatusModel {
         case terminated = "Terminated"
     }
     
-    public enum U2Restrictions: String, PickerType, CaseIterable {
+    public enum CombinedRestrictions: String, PickerType, CaseIterable {
         public var description: String { return self.rawValue}
         
         case xwG_10 = "XW > 10 Knots"
@@ -41,55 +41,41 @@ struct SetStatusModel {
         case windG_30 = "Wind > 30 Knots"
         case fitsCaution = "FITS Caution"
         case fitsDanger = "FITS Danger"
-        case highSortiesOnly = "High Sorties Only"
-        case lowSortiesOnly = "Low Sorties Only"
         case rvrLessT_2400 = "RVR < 2400"
         case rvrLessT_1600 = "RVR < 1600"
+        case turbulance = "Turbulence"
+        case thunderstorms = "Thunderstorms"
+        case wxLessT_20003 = "WX < 2000/3"
+        case fog = "Fog"
+        case birdModerate = "Bird Moderate"
+        case u2PracticeAreaActive = "U-2 Practice Area Active"
+    }
+    
+    public enum U2Restrictions: String, PickerType, CaseIterable {
+        public var description: String { return self.rawValue}
+        
+        case highSortiesOnly = "High Sorties Only"
+        case lowSortiesOnly = "Low Sorties Only"
         case noTouchAndGos = "No Touch & Go's"
         case noAlternateAvailable = "No Alternates Available"
         case vfrPatternClosed = "VFR Pattern Closed"
         case alternateRequired = "Alternate Required"
-        case turbulance = "Turbulence"
-        case thunderstorms = "Thunderstorms"
         case wxLessT_ApproachMins = "WX < Approach Mins"
-        case wxLessT_20003 = "WX < 2000/3"
-        case fog = "Fog"
         case radarPatternOnly = "Radar Pattern Only"
-        case mhrBirdModerate = "MHR Bird Moderate"
-        case mhrBirdSevere = "MHR Bird Severe"
-        case birdModerate = "Bird Moderate"
-        case u2PracticeAreaActive = "U-2 Practice Area Active"
-        
     }
     
     public enum T38Restrictions: String, PickerType, CaseIterable {
         public var description: String { return self.rawValue}
         
         
-        case xwG_10 = "XW > 10 Knots"
-        case xwG_12 = "XW > 12 Knots"
-        case xwG_15 = "XW > 15 Knots"
-        case windG_30 = "Wind > 30 Knots"
-        case fitsCaution = "FITS Caution"
-        case fitsDanger = "FITS Danger"
-        case highSortiesOnly = "High Sorties Only"
-        case lowSortiesOnly = "Low Sorties Only"
-        case rvrLessT_2400 = "RVR < 2400"
-        case rvrLessT_1600 = "RVR < 1600"
         case noTouchAndGos = "No Touch & Go's"
         case noAlternateAvailable = "No Alternates Available"
         case vfrPatternClosed = "VFR Pattern Closed"
         case alternateRequired = "Alternate Required"
-        case turbulance = "Turbulence"
-        case thunderstorms = "Thunderstorms"
         case wxLessT_ApproachMins = "WX < Approach Mins"
-        case wxLessT_20003 = "WX < 2000/3"
-        case fog = "Fog"
         case radarPatternOnly = "Radar Pattern Only"
         case mhrBirdModerate = "MHR Bird Moderate"
         case mhrBirdSevere = "MHR Bird Severe"
-        case birdModerate = "Bird Moderate"
-        case u2PracticeAreaActive = "U-2 Practice Area Active"
     }
     
     public enum U2Alternates: String, PickerType, CaseIterable {

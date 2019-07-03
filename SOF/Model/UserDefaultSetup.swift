@@ -19,11 +19,13 @@ struct UserDefaultSetup {
         case listOfT38LocalField = "listOfT38LocalField"
         case normalChecklists = "normalChecklists"
         case emergencyChecklists = "emergencyChecklists"
+        case listOfRestrictions = "listOfRestrictions"
     }
     
     private var listOfSOF: [String] = [] //["Rank, Last, First, CallSign"]
     private var listOfU2LocalFields: [String] = [] //["ICAO"]
     private var listOfT38LocalField: [String] = [] //["ICAO"]
+    private var listOfRestrictions: [String] = [] //["Restriction"]
     private var normalChecklists: [String: [String]] = [:] //["Checklist Name" : ["Step 1","Step 2"]]
     private var emergencyChecklists: [String: [String]] = [:] //["Checklist Name" : ["Step 1","Step 2"]]
     
@@ -42,6 +44,15 @@ struct UserDefaultSetup {
             result = listOfSof as! [String]
         }
         return result
+    }
+    
+    func removeItemList(item: String, withKey: KeyForDefaults) -> [String] {
+        var currentList = getListOf(withKey: withKey)
+        if currentList.contains(item) {
+            guard let i = currentList.firstIndex(of: item) else {return currentList}
+            currentList.remove(at: i)
+        }
+        return currentList
     }
     
     func add(checkListName: String, checklistItems: [String], to: KeyForDefaults) {

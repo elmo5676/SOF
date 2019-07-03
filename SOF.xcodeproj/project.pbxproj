@@ -61,6 +61,10 @@
 		52E3BB7022C483B00062E8F4 /* AhasDownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */; };
 		52E3BB7222C484060062E8F4 /* Ahas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB7122C484060062E8F4 /* Ahas.swift */; };
 		52E3BB7422C484180062E8F4 /* AhasParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB7322C484180062E8F4 /* AhasParser.swift */; };
+		52F0FBC022CC60DA00DBBCFC /* WeatherHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0FBBF22CC60DA00DBBCFC /* WeatherHandler.swift */; };
+		52F0FBC222CC626400DBBCFC /* RestrictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0FBC122CC626400DBBCFC /* RestrictionsViewController.swift */; };
+		52F0FBC422CC63F300DBBCFC /* RestrictionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0FBC322CC63F300DBBCFC /* RestrictionsTableViewCell.swift */; };
+		52F0FBC922CCA35100DBBCFC /* UITableViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0FBC822CCA35100DBBCFC /* UITableViewController+Extension.swift */; };
 		52F3BCFD22B6268600F7F367 /* CoreDataXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BCF322B6268500F7F367 /* CoreDataXML.swift */; };
 		52F3BCFE22B6268600F7F367 /* SwiftDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BCF422B6268500F7F367 /* SwiftDecoders.swift */; };
 		52F3BCFF22B6268600F7F367 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BCF522B6268500F7F367 /* Enums.swift */; };
@@ -231,6 +235,10 @@
 		52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasDownLoader.swift; sourceTree = "<group>"; };
 		52E3BB7122C484060062E8F4 /* Ahas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ahas.swift; sourceTree = "<group>"; };
 		52E3BB7322C484180062E8F4 /* AhasParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasParser.swift; sourceTree = "<group>"; };
+		52F0FBBF22CC60DA00DBBCFC /* WeatherHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHandler.swift; sourceTree = "<group>"; };
+		52F0FBC122CC626400DBBCFC /* RestrictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionsViewController.swift; sourceTree = "<group>"; };
+		52F0FBC322CC63F300DBBCFC /* RestrictionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionsTableViewCell.swift; sourceTree = "<group>"; };
+		52F0FBC822CCA35100DBBCFC /* UITableViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewController+Extension.swift"; sourceTree = "<group>"; };
 		52F3BCF322B6268500F7F367 /* CoreDataXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataXML.swift; sourceTree = "<group>"; };
 		52F3BCF422B6268500F7F367 /* SwiftDecoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDecoders.swift; sourceTree = "<group>"; };
 		52F3BCF522B6268500F7F367 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -351,6 +359,7 @@
 				5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */,
 				5294101422BA9BE3008F05A0 /* UIView+Extension.swift */,
 				52A1879022CBA8D300531927 /* Int+Extension.swift */,
+				52F0FBC822CCA35100DBBCFC /* UITableViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,6 +407,7 @@
 				5265457322BA979C00EA210E /* CheckInViewController.swift */,
 				5223959A22BB73EA00EFEDD1 /* SetStatusViewController.swift */,
 				52A7454622CA05CC0056F736 /* SignIn */,
+				52F0FBC522CC682000DBBCFC /* Restrictions */,
 			);
 			path = NormalOpsTabSB;
 			sourceTree = "<group>";
@@ -560,6 +570,15 @@
 			path = AHAS;
 			sourceTree = "<group>";
 		};
+		52F0FBC522CC682000DBBCFC /* Restrictions */ = {
+			isa = PBXGroup;
+			children = (
+				52F0FBC122CC626400DBBCFC /* RestrictionsViewController.swift */,
+				52F0FBC322CC63F300DBBCFC /* RestrictionsTableViewCell.swift */,
+			);
+			path = Restrictions;
+			sourceTree = "<group>";
+		};
 		52F3BCF022B6260600F7F367 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +721,7 @@
 				52F3BDAD22B6295A00F7F367 /* AddsWeatherAPI.swift */,
 				52F3BDAE22B6295A00F7F367 /* METAR */,
 				52F3BDB222B6295A00F7F367 /* TAF */,
+				52F0FBBF22CC60DA00DBBCFC /* WeatherHandler.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -940,6 +960,7 @@
 				52F3BCFD22B6268600F7F367 /* CoreDataXML.swift in Sources */,
 				52F3BD0622B6268600F7F367 /* JSONFromDAFFIF.swift in Sources */,
 				522BE34422BFD19100D31E36 /* Extensions.swift in Sources */,
+				52F0FBC022CC60DA00DBBCFC /* WeatherHandler.swift in Sources */,
 				52F3BD9522B6276B00F7F367 /* Gen_CD+CoreDataClass.swift in Sources */,
 				52F3BD0022B6268600F7F367 /* UnzipDAFIF8.swift in Sources */,
 				5223959B22BB73EA00EFEDD1 /* SetStatusViewController.swift in Sources */,
@@ -950,12 +971,14 @@
 				52F3BDB922B6295A00F7F367 /* Metar.swift in Sources */,
 				5265457422BA979C00EA210E /* CheckInViewController.swift in Sources */,
 				52F3BD4122B6275A00F7F367 /* RwyCDU.swift in Sources */,
+				52F0FBC422CC63F300DBBCFC /* RestrictionsTableViewCell.swift in Sources */,
 				52A7454322C9FB280056F736 /* SignInAWSAuthNavController.swift in Sources */,
 				529630DD22AC3A5300CAD9BC /* EmergencyTabModel.swift in Sources */,
 				52F3BD9422B6276B00F7F367 /* Fueloil_CD+CoreDataProperties.swift in Sources */,
 				52F3BD3D22B6275A00F7F367 /* TrmSegCDU.swift in Sources */,
 				52F3BD5122B6275A00F7F367 /* AcomRmk.swift in Sources */,
 				52F3BDBC22B6295A00F7F367 /* TafParser.swift in Sources */,
+				52F0FBC922CCA35100DBBCFC /* UITableViewController+Extension.swift in Sources */,
 				52F3BD3F22B6275A00F7F367 /* TrmRmkCDU.swift in Sources */,
 				52F3BD4522B6275A00F7F367 /* GenCDU.swift in Sources */,
 				52F3BD8322B6276B00F7F367 /* Agear_CD+CoreDataClass.swift in Sources */,
@@ -996,6 +1019,7 @@
 				52F3BD8822B6276B00F7F367 /* TrmPar_CD+CoreDataProperties.swift in Sources */,
 				52F3BD4922B6275A00F7F367 /* FueloilCDU.swift in Sources */,
 				52F3BDB822B6295A00F7F367 /* MetarDownLoader.swift in Sources */,
+				52F0FBC222CC626400DBBCFC /* RestrictionsViewController.swift in Sources */,
 				52F3BD9B22B6276B00F7F367 /* SvcRmk_CD+CoreDataClass.swift in Sources */,
 				52D0952B22AC3649008A236B /* AppDelegate.swift in Sources */,
 				5294101122BA9BAD008F05A0 /* UIButton+Extension.swift in Sources */,
