@@ -56,24 +56,24 @@ struct SetStatusModel {
         
         case highSortiesOnly = "High Sorties Only"
         case lowSortiesOnly = "Low Sorties Only"
-        case noTouchAndGos = "No Touch & Go's"
-        case noAlternateAvailable = "No Alternates Available"
-        case vfrPatternClosed = "VFR Pattern Closed"
-        case alternateRequired = "Alternate Required"
-        case wxLessT_ApproachMins = "WX < Approach Mins"
-        case radarPatternOnly = "Radar Pattern Only"
+        case noTouchAndGos = "No U2 Touch & Go's"
+        case noAlternateAvailable = "No U2 Alternates Available"
+        case vfrPatternClosed = "U2 VFR Pattern Closed"
+        case alternateRequired = "U2 Alternate Required"
+        case wxLessT_ApproachMins = "WX < U2 Approach Mins"
+        case radarPatternOnly = "U2 Radar Pattern Only"
     }
     
     public enum T38Restrictions: String, PickerType, CaseIterable {
         public var description: String { return self.rawValue}
         
         
-        case noTouchAndGos = "No Touch & Go's"
-        case noAlternateAvailable = "No Alternates Available"
-        case vfrPatternClosed = "VFR Pattern Closed"
-        case alternateRequired = "Alternate Required"
-        case wxLessT_ApproachMins = "WX < Approach Mins"
-        case radarPatternOnly = "Radar Pattern Only"
+        case noTouchAndGos = "No T38 Touch & Go's"
+        case noAlternateAvailable = "No U2 Alternates Available"
+        case vfrPatternClosed = "T38 VFR Pattern Closed"
+        case alternateRequired = "T38 Alternate Required"
+        case wxLessT_ApproachMins = "WX < T38 Approach Mins"
+        case radarPatternOnly = "T38 Radar Pattern Only"
         case mhrBirdModerate = "MHR Bird Moderate"
         case mhrBirdSevere = "MHR Bird Severe"
     }

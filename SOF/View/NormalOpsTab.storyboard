@@ -455,7 +455,7 @@
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKZ-hM-GSg">
                                         <rect key="frame" x="0.0" y="0.0" width="633.5" height="667"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qcK-Fe-pjJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="633.5" height="667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="633" height="667"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="dark"/>
@@ -885,7 +885,7 @@
                                                                     <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <connections>
                                                                         <action selector="restrictSwitch:" destination="jWf-Sv-tNZ" eventType="primaryActionTriggered" id="lKv-4n-OpT"/>
-                                                                        <action selector="restrictionSwitch:" destination="fd8-rJ-aDw" eventType="valueChanged" id="sK1-Gv-4wW"/>
+                                                                        <action selector="restrictionSwitch:" destination="fd8-rJ-aDw" eventType="valueChanged" id="7vT-F8-Kek"/>
                                                                     </connections>
                                                                 </switch>
                                                             </subviews>
@@ -971,7 +971,7 @@
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnE-Cu-lFA">
                                         <rect key="frame" x="0.0" y="0.0" width="633.5" height="667"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZYF-6I-gAw">
-                                            <rect key="frame" x="0.0" y="0.0" width="633.5" height="667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="633" height="667"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="dark"/>

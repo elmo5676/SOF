@@ -18,16 +18,32 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
         restrictionsTableView.rowHeight = 50
     }
     
+    fileprivate func updateStoredData() {
+        combinedRestrictions = uds.getListOf(withKey: .listOfRestrictions)
+        u2Restrictions = uds.getListOf(withKey: .listOfU2Restrictions)
+        t38Restrictions = uds.getListOf(withKey: .listOfT38Restrictions)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateStoredData()
+    }
+    
     let statusModel = SetStatusModel()
     let u2Rest = SetStatusModel.U2Restrictions.allCases.self
     let t38Rest = SetStatusModel.T38Restrictions.allCases.self
     let combRest = SetStatusModel.CombinedRestrictions.allCases.self
     let uds = UserDefaultSetup()
+    var combinedRestrictions: [String] = []
+    var u2Restrictions: [String] = []
+    var t38Restrictions: [String] = []
     
     @IBOutlet weak var clearAllRestrictionsOutlet: UIButton!
     @IBAction func clearAllRestrictionsButton(_ sender: UIButton) {
         clearAllRestrictionsOutlet.showPressed()
         uds.clearAllListItems(withKey: .listOfRestrictions)
+        uds.clearAllListItems(withKey: .listOfU2Restrictions)
+        uds.clearAllListItems(withKey: .listOfT38Restrictions)
+        updateStoredData()
         restrictionsTableView.reloadData()
     }
     
@@ -54,30 +70,42 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
+    func makeSwitchMatchStoreData(restrictionSwitch: UISwitch, listOfRest: [String], restriction: String) {
+        if listOfRest.contains(restriction) {
+            restrictionSwitch.isOn = true
+        } else {
+            restrictionSwitch.isOn = false
+        }}
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "restrictionCell", for: indexPath) as! RestrictionsTableViewCell
-        let restrictions = uds.getListOf(withKey: .listOfRestrictions)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "restrictionCell") as! RestrictionsTableViewCell
         switch indexPath.section {
         case 0:
             cell.restrictionLabel.text = combRest[indexPath.row].rawValue
+//            makeSwitchMatchStoreData(restrictionSwitch: cell.restrictSwitchOutlet!, listOfRest: combinedRestrictions, restriction: cell.restrictionLabel.text!)
         case 1:
             cell.restrictionLabel.text = u2Rest[indexPath.row].rawValue
+//            makeSwitchMatchStoreData(restrictionSwitch: cell.restrictSwitchOutlet!, listOfRest: u2Restrictions, restriction: cell.restrictionLabel.text!)
         case 2:
             cell.restrictionLabel.text = t38Rest[indexPath.row].rawValue
+//            makeSwitchMatchStoreData(restrictionSwitch: cell.restrictSwitchOutlet!, listOfRest: t38Restrictions, restriction: cell.restrictionLabel.text!)
         default:
             cell.restrictionLabel.text = "testing"
         }
         
-        if restrictions.contains(cell.restrictionLabel.text!) {
-                cell.restrictSwitchOutlet.isOn = true
-            } else {
-                cell.restrictSwitchOutlet.isOn = false
-        }
+        var allRestrictions: [String] = []
+        let combinedRestrictions = uds.getListOf(withKey: .listOfRestrictions)
+        let u2Restrictions = uds.getListOf(withKey: .listOfU2Restrictions)
+        let t38Restrictions = uds.getListOf(withKey: .listOfU2Restrictions)
+        _ = combinedRestrictions.map {allRestrictions.append($0)}
+        _ = u2Restrictions.map {allRestrictions.append($0)}
+        _ = t38Restrictions.map {allRestrictions.append($0)}
+        makeSwitchMatchStoreData(restrictionSwitch: cell.restrictSwitchOutlet, listOfRest: allRestrictions, restriction: cell.restrictionLabel.text!)
+        
         return cell
     }
     
     @IBAction func restrictionSwitch(_ sender: UISwitch) {
-        print("not sure how?")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -97,7 +125,5 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
             return "No Soup for YOU!"
         }
     }
-    
-//    setCellB
     
 }
