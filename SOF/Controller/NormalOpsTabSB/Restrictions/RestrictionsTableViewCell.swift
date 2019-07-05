@@ -18,7 +18,6 @@ class RestrictionsTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        setSwitch()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,25 +26,22 @@ class RestrictionsTableViewCell: UITableViewCell {
     
     func allRestrictions() -> [String] {
         var result: [String] = []
-        let combinedRestrictions = uds.getListOf(withKey: .listOfRestrictions)
+        let combinedRestrictions = uds.getListOf(withKey: .listOfAirfieldRestrictions)
         let u2Restrictions = uds.getListOf(withKey: .listOfU2Restrictions)
-        let t38Restrictions = uds.getListOf(withKey: .listOfU2Restrictions)
+        let t38Restrictions = uds.getListOf(withKey: .listOfT38Restrictions)
         _ = combinedRestrictions.map {result.append($0)}
         _ = u2Restrictions.map {result.append($0)}
         _ = t38Restrictions.map {result.append($0)}
-        log.error(result)
         return result
     }
     
     func setSwitch() {
-        
         if let restriction = restrictionLabel.text {
             if allRestrictions().contains(restriction) {
                 restrictSwitchOutlet.isOn = true
             } else {
                 restrictSwitchOutlet.isOn = false
-            }
-        }
+            }}
     }
     
     

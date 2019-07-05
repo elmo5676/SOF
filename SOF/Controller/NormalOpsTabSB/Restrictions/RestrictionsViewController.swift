@@ -19,7 +19,7 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     fileprivate func updateStoredData() {
-        combinedRestrictions = uds.getListOf(withKey: .listOfRestrictions)
+        combinedRestrictions = uds.getListOf(withKey: .listOfAirfieldRestrictions)
         u2Restrictions = uds.getListOf(withKey: .listOfU2Restrictions)
         t38Restrictions = uds.getListOf(withKey: .listOfT38Restrictions)
     }
@@ -40,7 +40,7 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var clearAllRestrictionsOutlet: UIButton!
     @IBAction func clearAllRestrictionsButton(_ sender: UIButton) {
         clearAllRestrictionsOutlet.showPressed()
-        uds.clearAllListItems(withKey: .listOfRestrictions)
+        uds.clearAllListItems(withKey: .listOfAirfieldRestrictions)
         uds.clearAllListItems(withKey: .listOfU2Restrictions)
         uds.clearAllListItems(withKey: .listOfT38Restrictions)
         updateStoredData()
@@ -49,12 +49,16 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
     
     
     func inititialFormatting() {
-        clearAllRestrictionsOutlet.standardButtonFormatting()
+        clearAllRestrictionsOutlet.addBlurEffect(style: .dark)
+        clearAllRestrictionsOutlet.addLRPadding(10)
+        mainView.layer.cornerRadius = 10
     }
     
     
     
     //TableView
+    
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var restrictionsTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,21 +86,18 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
         switch indexPath.section {
         case 0:
             cell.restrictionLabel.text = combRest[indexPath.row].rawValue
-//            makeSwitchMatchStoreData(restrictionSwitch: cell.restrictSwitchOutlet!, listOfRest: combinedRestrictions, restriction: cell.restrictionLabel.text!)
         case 1:
             cell.restrictionLabel.text = u2Rest[indexPath.row].rawValue
-//            makeSwitchMatchStoreData(restrictionSwitch: cell.restrictSwitchOutlet!, listOfRest: u2Restrictions, restriction: cell.restrictionLabel.text!)
         case 2:
             cell.restrictionLabel.text = t38Rest[indexPath.row].rawValue
-//            makeSwitchMatchStoreData(restrictionSwitch: cell.restrictSwitchOutlet!, listOfRest: t38Restrictions, restriction: cell.restrictionLabel.text!)
         default:
             cell.restrictionLabel.text = "testing"
         }
         
         var allRestrictions: [String] = []
-        let combinedRestrictions = uds.getListOf(withKey: .listOfRestrictions)
+        let combinedRestrictions = uds.getListOf(withKey: .listOfAirfieldRestrictions)
         let u2Restrictions = uds.getListOf(withKey: .listOfU2Restrictions)
-        let t38Restrictions = uds.getListOf(withKey: .listOfU2Restrictions)
+        let t38Restrictions = uds.getListOf(withKey: .listOfT38Restrictions)
         _ = combinedRestrictions.map {allRestrictions.append($0)}
         _ = u2Restrictions.map {allRestrictions.append($0)}
         _ = t38Restrictions.map {allRestrictions.append($0)}
@@ -116,7 +117,7 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Restrictions"
+            return "Airfield Restrictions"
         case 1:
             return "U2 Restrictions"
         case 2:

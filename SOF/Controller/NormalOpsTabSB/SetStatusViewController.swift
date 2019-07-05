@@ -63,6 +63,12 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     
     @IBOutlet var itemLabels: [UILabel]!
     
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var currentStatusView: UIView!
+    @IBOutlet weak var updatingStatusView: UIView!
+    @IBOutlet weak var currentStatusTitelLabel: UILabel!
+    
+    
     @IBOutlet weak var updateStatusButtonOutlet: UIButton!
     @IBAction func updateStatusButton(_ sender: UIButton) {
         updateStatusButtonOutlet.showPressed()
@@ -97,35 +103,34 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     let statusModel = SetStatusModel()
     
     func initialSetup() {
-        self.hideKeyboardWhenTappedAround()
-        for tf in allTextFields {
-            tf.delegate = self
-        }
-        
-        u2StatusOutlet.inputView = PickerTextField<SetStatusModel.U2Status>(hostTextField: u2StatusOutlet)
-        t38StatusOutlet.inputView = PickerTextField<SetStatusModel.T38Status>(hostTextField: t38StatusOutlet)
-        u2RestrictionsOutlet.inputView = PickerTextField<SetStatusModel.U2Restrictions>(hostTextField: u2RestrictionsOutlet)
-        t38RestrictionsOutlet.inputView = PickerTextField<SetStatusModel.T38Restrictions>(hostTextField: t38RestrictionsOutlet)
-        u2AlternatesOutlet.inputView = PickerTextField<SetStatusModel.U2Alternates>(hostTextField: u2AlternatesOutlet)
-        t38AlternatesOutlet.inputView = PickerTextField<SetStatusModel.T38Alternates>(hostTextField: t38AlternatesOutlet)
-        navaidsOutlet.inputView = PickerTextField<SetStatusModel.Navaids>(hostTextField: navaidsOutlet)
-        approachLightsOutlet.inputView = PickerTextField<SetStatusModel.ApproachLights>(hostTextField: approachLightsOutlet)
-//        localAirfieldsOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: localAirfieldsOu tlet)
-        birdStatusOutlet.inputView = PickerTextField<SetStatusModel.BirdStatus>(hostTextField: birdStatusOutlet)
-        fitsOutlet.inputView = PickerTextField<SetStatusModel.Fits>(hostTextField: fitsOutlet)
-        activeRunwayOutlet.inputView = PickerTextField<SetStatusModel.ActiveRunway>(hostTextField: activeRunwayOutlet)
-        runwayConditionsOutlet.inputView = PickerTextField<SetStatusModel.RunwayCondition>(hostTextField: runwayConditionsOutlet)
-//        dateOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: dateOutlet)
-//        timeOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: timeOutlet)
-//        sofOnDutyOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: sofOnDutyOutlet)
+//        self.hideKeyboardWhenTappedAround()
+//        for tf in allTextFields {
+//            tf.delegate = self
+//        }
+//
+//        u2StatusOutlet.inputView = PickerTextField<SetStatusModel.U2Status>(hostTextField: u2StatusOutlet)
+//        t38StatusOutlet.inputView = PickerTextField<SetStatusModel.T38Status>(hostTextField: t38StatusOutlet)
+//        u2RestrictionsOutlet.inputView = PickerTextField<SetStatusModel.U2Restrictions>(hostTextField: u2RestrictionsOutlet)
+//        t38RestrictionsOutlet.inputView = PickerTextField<SetStatusModel.T38Restrictions>(hostTextField: t38RestrictionsOutlet)
+//        u2AlternatesOutlet.inputView = PickerTextField<SetStatusModel.U2Alternates>(hostTextField: u2AlternatesOutlet)
+//        t38AlternatesOutlet.inputView = PickerTextField<SetStatusModel.T38Alternates>(hostTextField: t38AlternatesOutlet)
+//        navaidsOutlet.inputView = PickerTextField<SetStatusModel.Navaids>(hostTextField: navaidsOutlet)
+//        approachLightsOutlet.inputView = PickerTextField<SetStatusModel.ApproachLights>(hostTextField: approachLightsOutlet)
+////        localAirfieldsOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: localAirfieldsOu tlet)
+//        birdStatusOutlet.inputView = PickerTextField<SetStatusModel.BirdStatus>(hostTextField: birdStatusOutlet)
+//        fitsOutlet.inputView = PickerTextField<SetStatusModel.Fits>(hostTextField: fitsOutlet)
+//        activeRunwayOutlet.inputView = PickerTextField<SetStatusModel.ActiveRunway>(hostTextField: activeRunwayOutlet)
+//        runwayConditionsOutlet.inputView = PickerTextField<SetStatusModel.RunwayCondition>(hostTextField: runwayConditionsOutlet)
+////        dateOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: dateOutlet)
+////        timeOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: timeOutlet)
+////        sofOnDutyOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: sofOnDutyOutlet)
     }
     
     func setFormatting() {
-        for label in itemLabels {
-            label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            label.textAlignment = .right
-        }
-        updateStatusButtonOutlet.standardButtonFormatting()
+        updateStatusButtonOutlet.addBlurEffect(style: .extraLight)
+        currentStatusView.addBlurEffecttoView(style: .dark, heightRatio: 0.8, widthRatio: 0.8)
+        updatingStatusView.addBlurEffecttoView(style: .dark, heightRatio: 0.8, widthRatio: 0.8)
+        currentStatusTitelLabel.addBlurEffectToLabel(style: .dark)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -138,9 +143,9 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
             allTextFields[i! + 1].becomeFirstResponder()}
         return true}
     
-    func getRestrictions() -> String {
+    func getRestrictions(key: UserDefaultSetup.KeyForDefaults) -> String {
         var result = ""
-        let restricionArray = uds.getListOf(withKey: .listOfRestrictions)
+        let restricionArray = uds.getListOf(withKey: key)
         for r in restricionArray {
             result += r
         }
@@ -154,8 +159,9 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         let newStatus = CreateSOFStatusInput(
             u2Status: "\(placeHolderText)",
             t38Status: "\(placeHolderText)",
-            u2Restrictions: "\(getRestrictions()))",
-            t38Restrictions: "\(placeHolderText)",
+            airfieldRestrictions: "\(getRestrictions(key: .listOfAirfieldRestrictions)))",
+            u2Restrictions: "\(getRestrictions(key: .listOfU2Restrictions)))",
+            t38Restrictions: "\(getRestrictions(key: .listOfT38Restrictions)))",
             u2Alternates: "\(placeHolderText)",
             t38Alternates: "\(placeHolderText))",
             navaids: "\(placeHolderText)",
@@ -168,7 +174,10 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
             timeStamp: "\(now)",
             sofOnDuty: "\(aws.username ?? placeHolderText)")
         
-        
+        print("************************************************")
+        print(getRestrictions(key: .listOfU2Restrictions))
+        print(getRestrictions(key: .listOfT38Restrictions))
+        print("************************************************")
         
         appSyncClient?.perform(mutation: CreateSofStatusMutation(input: newStatus)){ (result, error) in
             if let error = error as? AWSAppSyncClientError {

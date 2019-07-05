@@ -31,6 +31,7 @@
 		5242112B22B899810066FB88 /* EmergencyTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5242112A22B899810066FB88 /* EmergencyTab.storyboard */; };
 		5242112D22B899E50066FB88 /* NormalOpsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5242112C22B899E50066FB88 /* NormalOpsTab.storyboard */; };
 		5242113222B89BEA0066FB88 /* NormalOpsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */; };
+		525AA9FF22CFB8E500173CE8 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525AA9FE22CFB8E400173CE8 /* UILabel+Extension.swift */; };
 		5265457422BA979C00EA210E /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265457322BA979C00EA210E /* CheckInViewController.swift */; };
 		5265457722BA99DF00EA210E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265457622BA99DF00EA210E /* UIViewController+Extension.swift */; };
 		527BE79422C650F200CCC6F9 /* DateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527BE79322C650F200CCC6F9 /* DateHandler.swift */; };
@@ -203,6 +204,7 @@
 		5242112A22B899810066FB88 /* EmergencyTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmergencyTab.storyboard; sourceTree = "<group>"; };
 		5242112C22B899E50066FB88 /* NormalOpsTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NormalOpsTab.storyboard; sourceTree = "<group>"; };
 		5242113122B89BEA0066FB88 /* NormalOpsTabTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalOpsTabTableViewController.swift; sourceTree = "<group>"; };
+		525AA9FE22CFB8E400173CE8 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		5265457322BA979C00EA210E /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		5265457622BA99DF00EA210E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		527BE79322C650F200CCC6F9 /* DateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHandler.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				5294101422BA9BE3008F05A0 /* UIView+Extension.swift */,
 				52A1879022CBA8D300531927 /* Int+Extension.swift */,
 				52F0FBC822CCA35100DBBCFC /* UITableViewController+Extension.swift */,
+				525AA9FE22CFB8E400173CE8 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -991,6 +994,7 @@
 				52F3BD8C22B6276B00F7F367 /* Acom_CD+CoreDataProperties.swift in Sources */,
 				52F3BD9922B6276B00F7F367 /* Rwy_CD+CoreDataClass.swift in Sources */,
 				52F3BD8E22B6276B00F7F367 /* TrmClb_CD+CoreDataProperties.swift in Sources */,
+				525AA9FF22CFB8E500173CE8 /* UILabel+Extension.swift in Sources */,
 				5294101322BA9BC9008F05A0 /* UIColor+Extension.swift in Sources */,
 				5205743122BDF52400B79425 /* TimeCalculations.swift in Sources */,
 				52F3BD5A22B6275A00F7F367 /* Arpt.swift in Sources */,

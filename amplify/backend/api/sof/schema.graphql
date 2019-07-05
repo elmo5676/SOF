@@ -2,6 +2,7 @@ type SOFStatus @model {
   id: ID!
   u2Status: String
   t38Status: String
+  airfieldRestrictions: String
   u2Restrictions: String
   t38Restrictions: String
   u2Alternates: String

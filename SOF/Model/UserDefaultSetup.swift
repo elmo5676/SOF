@@ -19,7 +19,7 @@ struct UserDefaultSetup {
         case listOfT38LocalField = "listOfT38LocalField"
         case normalChecklists = "normalChecklists"
         case emergencyChecklists = "emergencyChecklists"
-        case listOfRestrictions = "listOfRestrictions"
+        case listOfAirfieldRestrictions = "listOfRestrictions"
         case listOfU2Restrictions = "listOfU2Restrictions"
         case listOfT38Restrictions = "listOfT38Restrictions"
     }
@@ -32,21 +32,11 @@ struct UserDefaultSetup {
     private var emergencyChecklists: [String: [String]] = [:] //["Checklist Name" : ["Step 1","Step 2"]]
     
     
-    private func addR(restriction: String, add: Bool, to: KeyForDefaults) -> [String] {
-        var result: [String] = []
-        if add {
-            result = addToList(item: restriction, withKey: to)
-        } else {
-            result = removeItemList(item: restriction, withKey: to)}
-        return result
-    }
-    
-    
     func addRemoveRestToFromCorrectList(restriction: String, add: Bool) -> [String] {
         var result: [String] = []
         switch restriction {
         case restriction where SetStatusModel.CombinedRestrictions(rawValue: restriction) != nil:
-            result = addR(restriction: restriction, add: add, to: .listOfRestrictions)
+            result = addR(restriction: restriction, add: add, to: .listOfAirfieldRestrictions)
         case restriction where SetStatusModel.U2Restrictions(rawValue: restriction) != nil:
             result = addR(restriction: restriction, add: add, to: .listOfU2Restrictions)
         case restriction where SetStatusModel.T38Restrictions(rawValue: restriction) != nil:
@@ -57,11 +47,19 @@ struct UserDefaultSetup {
         return result
     }
     
+    private func addR(restriction: String, add: Bool, to: KeyForDefaults) -> [String] {
+        var result: [String] = []
+        if add {
+            result = addToList(item: restriction, withKey: to)
+        } else {
+            result = removeItemList(item: restriction, withKey: to)
+        }
+        return result
+    }
+    
     func addToList(item: String, withKey: KeyForDefaults) -> [String] {
         var currentList: [String] = []
-        if let cSofs = defaults.object(forKey: withKey.rawValue) {
-            currentList = cSofs as! [String]
-        }
+        currentList = getListOf(withKey: withKey)
         currentList.append(item)
         defaults.setValue(currentList, forKey: withKey.rawValue)
         return currentList
@@ -72,20 +70,11 @@ struct UserDefaultSetup {
         defaults.setValue(currentList, forKey: withKey.rawValue)
     }
     
-    func getListOf(withKey: KeyForDefaults) -> [String] {
-        var result: [String] = []
-        if let listOfSof = defaults.object(forKey: withKey.rawValue) {
-            result = listOfSof as! [String]
-        }
-        return result
-    }
     
     func removeItemList(item: String, withKey: KeyForDefaults) -> [String] {
         var currentList = getListOf(withKey: withKey)
-        if currentList.contains(item) {
-            guard let i = currentList.firstIndex(of: item) else {return currentList}
-            currentList.remove(at: i)
-        }
+        currentList = currentList.filter { $0 != item }
+        defaults.setValue(currentList, forKey: withKey.rawValue)
         return currentList
     }
     
@@ -96,6 +85,14 @@ struct UserDefaultSetup {
         }
         currentChecklists[checkListName] = checklistItems
         defaults.set(currentChecklists, forKey: to.rawValue)
+    }
+    
+    func getListOf(withKey: KeyForDefaults) -> [String] {
+        var result: [String] = []
+        if let listOfSof = defaults.object(forKey: withKey.rawValue) {
+            result = listOfSof as! [String]
+        }
+        return result
     }
     
     func getChecklists() -> (normal: [String: [String]], emergency: [String: [String]]) {

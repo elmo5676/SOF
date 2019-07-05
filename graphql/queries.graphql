@@ -4,6 +4,7 @@ query GetSofStatus($id: ID!) {
     id
     u2Status
     t38Status
+    airfieldRestrictions
     u2Restrictions
     t38Restrictions
     u2Alternates
@@ -29,6 +30,7 @@ query ListSofStatuss(
       id
       u2Status
       t38Status
+      airfieldRestrictions
       u2Restrictions
       t38Restrictions
       u2Alternates

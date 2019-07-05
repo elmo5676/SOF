@@ -4,6 +4,7 @@ mutation CreateSofStatus($input: CreateSOFStatusInput!) {
     id
     u2Status
     t38Status
+    airfieldRestrictions
     u2Restrictions
     t38Restrictions
     u2Alternates
@@ -24,6 +25,7 @@ mutation UpdateSofStatus($input: UpdateSOFStatusInput!) {
     id
     u2Status
     t38Status
+    airfieldRestrictions
     u2Restrictions
     t38Restrictions
     u2Alternates
@@ -44,6 +46,7 @@ mutation DeleteSofStatus($input: DeleteSOFStatusInput!) {
     id
     u2Status
     t38Status
+    airfieldRestrictions
     u2Restrictions
     t38Restrictions
     u2Alternates

@@ -4,6 +4,7 @@ subscription OnCreateSofStatus {
     id
     u2Status
     t38Status
+    airfieldRestrictions
     u2Restrictions
     t38Restrictions
     u2Alternates
@@ -24,6 +25,7 @@ subscription OnUpdateSofStatus {
     id
     u2Status
     t38Status
+    airfieldRestrictions
     u2Restrictions
     t38Restrictions
     u2Alternates
@@ -44,6 +46,7 @@ subscription OnDeleteSofStatus {
     id
     u2Status
     t38Status
+    airfieldRestrictions
     u2Restrictions
     t38Restrictions
     u2Alternates

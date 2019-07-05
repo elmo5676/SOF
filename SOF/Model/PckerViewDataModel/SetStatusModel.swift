@@ -69,7 +69,7 @@ struct SetStatusModel {
         
         
         case noTouchAndGos = "No T38 Touch & Go's"
-        case noAlternateAvailable = "No U2 Alternates Available"
+        case noAlternateAvailable = "No T38 Alternates Available"
         case vfrPatternClosed = "T38 VFR Pattern Closed"
         case alternateRequired = "T38 Alternate Required"
         case wxLessT_ApproachMins = "WX < T38 Approach Mins"

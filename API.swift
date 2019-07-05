@@ -5,8 +5,8 @@ import AWSAppSync
 public struct CreateSOFStatusInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID? = nil, u2Status: String? = nil, t38Status: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
-    graphQLMap = ["id": id, "u2Status": u2Status, "t38Status": t38Status, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty]
+  public init(id: GraphQLID? = nil, u2Status: String? = nil, t38Status: String? = nil, airfieldRestrictions: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
+    graphQLMap = ["id": id, "u2Status": u2Status, "t38Status": t38Status, "airfieldRestrictions": airfieldRestrictions, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty]
   }
 
   public var id: GraphQLID? {
@@ -33,6 +33,15 @@ public struct CreateSOFStatusInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "t38Status")
+    }
+  }
+
+  public var airfieldRestrictions: String? {
+    get {
+      return graphQLMap["airfieldRestrictions"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "airfieldRestrictions")
     }
   }
 
@@ -157,8 +166,8 @@ public struct CreateSOFStatusInput: GraphQLMapConvertible {
 public struct UpdateSOFStatusInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
-    graphQLMap = ["id": id, "u2Status": u2Status, "t38Status": t38Status, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty]
+  public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, airfieldRestrictions: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
+    graphQLMap = ["id": id, "u2Status": u2Status, "t38Status": t38Status, "airfieldRestrictions": airfieldRestrictions, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty]
   }
 
   public var id: GraphQLID {
@@ -185,6 +194,15 @@ public struct UpdateSOFStatusInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "t38Status")
+    }
+  }
+
+  public var airfieldRestrictions: String? {
+    get {
+      return graphQLMap["airfieldRestrictions"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "airfieldRestrictions")
     }
   }
 
@@ -836,8 +854,8 @@ public struct DeleteEmergencyInput: GraphQLMapConvertible {
 public struct ModelSOFStatusFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: ModelIDFilterInput? = nil, u2Status: ModelStringFilterInput? = nil, t38Status: ModelStringFilterInput? = nil, u2Restrictions: ModelStringFilterInput? = nil, t38Restrictions: ModelStringFilterInput? = nil, u2Alternates: ModelStringFilterInput? = nil, t38Alternates: ModelStringFilterInput? = nil, navaids: ModelStringFilterInput? = nil, approachLights: ModelStringFilterInput? = nil, localAirfields: ModelStringFilterInput? = nil, birdStatus: ModelStringFilterInput? = nil, fits: ModelStringFilterInput? = nil, activeRunway: ModelStringFilterInput? = nil, runwayConditions: ModelStringFilterInput? = nil, timeStamp: ModelStringFilterInput? = nil, sofOnDuty: ModelStringFilterInput? = nil, and: [ModelSOFStatusFilterInput?]? = nil, or: [ModelSOFStatusFilterInput?]? = nil, not: ModelSOFStatusFilterInput? = nil) {
-    graphQLMap = ["id": id, "u2Status": u2Status, "t38Status": t38Status, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty, "and": and, "or": or, "not": not]
+  public init(id: ModelIDFilterInput? = nil, u2Status: ModelStringFilterInput? = nil, t38Status: ModelStringFilterInput? = nil, airfieldRestrictions: ModelStringFilterInput? = nil, u2Restrictions: ModelStringFilterInput? = nil, t38Restrictions: ModelStringFilterInput? = nil, u2Alternates: ModelStringFilterInput? = nil, t38Alternates: ModelStringFilterInput? = nil, navaids: ModelStringFilterInput? = nil, approachLights: ModelStringFilterInput? = nil, localAirfields: ModelStringFilterInput? = nil, birdStatus: ModelStringFilterInput? = nil, fits: ModelStringFilterInput? = nil, activeRunway: ModelStringFilterInput? = nil, runwayConditions: ModelStringFilterInput? = nil, timeStamp: ModelStringFilterInput? = nil, sofOnDuty: ModelStringFilterInput? = nil, and: [ModelSOFStatusFilterInput?]? = nil, or: [ModelSOFStatusFilterInput?]? = nil, not: ModelSOFStatusFilterInput? = nil) {
+    graphQLMap = ["id": id, "u2Status": u2Status, "t38Status": t38Status, "airfieldRestrictions": airfieldRestrictions, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty, "and": and, "or": or, "not": not]
   }
 
   public var id: ModelIDFilterInput? {
@@ -864,6 +882,15 @@ public struct ModelSOFStatusFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "t38Status")
+    }
+  }
+
+  public var airfieldRestrictions: ModelStringFilterInput? {
+    get {
+      return graphQLMap["airfieldRestrictions"] as! ModelStringFilterInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "airfieldRestrictions")
     }
   }
 
@@ -1654,7 +1681,7 @@ public struct ModelIntFilterInput: GraphQLMapConvertible {
 
 public final class CreateSofStatusMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateSofStatus($input: CreateSOFStatusInput!) {\n  createSOFStatus(input: $input) {\n    __typename\n    id\n    u2Status\n    t38Status\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
+    "mutation CreateSofStatus($input: CreateSOFStatusInput!) {\n  createSOFStatus(input: $input) {\n    __typename\n    id\n    u2Status\n    t38Status\n    airfieldRestrictions\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
 
   public var input: CreateSOFStatusInput
 
@@ -1700,6 +1727,7 @@ public final class CreateSofStatusMutation: GraphQLMutation {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("u2Status", type: .scalar(String.self)),
         GraphQLField("t38Status", type: .scalar(String.self)),
+        GraphQLField("airfieldRestrictions", type: .scalar(String.self)),
         GraphQLField("u2Restrictions", type: .scalar(String.self)),
         GraphQLField("t38Restrictions", type: .scalar(String.self)),
         GraphQLField("u2Alternates", type: .scalar(String.self)),
@@ -1721,8 +1749,8 @@ public final class CreateSofStatusMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
-        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
+      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, airfieldRestrictions: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
+        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "airfieldRestrictions": airfieldRestrictions, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
       }
 
       public var __typename: String {
@@ -1758,6 +1786,15 @@ public final class CreateSofStatusMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "t38Status")
+        }
+      }
+
+      public var airfieldRestrictions: String? {
+        get {
+          return snapshot["airfieldRestrictions"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "airfieldRestrictions")
         }
       }
 
@@ -1883,7 +1920,7 @@ public final class CreateSofStatusMutation: GraphQLMutation {
 
 public final class UpdateSofStatusMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateSofStatus($input: UpdateSOFStatusInput!) {\n  updateSOFStatus(input: $input) {\n    __typename\n    id\n    u2Status\n    t38Status\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
+    "mutation UpdateSofStatus($input: UpdateSOFStatusInput!) {\n  updateSOFStatus(input: $input) {\n    __typename\n    id\n    u2Status\n    t38Status\n    airfieldRestrictions\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
 
   public var input: UpdateSOFStatusInput
 
@@ -1929,6 +1966,7 @@ public final class UpdateSofStatusMutation: GraphQLMutation {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("u2Status", type: .scalar(String.self)),
         GraphQLField("t38Status", type: .scalar(String.self)),
+        GraphQLField("airfieldRestrictions", type: .scalar(String.self)),
         GraphQLField("u2Restrictions", type: .scalar(String.self)),
         GraphQLField("t38Restrictions", type: .scalar(String.self)),
         GraphQLField("u2Alternates", type: .scalar(String.self)),
@@ -1950,8 +1988,8 @@ public final class UpdateSofStatusMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
-        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
+      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, airfieldRestrictions: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
+        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "airfieldRestrictions": airfieldRestrictions, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
       }
 
       public var __typename: String {
@@ -1987,6 +2025,15 @@ public final class UpdateSofStatusMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "t38Status")
+        }
+      }
+
+      public var airfieldRestrictions: String? {
+        get {
+          return snapshot["airfieldRestrictions"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "airfieldRestrictions")
         }
       }
 
@@ -2112,7 +2159,7 @@ public final class UpdateSofStatusMutation: GraphQLMutation {
 
 public final class DeleteSofStatusMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteSofStatus($input: DeleteSOFStatusInput!) {\n  deleteSOFStatus(input: $input) {\n    __typename\n    id\n    u2Status\n    t38Status\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
+    "mutation DeleteSofStatus($input: DeleteSOFStatusInput!) {\n  deleteSOFStatus(input: $input) {\n    __typename\n    id\n    u2Status\n    t38Status\n    airfieldRestrictions\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
 
   public var input: DeleteSOFStatusInput
 
@@ -2158,6 +2205,7 @@ public final class DeleteSofStatusMutation: GraphQLMutation {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("u2Status", type: .scalar(String.self)),
         GraphQLField("t38Status", type: .scalar(String.self)),
+        GraphQLField("airfieldRestrictions", type: .scalar(String.self)),
         GraphQLField("u2Restrictions", type: .scalar(String.self)),
         GraphQLField("t38Restrictions", type: .scalar(String.self)),
         GraphQLField("u2Alternates", type: .scalar(String.self)),
@@ -2179,8 +2227,8 @@ public final class DeleteSofStatusMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
-        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
+      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, airfieldRestrictions: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
+        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "airfieldRestrictions": airfieldRestrictions, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
       }
 
       public var __typename: String {
@@ -2216,6 +2264,15 @@ public final class DeleteSofStatusMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "t38Status")
+        }
+      }
+
+      public var airfieldRestrictions: String? {
+        get {
+          return snapshot["airfieldRestrictions"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "airfieldRestrictions")
         }
       }
 
@@ -3799,7 +3856,7 @@ public final class DeleteEmergencyMutation: GraphQLMutation {
 
 public final class GetSofStatusQuery: GraphQLQuery {
   public static let operationString =
-    "query GetSofStatus($id: ID!) {\n  getSOFStatus(id: $id) {\n    __typename\n    id\n    u2Status\n    t38Status\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
+    "query GetSofStatus($id: ID!) {\n  getSOFStatus(id: $id) {\n    __typename\n    id\n    u2Status\n    t38Status\n    airfieldRestrictions\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
 
   public var id: GraphQLID
 
@@ -3845,6 +3902,7 @@ public final class GetSofStatusQuery: GraphQLQuery {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("u2Status", type: .scalar(String.self)),
         GraphQLField("t38Status", type: .scalar(String.self)),
+        GraphQLField("airfieldRestrictions", type: .scalar(String.self)),
         GraphQLField("u2Restrictions", type: .scalar(String.self)),
         GraphQLField("t38Restrictions", type: .scalar(String.self)),
         GraphQLField("u2Alternates", type: .scalar(String.self)),
@@ -3866,8 +3924,8 @@ public final class GetSofStatusQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
-        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
+      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, airfieldRestrictions: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
+        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "airfieldRestrictions": airfieldRestrictions, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
       }
 
       public var __typename: String {
@@ -3903,6 +3961,15 @@ public final class GetSofStatusQuery: GraphQLQuery {
         }
         set {
           snapshot.updateValue(newValue, forKey: "t38Status")
+        }
+      }
+
+      public var airfieldRestrictions: String? {
+        get {
+          return snapshot["airfieldRestrictions"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "airfieldRestrictions")
         }
       }
 
@@ -4028,7 +4095,7 @@ public final class GetSofStatusQuery: GraphQLQuery {
 
 public final class ListSofStatussQuery: GraphQLQuery {
   public static let operationString =
-    "query ListSofStatuss($filter: ModelSOFStatusFilterInput, $limit: Int, $nextToken: String) {\n  listSOFStatuss(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      id\n      u2Status\n      t38Status\n      u2Restrictions\n      t38Restrictions\n      u2Alternates\n      t38Alternates\n      navaids\n      approachLights\n      localAirfields\n      birdStatus\n      fits\n      activeRunway\n      runwayConditions\n      timeStamp\n      sofOnDuty\n    }\n    nextToken\n  }\n}"
+    "query ListSofStatuss($filter: ModelSOFStatusFilterInput, $limit: Int, $nextToken: String) {\n  listSOFStatuss(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      id\n      u2Status\n      t38Status\n      airfieldRestrictions\n      u2Restrictions\n      t38Restrictions\n      u2Alternates\n      t38Alternates\n      navaids\n      approachLights\n      localAirfields\n      birdStatus\n      fits\n      activeRunway\n      runwayConditions\n      timeStamp\n      sofOnDuty\n    }\n    nextToken\n  }\n}"
 
   public var filter: ModelSOFStatusFilterInput?
   public var limit: Int?
@@ -4124,6 +4191,7 @@ public final class ListSofStatussQuery: GraphQLQuery {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("u2Status", type: .scalar(String.self)),
           GraphQLField("t38Status", type: .scalar(String.self)),
+          GraphQLField("airfieldRestrictions", type: .scalar(String.self)),
           GraphQLField("u2Restrictions", type: .scalar(String.self)),
           GraphQLField("t38Restrictions", type: .scalar(String.self)),
           GraphQLField("u2Alternates", type: .scalar(String.self)),
@@ -4145,8 +4213,8 @@ public final class ListSofStatussQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
-          self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
+        public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, airfieldRestrictions: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
+          self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "airfieldRestrictions": airfieldRestrictions, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
         }
 
         public var __typename: String {
@@ -4182,6 +4250,15 @@ public final class ListSofStatussQuery: GraphQLQuery {
           }
           set {
             snapshot.updateValue(newValue, forKey: "t38Status")
+          }
+        }
+
+        public var airfieldRestrictions: String? {
+          get {
+            return snapshot["airfieldRestrictions"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "airfieldRestrictions")
           }
         }
 
@@ -5484,7 +5561,7 @@ public final class ListEmergencysQuery: GraphQLQuery {
 
 public final class OnCreateSofStatusSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateSofStatus {\n  onCreateSOFStatus {\n    __typename\n    id\n    u2Status\n    t38Status\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
+    "subscription OnCreateSofStatus {\n  onCreateSOFStatus {\n    __typename\n    id\n    u2Status\n    t38Status\n    airfieldRestrictions\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
 
   public init() {
   }
@@ -5523,6 +5600,7 @@ public final class OnCreateSofStatusSubscription: GraphQLSubscription {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("u2Status", type: .scalar(String.self)),
         GraphQLField("t38Status", type: .scalar(String.self)),
+        GraphQLField("airfieldRestrictions", type: .scalar(String.self)),
         GraphQLField("u2Restrictions", type: .scalar(String.self)),
         GraphQLField("t38Restrictions", type: .scalar(String.self)),
         GraphQLField("u2Alternates", type: .scalar(String.self)),
@@ -5544,8 +5622,8 @@ public final class OnCreateSofStatusSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
-        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
+      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, airfieldRestrictions: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
+        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "airfieldRestrictions": airfieldRestrictions, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
       }
 
       public var __typename: String {
@@ -5581,6 +5659,15 @@ public final class OnCreateSofStatusSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "t38Status")
+        }
+      }
+
+      public var airfieldRestrictions: String? {
+        get {
+          return snapshot["airfieldRestrictions"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "airfieldRestrictions")
         }
       }
 
@@ -5706,7 +5793,7 @@ public final class OnCreateSofStatusSubscription: GraphQLSubscription {
 
 public final class OnUpdateSofStatusSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateSofStatus {\n  onUpdateSOFStatus {\n    __typename\n    id\n    u2Status\n    t38Status\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
+    "subscription OnUpdateSofStatus {\n  onUpdateSOFStatus {\n    __typename\n    id\n    u2Status\n    t38Status\n    airfieldRestrictions\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
 
   public init() {
   }
@@ -5745,6 +5832,7 @@ public final class OnUpdateSofStatusSubscription: GraphQLSubscription {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("u2Status", type: .scalar(String.self)),
         GraphQLField("t38Status", type: .scalar(String.self)),
+        GraphQLField("airfieldRestrictions", type: .scalar(String.self)),
         GraphQLField("u2Restrictions", type: .scalar(String.self)),
         GraphQLField("t38Restrictions", type: .scalar(String.self)),
         GraphQLField("u2Alternates", type: .scalar(String.self)),
@@ -5766,8 +5854,8 @@ public final class OnUpdateSofStatusSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
-        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
+      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, airfieldRestrictions: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
+        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "airfieldRestrictions": airfieldRestrictions, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
       }
 
       public var __typename: String {
@@ -5803,6 +5891,15 @@ public final class OnUpdateSofStatusSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "t38Status")
+        }
+      }
+
+      public var airfieldRestrictions: String? {
+        get {
+          return snapshot["airfieldRestrictions"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "airfieldRestrictions")
         }
       }
 
@@ -5928,7 +6025,7 @@ public final class OnUpdateSofStatusSubscription: GraphQLSubscription {
 
 public final class OnDeleteSofStatusSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteSofStatus {\n  onDeleteSOFStatus {\n    __typename\n    id\n    u2Status\n    t38Status\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
+    "subscription OnDeleteSofStatus {\n  onDeleteSOFStatus {\n    __typename\n    id\n    u2Status\n    t38Status\n    airfieldRestrictions\n    u2Restrictions\n    t38Restrictions\n    u2Alternates\n    t38Alternates\n    navaids\n    approachLights\n    localAirfields\n    birdStatus\n    fits\n    activeRunway\n    runwayConditions\n    timeStamp\n    sofOnDuty\n  }\n}"
 
   public init() {
   }
@@ -5967,6 +6064,7 @@ public final class OnDeleteSofStatusSubscription: GraphQLSubscription {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("u2Status", type: .scalar(String.self)),
         GraphQLField("t38Status", type: .scalar(String.self)),
+        GraphQLField("airfieldRestrictions", type: .scalar(String.self)),
         GraphQLField("u2Restrictions", type: .scalar(String.self)),
         GraphQLField("t38Restrictions", type: .scalar(String.self)),
         GraphQLField("u2Alternates", type: .scalar(String.self)),
@@ -5988,8 +6086,8 @@ public final class OnDeleteSofStatusSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
-        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
+      public init(id: GraphQLID, u2Status: String? = nil, t38Status: String? = nil, airfieldRestrictions: String? = nil, u2Restrictions: String? = nil, t38Restrictions: String? = nil, u2Alternates: String? = nil, t38Alternates: String? = nil, navaids: String? = nil, approachLights: String? = nil, localAirfields: String? = nil, birdStatus: String? = nil, fits: String? = nil, activeRunway: String? = nil, runwayConditions: String? = nil, timeStamp: String? = nil, sofOnDuty: String? = nil) {
+        self.init(snapshot: ["__typename": "SOFStatus", "id": id, "u2Status": u2Status, "t38Status": t38Status, "airfieldRestrictions": airfieldRestrictions, "u2Restrictions": u2Restrictions, "t38Restrictions": t38Restrictions, "u2Alternates": u2Alternates, "t38Alternates": t38Alternates, "navaids": navaids, "approachLights": approachLights, "localAirfields": localAirfields, "birdStatus": birdStatus, "fits": fits, "activeRunway": activeRunway, "runwayConditions": runwayConditions, "timeStamp": timeStamp, "sofOnDuty": sofOnDuty])
       }
 
       public var __typename: String {
@@ -6025,6 +6123,15 @@ public final class OnDeleteSofStatusSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "t38Status")
+        }
+      }
+
+      public var airfieldRestrictions: String? {
+        get {
+          return snapshot["airfieldRestrictions"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "airfieldRestrictions")
         }
       }
 

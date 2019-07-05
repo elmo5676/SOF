@@ -45,6 +45,44 @@ extension UIButton {
         }
     }
     
+    func addBlurEffect(style: UIBlurEffect.Style) {
+        let cornerRadius: CGFloat = 5
+        let blur = UIVisualEffectView(effect: UIBlurEffect(style: style))
+        blur.frame = self.bounds
+        blur.isUserInteractionEnabled = false
+        self.insertSubview(blur, at: 0)
+        if let imageView = self.imageView{
+            self.bringSubviewToFront(imageView)
+        }
+        blur.layer.cornerRadius = cornerRadius
+        blur.clipsToBounds = true
+        blur.layer.masksToBounds = true
+        self.backgroundColor = .clear
+        self.layer.cornerRadius = cornerRadius
+        self.layer.borderWidth = 0.5
+        switch style {
+        case .dark:
+            self.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            self.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        case .light:
+            self.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            self.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        case .extraLight:
+            self.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            self.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        case .prominent:
+            print("Not supported yet")
+        case .regular:
+            print("Not supported yet")
+        default:
+            print("Not supported yet")
+        }
+    }
+    
+    func addLRPadding(_ padding: CGFloat) {
+        titleEdgeInsets = UIEdgeInsets(top: 0.0, left: padding, bottom: 0.0, right: padding)
+    }
+    
     func standardButtonFormatting() {
         self.backgroundColor = #colorLiteral(red: 0.2764866352, green: 0.3470229506, blue: 0.4352231026, alpha: 1)
         self.layer.borderColor = #colorLiteral(red: 0.2771260142, green: 0.3437626958, blue: 0.4359292388, alpha: 1)
