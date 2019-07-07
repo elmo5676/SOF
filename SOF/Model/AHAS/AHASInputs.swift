@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AhasArea: PickerType, CaseIterable, RawRepresentable {
+protocol AhasArea: PickerType, CaseIterable {
 }
 
 struct AHASInputs {

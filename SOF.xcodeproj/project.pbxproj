@@ -56,6 +56,8 @@
 		52D0953822AC364A008A236B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0953622AC364A008A236B /* LaunchScreen.storyboard */; };
 		52D0954422AC3714008A236B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954022AC3714008A236B /* MainTabBarController.swift */; };
 		52D2D2C922D266730030C79B /* GraphQLSelectionSet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2D2C822D266730030C79B /* GraphQLSelectionSet+Extension.swift */; };
+		52D2D2D222D299730030C79B /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2D2D122D299730030C79B /* SwiftyUserDefaults.swift */; };
+		52D2D2D422D29B7B0030C79B /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2D2D322D29B7B0030C79B /* SwiftyTimer.swift */; };
 		52E19DC522C9C76900A06C54 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 52E19DC422C9C76800A06C54 /* awsconfiguration.json */; };
 		52E19DC722C9CE8200A06C54 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E19DC622C9CE8200A06C54 /* API.swift */; };
 		52E3BB6C22C477E60062E8F4 /* AHASInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */; };
@@ -232,6 +234,8 @@
 		52D0953922AC364A008A236B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D0954022AC3714008A236B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		52D2D2C822D266730030C79B /* GraphQLSelectionSet+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GraphQLSelectionSet+Extension.swift"; sourceTree = "<group>"; };
+		52D2D2D122D299730030C79B /* SwiftyUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaults.swift; sourceTree = "<group>"; };
+		52D2D2D322D29B7B0030C79B /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
 		52E19DC422C9C76800A06C54 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		52E19DC622C9CE8200A06C54 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
 		52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHASInputs.swift; sourceTree = "<group>"; };
@@ -512,6 +516,8 @@
 				52E19DC322C9C74B00A06C54 /* AWS */,
 				527BE79322C650F200CCC6F9 /* DateHandler.swift */,
 				523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */,
+				52D2D2D322D29B7B0030C79B /* SwiftyTimer.swift */,
+				52D2D2D122D299730030C79B /* SwiftyUserDefaults.swift */,
 				52F3BDBD22B62B9900F7F367 /* Observable.swift */,
 				5265457222BA588C00EA210E /* PickerSpecial */,
 				5294101622BA9EFA008F05A0 /* PckerViewDataModel */,
@@ -929,8 +935,10 @@
 				52F3BDA022B6276B00F7F367 /* AcomRmk_CD+CoreDataProperties.swift in Sources */,
 				5294101522BA9BE3008F05A0 /* UIView+Extension.swift in Sources */,
 				52F3BD9722B6276B00F7F367 /* Nav_CD+CoreDataClass.swift in Sources */,
+				52D2D2D422D29B7B0030C79B /* SwiftyTimer.swift in Sources */,
 				52F3BDBA22B6295A00F7F367 /* Taf.swift in Sources */,
 				5294101822BA9F1C008F05A0 /* RankPV.swift in Sources */,
+				52D2D2D222D299730030C79B /* SwiftyUserDefaults.swift in Sources */,
 				52F3BDA522B6276B00F7F367 /* AddRwy_CD+CoreDataClass.swift in Sources */,
 				52F3BD4722B6275A00F7F367 /* TrmClbCDU.swift in Sources */,
 				52F3BD9022B6276B00F7F367 /* TrmMin_CD+CoreDataProperties.swift in Sources */,

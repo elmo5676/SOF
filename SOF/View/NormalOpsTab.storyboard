@@ -725,7 +725,7 @@
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPN-lW-Cin">
                                         <rect key="frame" x="0.0" y="0.0" width="633.5" height="625.5"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hGw-xN-6wb">
-                                            <rect key="frame" x="0.0" y="0.0" width="633" height="626"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="633.5" height="625.5"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="dark"/>
@@ -848,7 +848,7 @@
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnE-Cu-lFA">
                                         <rect key="frame" x="0.0" y="0.0" width="633.5" height="667"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZYF-6I-gAw">
-                                            <rect key="frame" x="0.0" y="0.0" width="633" height="667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="633.5" height="667"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="dark"/>

@@ -13,7 +13,6 @@ import AWSMobileClient
 class SignInAWSAuthNavController: UINavigationController {
     
     override func viewDidLoad() {
-//        self.navigationController?.navigationBar.
         let aws = AWSMobileClient.sharedInstance()
         if aws.isSignedIn {
         } else {
