@@ -70,8 +70,6 @@ class AhasParser: NSObject, XMLParserDelegate {
                                 alt4: ahas[AhasField.alt4.rawValue],
                                 alt5: ahas[AhasField.alt5.rawValue])
                 self.ahas.append(bird)
-                log.debug(ahas)
-                print(ahas)
             }}}
     
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {

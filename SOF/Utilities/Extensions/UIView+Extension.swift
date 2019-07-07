@@ -39,7 +39,6 @@ extension UIView {
     func addBlurEffecttoView(style: UIBlurEffect.Style, heightRatio: CGFloat, widthRatio: CGFloat) {
         let hRatio = 1/heightRatio
         let wRatio = 1/widthRatio
-        print("Height: \(hRatio) ||||  Width: \(wRatio)")
         let cornerRadius: CGFloat = 5
         let blur = UIVisualEffectView(effect: UIBlurEffect(style: style))
         let frame = self.frame

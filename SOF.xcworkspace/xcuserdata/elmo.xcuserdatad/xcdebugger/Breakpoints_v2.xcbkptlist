@@ -35,5 +35,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "API.swift"
+            timestampString = "584220997.5207959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "4186"
+            endingLineNumber = "4186"
+            landmarkName = "Item"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_B2FBA93731E2240F7C671CE0F8D2DBEF_func85"
+                  moduleName = "SOF"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elmo/Dropbox/00_Elmo/05_Coding/03_Working/SOFBuddy/SOF/API.swift"
+                  timestampString = "584214928.181046"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "4187"
+                  endingLineNumber = "4187"
+                  offsetFromSymbolStart = "22">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SOF.ListSofStatussQuery.Data.ListSofStatuss.Item.possibleTypes.unsafeMutableAddressor : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "SOF"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elmo/Dropbox/00_Elmo/05_Coding/03_Working/SOFBuddy/SOF/API.swift"
+                  timestampString = "584214928.184087"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "4187"
+                  endingLineNumber = "4187"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

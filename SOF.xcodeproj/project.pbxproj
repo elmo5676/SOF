@@ -55,6 +55,7 @@
 		52D0953322AC3649008A236B /* SOF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52D0953122AC3649008A236B /* SOF.xcdatamodeld */; };
 		52D0953822AC364A008A236B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0953622AC364A008A236B /* LaunchScreen.storyboard */; };
 		52D0954422AC3714008A236B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0954022AC3714008A236B /* MainTabBarController.swift */; };
+		52D2D2C922D266730030C79B /* GraphQLSelectionSet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2D2C822D266730030C79B /* GraphQLSelectionSet+Extension.swift */; };
 		52E19DC522C9C76900A06C54 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 52E19DC422C9C76800A06C54 /* awsconfiguration.json */; };
 		52E19DC722C9CE8200A06C54 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E19DC622C9CE8200A06C54 /* API.swift */; };
 		52E3BB6C22C477E60062E8F4 /* AHASInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */; };
@@ -230,6 +231,7 @@
 		52D0953722AC364A008A236B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D0953922AC364A008A236B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D0954022AC3714008A236B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		52D2D2C822D266730030C79B /* GraphQLSelectionSet+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GraphQLSelectionSet+Extension.swift"; sourceTree = "<group>"; };
 		52E19DC422C9C76800A06C54 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		52E19DC622C9CE8200A06C54 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
 		52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHASInputs.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				52A1879022CBA8D300531927 /* Int+Extension.swift */,
 				52F0FBC822CCA35100DBBCFC /* UITableViewController+Extension.swift */,
 				525AA9FE22CFB8E400173CE8 /* UILabel+Extension.swift */,
+				52D2D2C822D266730030C79B /* GraphQLSelectionSet+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -939,6 +942,7 @@
 				522BE34B22BFD19100D31E36 /* BaseDestination.swift in Sources */,
 				52F3BD0322B6268600F7F367 /* CoreDataStackCreator.swift in Sources */,
 				52F3BD9222B6276B00F7F367 /* Anav_CD+CoreDataProperties.swift in Sources */,
+				52D2D2C922D266730030C79B /* GraphQLSelectionSet+Extension.swift in Sources */,
 				52F3BD9822B6276B00F7F367 /* Nav_CD+CoreDataProperties.swift in Sources */,
 				52F3BD0B22B6269500F7F367 /* String+Extension.swift in Sources */,
 				522BE34722BFD19100D31E36 /* Filter.swift in Sources */,

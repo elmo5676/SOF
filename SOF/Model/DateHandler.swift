@@ -14,7 +14,9 @@ enum DateSource: String {
     case tafStartEnd = "yyyy'-'MM'-'dd' 'HH':'mm':'ss' +'Z"
     case ahas = "yyyy'-'MM'-'dd' 'HH':'mm':'ss.sss"
     case reference = "yyyyMMddHHmmss"
-    case aws = "yyyy'-'MM'-'dd'T'HH':'mm':'sssss'Z'" //"2019-07-02T07:59:59.303Z"
+    case aws = "yyyy'-'MM'-'dd'T'HH':'mm':'sssss'Z'"
+    case swiftStandard = "yyyy'-'MM'-'dd' 'HH':'mm':'ss' 'Z'"
+    case stringDisplay = "MMM d, hh:mm"
 }
 
 struct DateHandler {
@@ -32,6 +34,20 @@ struct DateHandler {
             if let date = date {return df.date(from: date)}
         }
         return nil
+    }
+    
+    func dateInDisplayFormat(_ date: String?) -> String? {
+        let df = DateFormatter()
+        let displayDf = DateFormatter()
+        df.dateFormat = DateSource.swiftStandard.rawValue
+        displayDf.dateFormat = DateSource.stringDisplay.rawValue
+        df.timeZone = TimeZone(abbreviation: "UTC")
+        displayDf.timeZone = TimeZone(abbreviation: "PST")
+        if let date = date {
+            if let dateUnformatted = df.date(from: date) {
+                return displayDf.string(from: dateUnformatted)
+            } else { return nil }
+        } else { return nil }
     }
     
     //Returns Dates of Now and hours in the future Date

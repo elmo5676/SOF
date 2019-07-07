@@ -46,7 +46,6 @@ struct AhasDownLoader {
     private func getBirdCondition<T: AhasArea>(area: T, month: AHASInputs.Month, day: AHASInputs.Day, hourZ: AHASInputs.Hour, duration: Int?) {
         let month = AHASInputs().monthIntReturn(month)
         let url = AhasAPI.AhasURL(area: area.rawValue as! String, month: month, day: day.rawValue, hour: hourZ.rawValue, parameters: nil)
-        log.info(url)
         let request = URLRequest(url: url)
         let task = self.session.dataTask(with: request) { (data, response, error) -> Void in
             if let XMLData = data {
@@ -64,7 +63,6 @@ struct AhasDownLoader {
     
     private func getBirdCondition<T: AhasArea>(area: T, month: String, day: String, hourZ: String, duration: Int?) {
         let url = AhasAPI.AhasURL(area: area.rawValue as! String, month: month, day: day, hour: hourZ, parameters: nil)
-        log.info(url)
         let request = URLRequest(url: url)
         let task = self.session.dataTask(with: request) { (data, response, error) -> Void in
             if let XMLData = data {

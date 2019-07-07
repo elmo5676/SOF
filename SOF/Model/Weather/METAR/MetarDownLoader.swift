@@ -17,6 +17,7 @@ struct MetarDownLoader {
     var delagate: MetarDelegate?
     var metarLoc: MetarLoc!
     var refreshUI: Bool!
+    let log = SwiftyBeaver.self
 
     init(icao: String,
          delagate: UIViewController,
@@ -44,7 +45,6 @@ struct MetarDownLoader {
     
     private func getMetarFor(icao: String) {
         let url = AddsWeatherAPI().weatherURL(type: .metar, icao: "\(icao)", parameters: nil)
-        log.debug(url)
         let request = URLRequest(url: url)
         let task = self.session.dataTask(with: request) { (data, response, error) -> Void in
             if let XMLData = data {
@@ -53,9 +53,9 @@ struct MetarDownLoader {
                     self.delagate?.getCurrentMetar(cm, metarLoc: self.metarLoc, refreshUI: self.refreshUI)
                 }
             } else if let requestError = error {
-                print("Error fetching metar: \(requestError)")
+                self.log.error("Error fetching metar: \(requestError)")
             } else {
-                print("Unexpected error with request")
+                self.log.error("Unexpected error with request")
             }
         }
         task.resume()

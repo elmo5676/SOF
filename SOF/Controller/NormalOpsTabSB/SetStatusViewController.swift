@@ -6,6 +6,41 @@
 //  Copyright © 2019 Matthew Elmore. All rights reserved.
 //
 
+// MARK: - Scrap:
+//        self.hideKeyboardWhenTappedAround()
+//        for tf in allTextFields {
+//            tf.delegate = self
+//        }
+////        sofOnDutyOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: sofOnDutyOutlet)
+
+
+//"SOF: "
+//"Status Updated: ",
+
+
+//"T-38 Status: ",
+//"T-38 Retrictions: ",
+//"T-38 Alternates: ",
+
+
+//"U-2 Status: ",
+//"U-2 Restrictions: ",
+//"U-2 Alternates: ",
+
+//"Airfield Restrictions: ",
+//"Active Runway: ",
+//"Runway Condition: ",
+//"Navaid Status: ",
+//"Approach Lights: ",
+//"Bird Status: ",
+//"FITS: ",
+
+//"Local Airfields: ",
+
+
+
+
+
 
 import UIKit
 import AWSAppSync
@@ -13,11 +48,14 @@ import AWSMobileClient
 
 class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDelegate, AhasDelegate {
     
+    var discard: Cancellable?
     var appSyncClient: AWSAppSyncClient?
     let aws = AWSMobileClient.sharedInstance()
     let log = SwiftyBeaver.self
     let console = ConsoleDestination()
     let uds = UserDefaultSetup()
+    let statusModel = SetStatusModel()
+    let dh = DateHandler()
     var metarStore: MetarDownLoader?
     var ahasDownloader: AhasDownLoader?
     var ahas: [Ahas]? = []
@@ -27,44 +65,46 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialSetup()
-        setFormatting()
-        appSyncClient = appDelegate.appSyncClient
-        metarStore?.delagate = self
-        ahasDownloader?.delegate = self
-        updateWx()
-        getBirdCondition()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        initialSetup()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         
     }
     
-    @IBOutlet var allTextFields: [UITextField]!
-    @IBOutlet weak var u2StatusOutlet: UITextField!
-    @IBOutlet weak var t38StatusOutlet: UITextField!
-    @IBOutlet weak var u2RestrictionsOutlet: UITextField!
-    @IBOutlet weak var t38RestrictionsOutlet: UITextField!
-    @IBOutlet weak var u2AlternatesOutlet: UITextField!
-    @IBOutlet weak var t38AlternatesOutlet: UITextField!
-    @IBOutlet weak var navaidsOutlet: UITextField!
-    @IBOutlet weak var approachLightsOutlet: UITextField!
-    @IBOutlet weak var localAirfieldsOutlet: UITextField!
-    @IBOutlet weak var birdStatusOutlet: UITextField!
-    @IBOutlet weak var fitsOutlet: UITextField!
-    @IBOutlet weak var activeRunwayOutlet: UITextField!
-    @IBOutlet weak var runwayConditionsOutlet: UITextField!
-    @IBOutlet weak var dateOutlet: UITextField!
-    @IBOutlet weak var timeOutlet: UITextField!
-    @IBOutlet weak var sofOnDutyOutlet: UITextField!
+    @IBOutlet var allLabels: [UILabel]!
     
-    @IBOutlet var itemLabels: [UILabel]!
+    @IBOutlet weak var navaidsOutlet: UILabel!
+    @IBOutlet weak var approachLightsOutlet: UILabel!
+    @IBOutlet weak var localAirfieldsOutlet: UILabel!
+    @IBOutlet weak var birdStatusOutlet: UILabel!
+    @IBOutlet weak var fitsOutlet: UILabel!
+    @IBOutlet weak var activeRunwayOutlet: UILabel!
+    @IBOutlet weak var runwayConditionsOutlet: UILabel!
+    @IBOutlet weak var dateOutlet: UILabel!
+    
     
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var updatedTimeOutlet: UILabel!
+    @IBOutlet weak var sofOnDutyOutlet: UILabel!
+    
+    
     @IBOutlet weak var currentStatusView: UIView!
+    @IBOutlet weak var T38StatusView: UIView!
+    @IBOutlet weak var t38StatusOutlet: UILabel!
+    @IBOutlet weak var t38AlternatesOutlet: UILabel!
+    @IBOutlet weak var t38RestrictionsOutlet: UILabel!
+    
+    @IBOutlet weak var U2StatusView: UIView!
+    @IBOutlet weak var u2StatusOutlet: UILabel!
+    @IBOutlet weak var u2AlternatesOutlet: UILabel!
+    @IBOutlet weak var u2RestrictionsOutlet: UILabel!
+    
+    
+    
     @IBOutlet weak var updatingStatusView: UIView!
     @IBOutlet weak var currentStatusTitelLabel: UILabel!
     
@@ -73,7 +113,23 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     @IBAction func updateStatusButton(_ sender: UIButton) {
         updateStatusButtonOutlet.showPressed()
         setStatus()
+    }
+    
+    func initialSetup() {
+        appSyncClient = appDelegate.appSyncClient
+        metarStore?.delagate = self
+        ahasDownloader?.delegate = self
+        setFormatting()
+        subscribe()
+        getBirdCondition()
+        updateWx()
         getStatus()
+    }
+    
+    func setFormatting() {
+        updateStatusButtonOutlet.addBlurEffect(style: .extraLight)
+        currentStatusView.addBlurEffecttoView(style: .dark, heightRatio: 0.8, widthRatio: 0.8)
+        updatingStatusView.addBlurEffecttoView(style: .dark, heightRatio: 0.8, widthRatio: 0.8)
     }
     
     
@@ -100,48 +156,6 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         metarStore = MetarDownLoader(icao: "KBAB", delagate: self, metarLoc: .icao, refreshUI: false)
     }
     
-    let statusModel = SetStatusModel()
-    
-    func initialSetup() {
-//        self.hideKeyboardWhenTappedAround()
-//        for tf in allTextFields {
-//            tf.delegate = self
-//        }
-//
-//        u2StatusOutlet.inputView = PickerTextField<SetStatusModel.U2Status>(hostTextField: u2StatusOutlet)
-//        t38StatusOutlet.inputView = PickerTextField<SetStatusModel.T38Status>(hostTextField: t38StatusOutlet)
-//        u2RestrictionsOutlet.inputView = PickerTextField<SetStatusModel.U2Restrictions>(hostTextField: u2RestrictionsOutlet)
-//        t38RestrictionsOutlet.inputView = PickerTextField<SetStatusModel.T38Restrictions>(hostTextField: t38RestrictionsOutlet)
-//        u2AlternatesOutlet.inputView = PickerTextField<SetStatusModel.U2Alternates>(hostTextField: u2AlternatesOutlet)
-//        t38AlternatesOutlet.inputView = PickerTextField<SetStatusModel.T38Alternates>(hostTextField: t38AlternatesOutlet)
-//        navaidsOutlet.inputView = PickerTextField<SetStatusModel.Navaids>(hostTextField: navaidsOutlet)
-//        approachLightsOutlet.inputView = PickerTextField<SetStatusModel.ApproachLights>(hostTextField: approachLightsOutlet)
-////        localAirfieldsOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: localAirfieldsOu tlet)
-//        birdStatusOutlet.inputView = PickerTextField<SetStatusModel.BirdStatus>(hostTextField: birdStatusOutlet)
-//        fitsOutlet.inputView = PickerTextField<SetStatusModel.Fits>(hostTextField: fitsOutlet)
-//        activeRunwayOutlet.inputView = PickerTextField<SetStatusModel.ActiveRunway>(hostTextField: activeRunwayOutlet)
-//        runwayConditionsOutlet.inputView = PickerTextField<SetStatusModel.RunwayCondition>(hostTextField: runwayConditionsOutlet)
-////        dateOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: dateOutlet)
-////        timeOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: timeOutlet)
-////        sofOnDutyOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: sofOnDutyOutlet)
-    }
-    
-    func setFormatting() {
-        updateStatusButtonOutlet.addBlurEffect(style: .extraLight)
-        currentStatusView.addBlurEffecttoView(style: .dark, heightRatio: 0.8, widthRatio: 0.8)
-        updatingStatusView.addBlurEffecttoView(style: .dark, heightRatio: 0.8, widthRatio: 0.8)
-        currentStatusTitelLabel.addBlurEffectToLabel(style: .dark)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let i = allTextFields.firstIndex(of: textField)
-        if textField == allTextFields[i!] {
-            if i == allTextFields.count - 1 {
-                textField.resignFirstResponder()
-                return true
-            }
-            allTextFields[i! + 1].becomeFirstResponder()}
-        return true}
     
     func getRestrictions(key: UserDefaultSetup.KeyForDefaults) -> String {
         var result = ""
@@ -152,33 +166,28 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         return result
     }
     
+    
+    // MARK: - AWS
+    let placeHolder = "UNK"
     func setStatus() {
-        let placeHolderText = "UNK"
-        print("SetStatus")
         let now = Date()
         let newStatus = CreateSOFStatusInput(
-            u2Status: "\(placeHolderText)",
-            t38Status: "\(placeHolderText)",
+            u2Status: "\(placeHolder)",
+            t38Status: "\(placeHolder)",
             airfieldRestrictions: "\(getRestrictions(key: .listOfAirfieldRestrictions)))",
             u2Restrictions: "\(getRestrictions(key: .listOfU2Restrictions)))",
             t38Restrictions: "\(getRestrictions(key: .listOfT38Restrictions)))",
-            u2Alternates: "\(placeHolderText)",
-            t38Alternates: "\(placeHolderText))",
-            navaids: "\(placeHolderText)",
-            approachLights: "\(placeHolderText)",
-            localAirfields: "\(placeHolderText)",
-            birdStatus: "\(ahas?.first?.ahasRisk ?? placeHolderText)",
+            u2Alternates: "\(placeHolder)",
+            t38Alternates: "\(placeHolder))",
+            navaids: "\(placeHolder)",
+            approachLights: "\(placeHolder)",
+            localAirfields: "\(placeHolder)",
+            birdStatus: "\(ahas?.first?.ahasRisk ?? placeHolder)",
             fits: "\(now)",
             activeRunway: "\(now)",
             runwayConditions: "\(now)",
             timeStamp: "\(now)",
-            sofOnDuty: "\(aws.username ?? placeHolderText)")
-        
-        print("************************************************")
-        print(getRestrictions(key: .listOfU2Restrictions))
-        print(getRestrictions(key: .listOfT38Restrictions))
-        print("************************************************")
-        
+            sofOnDuty: "\(aws.username ?? placeHolder)")
         appSyncClient?.perform(mutation: CreateSofStatusMutation(input: newStatus)){ (result, error) in
             if let error = error as? AWSAppSyncClientError {
                 self.log.error("Error occurred: \(error.localizedDescription )")
@@ -186,22 +195,59 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
             if let resultError = result?.errors {
                 self.log.error("Error saving the item on server: \(resultError)")
                 return
-            }
-        }
-    }
+            }}}
     
     func getStatus() {
-        print("getStatus")
         appSyncClient?.fetch(query: ListSofStatussQuery(), cachePolicy: .fetchIgnoringCacheData) {(result, error) in
             if error != nil {
                 self.log.error(error as Any)
                 return
             }
             if result != nil {
-                self.log.debug(result?.data?.listSofStatuss?.items?.forEach { print($0?.activeRunway as Any)} as Any)
-            }
-        }
-    }
+                self.initialUpdateStatusBoard(result: result!)
+            }}}
+    
+    func subscribe() {
+        do {
+            discard = try appSyncClient?.subscribe(subscription: OnCreateSofStatusSubscription(), resultHandler: { (result, transaction, error) in
+                if let result = result {
+                    print(result)
+                    self.updateStatusBoard(result: result)
+                } else if let error = error {
+                    self.log.error(error.localizedDescription)
+                }
+            })
+        } catch {
+            self.log.error("Error starting subscription.")
+        }}
+    
+    
+    func initialUpdateStatusBoard(result: GraphQLResult<ListSofStatussQuery.Data>) {
+        if let data = result.data {
+            if let list = data.listSofStatuss {
+                if let items = list.items {
+                    let j = items.allStatusInPrevious(hrs: 8)
+                    for i in items {
+                        print("************************************")
+                        print(i?.timeStamp)
+                        print("************************************")
+                    }
+                    if let currentStatus = items.mostRecentStatus() {
+                        sofOnDutyOutlet.text = "\(String(describing: currentStatus.sofOnDuty ?? placeHolder))"
+                        t38RestrictionsOutlet.text = "\(currentStatus.t38Restrictions ?? placeHolder)"
+                        if let updatedTime = dh.dateInDisplayFormat(currentStatus.timeStamp) {
+                            updatedTimeOutlet.text = "\(updatedTime)"
+                        }
+                    }}}}}
+    
+    func updateStatusBoard(result: GraphQLResult<OnCreateSofStatusSubscription.Data>) {
+        if let data = result.data {
+            if let status = data.onCreateSofStatus {
+                let currentStatus = status
+                sofOnDutyOutlet.text = "\(currentStatus.sofOnDuty ?? placeHolder)"
+                t38RestrictionsOutlet.text = "\(currentStatus.t38Restrictions ?? placeHolder)"
+                updatedTimeOutlet.text = "\(dh.dateInDisplayFormat(currentStatus.timeStamp) ?? placeHolder)"
+            }}}
     
     
 }
