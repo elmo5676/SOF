@@ -22,7 +22,7 @@ class AhasParser: NSObject, XMLParserDelegate {
         let parser = XMLParser(data: data)
         parser.delegate = self
         let success = parser.parse()
-        log.info(success)
+//        log.info(success)
     }
     
     func parserDidStartDocument(_ parser: XMLParser) {

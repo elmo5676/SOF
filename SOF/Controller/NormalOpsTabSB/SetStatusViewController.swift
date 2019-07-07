@@ -157,16 +157,6 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     }
     
     
-    func getRestrictions(key: UserDefaultSetup.KeyForDefaults) -> String {
-        var result = ""
-        let restricionArray = uds.getListOf(withKey: key)
-        for r in restricionArray {
-            result += r
-        }
-        return result
-    }
-    
-    
     // MARK: - AWS
     let placeHolder = "UNK"
     func setStatus() {
@@ -174,11 +164,11 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         let newStatus = CreateSOFStatusInput(
             u2Status: "\(placeHolder)",
             t38Status: "\(placeHolder)",
-            airfieldRestrictions: "\(getRestrictions(key: .listOfAirfieldRestrictions)))",
-            u2Restrictions: "\(getRestrictions(key: .listOfU2Restrictions)))",
-            t38Restrictions: "\(getRestrictions(key: .listOfT38Restrictions)))",
-            u2Alternates: "\(placeHolder)",
-            t38Alternates: "\(placeHolder))",
+            airfieldRestrictions: uds.getListOf(withKey: .listOfAirfieldRestrictions),
+            u2Restrictions: uds.getListOf(withKey: .listOfU2Restrictions),
+            t38Restrictions: uds.getListOf(withKey: .listOfT38Restrictions),
+            u2Alternates: ["\(placeHolder)"],
+            t38Alternates: ["\(placeHolder)"],
             navaids: "\(placeHolder)",
             approachLights: "\(placeHolder)",
             localAirfields: "\(placeHolder)",
@@ -198,13 +188,25 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
             }}}
     
     func getStatus() {
-        appSyncClient?.fetch(query: ListSofStatussQuery(), cachePolicy: .fetchIgnoringCacheData) {(result, error) in
+        let query = ListSofStatussQuery(limit: 10_000)
+        appSyncClient?.fetch(query: query, cachePolicy: .fetchIgnoringCacheData) {(result, error) in
             if error != nil {
                 self.log.error(error as Any)
                 return
             }
             if result != nil {
-                self.initialUpdateStatusBoard(result: result!)
+                guard let data = result?.data else {self.log.error("No Status Data"); return}
+                guard let list = data.listSofStatuss else {self.log.error("No Status List"); return}
+                guard let items = list.items else {self.log.error("No Status Items"); return}
+                self.log.info(items.count)
+                guard let currentStatus = items.mostRecentStatus() else {self.log.error("No Status Current Status"); return}
+                
+                let t38Restrictions = self.arrayToString(currentStatus.t38Restrictions) ?? " "
+                self.sofOnDutyOutlet.text = "\(currentStatus.sofOnDuty ?? self.placeHolder)"
+                self.t38RestrictionsOutlet.text = "\(t38Restrictions)"
+                if let updatedTime = self.dh.dateInDisplayFormat(currentStatus.timeStamp) {
+                    self.updatedTimeOutlet.text = "\(updatedTime)"
+                }
             }}}
     
     func subscribe() {
@@ -221,20 +223,24 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
             self.log.error("Error starting subscription.")
         }}
     
+    func arrayToString(_ ar: [String?]?) -> String? {
+        guard let strArray = ar else { return nil }
+        var result = ""
+        for str in strArray {
+            guard let str = str else { return nil}
+            result += "|| \(str) ||"
+        }
+        return result
+    }
     
     func initialUpdateStatusBoard(result: GraphQLResult<ListSofStatussQuery.Data>) {
         if let data = result.data {
             if let list = data.listSofStatuss {
                 if let items = list.items {
-                    let j = items.allStatusInPrevious(hrs: 8)
-                    for i in items {
-                        print("************************************")
-                        print(i?.timeStamp)
-                        print("************************************")
-                    }
                     if let currentStatus = items.mostRecentStatus() {
+                        let t38Restrictions = arrayToString(currentStatus.t38Restrictions) ?? " "
                         sofOnDutyOutlet.text = "\(String(describing: currentStatus.sofOnDuty ?? placeHolder))"
-                        t38RestrictionsOutlet.text = "\(currentStatus.t38Restrictions ?? placeHolder)"
+                        t38RestrictionsOutlet.text = "\(t38Restrictions)"
                         if let updatedTime = dh.dateInDisplayFormat(currentStatus.timeStamp) {
                             updatedTimeOutlet.text = "\(updatedTime)"
                         }
@@ -244,8 +250,9 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         if let data = result.data {
             if let status = data.onCreateSofStatus {
                 let currentStatus = status
+                let t38Restrictions = arrayToString(currentStatus.t38Restrictions) ?? " "
                 sofOnDutyOutlet.text = "\(currentStatus.sofOnDuty ?? placeHolder)"
-                t38RestrictionsOutlet.text = "\(currentStatus.t38Restrictions ?? placeHolder)"
+                t38RestrictionsOutlet.text = "\(t38Restrictions)"
                 updatedTimeOutlet.text = "\(dh.dateInDisplayFormat(currentStatus.timeStamp) ?? placeHolder)"
             }}}
     
