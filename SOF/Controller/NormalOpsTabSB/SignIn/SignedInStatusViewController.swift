@@ -18,39 +18,24 @@ class SignedInStatusViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setFormatting()
-        isSignedIn(aws.isSignedIn)
+        isSignedIn()
     }
     
     let aws = AWSMobileClient.sharedInstance()
     @IBOutlet weak var logo: UIImageView!
     
-    @IBOutlet weak var signInOutButtonOutlet: UIButton!
-    @IBAction func signInOutButton(_ sender: UIButton) {
-        signInOutButtonOutlet.showPressed()
-        aws.signOut()
-        isSignedIn(aws.isSignedIn)
-    }
-    
-    func isSignedIn(_ yN: Bool) {
-        switch yN {
-        case true:
-            self.title = "Sign Out"
-            signInOutButtonOutlet.isEnabled = true
-            signInOutButtonOutlet.isHidden = false
-        case false:
-            self.title = ""
-            signInOutButtonOutlet.isEnabled = false
-            signInOutButtonOutlet.isHidden = true
-        }}
     
     func setFormatting() {
-        logo.layer.cornerRadius = 30
-        signInOutButtonOutlet.standardButtonFormatting()
-        signInOutButtonOutlet.setTitle("Sign Out", for: .normal)
+        logo.layer.cornerRadius = 50
     }
     
     
     @IBAction func dismissButton(_ sender: UIBarButtonItem) {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
+    func isSignedIn() {
+        if aws.isSignedIn {
+            presentingViewController?.dismiss(animated: true, completion: nil)
+        }}
 }

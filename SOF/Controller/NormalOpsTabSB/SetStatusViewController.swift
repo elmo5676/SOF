@@ -62,6 +62,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     var metar: Metar? = nil
     var tafs: [Taf]? = []
     var notams: [Notam]? = []
+    var today = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,9 +94,17 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     @IBOutlet weak var updatedTimeOutlet: UILabel!
     @IBOutlet weak var sofOnDutyOutlet: UILabel!
     
+    @IBOutlet weak var sunTimesView: UIView!
+    @IBOutlet weak var sunriseLabel: UILabel!
+    @IBOutlet weak var sunSetLabel: UILabel!
+    @IBOutlet weak var dayDurationLabel: UILabel!
+    @IBOutlet weak var julianDayLabel: UILabel!
+    @IBOutlet weak var zuluTime: UILabel!
+    @IBOutlet var sunTimesLabels: [UILabel]!
+    
     
     @IBOutlet weak var currentStatusView: UIView!
-    @IBOutlet weak var T38StatusView: UIView!
+    @IBOutlet weak var t38StatusView: UIView!
     @IBOutlet weak var t38StatusOutlet: UILabel!
     @IBOutlet weak var t38AlternatesOutlet: UILabel!
     @IBOutlet weak var t38RestrictionsOutlet: UILabel!
@@ -112,6 +121,14 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     
     @IBOutlet weak var sofSignedIn: UILabel!
     @IBOutlet weak var SignedInButtonOutlet: UIButton!
+    @IBAction func signInOutButton(_ sender: UIButton) {
+        if aws.isSignedIn {
+            aws.signOut()
+        } else {
+            performSegue(withIdentifier: "signIn", sender: sender)
+        }
+        isSignedIn()
+    }
     
     @IBOutlet weak var updateStatusButtonOutlet: UIButton!
     @IBAction func updateStatusButton(_ sender: UIButton) {
@@ -127,30 +144,40 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         getBirdCondition()
         updateWx()
         getStatus()
-//        let timer = Timer.every(1.seconds) {
-//            self.log.debug("testing the timer")
-//        }
-//        timer.start()
-//        for i in 0...25 {
-//            Defaults[.launchCountl] += [i]
-//        }
-//        print(Defaults[.launchCountl])
+        // TODO: add option to get ipad position
+        let sun = TimeCalculations(latitude: 39.14, longitude: -121.44, date: today, timeZone: TimeZone(abbreviation: "PST")!)
+        updateSunTimes(sun)
+    }
+    
+    func updateSunTimes(_ sun: TimeCalculations) {
+        sunriseLabel.text = "\(sun.sunTimes().sunrise)"
+        sunSetLabel.text = "\(sun.sunTimes().sunset)"
+        julianDayLabel.text = "\(sun.julianDay())"
+        dayDurationLabel.text = "\(sun.sunTimes().durationFormatted)"
+        for sunLabel in sunTimesLabels {
+            sunLabel.adjustsFontSizeToFitWidth = true
+        }
     }
     
     
     func isSignedIn() {
         switch aws.isSignedIn {
         case true:
-            SignedInButtonOutlet.backgroundColor = .green
+            SignedInButtonOutlet.backgroundColor = #colorLiteral(red: 0.0643774569, green: 0.5319937468, blue: 0.05632310361, alpha: 1)
             SignedInButtonOutlet.setTitle("Log Out", for: .normal)
             sofSignedIn.isHidden = false
-            sofSignedIn.text = aws.username
+            let sof = aws.username ?? ""
+            sofSignedIn.text = "SOF: \(sof)"
             sofSignedIn.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            updateStatusButtonOutlet.isEnabled = true
+            updateStatusButtonOutlet.isHidden = false
         case false:
-            SignedInButtonOutlet.backgroundColor = .red
+            SignedInButtonOutlet.backgroundColor = #colorLiteral(red: 0.8894673586, green: 0.05032693595, blue: 0.03813567758, alpha: 1)
             SignedInButtonOutlet.setTitle("Log In", for: .normal)
             sofSignedIn.isHidden = true
             sofSignedIn.text = " "
+            updateStatusButtonOutlet.isEnabled = false
+            updateStatusButtonOutlet.isHidden = true
         }
         sofSignedIn.adjustsFontSizeToFitWidth = true
     }
@@ -161,14 +188,19 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         updateStatusButtonOutlet.addBlurEffect(style: .extraLight)
         let borderColor: CGColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         let borderWidth: CGFloat = 0.5
-        let cornerRadius: CGFloat = 5
+        let cornerRadius: CGFloat = 10
+        sunTimesView.layer.borderWidth = borderWidth
+        sunTimesView.layer.borderColor = borderColor
+        sunTimesView.layer.cornerRadius = cornerRadius
+        t38StatusView.layer.borderWidth = borderWidth
+        t38StatusView.layer.borderColor = borderColor
         currentStatusView.layer.borderColor = borderColor
         updatingStatusView.layer.borderColor = borderColor
         currentStatusView.layer.borderWidth = borderWidth
         updatingStatusView.layer.borderWidth = borderWidth
         currentStatusView.layer.cornerRadius = cornerRadius
         updatingStatusView.layer.cornerRadius = cornerRadius
-        
+        currentStatusView.layer.masksToBounds = true
     }
     
     

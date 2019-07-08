@@ -11,16 +11,18 @@ import Foundation
 struct TimeCalculations {
     private let latitude: Double
     private let longitude: Double
-    private let timeZ = TimeZone.current
+    private let timeZ: TimeZone
     private var timeZone: Double
     private var date: Date
     
     init(latitude: Double,
          longitude: Double,
-         date: Date) {
+         date: Date,
+         timeZone: TimeZone) {
         self.latitude = latitude
         self.longitude = longitude
         self.date = date
+        self.timeZ = timeZone
         self.timeZone = Double(timeZ.secondsFromGMT(for: date) / (3600))
     }
     
@@ -207,7 +209,7 @@ struct TimeCalculations {
         let zuluTimeFormat = DateFormatter()
         zuluDateFormat.dateStyle = .medium
         zuluDateFormat.timeZone = zuluTimeZone
-        zuluTimeFormat.timeStyle = .medium
+        zuluTimeFormat.dateFormat = "HH:mm"
         zuluTimeFormat.timeZone = zuluTimeZone
         let localDateFormat = DateFormatter()
         let localTimeFormat = DateFormatter()
