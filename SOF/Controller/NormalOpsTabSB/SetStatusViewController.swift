@@ -74,6 +74,11 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         isSignedIn()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        updateSunTimes()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         
     }
@@ -145,11 +150,53 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         updateWx()
         getStatus()
         // TODO: add option to get ipad position
-        let sun = TimeCalculations(latitude: 39.14, longitude: -121.44, date: today, timeZone: TimeZone(abbreviation: "PST")!)
-        updateSunTimes(sun)
     }
     
-    func updateSunTimes(_ sun: TimeCalculations) {
+    
+    
+    func makeGradientLayer(for object : UIView, startPoint : CGPoint, endPoint : CGPoint, sunLoc: [NSNumber], gradientColors : [Any]) -> CAGradientLayer {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = gradientColors
+        gradient.locations = sunLoc
+//        gradient.locations = [0.0 ,0.5, 1.0]
+        gradient.startPoint = startPoint
+        gradient.endPoint = endPoint
+        gradient.bounds = object.bounds
+        // TODO: Get a correct correction factor
+        let mainViewWidth = appDelegate.window!.rootViewController!.view.frame.size.width
+        let detailViewWidth = self.view.frame.width
+        let correctionFactor = detailViewWidth / mainViewWidth
+        print(correctionFactor)
+        gradient.frame = CGRect(x: 0, y: 0, width: 1.3 * object.frame.size.width, height: object.frame.size.height)
+        return gradient
+    }
+    
+    func updateSunTimes() {
+        let sun = TimeCalculations(latitude: 39.14, longitude: -121.44, date: today, timeZone: TimeZone(abbreviation: "PST")!)
+        let start : CGPoint = CGPoint(x: 0.0, y: 1.0)
+        let end : CGPoint = CGPoint(x: 1.0, y: 1.0)
+        let colors: [CGColor] = [#colorLiteral(red: 0.1394766867, green: 0.1395074427, blue: 0.1394726038, alpha: 1), #colorLiteral(red: 0.6039640307, green: 0.6058027744, blue: 0.4293674827, alpha: 1), #colorLiteral(red: 0.1394766867, green: 0.1395074427, blue: 0.1394726038, alpha: 1)]
+        var counter = 0.0
+        Timer.every(0.01.second) {
+            let c1 = NSNumber(value: counter)
+            let locs: [NSNumber] = [0.0, c1, 1.0]
+            let gradient: CAGradientLayer = self.makeGradientLayer(for: self.sunTimesView, startPoint: start, endPoint: end, sunLoc: locs, gradientColors: colors)
+            self.sunTimesView.layer.masksToBounds = true
+            self.sunTimesView.layer.insertSublayer(gradient, at: 0)
+            counter += 0.1
+        }
+//        for i in 0...100 {
+//            let sun = NSNumber(value: Double(i)/100)
+//            let locs: [NSNumber] = [0.0, sun, 1.0]
+//            let gradient: CAGradientLayer = makeGradientLayer(for: sunTimesView, startPoint: start, endPoint: end, sunLoc: locs, gradientColors: colors)
+//            self.sunTimesView.layer.masksToBounds = true
+//            self.sunTimesView.layer.insertSublayer(gradient, at: 0)
+//        }
+//        let gradient: CAGradientLayer = makeGradientLayer(for: sunTimesView, startPoint: start, endPoint: end, gradientColors: colors)
+//        self.sunTimesView.layer.masksToBounds = true
+//        self.sunTimesView.layer.insertSublayer(gradient, at: 0)
+        
+        
         sunriseLabel.text = "\(sun.sunTimes().sunrise)"
         sunSetLabel.text = "\(sun.sunTimes().sunset)"
         julianDayLabel.text = "\(sun.julianDay())"

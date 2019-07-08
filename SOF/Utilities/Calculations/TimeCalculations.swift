@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct TimeCalculations {
     private let latitude: Double
@@ -23,6 +24,16 @@ struct TimeCalculations {
         self.longitude = longitude
         self.date = date
         self.timeZ = timeZone
+        self.timeZone = Double(timeZ.secondsFromGMT(for: date) / (3600))
+    }
+    
+    init(coords: Coords,
+         date: Date,
+         timeZone: TimeZone) {
+        self.latitude = coords.latitude
+        self.longitude = coords.longitude
+        self.timeZ = timeZone
+        self.date = date
         self.timeZone = Double(timeZ.secondsFromGMT(for: date) / (3600))
     }
     
