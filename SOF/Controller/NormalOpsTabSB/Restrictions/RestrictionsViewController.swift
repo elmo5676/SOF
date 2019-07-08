@@ -49,9 +49,9 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
     
     
     func inititialFormatting() {
-        clearAllRestrictionsOutlet.addBlurEffect(style: .dark)
+        clearAllRestrictionsOutlet.addBlurEffect(style: .extraLight)
         clearAllRestrictionsOutlet.addLRPadding(10)
-        mainView.layer.cornerRadius = 10
+//        mainView.layer.cornerRadius = 10
     }
     
     
@@ -113,6 +113,11 @@ class RestrictionsViewController: UIViewController, UITableViewDataSource, UITab
         return 3
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = #colorLiteral(red: 0.1293983757, green: 0.1294192374, blue: 0.1293912828, alpha: 1)
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {

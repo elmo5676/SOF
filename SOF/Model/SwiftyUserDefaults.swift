@@ -119,13 +119,13 @@ public extension UserDefaults {
     
     /// Returns getter proxy for `key`
     
-    public subscript(key: String) -> Proxy {
+    subscript(key: String) -> Proxy {
         return Proxy(self, key)
     }
     
     /// Sets value for `key`
     
-    public subscript(key: String) -> Any? {
+    subscript(key: String) -> Any? {
         get {
             // return untyped Proxy
             // (make sure we don't fall into infinite loop)
@@ -153,13 +153,13 @@ public extension UserDefaults {
     
     /// Returns `true` if `key` exists
     
-    public func hasKey(_ key: String) -> Bool {
+    func hasKey(_ key: String) -> Bool {
         return object(forKey: key) != nil
     }
     
     /// Removes value for `key`
     
-    public func remove(_ key: String) {
+    func remove(_ key: String) {
         removeObject(forKey: key)
     }
     
@@ -168,7 +168,7 @@ public extension UserDefaults {
     /// - Note: This method only removes keys on the receiver `UserDefaults` object.
     ///         System-defined keys will still be present afterwards.
     
-    public func removeAll() {
+    func removeAll() {
         for (key, _) in dictionaryRepresentation() {
             removeObject(forKey: key)
         }
@@ -189,7 +189,14 @@ public let Defaults = UserDefaults.standard
 
 /// Extend this class and add your user defaults keys as static constants
 /// so you can use the shortcut dot notation (e.g. `Defaults[.yourKey]`)
-
+///
+/// **Example:**
+///~~~
+///extension DefaultsKeys {
+///    static let username = DefaultsKey<String?>("username")
+///    static let launchCount = DefaultsKey<Int>("launchCount", defaultValue: 0)
+///}
+///~~~
 open class DefaultsKeys {
     fileprivate init() {}
 }

@@ -21,7 +21,7 @@ class AhasParser: NSObject, XMLParserDelegate {
         self.init()
         let parser = XMLParser(data: data)
         parser.delegate = self
-        let success = parser.parse()
+//        let success = parser.parse()
 //        log.info(success)
     }
     

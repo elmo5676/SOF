@@ -92,7 +92,7 @@ public protocol MutationCache {
 
 public extension AWSAppSyncClientConfiguration {
     @available(*, deprecated, message: "Use an initializer that takes cacheConfiguration instead of databaseURL")
-    public convenience init(appSyncServiceConfig: AWSAppSyncServiceConfigProvider,
+    convenience init(appSyncServiceConfig: AWSAppSyncServiceConfigProvider,
                             networkTransport: AWSNetworkTransport,
                             databaseURL: URL?,
                             connectionStateChangeHandler: ConnectionStateChangeHandler? = nil,
@@ -108,7 +108,7 @@ public extension AWSAppSyncClientConfiguration {
     }
 
     @available(*, deprecated, message: "Use an initializer that takes cacheConfiguration instead of databaseURL")
-    public convenience init(url: URL,
+    convenience init(url: URL,
                             serviceRegion: AWSRegionType,
                             networkTransport: AWSNetworkTransport,
                             databaseURL: URL?,
@@ -125,7 +125,7 @@ public extension AWSAppSyncClientConfiguration {
     }
 
     @available(*, deprecated, message: "Use an initializer that takes cacheConfiguration instead of databaseURL")
-    public convenience init(url: URL,
+    convenience init(url: URL,
                             serviceRegion: AWSRegionType,
                             apiKeyAuthProvider: AWSAPIKeyAuthProvider? = nil,
                             credentialsProvider: AWSCredentialsProvider? = nil,
@@ -150,7 +150,7 @@ public extension AWSAppSyncClientConfiguration {
     }
 
     @available(*, deprecated, message: "Use an initializer that takes cacheConfiguration instead of databaseURL")
-    public convenience init(appSyncServiceConfig: AWSAppSyncServiceConfigProvider,
+    convenience init(appSyncServiceConfig: AWSAppSyncServiceConfigProvider,
                             apiKeyAuthProvider: AWSAPIKeyAuthProvider? = nil,
                             credentialsProvider: AWSCredentialsProvider? = nil,
                             oidcAuthProvider: AWSOIDCAuthProvider? = nil,

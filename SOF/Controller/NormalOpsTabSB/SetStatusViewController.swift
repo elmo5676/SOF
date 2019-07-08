@@ -65,10 +65,12 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setFormatting()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         initialSetup()
+        isSignedIn()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -108,6 +110,8 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     @IBOutlet weak var updatingStatusView: UIView!
     @IBOutlet weak var currentStatusTitelLabel: UILabel!
     
+    @IBOutlet weak var sofSignedIn: UILabel!
+    @IBOutlet weak var SignedInButtonOutlet: UIButton!
     
     @IBOutlet weak var updateStatusButtonOutlet: UIButton!
     @IBAction func updateStatusButton(_ sender: UIButton) {
@@ -119,17 +123,52 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         appSyncClient = appDelegate.appSyncClient
         metarStore?.delagate = self
         ahasDownloader?.delegate = self
-        setFormatting()
         subscribe()
         getBirdCondition()
         updateWx()
         getStatus()
+//        let timer = Timer.every(1.seconds) {
+//            self.log.debug("testing the timer")
+//        }
+//        timer.start()
+//        for i in 0...25 {
+//            Defaults[.launchCountl] += [i]
+//        }
+//        print(Defaults[.launchCountl])
+    }
+    
+    
+    func isSignedIn() {
+        switch aws.isSignedIn {
+        case true:
+            SignedInButtonOutlet.backgroundColor = .green
+            SignedInButtonOutlet.setTitle("Log Out", for: .normal)
+            sofSignedIn.isHidden = false
+            sofSignedIn.text = aws.username
+            sofSignedIn.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        case false:
+            SignedInButtonOutlet.backgroundColor = .red
+            SignedInButtonOutlet.setTitle("Log In", for: .normal)
+            sofSignedIn.isHidden = true
+            sofSignedIn.text = " "
+        }
+        sofSignedIn.adjustsFontSizeToFitWidth = true
     }
     
     func setFormatting() {
+        SignedInButtonOutlet.layer.cornerRadius = 12
+        sofSignedIn.layer.cornerRadius = 5
         updateStatusButtonOutlet.addBlurEffect(style: .extraLight)
-        currentStatusView.addBlurEffecttoView(style: .dark, heightRatio: 0.8, widthRatio: 0.8)
-        updatingStatusView.addBlurEffecttoView(style: .dark, heightRatio: 0.8, widthRatio: 0.8)
+        let borderColor: CGColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        let borderWidth: CGFloat = 0.5
+        let cornerRadius: CGFloat = 5
+        currentStatusView.layer.borderColor = borderColor
+        updatingStatusView.layer.borderColor = borderColor
+        currentStatusView.layer.borderWidth = borderWidth
+        updatingStatusView.layer.borderWidth = borderWidth
+        currentStatusView.layer.cornerRadius = cornerRadius
+        updatingStatusView.layer.cornerRadius = cornerRadius
+        
     }
     
     
@@ -228,7 +267,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         var result = ""
         for str in strArray {
             guard let str = str else { return nil}
-            result += "|| \(str) ||"
+            result += "| \(str) |"
         }
         return result
     }

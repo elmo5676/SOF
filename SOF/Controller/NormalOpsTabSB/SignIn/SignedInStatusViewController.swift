@@ -49,5 +49,8 @@ class SignedInStatusViewController: UIViewController {
         signInOutButtonOutlet.setTitle("Sign Out", for: .normal)
     }
     
-
+    
+    @IBAction func dismissButton(_ sender: UIBarButtonItem) {
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
 }

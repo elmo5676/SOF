@@ -9,11 +9,22 @@
 import Foundation
 
 
+extension DefaultsKeys {
+//    static let <#nameOfDefault#> = DefaultsKey< <#Type#> >("<#StringKey#>")
+    static let listOfU2LocalFields = DefaultsKey<[String]>("listOfU2LocalFields")
+    static let listOfT38LocalField = DefaultsKey<[String]>("listOfT38LocalField")
+    static let normalChecklists = DefaultsKey<[String: [String]]>("normalChecklists")
+    static let emergencyChecklists = DefaultsKey<[String: [String]]>("emergencyChecklists")
+    static let listOfAirfieldRestrictions = DefaultsKey<[String]>("listOfAirfieldRestrictions")
+    static let listOfU2Restrictions = DefaultsKey<[String]>("listOfU2Restrictions")
+    static let listOfT38Restrictions = DefaultsKey<[String]>("listOfT38Restrictions")
+}
+
 struct UserDefaultSetup {
     
     private let defaults = UserDefaults.standard
     
-    public enum KeyForDefaults: String {
+    public enum KeyForDefaults: String, CaseIterable {
         case listOfSOF = "listOfSOF"
         case listOfU2LocalFields = "listOfU2LocalFields"
         case listOfT38LocalField = "listOfT38LocalField"
