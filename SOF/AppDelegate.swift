@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     let log = SwiftyBeaver.self
     var window: UIWindow?
     let titles = ["Normal","Emergency", "Normal"]
-    
+    var masterVC: UIViewController?
     
     
     func customizeTabBarItems(tabBar: UITabBar) {
@@ -35,6 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func loadSplitView(tabBarController: UITabBarController) {
         let splitViewController = tabBarController.viewControllers?[0] as! UISplitViewController
+        if let masterVC = splitViewController.viewControllers.first {
+            self.masterVC = masterVC
+            log.debug(masterVC.view.frame.width)
+        }
         splitViewController.delegate = self
     }
     
@@ -48,7 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                 print("error: \(error.localizedDescription)")
             }
         }
-        
         do {
             let cacheConfiguration = try AWSAppSyncCacheConfiguration()
             let appSyncServiceConfig = try AWSAppSyncServiceConfig()
@@ -59,12 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             print("Error initializing appsync client. \(error)")
         }
         
-        
-        
-        
-        
-        
-        
         //SwiftyBeaver Logger
         // add log destinations. at least one is needed!
         let console = ConsoleDestination()  // log to Xcode Console
@@ -72,8 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         log.addDestination(console)
         log.addDestination(file)
         log.addDestination(platform)
-        
-        
         
         let tabBarController = self.window!.rootViewController as! UITabBarController
         tabBarController.selectedIndex = 0

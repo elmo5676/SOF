@@ -36,6 +36,8 @@
 		5265457722BA99DF00EA210E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265457622BA99DF00EA210E /* UIViewController+Extension.swift */; };
 		527BE79422C650F200CCC6F9 /* DateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527BE79322C650F200CCC6F9 /* DateHandler.swift */; };
 		528F70D622D3C58E004B1EFF /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528F70D522D3C58E004B1EFF /* CLLocationCoordinate2D+Extension.swift */; };
+		528F70D822D45062004B1EFF /* CoreDataTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528F70D722D45062004B1EFF /* CoreDataTesterViewController.swift */; };
+		528F70DA22D50571004B1EFF /* T38A_TOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528F70D922D50571004B1EFF /* T38A_TOLD.swift */; };
 		5294100F22BA9B6E008F05A0 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294100E22BA9B6E008F05A0 /* Double+Extension.swift */; };
 		5294101122BA9BAD008F05A0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */; };
 		5294101322BA9BC9008F05A0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */; };
@@ -213,6 +215,8 @@
 		5265457622BA99DF00EA210E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		527BE79322C650F200CCC6F9 /* DateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHandler.swift; sourceTree = "<group>"; };
 		528F70D522D3C58E004B1EFF /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
+		528F70D722D45062004B1EFF /* CoreDataTesterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTesterViewController.swift; sourceTree = "<group>"; };
+		528F70D922D50571004B1EFF /* T38A_TOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = T38A_TOLD.swift; sourceTree = "<group>"; };
 		5294100E22BA9B6E008F05A0 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		5294101022BA9BAD008F05A0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		5294101222BA9BC9008F05A0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -421,6 +425,7 @@
 				5223959A22BB73EA00EFEDD1 /* SetStatusViewController.swift */,
 				52A7454622CA05CC0056F736 /* SignIn */,
 				52F0FBC522CC682000DBBCFC /* Restrictions */,
+				528F70D722D45062004B1EFF /* CoreDataTesterViewController.swift */,
 			);
 			path = NormalOpsTabSB;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 			children = (
 				52E19DC322C9C74B00A06C54 /* AWS */,
 				527BE79322C650F200CCC6F9 /* DateHandler.swift */,
+				528F70D922D50571004B1EFF /* T38A_TOLD.swift */,
 				523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */,
 				52D2D2D322D29B7B0030C79B /* SwiftyTimer.swift */,
 				52D2D2D122D299730030C79B /* SwiftyUserDefaults.swift */,
@@ -952,6 +958,7 @@
 				52F3BD9F22B6276B00F7F367 /* AcomRmk_CD+CoreDataClass.swift in Sources */,
 				522BE34B22BFD19100D31E36 /* BaseDestination.swift in Sources */,
 				52F3BD0322B6268600F7F367 /* CoreDataStackCreator.swift in Sources */,
+				528F70DA22D50571004B1EFF /* T38A_TOLD.swift in Sources */,
 				52F3BD9222B6276B00F7F367 /* Anav_CD+CoreDataProperties.swift in Sources */,
 				52D2D2C922D266730030C79B /* GraphQLSelectionSet+Extension.swift in Sources */,
 				52F3BD9822B6276B00F7F367 /* Nav_CD+CoreDataProperties.swift in Sources */,
@@ -1016,6 +1023,7 @@
 				52F3BD5A22B6275A00F7F367 /* Arpt.swift in Sources */,
 				52F3BDA622B6276B00F7F367 /* AddRwy_CD+CoreDataProperties.swift in Sources */,
 				522BE34822BFD19100D31E36 /* Base64.swift in Sources */,
+				528F70D822D45062004B1EFF /* CoreDataTesterViewController.swift in Sources */,
 				52277ACE22AEF83900CD45BE /* PickerTextField.swift in Sources */,
 				52F3BD4D22B6275A00F7F367 /* TrmRmk.swift in Sources */,
 				523BAFBB22C07BCA00F667B3 /* UserDefaultSetup.swift in Sources */,

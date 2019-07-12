@@ -67,6 +67,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         setFormatting()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,8 +76,8 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        updateSunTimes()
+//        updateSunTimes()
+        animateSunTimes()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -154,49 +155,59 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     
     
     
-    func makeGradientLayer(for object : UIView, startPoint : CGPoint, endPoint : CGPoint, sunLoc: [NSNumber], gradientColors : [Any]) -> CAGradientLayer {
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.colors = gradientColors
-        gradient.locations = sunLoc
-//        gradient.locations = [0.0 ,0.5, 1.0]
-        gradient.startPoint = startPoint
-        gradient.endPoint = endPoint
-        gradient.bounds = object.bounds
-        // TODO: Get a correct correction factor
-        let mainViewWidth = appDelegate.window!.rootViewController!.view.frame.size.width
-        let detailViewWidth = self.view.frame.width
-        let correctionFactor = detailViewWidth / mainViewWidth
-        print(correctionFactor)
-        gradient.frame = CGRect(x: 0, y: 0, width: 1.3 * object.frame.size.width, height: object.frame.size.height)
-        return gradient
+    func animateSunTimes() {
+        self.updateSunTimes1()
+        UIView.animateKeyframes(withDuration: 3.0,
+                                delay: 0,
+                                options: [.autoreverse, .repeat, .allowUserInteraction],
+                                animations: {animateAlert()})
+        
+        func animateAlert() {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5) {
+                self.updateSunTimes2()
+            }
+//            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
+//                self.updateSunTimes2()
+//            }
+        }
     }
     
-    func updateSunTimes() {
+    
+    
+    
+    func updateSunTimes1() {
+        let sun = TimeCalculations(latitude: 39.14, longitude: -121.44, date: today, timeZone: TimeZone(abbreviation: "PST")!)
+        let start : CGPoint = CGPoint(x: 0.0, y: 0.0)
+        let end : CGPoint = CGPoint(x: 1.0, y: 1.0)
+        let colors: [CGColor] = [#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1),#colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1),#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)]
+        
+        let gradientStart: [NSNumber] = [0.0,0.5,1.0]
+//        let gradientEnd: [NSNumber] = [0.0,1.0,1.0]
+        
+        let gradient: CAGradientLayer = makeGradientLayer(for: sunTimesView, startPoint: start, endPoint: end, gradientLocations: gradientStart, gradientColors: colors)
+        self.sunTimesView.layer.masksToBounds = true
+        self.sunTimesView.layer.insertSublayer(gradient, at: 0)
+        sunriseLabel.text = "\(sun.sunTimes().sunrise)"
+        sunSetLabel.text = "\(sun.sunTimes().sunset)"
+        julianDayLabel.text = "\(sun.julianDay())"
+        dayDurationLabel.text = "\(sun.sunTimes().durationFormatted)"
+        for sunLabel in sunTimesLabels {
+            sunLabel.adjustsFontSizeToFitWidth = true
+        }
+    }
+    
+    func updateSunTimes2() {
         let sun = TimeCalculations(latitude: 39.14, longitude: -121.44, date: today, timeZone: TimeZone(abbreviation: "PST")!)
         let start : CGPoint = CGPoint(x: 0.0, y: 1.0)
         let end : CGPoint = CGPoint(x: 1.0, y: 1.0)
-        let colors: [CGColor] = [#colorLiteral(red: 0.1394766867, green: 0.1395074427, blue: 0.1394726038, alpha: 1), #colorLiteral(red: 0.6039640307, green: 0.6058027744, blue: 0.4293674827, alpha: 1), #colorLiteral(red: 0.1394766867, green: 0.1395074427, blue: 0.1394726038, alpha: 1)]
-        var counter = 0.0
-        Timer.every(0.01.second) {
-            let c1 = NSNumber(value: counter)
-            let locs: [NSNumber] = [0.0, c1, 1.0]
-            let gradient: CAGradientLayer = self.makeGradientLayer(for: self.sunTimesView, startPoint: start, endPoint: end, sunLoc: locs, gradientColors: colors)
-            self.sunTimesView.layer.masksToBounds = true
-            self.sunTimesView.layer.insertSublayer(gradient, at: 0)
-            counter += 0.1
-        }
-//        for i in 0...100 {
-//            let sun = NSNumber(value: Double(i)/100)
-//            let locs: [NSNumber] = [0.0, sun, 1.0]
-//            let gradient: CAGradientLayer = makeGradientLayer(for: sunTimesView, startPoint: start, endPoint: end, sunLoc: locs, gradientColors: colors)
-//            self.sunTimesView.layer.masksToBounds = true
-//            self.sunTimesView.layer.insertSublayer(gradient, at: 0)
-//        }
-//        let gradient: CAGradientLayer = makeGradientLayer(for: sunTimesView, startPoint: start, endPoint: end, gradientColors: colors)
-//        self.sunTimesView.layer.masksToBounds = true
-//        self.sunTimesView.layer.insertSublayer(gradient, at: 0)
+        let colors: [CGColor] = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1),#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1),#colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)]
         
+//        let gradientStart: [NSNumber] = [0.0,0.0,1.0]
+        let gradientEnd: [NSNumber] = [0.0,1.0,1.0]
         
+        let gradient: CAGradientLayer = makeGradientLayer(for: sunTimesView, startPoint: start, endPoint: end, gradientLocations: gradientEnd, gradientColors: colors)
+        self.sunTimesView.layer.masksToBounds = true
+        self.sunTimesView.layer.insertSublayer(gradient, at: 0)
         sunriseLabel.text = "\(sun.sunTimes().sunrise)"
         sunSetLabel.text = "\(sun.sunTimes().sunset)"
         julianDayLabel.text = "\(sun.julianDay())"

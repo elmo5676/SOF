@@ -111,6 +111,25 @@ public extension UIViewController {
         alertControllerName()
     }
     
+    func splitViewCorrectionFactor() -> CGFloat {
+        let totalWidth = Double(self.view.frame.width)
+        let masterVCWidth = Double(appDelegate.masterVC?.view.frame.width ?? 0.1)
+        return CGFloat(1 + (masterVCWidth/totalWidth))
+    }
+    
+    func makeGradientLayer(for object : UIView, startPoint : CGPoint, endPoint : CGPoint, gradientLocations: [NSNumber]? , gradientColors : [Any]) -> CAGradientLayer {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = gradientColors
+//        gradient.locations = [0.0, 0.5, 1.0]
+        gradient.locations = gradientLocations
+        gradient.startPoint = startPoint
+        gradient.endPoint = endPoint
+        gradient.bounds = object.bounds
+        let cf = splitViewCorrectionFactor()
+        print(cf)
+        gradient.frame = CGRect(x: 0, y: 0, width: cf * object.frame.size.width, height: object.frame.size.height)
+        return gradient
+    }
     
     // MARK: - Animations
     enum ButtonShape {
