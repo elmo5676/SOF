@@ -16,18 +16,42 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
         pc = stack.persistentContainer
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        runSpinner(false)
+    }
+    
     // MARK: - Delegate Functions
     func jsonIncrementCounter() {
+        log.debug("JSON Increment Counter")
+        DispatchQueue.main.async {
+            self.counter += 1
+            print(self.counter)
+            print(self.total)
+            let c = Double(self.counter)
+            let t = Double(self.total)
+            print(Float((c / t)))
+            self.dafifLoaderProgress.progress = Float((c / t))
+        }
     }
     
     func loadJSONafterDownloadedAndProcessed() {
         stack.loadJsonIntoCoreData()
         log.debug("CD was Loaded")
+        DispatchQueue.main.async {
+            self.runSpinner(false)
+        }
     }
     
     var stack = DAFIFCDStack()
     var pc: NSPersistentContainer?
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var dafifLoaderProgress: UIProgressView!
+    var total = DAFIFCDStack().wantedData.count
+    var counter = 0
+    
     func load() {
+        counter = 0
+        runSpinner(true)
         print("Number of Entities:: \(stack.wantedData.count)")
         stack.deleteAllCoreData()
         var dafif = DAFIFDataController(wantedData: stack.wantedData)
@@ -42,6 +66,16 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
     let arptCDU = ArptCDU()
     var allArpts: [Arpt_CD] = []
     var arptDic: [String? : [Any]] = [:]
+    
+    func runSpinner(_ run: Bool) {
+        switch run {
+        case true:
+            spinner.startAnimating()
+        case false:
+            spinner.stopAnimating()
+        }
+        
+    }
     
     @IBAction func b1(_ sender: UIButton) {
         load()
@@ -71,7 +105,7 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
         let moc = DAFIFCDStack().moc
 //        guard let airport = ArptCDU().getArptWithICAO(icao: "KSFO", moc: moc) else {return}
 //        let airportStuff = GeneralCDU.getAllAssociatedInfoFromAirportID(airport.arptIdent_CD!, moc: moc)
-        let airportStuff = GeneralCDU.getAllAssociatedInfoFromIcao("KBAB", moc: moc)
+        let airportStuff = GeneralCDU.getAllAssociatedInfoFromIcao("KDFW", moc: moc)
         guard let mins = airportStuff.trmMin else {return}
         guard let acoms = airportStuff.acom else {return}
         guard let runways = airportStuff.runways else {return}
@@ -79,24 +113,24 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
         guard let gens = airportStuff.gen else {return}
         guard let ils = airportStuff.ils else {return}
         guard let svcRmks = airportStuff.svcRmk else {return}
-        for min in mins {
+        for mn in mins {
             print("************* MINS ******************")
-            print(min.proc_CD!)
-            print(min.appType_CD!.removeAllCharOf("*"))
-            print(min.trmIdent_CD!)
-            print(min.catEDh_CD!)
+            print(mn.proc_CD!)
+            print(mn.appType_CD!.removeAllCharOf("*"))
+            print(mn.trmIdent_CD!)
+            print(mn.catEDh_CD!)
         }
         
-        for acom in acoms {
+        for ac in acoms {
             print("************ Acom *******************")
-            print(acom.commType_CD!)
-            print(acom.commName_CD!)
-            print(acom.freq1_CD.frequency)
-            print(acom.freq2_CD.frequency)
-            print(acom.freq3_CD.frequency)
-            print(acom.freq4_CD.frequency)
-            print(acom.freq5_CD.frequency)
-            print(acom.sOprH_CD.frequency)
+            print(ac.commType_CD!)
+            print(ac.commName_CD!)
+            print(ac.freq1_CD.frequency)
+            print(ac.freq2_CD.frequency)
+            print(ac.freq3_CD.frequency)
+            print(ac.freq4_CD.frequency)
+            print(ac.freq5_CD.frequency)
+            print(ac.sOprH_CD.frequency)
         }
         
         for fo in fuelOils {
@@ -106,14 +140,14 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
             print(fo.oil_CD!)
         }
         
-        for gen in gens {
+        for gn in gens {
             print("************ GEN *******************")
-            print(gen.oprHrs_CD!)
-            print(gen.notam_CD!)
-            print(gen.time_CD!)
-            print(gen.altName_CD!)
-            print(gen.daylightSave_CD!)
-            print(gen.daylightSave_CD!)
+            print(gn.oprHrs_CD!)
+            print(gn.notam_CD!)
+            print(gn.time_CD!)
+            print(gn.altName_CD!)
+            print(gn.daylightSave_CD!)
+            print(gn.daylightSave_CD!)
         }
 
         

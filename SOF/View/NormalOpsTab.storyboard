@@ -852,10 +852,20 @@
                                         <blurEffect style="dark"/>
                                     </visualEffectView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="6Hn-ET-ezM">
-                                        <rect key="frame" x="299.5" y="309.5" width="193" height="195"/>
+                                        <rect key="frame" x="299.5" y="187" width="193" height="440"/>
                                         <subviews>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Dph-CT-1oc">
+                                                <rect key="frame" x="0.0" y="0.0" width="193" height="193"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="193" id="9nU-iS-pcG"/>
+                                                    <constraint firstAttribute="width" secondItem="Dph-CT-1oc" secondAttribute="height" multiplier="1:1" id="wBC-as-cdQ"/>
+                                                </constraints>
+                                            </activityIndicatorView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yZ8-y7-KNg">
+                                                <rect key="frame" x="0.0" y="218" width="193" height="2"/>
+                                            </progressView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgv-zK-AQT">
-                                                <rect key="frame" x="0.0" y="0.0" width="193" height="30"/>
+                                                <rect key="frame" x="0.0" y="245" width="193" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="193" id="oS7-ja-vsa"/>
@@ -868,7 +878,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pic-QI-RM4">
-                                                <rect key="frame" x="0.0" y="55" width="193" height="30"/>
+                                                <rect key="frame" x="0.0" y="300" width="193" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="193" id="fqX-R4-zB0"/>
@@ -881,7 +891,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1y-Xh-zhF">
-                                                <rect key="frame" x="0.0" y="110" width="193" height="30"/>
+                                                <rect key="frame" x="0.0" y="355" width="193" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="193" id="oSd-Yd-MpO"/>
@@ -894,7 +904,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRU-9q-mVO">
-                                                <rect key="frame" x="0.0" y="165" width="193" height="30"/>
+                                                <rect key="frame" x="0.0" y="410" width="193" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="193" id="Cg5-hN-hBZ"/>
@@ -933,6 +943,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="laX-bx-beN"/>
                     </view>
+                    <connections>
+                        <outlet property="dafifLoaderProgress" destination="yZ8-y7-KNg" id="w4X-Yy-p3X"/>
+                        <outlet property="spinner" destination="Dph-CT-1oc" id="Beh-uD-TFW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2BZ-1O-VWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
