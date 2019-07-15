@@ -19,7 +19,27 @@ class TrmMsaCDU {
 					let results = try decoder.decode([TrmMsa].self, from: Data(contentsOf: fileName))
 					for trmMsa_CD in results {
 						let trmMsa_CD_DB = TrmMsa_CD(context: moc)
-						trmMsa_CD_DB.arptIdent_CD = trmMsa_CD.arptIdent						trmMsa_CD_DB.proc_CD = trmMsa_CD.proc						trmMsa_CD_DB.trmIdent_CD = trmMsa_CD.trmIdent						trmMsa_CD_DB.secNbr_CD = trmMsa_CD.secNbr						trmMsa_CD_DB.secAlt_CD = trmMsa_CD.secAlt						trmMsa_CD_DB.icao_CD = trmMsa_CD.icao						trmMsa_CD_DB.navIdent_CD = trmMsa_CD.navIdent						trmMsa_CD_DB.navType_CD = trmMsa_CD.navType						trmMsa_CD_DB.navCtry_CD = trmMsa_CD.navCtry						trmMsa_CD_DB.navKeyCd_CD = trmMsa_CD.navKeyCd						trmMsa_CD_DB.secBear1_CD = trmMsa_CD.secBear1						trmMsa_CD_DB.secBear2_CD = trmMsa_CD.secBear2						trmMsa_CD_DB.wptIdent_CD = trmMsa_CD.wptIdent						trmMsa_CD_DB.wptCtry_CD = trmMsa_CD.wptCtry						trmMsa_CD_DB.secMile1_CD = trmMsa_CD.secMile1						trmMsa_CD_DB.secMile2_CD = trmMsa_CD.secMile2						trmMsa_CD_DB.wgsLat_CD = trmMsa_CD.wgsLat						trmMsa_CD_DB.wgsDlat_CD = trmMsa_CD.wgsDlat						trmMsa_CD_DB.wgsLong_CD = trmMsa_CD.wgsLong						trmMsa_CD_DB.wgsDlong_CD = trmMsa_CD.wgsDlong						trmMsa_CD_DB.cycleDate_CD = trmMsa_CD.cycleDate
+						trmMsa_CD_DB.arptIdent_CD = trmMsa_CD.arptIdent
+						trmMsa_CD_DB.proc_CD = trmMsa_CD.proc
+						trmMsa_CD_DB.trmIdent_CD = trmMsa_CD.trmIdent
+						trmMsa_CD_DB.secNbr_CD = trmMsa_CD.secNbr
+						trmMsa_CD_DB.secAlt_CD = trmMsa_CD.secAlt
+						trmMsa_CD_DB.icao_CD = trmMsa_CD.icao
+						trmMsa_CD_DB.navIdent_CD = trmMsa_CD.navIdent
+						trmMsa_CD_DB.navType_CD = trmMsa_CD.navType
+						trmMsa_CD_DB.navCtry_CD = trmMsa_CD.navCtry
+						trmMsa_CD_DB.navKeyCd_CD = trmMsa_CD.navKeyCd
+						trmMsa_CD_DB.secBear1_CD = trmMsa_CD.secBear1
+						trmMsa_CD_DB.secBear2_CD = trmMsa_CD.secBear2
+						trmMsa_CD_DB.wptIdent_CD = trmMsa_CD.wptIdent
+						trmMsa_CD_DB.wptCtry_CD = trmMsa_CD.wptCtry
+						trmMsa_CD_DB.secMile1_CD = trmMsa_CD.secMile1
+						trmMsa_CD_DB.secMile2_CD = trmMsa_CD.secMile2
+						trmMsa_CD_DB.wgsLat_CD = trmMsa_CD.wgsLat
+						trmMsa_CD_DB.wgsDlat_CD = trmMsa_CD.wgsDlat
+						trmMsa_CD_DB.wgsLong_CD = trmMsa_CD.wgsLong
+						trmMsa_CD_DB.wgsDlong_CD = trmMsa_CD.wgsDlong
+						trmMsa_CD_DB.cycleDate_CD = trmMsa_CD.cycleDate
 						tempArray.append(trmMsa_CD_DB)
 					}
 					moc.performAndWait {
@@ -30,7 +50,7 @@ class TrmMsaCDU {
 						}}
 		} catch {print(error)}
 					DispatchQueue.main.async {
-						//print("TrmMsa_CD Done Loading into CoreData")
+						log.info("TrmMsa_CD Done Loading into CoreData")
 						self.cduIncDelegate?.cduDoneLoading()
 	}}}
 
@@ -59,4 +79,16 @@ class TrmMsaCDU {
 		}
 		return trmMsa_CD
 	}
+    
+    class func getWithAirPortId(id: String, moc: NSManagedObjectContext) -> [TrmMsa_CD]? {
+        let CDFetchRequest = NSFetchRequest<TrmMsa_CD>(entityName: "TrmMsa_CD")
+        let predicate = NSPredicate(format: "%K = %@", #keyPath(TrmMsa_CD.arptIdent_CD) , id)
+        CDFetchRequest.predicate = predicate
+        do {
+            return try moc.fetch(CDFetchRequest)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
 }

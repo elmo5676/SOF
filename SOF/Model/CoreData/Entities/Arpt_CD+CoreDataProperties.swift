@@ -2,7 +2,7 @@
 //  Arpt_CD+CoreDataProperties.swift
 //  SOF
 //
-//  Created by Matthew Elmore on 6/16/19.
+//  Created by Matthew Elmore on 7/15/19.
 //  Copyright © 2019 Matthew Elmore. All rights reserved.
 //
 //
@@ -18,29 +18,29 @@ extension Arpt_CD {
     }
 
     @NSManaged public var arptIdent_CD: String?
-    @NSManaged public var name_CD: String?
-    @NSManaged public var stateProv_CD: String?
-    @NSManaged public var icao_CD: String?
-    @NSManaged public var faaHostId_CD: String?
-    @NSManaged public var locHdatum_CD: String?
-    @NSManaged public var wgsDatum_CD: String?
-    @NSManaged public var wgsLat_CD: String?
-    @NSManaged public var wgsDlat_CD: String?
-    @NSManaged public var wgsLong_CD: String?
-    @NSManaged public var wgsDlong_CD: String?
-    @NSManaged public var elev_CD: String?
-    @NSManaged public var type_CD: String?
-    @NSManaged public var magVar_CD: String?
-    @NSManaged public var wac_CD: String?
     @NSManaged public var beacon_CD: String?
-    @NSManaged public var secondArpt_CD: String?
-    @NSManaged public var oprAgy_CD: String?
-    @NSManaged public var secName_CD: String?
-    @NSManaged public var secIcao_CD: String?
-    @NSManaged public var secFaa_CD: String?
-    @NSManaged public var secOprAgy_CD: String?
     @NSManaged public var cycleDate_CD: String?
-    @NSManaged public var terrain_CD: String?
+    @NSManaged public var elev_CD: String?
+    @NSManaged public var faaHostId_CD: String?
     @NSManaged public var hydro_CD: String?
+    @NSManaged public var icao_CD: String?
+    @NSManaged public var locHdatum_CD: String?
+    @NSManaged public var magVar_CD: String?
+    @NSManaged public var name_CD: String?
+    @NSManaged public var oprAgy_CD: String?
+    @NSManaged public var secFaa_CD: String?
+    @NSManaged public var secIcao_CD: String?
+    @NSManaged public var secName_CD: String?
+    @NSManaged public var secondArpt_CD: String?
+    @NSManaged public var secOprAgy_CD: String?
+    @NSManaged public var stateProv_CD: String?
+    @NSManaged public var terrain_CD: String?
+    @NSManaged public var type_CD: String?
+    @NSManaged public var wac_CD: String?
+    @NSManaged public var wgsDatum_CD: String?
+    @NSManaged public var wgsDlat_CD: String?
+    @NSManaged public var wgsDlong_CD: String?
+    @NSManaged public var wgsLat_CD: String?
+    @NSManaged public var wgsLong_CD: String?
 
 }

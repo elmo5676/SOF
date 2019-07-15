@@ -19,7 +19,11 @@ class AgearCDU {
 					let results = try decoder.decode([Agear].self, from: Data(contentsOf: fileName))
 					for agear_CD in results {
 						let agear_CD_DB = Agear_CD(context: moc)
-						agear_CD_DB.arptIdent_CD = agear_CD.arptIdent						agear_CD_DB.rwyIdent_CD = agear_CD.rwyIdent						agear_CD_DB.location_CD = agear_CD.location						agear_CD_DB.type_CD = agear_CD.type						agear_CD_DB.cycleDate_CD = agear_CD.cycleDate
+						agear_CD_DB.arptIdent_CD = agear_CD.arptIdent
+						agear_CD_DB.rwyIdent_CD = agear_CD.rwyIdent
+						agear_CD_DB.location_CD = agear_CD.location
+						agear_CD_DB.type_CD = agear_CD.type
+						agear_CD_DB.cycleDate_CD = agear_CD.cycleDate
 						tempArray.append(agear_CD_DB)
 					}
 					moc.performAndWait {
@@ -30,7 +34,7 @@ class AgearCDU {
 						}}
 		} catch {print(error)}
 					DispatchQueue.main.async {
-						//print("Agear_CD Done Loading into CoreData")
+						log.info("Agear_CD Done Loading into CoreData")
 						self.cduIncDelegate?.cduDoneLoading()
 	}}}
 
@@ -59,4 +63,16 @@ class AgearCDU {
 		}
 		return agear_CD
 	}
+    
+    class func getWithAirPortId(id: String, moc: NSManagedObjectContext) -> [Agear_CD]? {
+        let CDFetchRequest = NSFetchRequest<Agear_CD>(entityName: "Agear_CD")
+        let predicate = NSPredicate(format: "%K = %@", #keyPath(Agear_CD.arptIdent_CD) , id)
+        CDFetchRequest.predicate = predicate
+        do {
+            return try moc.fetch(CDFetchRequest)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
 }

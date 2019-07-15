@@ -10,6 +10,7 @@ import Foundation
 
 
 extension String {
+    
     public func camelCased(with separator: Character) -> String {
         return self.lowercased()
             .split(separator: separator)
@@ -28,6 +29,16 @@ extension String {
     
     func lowerCaseFirstLetter() -> String {
         return self.prefix(1).lowercased() + dropFirst()
+    }
+    
+    func removeAllCharOf(_ str: String) -> String {
+        let charR = Character(str)
+        var returnCharecters: [Character] = []
+        for char in self {
+            if char != charR {
+                returnCharecters.append(char)
+            }}
+        return String(returnCharecters)
     }
     
 }

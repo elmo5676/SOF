@@ -2,7 +2,7 @@
 //  Arpt_CD+CoreDataClass.swift
 //  SOF
 //
-//  Created by Matthew Elmore on 6/16/19.
+//  Created by Matthew Elmore on 7/15/19.
 //  Copyright © 2019 Matthew Elmore. All rights reserved.
 //
 //

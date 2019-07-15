@@ -19,7 +19,18 @@ class TrmClbCDU {
 					let results = try decoder.decode([TrmClb].self, from: Data(contentsOf: fileName))
 					for trmClb_CD in results {
 						let trmClb_CD_DB = TrmClb_CD(context: moc)
-						trmClb_CD_DB.arptIdent_CD = trmClb_CD.arptIdent						trmClb_CD_DB.proc_CD = trmClb_CD.proc						trmClb_CD_DB.trmIdent_CD = trmClb_CD.trmIdent						trmClb_CD_DB.rwyId_CD = trmClb_CD.rwyId						trmClb_CD_DB.occNo_CD = trmClb_CD.occNo						trmClb_CD_DB.icao_CD = trmClb_CD.icao						trmClb_CD_DB.desig_CD = trmClb_CD.desig						trmClb_CD_DB.knots_CD = trmClb_CD.knots						trmClb_CD_DB.rateDesc_CD = trmClb_CD.rateDesc						trmClb_CD_DB.alt_CD = trmClb_CD.alt						trmClb_CD_DB.ftnote_CD = trmClb_CD.ftnote						trmClb_CD_DB.cycleDate_CD = trmClb_CD.cycleDate
+						trmClb_CD_DB.arptIdent_CD = trmClb_CD.arptIdent
+						trmClb_CD_DB.proc_CD = trmClb_CD.proc
+						trmClb_CD_DB.trmIdent_CD = trmClb_CD.trmIdent
+						trmClb_CD_DB.rwyId_CD = trmClb_CD.rwyId
+						trmClb_CD_DB.occNo_CD = trmClb_CD.occNo
+						trmClb_CD_DB.icao_CD = trmClb_CD.icao
+						trmClb_CD_DB.desig_CD = trmClb_CD.desig
+						trmClb_CD_DB.knots_CD = trmClb_CD.knots
+						trmClb_CD_DB.rateDesc_CD = trmClb_CD.rateDesc
+						trmClb_CD_DB.alt_CD = trmClb_CD.alt
+						trmClb_CD_DB.ftnote_CD = trmClb_CD.ftnote
+						trmClb_CD_DB.cycleDate_CD = trmClb_CD.cycleDate
 						tempArray.append(trmClb_CD_DB)
 					}
 					moc.performAndWait {
@@ -30,7 +41,7 @@ class TrmClbCDU {
 						}}
 		} catch {print(error)}
 					DispatchQueue.main.async {
-						//print("TrmClb_CD Done Loading into CoreData")
+						log.info("TrmClb_CD Done Loading into CoreData")
 						self.cduIncDelegate?.cduDoneLoading()
 	}}}
 
@@ -59,4 +70,16 @@ class TrmClbCDU {
 		}
 		return trmClb_CD
 	}
+    
+    class func getWithAirPortId(id: String, moc: NSManagedObjectContext) -> [TrmClb_CD]? {
+        let CDFetchRequest = NSFetchRequest<TrmClb_CD>(entityName: "TrmClb_CD")
+        let predicate = NSPredicate(format: "%K = %@", #keyPath(TrmClb_CD.arptIdent_CD) , id)
+        CDFetchRequest.predicate = predicate
+        do {
+            return try moc.fetch(CDFetchRequest)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
 }

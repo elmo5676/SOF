@@ -19,7 +19,16 @@ class AnavCDU {
 					let results = try decoder.decode([Anav].self, from: Data(contentsOf: fileName))
 					for anav_CD in results {
 						let anav_CD_DB = Anav_CD(context: moc)
-						anav_CD_DB.arptIdent_CD = anav_CD.arptIdent						anav_CD_DB.navIdent_CD = anav_CD.navIdent						anav_CD_DB.navType_CD = anav_CD.navType						anav_CD_DB.navCtry_CD = anav_CD.navCtry						anav_CD_DB.navKeyCd_CD = anav_CD.navKeyCd						anav_CD_DB.name_CD = anav_CD.name						anav_CD_DB.atFld_CD = anav_CD.atFld						anav_CD_DB.bearing_CD = anav_CD.bearing						anav_CD_DB.distance_CD = anav_CD.distance						anav_CD_DB.cycleDate_CD = anav_CD.cycleDate
+						anav_CD_DB.arptIdent_CD = anav_CD.arptIdent
+						anav_CD_DB.navIdent_CD = anav_CD.navIdent
+						anav_CD_DB.navType_CD = anav_CD.navType
+						anav_CD_DB.navCtry_CD = anav_CD.navCtry
+						anav_CD_DB.navKeyCd_CD = anav_CD.navKeyCd
+						anav_CD_DB.name_CD = anav_CD.name
+						anav_CD_DB.atFld_CD = anav_CD.atFld
+						anav_CD_DB.bearing_CD = anav_CD.bearing
+						anav_CD_DB.distance_CD = anav_CD.distance
+						anav_CD_DB.cycleDate_CD = anav_CD.cycleDate
 						tempArray.append(anav_CD_DB)
 					}
 					moc.performAndWait {
@@ -30,7 +39,7 @@ class AnavCDU {
 						}}
 		} catch {print(error)}
 					DispatchQueue.main.async {
-						//print("Anav_CD Done Loading into CoreData")
+						log.info("Anav_CD Done Loading into CoreData")
 						self.cduIncDelegate?.cduDoneLoading()
 	}}}
 
@@ -59,4 +68,18 @@ class AnavCDU {
 		}
 		return anav_CD
 	}
+    
+    class func getWithAirPortId(id: String, moc: NSManagedObjectContext) -> [Anav_CD]? {
+        let CDFetchRequest = NSFetchRequest<Anav_CD>(entityName: "Anav_CD")
+        let predicate = NSPredicate(format: "%K = %@", #keyPath(Anav_CD.arptIdent_CD) , id)
+        CDFetchRequest.predicate = predicate
+        do {
+            return try moc.fetch(CDFetchRequest)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+    
+    
 }

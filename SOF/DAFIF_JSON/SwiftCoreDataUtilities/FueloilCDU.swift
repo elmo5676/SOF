@@ -19,7 +19,13 @@ class FueloilCDU {
 					let results = try decoder.decode([Fueloil].self, from: Data(contentsOf: fileName))
 					for fueloil_CD in results {
 						let fueloil_CD_DB = Fueloil_CD(context: moc)
-						fueloil_CD_DB.arptIdent_CD = fueloil_CD.arptIdent						fueloil_CD_DB.icao_CD = fueloil_CD.icao						fueloil_CD_DB.fuel_CD = fueloil_CD.fuel						fueloil_CD_DB.oil_CD = fueloil_CD.oil						fueloil_CD_DB.jasu_CD = fueloil_CD.jasu						fueloil_CD_DB.supFluids_CD = fueloil_CD.supFluids						fueloil_CD_DB.cycleDate_CD = fueloil_CD.cycleDate
+						fueloil_CD_DB.arptIdent_CD = fueloil_CD.arptIdent
+						fueloil_CD_DB.icao_CD = fueloil_CD.icao
+						fueloil_CD_DB.fuel_CD = fueloil_CD.fuel
+						fueloil_CD_DB.oil_CD = fueloil_CD.oil
+						fueloil_CD_DB.jasu_CD = fueloil_CD.jasu
+						fueloil_CD_DB.supFluids_CD = fueloil_CD.supFluids
+						fueloil_CD_DB.cycleDate_CD = fueloil_CD.cycleDate
 						tempArray.append(fueloil_CD_DB)
 					}
 					moc.performAndWait {
@@ -30,7 +36,7 @@ class FueloilCDU {
 						}}
 		} catch {print(error)}
 					DispatchQueue.main.async {
-						//print("Fueloil_CD Done Loading into CoreData")
+						log.info("Fueloil_CD Done Loading into CoreData")
 						self.cduIncDelegate?.cduDoneLoading()
 	}}}
 
@@ -59,4 +65,17 @@ class FueloilCDU {
 		}
 		return fueloil_CD
 	}
+    
+    
+    class func getWithAirPortId(id: String, moc: NSManagedObjectContext) -> [Fueloil_CD]? {
+        let CDFetchRequest = NSFetchRequest<Fueloil_CD>(entityName: "Fueloil_CD")
+        let predicate = NSPredicate(format: "%K = %@", #keyPath(Fueloil_CD.arptIdent_CD) , id)
+        CDFetchRequest.predicate = predicate
+        do {
+            return try moc.fetch(CDFetchRequest)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
 }

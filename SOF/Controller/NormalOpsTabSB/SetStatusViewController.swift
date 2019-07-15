@@ -179,12 +179,11 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         let sun = TimeCalculations(latitude: 39.14, longitude: -121.44, date: today, timeZone: TimeZone(abbreviation: "PST")!)
         let start : CGPoint = CGPoint(x: 0.0, y: 0.0)
         let end : CGPoint = CGPoint(x: 1.0, y: 1.0)
-        let colors: [CGColor] = [#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1),#colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1),#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)]
+        let colors: [CGColor] = [#colorLiteral(red: 0.6075459719, green: 0, blue: 0, alpha: 1),#colorLiteral(red: 0, green: 0.02883746661, blue: 0.5216178298, alpha: 1)]
         
         let gradientStart: [NSNumber] = [0.0,0.5,1.0]
-//        let gradientEnd: [NSNumber] = [0.0,1.0,1.0]
         
-        let gradient: CAGradientLayer = makeGradientLayer(for: sunTimesView, startPoint: start, endPoint: end, gradientLocations: gradientStart, gradientColors: colors)
+        let gradient: CAGradientLayer = makeGradientLayer(for: sunTimesView, startPoint: start, endPoint: end, gradientLocations: nil, gradientColors: colors)
         self.sunTimesView.layer.masksToBounds = true
         self.sunTimesView.layer.insertSublayer(gradient, at: 0)
         sunriseLabel.text = "\(sun.sunTimes().sunrise)"
@@ -205,7 +204,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
 //        let gradientStart: [NSNumber] = [0.0,0.0,1.0]
         let gradientEnd: [NSNumber] = [0.0,1.0,1.0]
         
-        let gradient: CAGradientLayer = makeGradientLayer(for: sunTimesView, startPoint: start, endPoint: end, gradientLocations: gradientEnd, gradientColors: colors)
+        let gradient: CAGradientLayer = makeGradientLayer(for: sunTimesView, startPoint: start, endPoint: end, gradientLocations: nil, gradientColors: colors)
         self.sunTimesView.layer.masksToBounds = true
         self.sunTimesView.layer.insertSublayer(gradient, at: 0)
         sunriseLabel.text = "\(sun.sunTimes().sunrise)"

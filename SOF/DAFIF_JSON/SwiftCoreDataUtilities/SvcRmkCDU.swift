@@ -19,7 +19,12 @@ class SvcRmkCDU {
 					let results = try decoder.decode([SvcRmk].self, from: Data(contentsOf: fileName))
 					for svcRmk_CD in results {
 						let svcRmk_CD_DB = SvcRmk_CD(context: moc)
-						svcRmk_CD_DB.arptIdent_CD = svcRmk_CD.arptIdent						svcRmk_CD_DB.type_CD = svcRmk_CD.type						svcRmk_CD_DB.rmkSeq_CD = svcRmk_CD.rmkSeq						svcRmk_CD_DB.icao_CD = svcRmk_CD.icao						svcRmk_CD_DB.remarks_CD = svcRmk_CD.remarks						svcRmk_CD_DB.cycleDate_CD = svcRmk_CD.cycleDate
+						svcRmk_CD_DB.arptIdent_CD = svcRmk_CD.arptIdent
+						svcRmk_CD_DB.type_CD = svcRmk_CD.type
+						svcRmk_CD_DB.rmkSeq_CD = svcRmk_CD.rmkSeq
+						svcRmk_CD_DB.icao_CD = svcRmk_CD.icao
+						svcRmk_CD_DB.remarks_CD = svcRmk_CD.remarks
+						svcRmk_CD_DB.cycleDate_CD = svcRmk_CD.cycleDate
 						tempArray.append(svcRmk_CD_DB)
 					}
 					moc.performAndWait {
@@ -30,7 +35,7 @@ class SvcRmkCDU {
 						}}
 		} catch {print(error)}
 					DispatchQueue.main.async {
-						//print("SvcRmk_CD Done Loading into CoreData")
+						log.info("SvcRmk_CD Done Loading into CoreData")
 						self.cduIncDelegate?.cduDoneLoading()
 	}}}
 
@@ -59,4 +64,18 @@ class SvcRmkCDU {
 		}
 		return svcRmk_CD
 	}
+    
+    
+    class func getWithAirPortId(id: String, moc: NSManagedObjectContext) -> [SvcRmk_CD]? {
+        let CDFetchRequest = NSFetchRequest<SvcRmk_CD>(entityName: "SvcRmk_CD")
+        let predicate = NSPredicate(format: "%K = %@", #keyPath(SvcRmk_CD.arptIdent_CD) , id)
+        CDFetchRequest.predicate = predicate
+        do {
+            return try moc.fetch(CDFetchRequest)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+    
 }

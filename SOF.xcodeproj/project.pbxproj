@@ -27,6 +27,12 @@
 		522BE34B22BFD19100D31E36 /* BaseDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE34122BFD19100D31E36 /* BaseDestination.swift */; };
 		522BE34C22BFD19100D31E36 /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE34222BFD19100D31E36 /* AES256CBC.swift */; };
 		522BE34D22BFD19100D31E36 /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522BE34322BFD19100D31E36 /* ConsoleDestination.swift */; };
+		5232EC1922DCBF400002CA8D /* GeneralCDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232EC1822DCBF400002CA8D /* GeneralCDU.swift */; };
+		5232EC1E22DCD0E80002CA8D /* Arpt_CD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232EC1A22DCD0E80002CA8D /* Arpt_CD+CoreDataClass.swift */; };
+		5232EC1F22DCD0E80002CA8D /* Arpt_CD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232EC1B22DCD0E80002CA8D /* Arpt_CD+CoreDataProperties.swift */; };
+		5232EC2022DCD0E80002CA8D /* Rwy_CD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232EC1C22DCD0E80002CA8D /* Rwy_CD+CoreDataClass.swift */; };
+		5232EC2122DCD0E80002CA8D /* Rwy_CD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232EC1D22DCD0E80002CA8D /* Rwy_CD+CoreDataProperties.swift */; };
+		5232EC2322DCE2AF0002CA8D /* StringOptional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232EC2222DCE2AF0002CA8D /* StringOptional+Extension.swift */; };
 		523BAFBB22C07BCA00F667B3 /* UserDefaultSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */; };
 		5242112B22B899810066FB88 /* EmergencyTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5242112A22B899810066FB88 /* EmergencyTab.storyboard */; };
 		5242112D22B899E50066FB88 /* NormalOpsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5242112C22B899E50066FB88 /* NormalOpsTab.storyboard */; };
@@ -125,8 +131,6 @@
 		52F3BD5E22B6275A00F7F367 /* Agear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD3822B6275A00F7F367 /* Agear.swift */; };
 		52F3BD8322B6276B00F7F367 /* Agear_CD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD5F22B6276B00F7F367 /* Agear_CD+CoreDataClass.swift */; };
 		52F3BD8422B6276B00F7F367 /* Agear_CD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD6022B6276B00F7F367 /* Agear_CD+CoreDataProperties.swift */; };
-		52F3BD8522B6276B00F7F367 /* Arpt_CD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD6122B6276B00F7F367 /* Arpt_CD+CoreDataClass.swift */; };
-		52F3BD8622B6276B00F7F367 /* Arpt_CD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD6222B6276B00F7F367 /* Arpt_CD+CoreDataProperties.swift */; };
 		52F3BD8722B6276B00F7F367 /* TrmPar_CD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD6322B6276B00F7F367 /* TrmPar_CD+CoreDataClass.swift */; };
 		52F3BD8822B6276B00F7F367 /* TrmPar_CD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD6422B6276B00F7F367 /* TrmPar_CD+CoreDataProperties.swift */; };
 		52F3BD8922B6276B00F7F367 /* TrmRmk_CD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD6522B6276B00F7F367 /* TrmRmk_CD+CoreDataClass.swift */; };
@@ -145,8 +149,6 @@
 		52F3BD9622B6276B00F7F367 /* Gen_CD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD7222B6276B00F7F367 /* Gen_CD+CoreDataProperties.swift */; };
 		52F3BD9722B6276B00F7F367 /* Nav_CD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD7322B6276B00F7F367 /* Nav_CD+CoreDataClass.swift */; };
 		52F3BD9822B6276B00F7F367 /* Nav_CD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD7422B6276B00F7F367 /* Nav_CD+CoreDataProperties.swift */; };
-		52F3BD9922B6276B00F7F367 /* Rwy_CD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD7522B6276B00F7F367 /* Rwy_CD+CoreDataClass.swift */; };
-		52F3BD9A22B6276B00F7F367 /* Rwy_CD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD7622B6276B00F7F367 /* Rwy_CD+CoreDataProperties.swift */; };
 		52F3BD9B22B6276B00F7F367 /* SvcRmk_CD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD7722B6276B00F7F367 /* SvcRmk_CD+CoreDataClass.swift */; };
 		52F3BD9C22B6276B00F7F367 /* SvcRmk_CD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD7822B6276B00F7F367 /* SvcRmk_CD+CoreDataProperties.swift */; };
 		52F3BD9D22B6276B00F7F367 /* Ils_CD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3BD7922B6276B00F7F367 /* Ils_CD+CoreDataClass.swift */; };
@@ -206,6 +208,12 @@
 		522BE34122BFD19100D31E36 /* BaseDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDestination.swift; sourceTree = "<group>"; };
 		522BE34222BFD19100D31E36 /* AES256CBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
 		522BE34322BFD19100D31E36 /* ConsoleDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleDestination.swift; sourceTree = "<group>"; };
+		5232EC1822DCBF400002CA8D /* GeneralCDU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCDU.swift; sourceTree = "<group>"; };
+		5232EC1A22DCD0E80002CA8D /* Arpt_CD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Arpt_CD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5232EC1B22DCD0E80002CA8D /* Arpt_CD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Arpt_CD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5232EC1C22DCD0E80002CA8D /* Rwy_CD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rwy_CD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5232EC1D22DCD0E80002CA8D /* Rwy_CD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rwy_CD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5232EC2222DCE2AF0002CA8D /* StringOptional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringOptional+Extension.swift"; sourceTree = "<group>"; };
 		523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultSetup.swift; sourceTree = "<group>"; };
 		5242112A22B899810066FB88 /* EmergencyTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmergencyTab.storyboard; sourceTree = "<group>"; };
 		5242112C22B899E50066FB88 /* NormalOpsTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NormalOpsTab.storyboard; sourceTree = "<group>"; };
@@ -306,8 +314,6 @@
 		52F3BD3822B6275A00F7F367 /* Agear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agear.swift; sourceTree = "<group>"; };
 		52F3BD5F22B6276B00F7F367 /* Agear_CD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Agear_CD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		52F3BD6022B6276B00F7F367 /* Agear_CD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Agear_CD+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		52F3BD6122B6276B00F7F367 /* Arpt_CD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Arpt_CD+CoreDataClass.swift"; sourceTree = "<group>"; };
-		52F3BD6222B6276B00F7F367 /* Arpt_CD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Arpt_CD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52F3BD6322B6276B00F7F367 /* TrmPar_CD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrmPar_CD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		52F3BD6422B6276B00F7F367 /* TrmPar_CD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrmPar_CD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52F3BD6522B6276B00F7F367 /* TrmRmk_CD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrmRmk_CD+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -326,8 +332,6 @@
 		52F3BD7222B6276B00F7F367 /* Gen_CD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gen_CD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52F3BD7322B6276B00F7F367 /* Nav_CD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav_CD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		52F3BD7422B6276B00F7F367 /* Nav_CD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nav_CD+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		52F3BD7522B6276B00F7F367 /* Rwy_CD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rwy_CD+CoreDataClass.swift"; sourceTree = "<group>"; };
-		52F3BD7622B6276B00F7F367 /* Rwy_CD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rwy_CD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52F3BD7722B6276B00F7F367 /* SvcRmk_CD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SvcRmk_CD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		52F3BD7822B6276B00F7F367 /* SvcRmk_CD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SvcRmk_CD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52F3BD7922B6276B00F7F367 /* Ils_CD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ils_CD+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -377,6 +381,8 @@
 				525AA9FE22CFB8E400173CE8 /* UILabel+Extension.swift */,
 				52D2D2C822D266730030C79B /* GraphQLSelectionSet+Extension.swift */,
 				528F70D522D3C58E004B1EFF /* CLLocationCoordinate2D+Extension.swift */,
+				5232EC2222DCE2AF0002CA8D /* StringOptional+Extension.swift */,
+				52F3BD0722B6269500F7F367 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -604,6 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				52F3BD1022B6275A00F7F367 /* DAFIF.xcdatamodeld */,
+				5232EC1822DCBF400002CA8D /* GeneralCDU.swift */,
 				52F3BD1222B6275A00F7F367 /* DAFIFCDStack.swift */,
 				52F3BD1322B6275A00F7F367 /* SwiftCoreDataUtilities */,
 				52F3BD2622B6275A00F7F367 /* SwiftDecoders */,
@@ -616,10 +623,12 @@
 		52F3BCF122B6261600F7F367 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				5232EC1A22DCD0E80002CA8D /* Arpt_CD+CoreDataClass.swift */,
+				5232EC1B22DCD0E80002CA8D /* Arpt_CD+CoreDataProperties.swift */,
+				5232EC1C22DCD0E80002CA8D /* Rwy_CD+CoreDataClass.swift */,
+				5232EC1D22DCD0E80002CA8D /* Rwy_CD+CoreDataProperties.swift */,
 				52F3BD5F22B6276B00F7F367 /* Agear_CD+CoreDataClass.swift */,
 				52F3BD6022B6276B00F7F367 /* Agear_CD+CoreDataProperties.swift */,
-				52F3BD6122B6276B00F7F367 /* Arpt_CD+CoreDataClass.swift */,
-				52F3BD6222B6276B00F7F367 /* Arpt_CD+CoreDataProperties.swift */,
 				52F3BD6322B6276B00F7F367 /* TrmPar_CD+CoreDataClass.swift */,
 				52F3BD6422B6276B00F7F367 /* TrmPar_CD+CoreDataProperties.swift */,
 				52F3BD6522B6276B00F7F367 /* TrmRmk_CD+CoreDataClass.swift */,
@@ -638,8 +647,6 @@
 				52F3BD7222B6276B00F7F367 /* Gen_CD+CoreDataProperties.swift */,
 				52F3BD7322B6276B00F7F367 /* Nav_CD+CoreDataClass.swift */,
 				52F3BD7422B6276B00F7F367 /* Nav_CD+CoreDataProperties.swift */,
-				52F3BD7522B6276B00F7F367 /* Rwy_CD+CoreDataClass.swift */,
-				52F3BD7622B6276B00F7F367 /* Rwy_CD+CoreDataProperties.swift */,
 				52F3BD7722B6276B00F7F367 /* SvcRmk_CD+CoreDataClass.swift */,
 				52F3BD7822B6276B00F7F367 /* SvcRmk_CD+CoreDataProperties.swift */,
 				52F3BD7922B6276B00F7F367 /* Ils_CD+CoreDataClass.swift */,
@@ -678,7 +685,6 @@
 			isa = PBXGroup;
 			children = (
 				52F3BD0822B6269500F7F367 /* FileNames+Extension.swift */,
-				52F3BD0722B6269500F7F367 /* String+Extension.swift */,
 				52F3BD0922B6269500F7F367 /* URL+Extension.swift */,
 			);
 			path = Extensions;
@@ -935,7 +941,6 @@
 				5205743622BDF57C00B79425 /* EngineOut.swift in Sources */,
 				52F3BD5722B6275A00F7F367 /* Fueloil.swift in Sources */,
 				52F3BCFF22B6268600F7F367 /* Enums.swift in Sources */,
-				52F3BD9A22B6276B00F7F367 /* Rwy_CD+CoreDataProperties.swift in Sources */,
 				52F3BD9622B6276B00F7F367 /* Gen_CD+CoreDataProperties.swift in Sources */,
 				52F3BD3C22B6275A00F7F367 /* ArptCDU.swift in Sources */,
 				52F3BD5322B6275A00F7F367 /* TrmMin.swift in Sources */,
@@ -965,6 +970,7 @@
 				52F3BD0B22B6269500F7F367 /* String+Extension.swift in Sources */,
 				522BE34722BFD19100D31E36 /* Filter.swift in Sources */,
 				52F3BD5422B6275A00F7F367 /* TrmPar.swift in Sources */,
+				5232EC2122DCD0E80002CA8D /* Rwy_CD+CoreDataProperties.swift in Sources */,
 				52A1879122CBA8D300531927 /* Int+Extension.swift in Sources */,
 				52F3BDA322B6276B00F7F367 /* TrmMsa_CD+CoreDataClass.swift in Sources */,
 				52F3BD8B22B6276B00F7F367 /* Acom_CD+CoreDataClass.swift in Sources */,
@@ -975,7 +981,6 @@
 				52F3BD5822B6275A00F7F367 /* Nav.swift in Sources */,
 				529630DF22AC3AFB00CAD9BC /* NormalTabModel.swift in Sources */,
 				522BE34922BFD19100D31E36 /* SBPlatformDestination.swift in Sources */,
-				52F3BD8622B6276B00F7F367 /* Arpt_CD+CoreDataProperties.swift in Sources */,
 				52F3BD4222B6275A00F7F367 /* AddRwyCDU.swift in Sources */,
 				52F3BD9122B6276B00F7F367 /* Anav_CD+CoreDataClass.swift in Sources */,
 				52F3BD4422B6275A00F7F367 /* AcomRmkCDU.swift in Sources */,
@@ -1000,6 +1005,7 @@
 				52A7454322C9FB280056F736 /* SignInAWSAuthNavController.swift in Sources */,
 				529630DD22AC3A5300CAD9BC /* EmergencyTabModel.swift in Sources */,
 				52F3BD9422B6276B00F7F367 /* Fueloil_CD+CoreDataProperties.swift in Sources */,
+				5232EC1F22DCD0E80002CA8D /* Arpt_CD+CoreDataProperties.swift in Sources */,
 				528F70D622D3C58E004B1EFF /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				52F3BD3D22B6275A00F7F367 /* TrmSegCDU.swift in Sources */,
 				52F3BD5122B6275A00F7F367 /* AcomRmk.swift in Sources */,
@@ -1015,7 +1021,6 @@
 				52AF2E6422C20FB200B5EE43 /* BealChecklistDefaults.swift in Sources */,
 				52F3BD5922B6275A00F7F367 /* TrmClb.swift in Sources */,
 				52F3BD8C22B6276B00F7F367 /* Acom_CD+CoreDataProperties.swift in Sources */,
-				52F3BD9922B6276B00F7F367 /* Rwy_CD+CoreDataClass.swift in Sources */,
 				52F3BD8E22B6276B00F7F367 /* TrmClb_CD+CoreDataProperties.swift in Sources */,
 				525AA9FF22CFB8E500173CE8 /* UILabel+Extension.swift in Sources */,
 				5294101322BA9BC9008F05A0 /* UIColor+Extension.swift in Sources */,
@@ -1048,6 +1053,7 @@
 				52F3BD4922B6275A00F7F367 /* FueloilCDU.swift in Sources */,
 				52F3BDB822B6295A00F7F367 /* MetarDownLoader.swift in Sources */,
 				52F0FBC222CC626400DBBCFC /* RestrictionsViewController.swift in Sources */,
+				5232EC1E22DCD0E80002CA8D /* Arpt_CD+CoreDataClass.swift in Sources */,
 				52F3BD9B22B6276B00F7F367 /* SvcRmk_CD+CoreDataClass.swift in Sources */,
 				52D0952B22AC3649008A236B /* AppDelegate.swift in Sources */,
 				5294101122BA9BAD008F05A0 /* UIButton+Extension.swift in Sources */,
@@ -1055,12 +1061,12 @@
 				52D0953322AC3649008A236B /* SOF.xcdatamodeld in Sources */,
 				52F3BD5022B6275A00F7F367 /* Rwy.swift in Sources */,
 				52AD6D1E22B7C6770077FC91 /* Notam.swift in Sources */,
+				5232EC1922DCBF400002CA8D /* GeneralCDU.swift in Sources */,
 				52F3BD9C22B6276B00F7F367 /* SvcRmk_CD+CoreDataProperties.swift in Sources */,
 				52F3BD4022B6275A00F7F367 /* AnavCDU.swift in Sources */,
 				522BE34C22BFD19100D31E36 /* AES256CBC.swift in Sources */,
 				52E3BB7222C484060062E8F4 /* Ahas.swift in Sources */,
 				52F3BD8D22B6276B00F7F367 /* TrmClb_CD+CoreDataClass.swift in Sources */,
-				52F3BD8522B6276B00F7F367 /* Arpt_CD+CoreDataClass.swift in Sources */,
 				52F3BD9322B6276B00F7F367 /* Fueloil_CD+CoreDataClass.swift in Sources */,
 				5242113222B89BEA0066FB88 /* NormalOpsTabTableViewController.swift in Sources */,
 				52277ACA22AEF78A00CD45BE /* ArrayPicker.swift in Sources */,
@@ -1068,6 +1074,8 @@
 				5205743522BDF57C00B79425 /* Supporting.swift in Sources */,
 				52E19DC722C9CE8200A06C54 /* API.swift in Sources */,
 				52F3BD4322B6275A00F7F367 /* AcomCDU.swift in Sources */,
+				5232EC2322DCE2AF0002CA8D /* StringOptional+Extension.swift in Sources */,
+				5232EC2022DCD0E80002CA8D /* Rwy_CD+CoreDataClass.swift in Sources */,
 				522BE34D22BFD19100D31E36 /* ConsoleDestination.swift in Sources */,
 				52F3BD3E22B6275A00F7F367 /* SvcRmkCDU.swift in Sources */,
 				52F3BD5C22B6275A00F7F367 /* Ils.swift in Sources */,

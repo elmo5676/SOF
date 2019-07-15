@@ -56,7 +56,7 @@ class ArptCDU {
 						}}
 		} catch {print(error)}
 					DispatchQueue.main.async {
-						//print("Arpt_CD Done Loading into CoreData")
+						log.info("Arpt_CD Done Loading into CoreData")
 						self.cduIncDelegate?.cduDoneLoading()
 	}}}
 
@@ -74,8 +74,8 @@ class ArptCDU {
 	}
 
 
-	func getAll(pc: NSPersistentContainer) -> [Arpt_CD] {
-		let moc = pc.viewContext
+    func getAll(moc: NSManagedObjectContext) -> [Arpt_CD] {
+//        let moc = stack.moc
 		var arpt_CD = [Arpt_CD]()
 		let arpt_CDFetchRequest = NSFetchRequest<Arpt_CD>(entityName: "Arpt_CD")
 		do {
@@ -87,10 +87,21 @@ class ArptCDU {
 	}
     
     
-    func getArptWithId(id: String, pc: NSPersistentContainer) -> Arpt_CD? {
-        let moc = pc.viewContext
+    func getArptWithId(id: String, moc: NSManagedObjectContext) -> Arpt_CD? {
         let arpt_CDFetchRequest = NSFetchRequest<Arpt_CD>(entityName: "Arpt_CD")
-        let arptPredicate = NSPredicate(format: "%K = %@", id)
+        let arptPredicate = NSPredicate(format: "%K = %@", #keyPath(Arpt_CD.arptIdent_CD) , id)
+        arpt_CDFetchRequest.predicate = arptPredicate
+        do {
+            return try moc.fetch(arpt_CDFetchRequest).first
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+    
+    func getArptWithICAO(icao: String, moc: NSManagedObjectContext) -> Arpt_CD? {
+        let arpt_CDFetchRequest = NSFetchRequest<Arpt_CD>(entityName: "Arpt_CD")
+        let arptPredicate = NSPredicate(format: "%K = %@", #keyPath(Arpt_CD.icao_CD) , icao)
         arpt_CDFetchRequest.predicate = arptPredicate
         do {
             return try moc.fetch(arpt_CDFetchRequest).first

@@ -1,4 +1,1220 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-	<entity name="Ils_CD" representedClassName=".Ils_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="rwyIdent_CD" optional="YES" attributeType="String" />		<attribute name="compType_CD" optional="YES" attributeType="String" />		<attribute name="colctn_CD" optional="YES" attributeType="String" />		<attribute name="name_CD" optional="YES" attributeType="String" />		<attribute name="freq_CD" optional="YES" attributeType="String" />		<attribute name="chan_CD" optional="YES" attributeType="String" />		<attribute name="gsAngle_CD" optional="YES" attributeType="String" />		<attribute name="lczrGslctn_CD" optional="YES" attributeType="String" />		<attribute name="locMkrlctn_CD" optional="YES" attributeType="String" />		<attribute name="elev_CD" optional="YES" attributeType="String" />		<attribute name="locHdatum_CD" optional="YES" attributeType="String" />		<attribute name="wgsDatum_CD" optional="YES" attributeType="String" />		<attribute name="ilsCat_CD" optional="YES" attributeType="String" />		<attribute name="wgsLat_CD" optional="YES" attributeType="String" />		<attribute name="wgsDlat_CD" optional="YES" attributeType="String" />		<attribute name="wgsLong_CD" optional="YES" attributeType="String" />		<attribute name="wgsDlong_CD" optional="YES" attributeType="String" />		<attribute name="navIdent_CD" optional="YES" attributeType="String" />		<attribute name="navType_CD" optional="YES" attributeType="String" />		<attribute name="navCtry_CD" optional="YES" attributeType="String" />		<attribute name="navKeyCd_CD" optional="YES" attributeType="String" />		<attribute name="magVar_CD" optional="YES" attributeType="String" />		<attribute name="slaveVar_CD" optional="YES" attributeType="String" />		<attribute name="ilsBrg_CD" optional="YES" attributeType="String" />		<attribute name="locWidth_CD" optional="YES" attributeType="String" />		<attribute name="thdCrossingHgt_CD" optional="YES" attributeType="String" />		<attribute name="dmeBias_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" />		<attribute name="dmeNP_CD" optional="YES" attributeType="String" /></entity>	<entity name="Rwy_CD" representedClassName=".Rwy_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="highIdent_CD" optional="YES" attributeType="String" />		<attribute name="lowIdent_CD" optional="YES" attributeType="String" />		<attribute name="highHdg_CD" optional="YES" attributeType="String" />		<attribute name="lowHdg_CD" optional="YES" attributeType="String" />		<attribute name="length_CD" optional="YES" attributeType="String" />		<attribute name="rwyWidth_CD" optional="YES" attributeType="String" />		<attribute name="surface_CD" optional="YES" attributeType="String" />		<attribute name="pcn_CD" optional="YES" attributeType="String" />		<attribute name="heWgsLat_CD" optional="YES" attributeType="String" />		<attribute name="heWgsDlat_CD" optional="YES" attributeType="String" />		<attribute name="heWgsLong_CD" optional="YES" attributeType="String" />		<attribute name="heWgsDlong_CD" optional="YES" attributeType="String" />		<attribute name="heElev_CD" optional="YES" attributeType="String" />		<attribute name="heSlope_CD" optional="YES" attributeType="String" />		<attribute name="heTdze_CD" optional="YES" attributeType="String" />		<attribute name="heDt_CD" optional="YES" attributeType="String" />		<attribute name="heDtElev_CD" optional="YES" attributeType="String" />		<attribute name="hlgtSys1_CD" optional="YES" attributeType="String" />		<attribute name="hlgtSys2_CD" optional="YES" attributeType="String" />		<attribute name="hlgtSys3_CD" optional="YES" attributeType="String" />		<attribute name="hlgtSys4_CD" optional="YES" attributeType="String" />		<attribute name="hlgtSys5_CD" optional="YES" attributeType="String" />		<attribute name="hlgtSys6_CD" optional="YES" attributeType="String" />		<attribute name="hlgtSys7_CD" optional="YES" attributeType="String" />		<attribute name="hlgtSys8_CD" optional="YES" attributeType="String" />		<attribute name="leWgsLat_CD" optional="YES" attributeType="String" />		<attribute name="leWgsDlat_CD" optional="YES" attributeType="String" />		<attribute name="leWgsLong_CD" optional="YES" attributeType="String" />		<attribute name="leWgsDlong_CD" optional="YES" attributeType="String" />		<attribute name="leElev_CD" optional="YES" attributeType="String" />		<attribute name="leSlope_CD" optional="YES" attributeType="String" />		<attribute name="leTdze_CD" optional="YES" attributeType="String" />		<attribute name="leDt_CD" optional="YES" attributeType="String" />		<attribute name="leDtElev_CD" optional="YES" attributeType="String" />		<attribute name="llgtSys1_CD" optional="YES" attributeType="String" />		<attribute name="llgtSys2_CD" optional="YES" attributeType="String" />		<attribute name="llgtSys3_CD" optional="YES" attributeType="String" />		<attribute name="llgtSys4_CD" optional="YES" attributeType="String" />		<attribute name="llgtSys5_CD" optional="YES" attributeType="String" />		<attribute name="llgtSys6_CD" optional="YES" attributeType="String" />		<attribute name="llgtSys7_CD" optional="YES" attributeType="String" />		<attribute name="llgtSys8_CD" optional="YES" attributeType="String" />		<attribute name="heTrueHdg_CD" optional="YES" attributeType="String" />		<attribute name="leTrueHdg_CD" optional="YES" attributeType="String" />		<attribute name="cldRwy_CD" optional="YES" attributeType="String" />		<attribute name="helandDis_CD" optional="YES" attributeType="String" />		<attribute name="heTakeoff_CD" optional="YES" attributeType="String" />		<attribute name="lelandDis_CD" optional="YES" attributeType="String" />		<attribute name="leTakeoff_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" /></entity>	<entity name="Acom_CD" representedClassName=".Acom_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="commType_CD" optional="YES" attributeType="String" />		<attribute name="commName_CD" optional="YES" attributeType="String" />		<attribute name="sym_CD" optional="YES" attributeType="String" />		<attribute name="freq1_CD" optional="YES" attributeType="String" />		<attribute name="freq2_CD" optional="YES" attributeType="String" />		<attribute name="freq3_CD" optional="YES" attributeType="String" />		<attribute name="freq4_CD" optional="YES" attributeType="String" />		<attribute name="freq5_CD" optional="YES" attributeType="String" />		<attribute name="sec_CD" optional="YES" attributeType="String" />		<attribute name="sOprH_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" />		<attribute name="multi_CD" optional="YES" attributeType="String" />		<attribute name="freqMulti_CD" optional="YES" attributeType="String" />		<attribute name="comFreq1_CD" optional="YES" attributeType="String" />		<attribute name="freqUnit1_CD" optional="YES" attributeType="String" />		<attribute name="comFreq2_CD" optional="YES" attributeType="String" />		<attribute name="freqUnit2_CD" optional="YES" attributeType="String" />		<attribute name="comFreq3_CD" optional="YES" attributeType="String" />		<attribute name="freqUnit3_CD" optional="YES" attributeType="String" />		<attribute name="comFreq4_CD" optional="YES" attributeType="String" />		<attribute name="freqUnit4_CD" optional="YES" attributeType="String" />		<attribute name="comFreq5_CD" optional="YES" attributeType="String" />		<attribute name="freqUnit5_CD" optional="YES" attributeType="String" /></entity>	<entity name="Arpt_CD" representedClassName=".Arpt_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="name_CD" optional="YES" attributeType="String" />		<attribute name="stateProv_CD" optional="YES" attributeType="String" />		<attribute name="icao_CD" optional="YES" attributeType="String" />		<attribute name="faaHostId_CD" optional="YES" attributeType="String" />		<attribute name="locHdatum_CD" optional="YES" attributeType="String" />		<attribute name="wgsDatum_CD" optional="YES" attributeType="String" />		<attribute name="wgsLat_CD" optional="YES" attributeType="String" />		<attribute name="wgsDlat_CD" optional="YES" attributeType="String" />		<attribute name="wgsLong_CD" optional="YES" attributeType="String" />		<attribute name="wgsDlong_CD" optional="YES" attributeType="String" />		<attribute name="elev_CD" optional="YES" attributeType="String" />		<attribute name="type_CD" optional="YES" attributeType="String" />		<attribute name="magVar_CD" optional="YES" attributeType="String" />		<attribute name="wac_CD" optional="YES" attributeType="String" />		<attribute name="beacon_CD" optional="YES" attributeType="String" />		<attribute name="secondArpt_CD" optional="YES" attributeType="String" />		<attribute name="oprAgy_CD" optional="YES" attributeType="String" />		<attribute name="secName_CD" optional="YES" attributeType="String" />		<attribute name="secIcao_CD" optional="YES" attributeType="String" />		<attribute name="secFaa_CD" optional="YES" attributeType="String" />		<attribute name="secOprAgy_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" />		<attribute name="terrain_CD" optional="YES" attributeType="String" />		<attribute name="hydro_CD" optional="YES" attributeType="String" /></entity>	<entity name="AcomRmk_CD" representedClassName=".AcomRmk_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="commType_CD" optional="YES" attributeType="String" />		<attribute name="rmkSeq_CD" optional="YES" attributeType="String" />		<attribute name="remark_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" />		<attribute name="multi_CD" optional="YES" attributeType="String" /></entity>	<entity name="Anav_CD" representedClassName=".Anav_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="navIdent_CD" optional="YES" attributeType="String" />		<attribute name="navType_CD" optional="YES" attributeType="String" />		<attribute name="navCtry_CD" optional="YES" attributeType="String" />		<attribute name="navKeyCd_CD" optional="YES" attributeType="String" />		<attribute name="name_CD" optional="YES" attributeType="String" />		<attribute name="atFld_CD" optional="YES" attributeType="String" />		<attribute name="bearing_CD" optional="YES" attributeType="String" />		<attribute name="distance_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" /></entity>	<entity name="Agear_CD" representedClassName=".Agear_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="rwyIdent_CD" optional="YES" attributeType="String" />		<attribute name="location_CD" optional="YES" attributeType="String" />		<attribute name="type_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" /></entity>	<entity name="TrmRmk_CD" representedClassName=".TrmRmk_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="proc_CD" optional="YES" attributeType="String" />		<attribute name="trmIdent_CD" optional="YES" attributeType="String" />		<attribute name="appType_CD" optional="YES" attributeType="String" />		<attribute name="rmkSeq_CD" optional="YES" attributeType="String" />		<attribute name="icao_CD" optional="YES" attributeType="String" />		<attribute name="remarks_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" />		<attribute name="rmkType_CD" optional="YES" attributeType="String" /></entity>	<entity name="TrmClb_CD" representedClassName=".TrmClb_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="proc_CD" optional="YES" attributeType="String" />		<attribute name="trmIdent_CD" optional="YES" attributeType="String" />		<attribute name="rwyId_CD" optional="YES" attributeType="String" />		<attribute name="occNo_CD" optional="YES" attributeType="String" />		<attribute name="icao_CD" optional="YES" attributeType="String" />		<attribute name="desig_CD" optional="YES" attributeType="String" />		<attribute name="knots_CD" optional="YES" attributeType="String" />		<attribute name="rateDesc_CD" optional="YES" attributeType="String" />		<attribute name="alt_CD" optional="YES" attributeType="String" />		<attribute name="ftnote_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" /></entity>	<entity name="TrmSeg_CD" representedClassName=".TrmSeg_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="proc_CD" optional="YES" attributeType="String" />		<attribute name="trmIdent_CD" optional="YES" attributeType="String" />		<attribute name="seqNbr_CD" optional="YES" attributeType="String" />		<attribute name="type_CD" optional="YES" attributeType="String" />		<attribute name="transition_CD" optional="YES" attributeType="String" />		<attribute name="icao_CD" optional="YES" attributeType="String" />		<attribute name="trackCd_CD" optional="YES" attributeType="String" />		<attribute name="wptId_CD" optional="YES" attributeType="String" />		<attribute name="wptCtry_CD" optional="YES" attributeType="String" />		<attribute name="wptDesc1_CD" optional="YES" attributeType="String" />		<attribute name="wptDesc2_CD" optional="YES" attributeType="String" />		<attribute name="wptDesc3_CD" optional="YES" attributeType="String" />		<attribute name="wptDesc4_CD" optional="YES" attributeType="String" />		<attribute name="turnDir_CD" optional="YES" attributeType="String" />		<attribute name="nav1Ident_CD" optional="YES" attributeType="String" />		<attribute name="nav1Type_CD" optional="YES" attributeType="String" />		<attribute name="nav1Ctry_CD" optional="YES" attributeType="String" />		<attribute name="nav1KeyCd_CD" optional="YES" attributeType="String" />		<attribute name="nav1Bear_CD" optional="YES" attributeType="String" />		<attribute name="nav1Dist_CD" optional="YES" attributeType="String" />		<attribute name="nav2Ident_CD" optional="YES" attributeType="String" />		<attribute name="nav2Type_CD" optional="YES" attributeType="String" />		<attribute name="nav2Ctry_CD" optional="YES" attributeType="String" />		<attribute name="nav2KeyCd_CD" optional="YES" attributeType="String" />		<attribute name="nav2Bear_CD" optional="YES" attributeType="String" />		<attribute name="nav2Dist_CD" optional="YES" attributeType="String" />		<attribute name="magCrs_CD" optional="YES" attributeType="String" />		<attribute name="distance_CD" optional="YES" attributeType="String" />		<attribute name="altDesc_CD" optional="YES" attributeType="String" />		<attribute name="altOne_CD" optional="YES" attributeType="String" />		<attribute name="altTwo_CD" optional="YES" attributeType="String" />		<attribute name="rnp_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" />		<attribute name="wptWgsLat_CD" optional="YES" attributeType="String" />		<attribute name="wptWgsDlat_CD" optional="YES" attributeType="String" />		<attribute name="wptWgsLong_CD" optional="YES" attributeType="String" />		<attribute name="wptWgsDlong_CD" optional="YES" attributeType="String" />		<attribute name="wptMvar_CD" optional="YES" attributeType="String" />		<attribute name="nav1WgsLat_CD" optional="YES" attributeType="String" />		<attribute name="nav1WgsDlat_CD" optional="YES" attributeType="String" />		<attribute name="nav1WgsLong_CD" optional="YES" attributeType="String" />		<attribute name="nav1WgsDlong_CD" optional="YES" attributeType="String" />		<attribute name="nav1Mvar_CD" optional="YES" attributeType="String" />		<attribute name="nav1DmeWgsLat_CD" optional="YES" attributeType="String" />		<attribute name="nav1DmeWgsDlat_CD" optional="YES" attributeType="String" />		<attribute name="nav1DmeWgsLong_CD" optional="YES" attributeType="String" />		<attribute name="nav1DmeWgsDlong_CD" optional="YES" attributeType="String" />		<attribute name="nav2WgsLat_CD" optional="YES" attributeType="String" />		<attribute name="nav2WgsDlat_CD" optional="YES" attributeType="String" />		<attribute name="nav2WgsLong_CD" optional="YES" attributeType="String" />		<attribute name="nav2WgsDlong_CD" optional="YES" attributeType="String" />		<attribute name="nav2Mvar_CD" optional="YES" attributeType="String" />		<attribute name="nav2DmeWgsLat_CD" optional="YES" attributeType="String" />		<attribute name="nav2DmeWgsDlat_CD" optional="YES" attributeType="String" />		<attribute name="nav2DmeWgsLong_CD" optional="YES" attributeType="String" />		<attribute name="nav2DmeWgsDlong_CD" optional="YES" attributeType="String" />		<attribute name="speed_CD" optional="YES" attributeType="String" />		<attribute name="speedAc_CD" optional="YES" attributeType="String" />		<attribute name="speedAlt_CD" optional="YES" attributeType="String" />		<attribute name="speed2_CD" optional="YES" attributeType="String" />		<attribute name="speedAc2_CD" optional="YES" attributeType="String" />		<attribute name="speedAlt2_CD" optional="YES" attributeType="String" />		<attribute name="vnav_CD" optional="YES" attributeType="String" />		<attribute name="tch_CD" optional="YES" attributeType="String" /></entity>	<entity name="TrmMin_CD" representedClassName=".TrmMin_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="proc_CD" optional="YES" attributeType="String" />		<attribute name="trmIdent_CD" optional="YES" attributeType="String" />		<attribute name="appType_CD" optional="YES" attributeType="String" />		<attribute name="icao_CD" optional="YES" attributeType="String" />		<attribute name="catADh_CD" optional="YES" attributeType="String" />		<attribute name="catARv_CD" optional="YES" attributeType="String" />		<attribute name="catAHa_CD" optional="YES" attributeType="String" />		<attribute name="catAWxCl_CD" optional="YES" attributeType="String" />		<attribute name="catAWxPv_CD" optional="YES" attributeType="String" />		<attribute name="catBDh_CD" optional="YES" attributeType="String" />		<attribute name="catBRv_CD" optional="YES" attributeType="String" />		<attribute name="catBHa_CD" optional="YES" attributeType="String" />		<attribute name="catBWxCl_CD" optional="YES" attributeType="String" />		<attribute name="catBWxPv_CD" optional="YES" attributeType="String" />		<attribute name="catCDh_CD" optional="YES" attributeType="String" />		<attribute name="catCRv_CD" optional="YES" attributeType="String" />		<attribute name="catCHa_CD" optional="YES" attributeType="String" />		<attribute name="catCWxCl_CD" optional="YES" attributeType="String" />		<attribute name="catCWxPv_CD" optional="YES" attributeType="String" />		<attribute name="catDDh_CD" optional="YES" attributeType="String" />		<attribute name="catDRv_CD" optional="YES" attributeType="String" />		<attribute name="catDHa_CD" optional="YES" attributeType="String" />		<attribute name="catDWxCl_CD" optional="YES" attributeType="String" />		<attribute name="catDWxPv_CD" optional="YES" attributeType="String" />		<attribute name="catEDh_CD" optional="YES" attributeType="String" />		<attribute name="catERv_CD" optional="YES" attributeType="String" />		<attribute name="catEHa_CD" optional="YES" attributeType="String" />		<attribute name="catEWxCl_CD" optional="YES" attributeType="String" />		<attribute name="catEWxPv_CD" optional="YES" attributeType="String" />		<attribute name="minRmk_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" /></entity>	<entity name="TrmMsa_CD" representedClassName=".TrmMsa_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="proc_CD" optional="YES" attributeType="String" />		<attribute name="trmIdent_CD" optional="YES" attributeType="String" />		<attribute name="secNbr_CD" optional="YES" attributeType="String" />		<attribute name="secAlt_CD" optional="YES" attributeType="String" />		<attribute name="icao_CD" optional="YES" attributeType="String" />		<attribute name="navIdent_CD" optional="YES" attributeType="String" />		<attribute name="navType_CD" optional="YES" attributeType="String" />		<attribute name="navCtry_CD" optional="YES" attributeType="String" />		<attribute name="navKeyCd_CD" optional="YES" attributeType="String" />		<attribute name="secBear1_CD" optional="YES" attributeType="String" />		<attribute name="secBear2_CD" optional="YES" attributeType="String" />		<attribute name="wptIdent_CD" optional="YES" attributeType="String" />		<attribute name="wptCtry_CD" optional="YES" attributeType="String" />		<attribute name="secMile1_CD" optional="YES" attributeType="String" />		<attribute name="secMile2_CD" optional="YES" attributeType="String" />		<attribute name="wgsLat_CD" optional="YES" attributeType="String" />		<attribute name="wgsDlat_CD" optional="YES" attributeType="String" />		<attribute name="wgsLong_CD" optional="YES" attributeType="String" />		<attribute name="wgsDlong_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" /></entity>	<entity name="TrmPar_CD" representedClassName=".TrmPar_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="proc_CD" optional="YES" attributeType="String" />		<attribute name="trmIdent_CD" optional="YES" attributeType="String" />		<attribute name="icao_CD" optional="YES" attributeType="String" />		<attribute name="esAlt_CD" optional="YES" attributeType="String" />		<attribute name="julianDate_CD" optional="YES" attributeType="String" />		<attribute name="amdtNo_CD" optional="YES" attributeType="String" />		<attribute name="opr_CD" optional="YES" attributeType="String" />		<attribute name="hostCtryAuth_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" />		<attribute name="altMin_CD" optional="YES" attributeType="String" />		<attribute name="tranAlt_CD" optional="YES" attributeType="String" />		<attribute name="tranLvl_CD" optional="YES" attributeType="String" />		<attribute name="rteTypeQual_CD" optional="YES" attributeType="String" /></entity>	<entity name="Nav_CD" representedClassName=".Nav_CD" syncable="YES">		<attribute name="navIdent_CD" optional="YES" attributeType="String" />		<attribute name="type_CD" optional="YES" attributeType="String" />		<attribute name="ctry_CD" optional="YES" attributeType="String" />		<attribute name="navKeyCd_CD" optional="YES" attributeType="String" />		<attribute name="stateProv_CD" optional="YES" attributeType="String" />		<attribute name="name_CD" optional="YES" attributeType="String" />		<attribute name="icao_CD" optional="YES" attributeType="String" />		<attribute name="wac_CD" optional="YES" attributeType="String" />		<attribute name="freq_CD" optional="YES" attributeType="String" />		<attribute name="usageCd_CD" optional="YES" attributeType="String" />		<attribute name="chan_CD" optional="YES" attributeType="String" />		<attribute name="rcc_CD" optional="YES" attributeType="String" />		<attribute name="freqProt_CD" optional="YES" attributeType="String" />		<attribute name="power_CD" optional="YES" attributeType="String" />		<attribute name="navRange_CD" optional="YES" attributeType="String" />		<attribute name="locHdatum_CD" optional="YES" attributeType="String" />		<attribute name="wgsDatum_CD" optional="YES" attributeType="String" />		<attribute name="wgsLat_CD" optional="YES" attributeType="String" />		<attribute name="wgsDlat_CD" optional="YES" attributeType="String" />		<attribute name="wgsLong_CD" optional="YES" attributeType="String" />		<attribute name="wgsDlong_CD" optional="YES" attributeType="String" />		<attribute name="slavedVar_CD" optional="YES" attributeType="String" />		<attribute name="magVar_CD" optional="YES" attributeType="String" />		<attribute name="elev_CD" optional="YES" attributeType="String" />		<attribute name="dmeWgsLat_CD" optional="YES" attributeType="String" />		<attribute name="dmeWgsDlat_CD" optional="YES" attributeType="String" />		<attribute name="dmeWgsLong_CD" optional="YES" attributeType="String" />		<attribute name="dmeWgsDlong_CD" optional="YES" attributeType="String" />		<attribute name="dmeElev_CD" optional="YES" attributeType="String" />		<attribute name="arptIcao_CD" optional="YES" attributeType="String" />		<attribute name="os_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" /></entity>	<entity name="Fueloil_CD" representedClassName=".Fueloil_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="icao_CD" optional="YES" attributeType="String" />		<attribute name="fuel_CD" optional="YES" attributeType="String" />		<attribute name="oil_CD" optional="YES" attributeType="String" />		<attribute name="jasu_CD" optional="YES" attributeType="String" />		<attribute name="supFluids_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" /></entity>	<entity name="SvcRmk_CD" representedClassName=".SvcRmk_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="type_CD" optional="YES" attributeType="String" />		<attribute name="rmkSeq_CD" optional="YES" attributeType="String" />		<attribute name="icao_CD" optional="YES" attributeType="String" />		<attribute name="remarks_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" /></entity>	<entity name="AddRwy_CD" representedClassName=".AddRwy_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="highIdent_CD" optional="YES" attributeType="String" />		<attribute name="loIdent_CD" optional="YES" attributeType="String" />		<attribute name="icao_CD" optional="YES" attributeType="String" />		<attribute name="heDtLat_CD" optional="YES" attributeType="String" />		<attribute name="heDtDlat_CD" optional="YES" attributeType="String" />		<attribute name="heDtLong_CD" optional="YES" attributeType="String" />		<attribute name="heDtDlong_CD" optional="YES" attributeType="String" />		<attribute name="heOverrunDis_CD" optional="YES" attributeType="String" />		<attribute name="heSurface_CD" optional="YES" attributeType="String" />		<attribute name="heOverrunLat_CD" optional="YES" attributeType="String" />		<attribute name="heOverrunDlat_CD" optional="YES" attributeType="String" />		<attribute name="heOverrunLong_CD" optional="YES" attributeType="String" />		<attribute name="heOverrunDlong_CD" optional="YES" attributeType="String" />		<attribute name="loDtLat_CD" optional="YES" attributeType="String" />		<attribute name="loDtDlat_CD" optional="YES" attributeType="String" />		<attribute name="loDtLong_CD" optional="YES" attributeType="String" />		<attribute name="loDtDlong_CD" optional="YES" attributeType="String" />		<attribute name="loOverrunDis_CD" optional="YES" attributeType="String" />		<attribute name="loSurface_CD" optional="YES" attributeType="String" />		<attribute name="loOverrunLat_CD" optional="YES" attributeType="String" />		<attribute name="loOverrunDlat_CD" optional="YES" attributeType="String" />		<attribute name="loOverrunLong_CD" optional="YES" attributeType="String" />		<attribute name="loOverrunDlong_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" /></entity>	<entity name="Gen_CD" representedClassName=".Gen_CD" syncable="YES">		<attribute name="arptIdent_CD" optional="YES" attributeType="String" />		<attribute name="icao_CD" optional="YES" attributeType="String" />		<attribute name="altName_CD" optional="YES" attributeType="String" />		<attribute name="cityCrossRef_CD" optional="YES" attributeType="String" />		<attribute name="islGroup_CD" optional="YES" attributeType="String" />		<attribute name="notam_CD" optional="YES" attributeType="String" />		<attribute name="oprHrs_CD" optional="YES" attributeType="String" />		<attribute name="clearStatus_CD" optional="YES" attributeType="String" />		<attribute name="utmGrid_CD" optional="YES" attributeType="String" />		<attribute name="time_CD" optional="YES" attributeType="String" />		<attribute name="daylightSave_CD" optional="YES" attributeType="String" />		<attribute name="flipPub_CD" optional="YES" attributeType="String" />		<attribute name="cycleDate_CD" optional="YES" attributeType="String" /></entity>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F203" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Acom_CD" representedClassName=".Acom_CD" syncable="YES">
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="comFreq1_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="comFreq2_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="comFreq3_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="comFreq4_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="comFreq5_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="commName_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="commType_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freq1_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freq2_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freq3_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freq4_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freq5_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freqMulti_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freqUnit1_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freqUnit2_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freqUnit3_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freqUnit4_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freqUnit5_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="multi_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="sec_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="sOprH_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="sym_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="AcomRmk_CD" representedClassName=".AcomRmk_CD" syncable="YES">
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="commType_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="multi_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="remark_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rmkSeq_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="AddRwy_CD" representedClassName=".AddRwy_CD" syncable="YES">
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heDtDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heDtDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heDtLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heDtLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heOverrunDis_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heOverrunDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heOverrunDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heOverrunLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heOverrunLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heSurface_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="highIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="icao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="loDtDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="loDtDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="loDtLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="loDtLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="loIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="loOverrunDis_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="loOverrunDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="loOverrunDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="loOverrunLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="loOverrunLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="loSurface_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="Agear_CD" representedClassName=".Agear_CD" syncable="YES">
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="location_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rwyIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="type_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="Anav_CD" representedClassName=".Anav_CD" syncable="YES">
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="atFld_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="bearing_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="distance_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="name_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navCtry_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navKeyCd_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navType_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="Arpt_CD" representedClassName=".Arpt_CD" syncable="YES">
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="beacon_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="elev_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="faaHostId_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hydro_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="icao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="locHdatum_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="magVar_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="name_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="oprAgy_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="secFaa_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="secIcao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="secName_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="secondArpt_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="secOprAgy_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="stateProv_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="terrain_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="type_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wac_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsDatum_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="Fueloil_CD" representedClassName=".Fueloil_CD" syncable="YES">
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="fuel_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="icao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="jasu_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="oil_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="supFluids_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="Gen_CD" representedClassName=".Gen_CD" syncable="YES">
+        <attribute name="altName_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cityCrossRef_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="clearStatus_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="daylightSave_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="flipPub_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="icao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="islGroup_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="notam_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="oprHrs_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="time_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="utmGrid_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="Ils_CD" representedClassName=".Ils_CD" syncable="YES">
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="chan_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="colctn_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="compType_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="dmeBias_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="dmeNP_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="elev_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freq_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="gsAngle_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="ilsBrg_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="ilsCat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="lczrGslctn_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="locHdatum_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="locMkrlctn_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="locWidth_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="magVar_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="name_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navCtry_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navKeyCd_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navType_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rwyIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="slaveVar_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="thdCrossingHgt_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsDatum_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="Nav_CD" representedClassName=".Nav_CD" syncable="YES">
+        <attribute name="arptIcao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="chan_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="ctry_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="dmeElev_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="dmeWgsDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="dmeWgsDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="dmeWgsLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="dmeWgsLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="elev_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freq_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="freqProt_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="icao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="locHdatum_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="magVar_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="name_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navKeyCd_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navRange_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="os_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="power_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rcc_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="slavedVar_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="stateProv_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="type_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="usageCd_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wac_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsDatum_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="Rwy_CD" representedClassName=".Rwy_CD" syncable="YES">
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cldRwy_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heDt_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heDtElev_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heElev_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="helandDis_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heSlope_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heTakeoff_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heTdze_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heTrueHdg_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heWgsDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heWgsDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heWgsLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="heWgsLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="highHdg_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="highIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hlgtSys1_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hlgtSys2_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hlgtSys3_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hlgtSys4_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hlgtSys5_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hlgtSys6_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hlgtSys7_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hlgtSys8_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="leDt_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="leDtElev_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="leElev_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="lelandDis_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="length_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="leSlope_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="leTakeoff_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="leTdze_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="leTrueHdg_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="leWgsDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="leWgsDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="leWgsLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="leWgsLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="llgtSys1_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="llgtSys2_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="llgtSys3_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="llgtSys4_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="llgtSys5_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="llgtSys6_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="llgtSys7_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="llgtSys8_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="lowHdg_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="lowIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="pcn_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rwyWidth_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="surface_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="SvcRmk_CD" representedClassName=".SvcRmk_CD" syncable="YES">
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="icao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="remarks_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rmkSeq_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="type_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="TrmClb_CD" representedClassName=".TrmClb_CD" syncable="YES">
+        <attribute name="alt_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="desig_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="ftnote_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="icao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="knots_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="occNo_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="proc_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rateDesc_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rwyId_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="trmIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="TrmMin_CD" representedClassName=".TrmMin_CD" syncable="YES">
+        <attribute name="appType_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catADh_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catAHa_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catARv_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catAWxCl_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catAWxPv_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catBDh_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catBHa_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catBRv_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catBWxCl_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catBWxPv_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catCDh_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catCHa_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catCRv_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catCWxCl_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catCWxPv_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catDDh_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catDHa_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catDRv_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catDWxCl_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catDWxPv_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catEDh_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catEHa_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catERv_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catEWxCl_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="catEWxPv_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="icao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="minRmk_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="proc_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="trmIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="TrmMsa_CD" representedClassName=".TrmMsa_CD" syncable="YES">
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="icao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navCtry_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navKeyCd_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="navType_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="proc_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="secAlt_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="secBear1_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="secBear2_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="secMile1_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="secMile2_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="secNbr_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="trmIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wgsLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptCtry_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="TrmPar_CD" representedClassName=".TrmPar_CD" syncable="YES">
+        <attribute name="altMin_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="amdtNo_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="esAlt_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="hostCtryAuth_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="icao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="julianDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="opr_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="proc_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rteTypeQual_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="tranAlt_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="tranLvl_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="trmIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="TrmRmk_CD" representedClassName=".TrmRmk_CD" syncable="YES">
+        <attribute name="appType_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="icao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="proc_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="remarks_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rmkSeq_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rmkType_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="trmIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="TrmSeg_CD" representedClassName=".TrmSeg_CD" syncable="YES">
+        <attribute name="altDesc_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="altOne_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="altTwo_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="arptIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="cycleDate_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="distance_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="icao_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="magCrs_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1Bear_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1Ctry_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1Dist_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1DmeWgsDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1DmeWgsDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1DmeWgsLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1DmeWgsLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1Ident_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1KeyCd_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1Mvar_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1Type_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1WgsDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1WgsDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1WgsLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav1WgsLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2Bear_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2Ctry_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2Dist_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2DmeWgsDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2DmeWgsDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2DmeWgsLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2DmeWgsLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2Ident_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2KeyCd_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2Mvar_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2Type_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2WgsDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2WgsDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2WgsLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="nav2WgsLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="proc_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rnp_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="seqNbr_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="speed_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="speed2_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="speedAc_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="speedAc2_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="speedAlt_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="speedAlt2_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="tch_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="trackCd_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="transition_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="trmIdent_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="turnDir_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="type_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="vnav_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptCtry_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptDesc1_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptDesc2_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptDesc3_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptDesc4_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptId_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptMvar_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptWgsDlat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptWgsDlong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptWgsLat_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="wptWgsLong_CD" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <elements>
+        <element name="Acom_CD" positionX="160" positionY="192" width="128" height="405"/>
+        <element name="AcomRmk_CD" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="AddRwy_CD" positionX="160" positionY="192" width="128" height="420"/>
+        <element name="Agear_CD" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="Anav_CD" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="Arpt_CD" positionX="160" positionY="192" width="128" height="420"/>
+        <element name="Fueloil_CD" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="Gen_CD" positionX="160" positionY="192" width="128" height="240"/>
+        <element name="Ils_CD" positionX="160" positionY="192" width="128" height="495"/>
+        <element name="Nav_CD" positionX="160" positionY="192" width="128" height="525"/>
+        <element name="Rwy_CD" positionX="160" positionY="192" width="128" height="810"/>
+        <element name="SvcRmk_CD" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="TrmClb_CD" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="TrmMin_CD" positionX="160" positionY="192" width="128" height="525"/>
+        <element name="TrmMsa_CD" positionX="160" positionY="192" width="128" height="360"/>
+        <element name="TrmPar_CD" positionX="160" positionY="192" width="128" height="255"/>
+        <element name="TrmRmk_CD" positionX="160" positionY="192" width="128" height="180"/>
+        <element name="TrmSeg_CD" positionX="160" positionY="192" width="128" height="1020"/>
+    </elements>
 </model>

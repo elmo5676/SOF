@@ -19,7 +19,15 @@ class TrmRmkCDU {
 					let results = try decoder.decode([TrmRmk].self, from: Data(contentsOf: fileName))
 					for trmRmk_CD in results {
 						let trmRmk_CD_DB = TrmRmk_CD(context: moc)
-						trmRmk_CD_DB.arptIdent_CD = trmRmk_CD.arptIdent						trmRmk_CD_DB.proc_CD = trmRmk_CD.proc						trmRmk_CD_DB.trmIdent_CD = trmRmk_CD.trmIdent						trmRmk_CD_DB.appType_CD = trmRmk_CD.appType						trmRmk_CD_DB.rmkSeq_CD = trmRmk_CD.rmkSeq						trmRmk_CD_DB.icao_CD = trmRmk_CD.icao						trmRmk_CD_DB.remarks_CD = trmRmk_CD.remarks						trmRmk_CD_DB.cycleDate_CD = trmRmk_CD.cycleDate						trmRmk_CD_DB.rmkType_CD = trmRmk_CD.rmkType
+						trmRmk_CD_DB.arptIdent_CD = trmRmk_CD.arptIdent
+						trmRmk_CD_DB.proc_CD = trmRmk_CD.proc
+						trmRmk_CD_DB.trmIdent_CD = trmRmk_CD.trmIdent
+						trmRmk_CD_DB.appType_CD = trmRmk_CD.appType
+						trmRmk_CD_DB.rmkSeq_CD = trmRmk_CD.rmkSeq
+						trmRmk_CD_DB.icao_CD = trmRmk_CD.icao
+						trmRmk_CD_DB.remarks_CD = trmRmk_CD.remarks
+						trmRmk_CD_DB.cycleDate_CD = trmRmk_CD.cycleDate
+						trmRmk_CD_DB.rmkType_CD = trmRmk_CD.rmkType
 						tempArray.append(trmRmk_CD_DB)
 					}
 					moc.performAndWait {
@@ -30,7 +38,7 @@ class TrmRmkCDU {
 						}}
 		} catch {print(error)}
 					DispatchQueue.main.async {
-						//print("TrmRmk_CD Done Loading into CoreData")
+						log.info("TrmRmk_CD Done Loading into CoreData")
 						self.cduIncDelegate?.cduDoneLoading()
 	}}}
 
@@ -59,4 +67,17 @@ class TrmRmkCDU {
 		}
 		return trmRmk_CD
 	}
+    
+    class func getWithAirPortId(id: String, moc: NSManagedObjectContext) -> [TrmRmk_CD]? {
+        let CDFetchRequest = NSFetchRequest<TrmRmk_CD>(entityName: "TrmRmk_CD")
+        let predicate = NSPredicate(format: "%K = %@", #keyPath(TrmRmk_CD.arptIdent_CD) , id)
+        CDFetchRequest.predicate = predicate
+        do {
+            return try moc.fetch(CDFetchRequest)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+    
 }

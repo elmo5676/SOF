@@ -41,7 +41,7 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
     var allRwys: [Rwy_CD] = []
     let arptCDU = ArptCDU()
     var allArpts: [Arpt_CD] = []
-    var arptDic: [String? : Rwy_CD] = [:]
+    var arptDic: [String? : [Any]] = [:]
     
     @IBAction func b1(_ sender: UIButton) {
         load()
@@ -51,27 +51,100 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
         stack.deleteAllCoreData()
     }
     
+    
     @IBAction func b3(_ sender: UIButton) {
-//        
-//        allRwys = rwyCDU.getRwysGreaterThan(8000.00, pc: pc!)
-//        for rwy in allRwys {
-//            print(rwy.arptIdent_CD)
-////            arptDic[arptCDU.getArptWithId(id: rwy.arptIdent_CD!, pc: pc!)!.icao_CD] = rwy
+//        let moc = stack.bmoc
+//        allArpts = arptCDU.getAll(moc: moc)
+//        allRwys = rwyCDU.getAll(moc: moc)
+//        for airport in allArpts {
+//            for runway in allRwys {
+//                if runway.arptIdent_CD == airport.arptIdent_CD {
+//                    let i = allRwys.firstIndex(of: runway)
+//                    allRwys.remove(at: i!)
+//                }
+//            }
 //        }
-//        print(arptDic)
+//        stack.saveBackgroundContext()
     }
     
     @IBAction func b4(_ sender: UIButton) {
-//        for rwy in allRwys {
-//            if rwy.arptIdent_CD != nil {
-//                let arpt = arptCDU.getArptWithId(id: rwy.arptIdent_CD!, pc: pc!)
-//                allArpts.append(arpt!)
-//            }
-//            for air in allArpts {
-//                print(air.icao_CD)
-//            }
-//            arptDic[arptCDU.getArptWithId(id: rwy.arptIdent_CD!, pc: pc!)!.icao_CD] = rwy
-//        }
+        let moc = DAFIFCDStack().moc
+//        guard let airport = ArptCDU().getArptWithICAO(icao: "KSFO", moc: moc) else {return}
+//        let airportStuff = GeneralCDU.getAllAssociatedInfoFromAirportID(airport.arptIdent_CD!, moc: moc)
+        let airportStuff = GeneralCDU.getAllAssociatedInfoFromIcao("KBAB", moc: moc)
+        guard let mins = airportStuff.trmMin else {return}
+        guard let acoms = airportStuff.acom else {return}
+        guard let runways = airportStuff.runways else {return}
+        guard let fuelOils = airportStuff.fuelOil else {return}
+        guard let gens = airportStuff.gen else {return}
+        guard let ils = airportStuff.ils else {return}
+        guard let svcRmks = airportStuff.svcRmk else {return}
+        for min in mins {
+            print("************* MINS ******************")
+            print(min.proc_CD!)
+            print(min.appType_CD!.removeAllCharOf("*"))
+            print(min.trmIdent_CD!)
+            print(min.catEDh_CD!)
+        }
+        
+        for acom in acoms {
+            print("************ Acom *******************")
+            print(acom.commType_CD!)
+            print(acom.commName_CD!)
+            print(acom.freq1_CD.frequency)
+            print(acom.freq2_CD.frequency)
+            print(acom.freq3_CD.frequency)
+            print(acom.freq4_CD.frequency)
+            print(acom.freq5_CD.frequency)
+            print(acom.sOprH_CD.frequency)
+        }
+        
+        for fo in fuelOils {
+            print("************* FUEL OIL ******************")
+            print(fo.fuel_CD!)
+            print(fo.jasu_CD!)
+            print(fo.oil_CD!)
+        }
+        
+        for gen in gens {
+            print("************ GEN *******************")
+            print(gen.oprHrs_CD!)
+            print(gen.notam_CD!)
+            print(gen.time_CD!)
+            print(gen.altName_CD!)
+            print(gen.daylightSave_CD!)
+            print(gen.daylightSave_CD!)
+        }
+
+        
+        for il in ils {
+            print("*********** ILS ********************")
+            print(il.chan_CD!)
+            print(il.elev_CD!)
+            print(il.compType_CD!)
+            print(il.freq_CD.ilsFrequency)
+            print(il.ilsBrg_CD!)
+            print(il.ilsCat_CD!)
+            print(il.magVar_CD!)
+            print(il.name_CD!)
+            print(il.rwyIdent_CD!)
+        }
+        
+        for sv in svcRmks {
+            print("********** Remarks *********************")
+            print(sv.remarks_CD!)
+            print(sv.type_CD!)
+        }
+        
+        for rw in runways {
+            print("************ Runways *******************")
+            print(rw.heSlope_CD!)
+            print(rw.leSlope_CD!)
+            print(rw.highIdent_CD!)
+            print(rw.lowIdent_CD!)
+        }
+
+
     }
     
     
