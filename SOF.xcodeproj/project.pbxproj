@@ -41,6 +41,7 @@
 		5265457422BA979C00EA210E /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265457322BA979C00EA210E /* CheckInViewController.swift */; };
 		5265457722BA99DF00EA210E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265457622BA99DF00EA210E /* UIViewController+Extension.swift */; };
 		527BE79422C650F200CCC6F9 /* DateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527BE79322C650F200CCC6F9 /* DateHandler.swift */; };
+		528A1D9122DD9BBA001DF187 /* NotamFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A1D9022DD9BBA001DF187 /* NotamFetcher.swift */; };
 		528F70D622D3C58E004B1EFF /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528F70D522D3C58E004B1EFF /* CLLocationCoordinate2D+Extension.swift */; };
 		528F70D822D45062004B1EFF /* CoreDataTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528F70D722D45062004B1EFF /* CoreDataTesterViewController.swift */; };
 		528F70DA22D50571004B1EFF /* T38A_TOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528F70D922D50571004B1EFF /* T38A_TOLD.swift */; };
@@ -222,6 +223,7 @@
 		5265457322BA979C00EA210E /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		5265457622BA99DF00EA210E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		527BE79322C650F200CCC6F9 /* DateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHandler.swift; sourceTree = "<group>"; };
+		528A1D9022DD9BBA001DF187 /* NotamFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotamFetcher.swift; sourceTree = "<group>"; };
 		528F70D522D3C58E004B1EFF /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
 		528F70D722D45062004B1EFF /* CoreDataTesterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTesterViewController.swift; sourceTree = "<group>"; };
 		528F70D922D50571004B1EFF /* T38A_TOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = T38A_TOLD.swift; sourceTree = "<group>"; };
@@ -462,6 +464,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		528A1D8F22DD9B8C001DF187 /* AtisNOTAM */ = {
+			isa = PBXGroup;
+			children = (
+				528A1D9022DD9BBA001DF187 /* NotamFetcher.swift */,
+			);
+			path = AtisNOTAM;
+			sourceTree = "<group>";
+		};
 		5294101622BA9EFA008F05A0 /* PckerViewDataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +548,7 @@
 				5294101622BA9EFA008F05A0 /* PckerViewDataModel */,
 				52E3BB6A22C477C70062E8F4 /* AHAS */,
 				52AD6D1F22B7DDDC0077FC91 /* Notams */,
+				528A1D8F22DD9B8C001DF187 /* AtisNOTAM */,
 				52F3BDAC22B6295A00F7F367 /* Weather */,
 				52F3BCF222B6267300F7F367 /* DAFIF Processor */,
 				52F3BCF022B6260600F7F367 /* CoreData */,
@@ -1067,6 +1078,7 @@
 				522BE34C22BFD19100D31E36 /* AES256CBC.swift in Sources */,
 				52E3BB7222C484060062E8F4 /* Ahas.swift in Sources */,
 				52F3BD8D22B6276B00F7F367 /* TrmClb_CD+CoreDataClass.swift in Sources */,
+				528A1D9122DD9BBA001DF187 /* NotamFetcher.swift in Sources */,
 				52F3BD9322B6276B00F7F367 /* Fueloil_CD+CoreDataClass.swift in Sources */,
 				5242113222B89BEA0066FB88 /* NormalOpsTabTableViewController.swift in Sources */,
 				52277ACA22AEF78A00CD45BE /* ArrayPicker.swift in Sources */,
