@@ -75,7 +75,6 @@ class ArptCDU {
 
 
     func getAll(moc: NSManagedObjectContext) -> [Arpt_CD] {
-//        let moc = stack.moc
 		var arpt_CD = [Arpt_CD]()
 		let arpt_CDFetchRequest = NSFetchRequest<Arpt_CD>(entityName: "Arpt_CD")
 		do {

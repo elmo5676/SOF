@@ -92,8 +92,8 @@ struct DAFIFDataController {
             _ = JSONFromDAFFIF(fileName: file, writeToFile: true, jsonOnly: self.jsonOnly, documentsDirectory: documentsDirectory)
             jsonIncrementorDelegate?.jsonIncrementCounter()
         }
-        jsonLoaderDelegate?.loadJSONafterDownloadedAndProcessed()
         cleanUpFolder()
+        jsonLoaderDelegate?.loadJSONafterDownloadedAndProcessed()
     }
     
     func cleanUpFolder() {

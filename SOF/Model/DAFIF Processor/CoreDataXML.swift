@@ -50,7 +50,6 @@ struct CoreDataXML {
         return "\(entity)\(attribute)</entity>\r"
     }
     
-//    syncable=\"YES\"
     
     public func createCoreDataModel(internalCoreDataXML: String?, coreDataModelName: String) {
         if let internalXML = internalCoreDataXML {

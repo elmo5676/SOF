@@ -105,61 +105,6 @@ struct CDUCreator {
         \t}
         }
         """
-//        var swiftFileContent = """
-//                                \r
-//                                \r
-//                                import Foundation
-//                                import CoreData
-//                                \r
-//                                \r
-//                                struct \(structName)CDU {
-//                                \r
-//                                \r
-//                                \tfunc load\(structName)ToCDfromJSON(moc: NSManagedObjectContext){
-//                                \t\tlet decoder = JSONDecoder()
-//                                \t\tlet fileName = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first!.appendingPathComponent("DAFIF_JSON/\(jsonFileName)")
-//                                \r
-//                                \t\tdo {
-//                                \t\t\tlet results = try decoder.decode([\(structName)].self, from: Data(contentsOf: fileName))
-//                                \t\t\t_ = results.map { (\(entityName.lowerCaseFirstLetter())) -> \(entityName) in
-//                                \t\t\t\tlet \(entityName.lowerCaseFirstLetter())_DB = \(entityName)(context: moc)
-//                                \(encoders)
-//                                \t\t\t\treturn \(entityName.lowerCaseFirstLetter())_DB
-//                                \t\t\t}
-//                                \t\t\tmoc.performAndWait {
-//                                \t\t\t\tdo {
-//                                \t\t\t\t\ttry moc.save()
-//                                \t\t\t\t} catch {
-//                                \t\t\t\t\tprint(error)
-//                                \t\t\t\t}}
-//                                \t\t} catch {print(error)}
-//                                \t}
-//                                \r
-//                                \r
-//                                \tfunc delete\(entityName)FromDB(moc: NSManagedObjectContext) {
-//                                \t\tlet delete\(entityName) = NSBatchDeleteRequest(fetchRequest: \(entityName).fetchRequest())
-//                                \t\tdo {
-//                                \t\t\ttry moc.execute(delete\(entityName))
-//                                \t\t\ttry moc.save()
-//                                \t\t\tprint("All \(entityName) were succesfully deleted from CoreData")
-//                                \t\t} catch {
-//                                \t\t\tprint("Nope")
-//                                \t\t}
-//                                \t}
-//                                \r
-//                                \r
-//                                \tfunc getAll\(entityName)(moc: NSManagedObjectContext) -> [\(entityName)] {
-//                                \t\tvar \(entityName.lowerCaseFirstLetter()) = [\(entityName)]()
-//                                \t\tlet \(entityName.lowerCaseFirstLetter())FetchRequest = NSFetchRequest<\(entityName)>(entityName: "\(entityName)")
-//                                \t\tdo {
-//                                \t\t\t\(entityName.lowerCaseFirstLetter()) = try moc.fetch(\(entityName.lowerCaseFirstLetter())FetchRequest)
-//                                \t\t} catch {
-//                                \t\t\tprint(error)
-//                                \t\t}
-//                                \t\treturn \(entityName.lowerCaseFirstLetter())
-//                                \t}
-//                                }
-//                                """
         let myData = Data(swiftFileContent.utf8)
         do {
             try myData.write(to: urlName, options: .atomic)

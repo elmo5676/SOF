@@ -24,13 +24,13 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
     func jsonIncrementCounter() {
         log.debug("JSON Increment Counter")
         DispatchQueue.main.async {
-            self.counter += 1
-            print(self.counter)
-            print(self.total)
-            let c = Double(self.counter)
-            let t = Double(self.total)
-            print(Float((c / t)))
-            self.dafifLoaderProgress.progress = Float((c / t))
+            self.dafifIncCounter += 1
+            print(self.dafifIncCounter)
+            print(self.dafifIncTotal)
+            let c = Double(self.dafifIncCounter)
+            let t = Double(self.dafifIncTotal)
+            let dafifIncRatio = (c/t)
+            self.dafifLoaderProgress.progress = Float(dafifIncRatio)
         }
     }
     
@@ -46,11 +46,12 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
     var pc: NSPersistentContainer?
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var dafifLoaderProgress: UIProgressView!
-    var total = DAFIFCDStack().wantedData.count
-    var counter = 0
+    var dafifIncTotal = DAFIFCDStack().wantedData.count
+    var dafifIncCounter = 0
+    
     
     func load() {
-        counter = 0
+        dafifIncCounter = 0
         runSpinner(true)
         print("Number of Entities:: \(stack.wantedData.count)")
         stack.deleteAllCoreData()
@@ -87,24 +88,10 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
     
     
     @IBAction func b3(_ sender: UIButton) {
-//        let moc = stack.bmoc
-//        allArpts = arptCDU.getAll(moc: moc)
-//        allRwys = rwyCDU.getAll(moc: moc)
-//        for airport in allArpts {
-//            for runway in allRwys {
-//                if runway.arptIdent_CD == airport.arptIdent_CD {
-//                    let i = allRwys.firstIndex(of: runway)
-//                    allRwys.remove(at: i!)
-//                }
-//            }
-//        }
-//        stack.saveBackgroundContext()
     }
     
     @IBAction func b4(_ sender: UIButton) {
         let moc = DAFIFCDStack().moc
-//        guard let airport = ArptCDU().getArptWithICAO(icao: "KSFO", moc: moc) else {return}
-//        let airportStuff = GeneralCDU.getAllAssociatedInfoFromAirportID(airport.arptIdent_CD!, moc: moc)
         let airportStuff = GeneralCDU.getAllAssociatedInfoFromIcao("KDFW", moc: moc)
         guard let mins = airportStuff.trmMin else {return}
         guard let acoms = airportStuff.acom else {return}
