@@ -95,12 +95,12 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
     
     
     @IBAction func b3(_ sender: UIButton) {
-        let alt = Alternate(icao: "KBAB", aircraft: .T38A)
+        let alt = Alternate(icao: "KMHR", aircraft: .T38A)
     }
     
     @IBAction func b4(_ sender: UIButton) {
         let moc = DAFIFCDStack().moc
-        let airportStuff = GeneralCDU.getAllAssociatedInfoFromIcao("KDFW", moc: moc)
+        let airportStuff = GeneralCDU.getAllAssociatedInfoFromIcao("KMHR", moc: moc)
         guard let mins = airportStuff.trmMin else {return}
         guard let acoms = airportStuff.acom else {return}
         guard let runways = airportStuff.runways else {return}
