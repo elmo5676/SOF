@@ -537,13 +537,13 @@
 		52D0954D22AC373C008A236B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				52E19DC322C9C74B00A06C54 /* AWS */,
 				527BE79322C650F200CCC6F9 /* DateHandler.swift */,
 				528F70D922D50571004B1EFF /* T38A_TOLD.swift */,
 				523BAFBA22C07BCA00F667B3 /* UserDefaultSetup.swift */,
 				52D2D2D322D29B7B0030C79B /* SwiftyTimer.swift */,
 				52D2D2D122D299730030C79B /* SwiftyUserDefaults.swift */,
 				52F3BDBD22B62B9900F7F367 /* Observable.swift */,
+				52E19DC322C9C74B00A06C54 /* AWS */,
 				5265457222BA588C00EA210E /* PickerSpecial */,
 				5294101622BA9EFA008F05A0 /* PckerViewDataModel */,
 				52E3BB6A22C477C70062E8F4 /* AHAS */,
@@ -1233,7 +1233,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KG653N5ES4;
+				DEVELOPMENT_TEAM = VR6Z5GU2W7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1256,7 +1256,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KG653N5ES4;
+				DEVELOPMENT_TEAM = VR6Z5GU2W7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

@@ -86,8 +86,16 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
         stack.deleteAllCoreData()
     }
     
+    func doSomething(_ notamList: NotamList) {
+        print(notamList)
+        for (key, value) in notamList {
+            print(value)
+        }
+    }
+    
     
     @IBAction func b3(_ sender: UIButton) {
+        _ = NotamFetcher(stations: ["KBAB"], completion: doSomething)
     }
     
     @IBAction func b4(_ sender: UIButton) {

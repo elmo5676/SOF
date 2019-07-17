@@ -18,7 +18,6 @@ struct JSONFromDAFFIF {
     public var headerDecoders: [String] = []
     public var bodySampleDecoder: [String] = []
     public var json: Data?
-    public var printableJson: String?
     public var jsonFileName: String?
     private let fileManager: FileManager
     private let documentsDirectory: URL
@@ -32,12 +31,11 @@ struct JSONFromDAFFIF {
         self.fileName = fileName
         fileManager = FileManager.default
         self.documentsDirectory = documentsDirectory
-        let json = makeJson()
-        self.json = json.json
-        self.printableJson = json.printableJson
+        self.json = makeJson()
         if writeToFile {
             if let validData = self.json {
                 self.writeJsonToFile(json: validData)
+                self.json = nil
             }}}
     
     private func getFileNamed(_ filename: URL) -> String {
@@ -105,18 +103,16 @@ struct JSONFromDAFFIF {
         return result
     }
     
-    private mutating func makeJson() -> (json: Data?, printableJson: String?)  {
+    private mutating func makeJson() -> Data?  {
         var result: Data?
-        var printableJson: String?
         let x = getDAFFIFDict(fileName: self.fileName)
         self.headerDecoders = x.headers
         let json = makeJsonReadyDictDaffif(headers: x.headers, body: x.body)
         if JSONSerialization.isValidJSONObject(json) {
             if let data = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
                 result = data
-                printableJson = String(decoding: data, as: UTF8.self)
         }}
-        return (json: result, printableJson: printableJson)
+        return result
     }
     
     ///This function creates the JSON files from the DAFIF8 text files.
@@ -129,7 +125,7 @@ struct JSONFromDAFFIF {
             return "\(folder)_\(lastC)"
         }()
         let urlName = documentsDirectory.appendingPathComponent("DAFIF_JSON/\(jsonFileName)")
-        self.jsonFileName = jsonFileName//"\(documentsDirectory).appendingPathComponent(\"DAFIF_JSON/\(jsonFileName)\")"
+        self.jsonFileName = jsonFileName
         let myData = json
         switch self.jsonOnly {
         case true:

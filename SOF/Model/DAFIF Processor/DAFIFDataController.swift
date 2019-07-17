@@ -89,7 +89,14 @@ struct DAFIFDataController {
         unZipper.unZipDAFIF8()
         let listOfFileNames = unZipper.getContentsOf(.dafift, wantedData: wantedData)
         for file in listOfFileNames {
+            let myGroup = DispatchGroup()
+            myGroup.enter()
             _ = JSONFromDAFFIF(fileName: file, writeToFile: true, jsonOnly: self.jsonOnly, documentsDirectory: documentsDirectory)
+            myGroup.leave() //// When your task completes
+            myGroup.notify(queue: DispatchQueue.main) {
+                log.debug("Hopefully this speeds things up a bit")
+            }
+            
             jsonIncrementorDelegate?.jsonIncrementCounter()
         }
         cleanUpFolder()
