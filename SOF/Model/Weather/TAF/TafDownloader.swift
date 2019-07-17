@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TafDelegate {
-    func getTafs(_ taf: [Taf]?)
+    func hereAreTheTafs(_ taf: [Taf]?)
 }
 
 class TafDownloader {
@@ -18,6 +18,12 @@ class TafDownloader {
     init(icao: String,
          delegate: UIViewController) {
         self.delegate = delegate as? TafDelegate
+        getTafFor(icao: icao)
+    }
+    
+    init(icao: String,
+         delegate: Alternate) {
+        self.delegate = delegate as TafDelegate
         getTafFor(icao: icao)
     }
     
@@ -31,7 +37,7 @@ class TafDownloader {
         let task = session.dataTask(with: request) { (data, response, error) -> Void in
             if let XMLData = data {
                 let ct = TafParser(data: XMLData).tafs
-                self.delegate?.getTafs(ct)
+                self.delegate?.hereAreTheTafs(ct)
             } else if let requestError = error {
                 print("Error fetching metar: \(requestError)")
             } else {

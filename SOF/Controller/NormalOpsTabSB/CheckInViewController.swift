@@ -70,8 +70,6 @@ class CheckInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func getBirdCondition(_ sender: Any) {
-        let ahas = AhasDownLoader(area: AHASInputs.MilitaryAirfields.BEALE_AFB, delegate: self, month: .june, day: ._27, hourZ: ._17, duration: 1)
-        print(ahas)
     }
     
    

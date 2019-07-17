@@ -21,8 +21,7 @@ class AhasParser: NSObject, XMLParserDelegate {
         self.init()
         let parser = XMLParser(data: data)
         parser.delegate = self
-//        let success = parser.parse()
-//        log.info(success)
+        _ = parser.parse()
     }
     
     func parserDidStartDocument(_ parser: XMLParser) {
@@ -73,7 +72,7 @@ class AhasParser: NSObject, XMLParserDelegate {
             }}}
     
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
-        print(parseError)
+        log.error(parseError)
         currentValue = nil
         currentAhas = nil
         results = nil

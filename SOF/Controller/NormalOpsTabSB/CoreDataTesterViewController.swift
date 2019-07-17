@@ -95,7 +95,7 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
     
     
     @IBAction func b3(_ sender: UIButton) {
-        _ = NotamFetcher(stations: ["KBAB"], completion: doSomething)
+        let alt = Alternate(icao: "KBAB", aircraft: .T38A)
     }
     
     @IBAction func b4(_ sender: UIButton) {

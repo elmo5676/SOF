@@ -262,7 +262,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     
     
     // MARK: - Bird Condition
-    func getBirdCondition(_ ahas: [Ahas]) {
+    func hereIsTheBirdCondition(_ ahas: [Ahas]) {
         self.ahas = ahas
     }
     
@@ -277,7 +277,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     }
     
     // MARK: - Weather
-    func getCurrentMetar(_ metar: [Metar]?, metarLoc: MetarLoc, refreshUI: Bool) {
+    func hereIsTheMetar(_ metar: [Metar]?, metarLoc: MetarLoc, refreshUI: Bool) {
     }
     
     func updateWx(){
@@ -319,7 +319,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         let query = ListSofStatussQuery(limit: 10_000)
         appSyncClient?.fetch(query: query, cachePolicy: .fetchIgnoringCacheData) {(result, error) in
             if error != nil {
-                self.log.error(error as Any)
+//                self.log.error(error as Any)
                 return
             }
             if result != nil {
@@ -344,7 +344,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
                     print(result)
                     self.updateStatusBoard(result: result)
                 } else if let error = error {
-                    self.log.error(error.localizedDescription)
+//                    self.log.error(error.localizedDescription)
                 }
             })
         } catch {

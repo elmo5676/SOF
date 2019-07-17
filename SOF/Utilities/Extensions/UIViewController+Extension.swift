@@ -126,7 +126,6 @@ public extension UIViewController {
         gradient.endPoint = endPoint
         gradient.bounds = object.bounds
         let cf = splitViewCorrectionFactor()
-        print(cf)
         gradient.frame = CGRect(x: 0, y: 0, width: cf * object.frame.size.width, height: object.frame.size.height)
         return gradient
     }

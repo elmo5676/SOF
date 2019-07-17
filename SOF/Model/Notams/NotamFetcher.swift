@@ -10,6 +10,10 @@ import Foundation
 
 typealias NotamList = [String: [String]]
 
+protocol NotamFetcherDelegate {
+    func hereAreTheNotams(_ notams: NotamList)
+}
+
 class NotamFetcher {
     var stations: [String] {
         didSet {
@@ -17,6 +21,7 @@ class NotamFetcher {
         }
     }
     
+    var delegate: NotamFetcherDelegate?
     private(set) var notams: NotamList = [:]
     
     private var rawNotamData: [String] = []
@@ -33,6 +38,13 @@ class NotamFetcher {
     init(stations: [String], completion: ((NotamList) -> ())?) {
         self.stations = stations.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
         self.completionAction = completion
+        retrieveNotams()
+    }
+    
+    init(icaos: [String],
+        delegate: Alternate) {
+        self.stations = icaos.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+        self.delegate = delegate as NotamFetcherDelegate
         retrieveNotams()
     }
     
@@ -121,6 +133,9 @@ class NotamFetcher {
         notams[prevStation] = notamArray
         if let completion = completionAction {
             completion(notams)
+        }
+        if let delegate = self.delegate {
+            delegate.hereAreTheNotams(notams)
         }
     }
     

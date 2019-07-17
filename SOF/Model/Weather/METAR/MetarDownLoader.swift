@@ -10,10 +10,10 @@ import UIKit
 
 
 protocol MetarDelegate {
-    func getCurrentMetar(_ metar: [Metar]?, metarLoc: MetarLoc, refreshUI: Bool)
+    func hereIsTheMetar(_ metar: [Metar]?, metarLoc: MetarLoc, refreshUI: Bool)
 }
 
-struct MetarDownLoader {
+class MetarDownLoader {
     var delagate: MetarDelegate?
     var metarLoc: MetarLoc!
     var refreshUI: Bool!
@@ -39,6 +39,14 @@ struct MetarDownLoader {
         getMetarFor(icao: icao)
     }
     
+    init(icao: String,
+         delegate: Alternate){
+        self.delagate = delegate as MetarDelegate
+        self.metarLoc = .icao
+        self.refreshUI = false
+        getMetarFor(icao: icao)
+    }
+    
     private let session: URLSession = {
         return URLSession(configuration: .default)
     }()
@@ -50,7 +58,7 @@ struct MetarDownLoader {
             if let XMLData = data {
                 let cm = MetarParser(data: XMLData).metars
                 DispatchQueue.main.async {
-                    self.delagate?.getCurrentMetar(cm, metarLoc: self.metarLoc, refreshUI: self.refreshUI)
+                    self.delagate?.hereIsTheMetar(cm, metarLoc: self.metarLoc, refreshUI: self.refreshUI)
                 }
             } else if let requestError = error {
                 self.log.error("Error fetching metar: \(requestError)")

@@ -8,7 +8,7 @@
 
 import Foundation
 
-//Enum for the various DateFormats from the named APIs
+///Enum for the various DateFormats from the named APIs
 enum DateSource: String {
     case metarAndTaf = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"
     case tafStartEnd = "yyyy'-'MM'-'dd' 'HH':'mm':'ss' +'Z"
@@ -22,7 +22,7 @@ enum DateSource: String {
 
 struct DateHandler {
     
-    //This translates Dates from various API's into Date()
+    ///This translates Dates from various API's into Date()
     func getDateFrom(_ date: String?, ofType: DateSource) -> Date? {
         let df = DateFormatter()
         df.dateFormat = ofType.rawValue
@@ -51,13 +51,17 @@ struct DateHandler {
         } else { return nil }
     }
     
-    //Returns Dates of Now and hours in the future Date
+    ///Returns Dates of Now and hours in the future Date
     func getDateForTaf(nowPlusHours: Int) -> (now: Date?, endTime: Date?) {
         let today = Date()
         var calender = Calendar.current
         calender.timeZone = TimeZone(abbreviation: "UTC")!
         let endTime = calender.date(byAdding: .hour, value: nowPlusHours, to: today)
         return (now: today, endTime: endTime)
+    }
+    
+    func getAhasDateComponentsFrom(_ date: Date) {
+        
     }
     
 
