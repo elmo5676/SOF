@@ -75,7 +75,6 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
         case false:
             spinner.stopAnimating()
         }
-        
     }
     
     @IBAction func b1(_ sender: UIButton) {
@@ -83,97 +82,17 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
     }
     
     @IBAction func b2(_ sender: UIButton) {
-        stack.deleteAllCoreData()
     }
-    
-    func doSomething(_ notamList: NotamList) {
-        print(notamList)
-        for (key, value) in notamList {
-            print(value)
-        }
-    }
-    
     
     @IBAction func b3(_ sender: UIButton) {
-        let alt = Alternate(icao: "KMHR", aircraft: .T38A)
+        let ac = T38A()
+        let alt = Alternate(icao: "KSFO", aircraft: ac)
+        for app in alt.compatableApproaches {
+            print(app.trmIdent_CD)
+        }
     }
     
     @IBAction func b4(_ sender: UIButton) {
-        let moc = DAFIFCDStack().moc
-        let airportStuff = GeneralCDU.getAllAssociatedInfoFromIcao("KMHR", moc: moc)
-        guard let mins = airportStuff.trmMin else {return}
-        guard let acoms = airportStuff.acom else {return}
-        guard let runways = airportStuff.runways else {return}
-        guard let fuelOils = airportStuff.fuelOil else {return}
-        guard let gens = airportStuff.gen else {return}
-        guard let ils = airportStuff.ils else {return}
-        guard let svcRmks = airportStuff.svcRmk else {return}
-        for mn in mins {
-            print("************* MINS ******************")
-            print(mn.proc_CD!)
-            print(mn.appType_CD!.removeAllCharOf("*"))
-            print(mn.trmIdent_CD!)
-            print(mn.catEDh_CD!)
-        }
-        
-        for ac in acoms {
-            print("************ Acom *******************")
-            print(ac.commType_CD!)
-            print(ac.commName_CD!)
-            print(ac.freq1_CD.frequency)
-            print(ac.freq2_CD.frequency)
-            print(ac.freq3_CD.frequency)
-            print(ac.freq4_CD.frequency)
-            print(ac.freq5_CD.frequency)
-            print(ac.sOprH_CD.frequency)
-        }
-        
-        for fo in fuelOils {
-            print("************* FUEL OIL ******************")
-            print(fo.fuel_CD!)
-            print(fo.jasu_CD!)
-            print(fo.oil_CD!)
-        }
-        
-        for gn in gens {
-            print("************ GEN *******************")
-            print(gn.oprHrs_CD!)
-            print(gn.notam_CD!)
-            print(gn.time_CD!)
-            print(gn.altName_CD!)
-            print(gn.daylightSave_CD!)
-            print(gn.daylightSave_CD!)
-        }
-
-        
-        for il in ils {
-            print("*********** ILS ********************")
-            print(il.chan_CD!)
-            print(il.elev_CD!)
-            print(il.compType_CD!)
-            print(il.freq_CD.ilsFrequency)
-            print(il.ilsBrg_CD!)
-            print(il.ilsCat_CD!)
-            print(il.magVar_CD!)
-            print(il.name_CD!)
-            print(il.rwyIdent_CD!)
-        }
-        
-        for sv in svcRmks {
-            print("********** Remarks *********************")
-            print(sv.remarks_CD!)
-            print(sv.type_CD!)
-        }
-        
-        for rw in runways {
-            print("************ Runways *******************")
-            print(rw.heSlope_CD!)
-            print(rw.leSlope_CD!)
-            print(rw.highIdent_CD!)
-            print(rw.lowIdent_CD!)
-        }
-
-
     }
     
     

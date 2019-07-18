@@ -293,7 +293,7 @@
                                     <visualEffectView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hV4-a9-B4n">
                                         <rect key="frame" x="0.0" y="0.0" width="791.5" height="814"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6sI-bh-fcQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="791.5" height="814"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="791" height="814"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qvx-7C-4b5">
@@ -723,7 +723,7 @@
                                     <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPN-lW-Cin">
                                         <rect key="frame" x="0.0" y="0.0" width="791.5" height="814"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hGw-xN-6wb">
-                                            <rect key="frame" x="0.0" y="0.0" width="791.5" height="814"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="791" height="814"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="dark"/>
@@ -846,7 +846,7 @@
                                     <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnE-Cu-lFA">
                                         <rect key="frame" x="0.0" y="0.0" width="791.5" height="814"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZYF-6I-gAw">
-                                            <rect key="frame" x="0.0" y="0.0" width="791.5" height="814"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="791" height="814"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="dark"/>
@@ -883,7 +883,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="193" id="fqX-R4-zB0"/>
                                                 </constraints>
-                                                <state key="normal" title="Delete All">
+                                                <state key="normal" title="B 2">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -896,11 +896,11 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="193" id="oSd-Yd-MpO"/>
                                                 </constraints>
-                                                <state key="normal" title="Something else">
+                                                <state key="normal" title="B 3">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="b3:" destination="tmZ-5e-F9e" eventType="touchUpInside" id="bOF-1K-Rc5"/>
+                                                    <action selector="b3:" destination="tmZ-5e-F9e" eventType="touchUpInside" id="grP-op-uhg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRU-9q-mVO">
@@ -909,7 +909,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="193" id="Cg5-hN-hBZ"/>
                                                 </constraints>
-                                                <state key="normal" title="Something else else">
+                                                <state key="normal" title="B 4">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>

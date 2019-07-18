@@ -68,4 +68,12 @@ extension String {
         }
     }
     
+    ///Returns the Runway Identifier from TrmMin_CD.trmIdent_CD e.g. 18R or 27L
+    var runwayIdentifier: String {
+        let start = self.index(self.startIndex, offsetBy: 1)
+        let end = self.index(self.startIndex, offsetBy: 4)
+        let rwyID = self[start..<end]
+        return String(rwyID)
+    }
+    
 }

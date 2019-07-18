@@ -79,8 +79,8 @@ class TrmMinCDU {
 	}
 
 
-	func getAll(pc: NSPersistentContainer) -> [TrmMin_CD] {
-		let moc = pc.viewContext
+	func getAll(moc: NSManagedObjectContext) -> [TrmMin_CD] {
+//        let moc = pc.viewContext
 		var trmMin_CD = [TrmMin_CD]()
 		let trmMin_CDFetchRequest = NSFetchRequest<TrmMin_CD>(entityName: "TrmMin_CD")
 		do {

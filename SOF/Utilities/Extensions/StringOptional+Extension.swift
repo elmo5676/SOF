@@ -14,6 +14,15 @@ import Foundation
 
 extension Optional where Wrapped == String {
     
+    ///Used on an Optional - Returns the Runway Identifier from TrmMin_CD.trmIdent_CD e.g. 18R or 27L or if not a String then returns ""
+    var runwayIdentifier: String {
+        let str = self ?? ""
+        let start = str.index(str.startIndex, offsetBy: 1)
+        let end = str.index(str.startIndex, offsetBy: 4)
+        let rwyID = str[start..<end]
+        return String(rwyID)
+    }
+    
     var frequency: String {
         guard var freq = self else {return ""}
         if freq.hasSuffix("M") {

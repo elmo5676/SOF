@@ -12,19 +12,19 @@ import CoreData
 struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate {
     
     func hereIsTheMetar(_ metar: [Metar]?, metarLoc: MetarLoc, refreshUI: Bool) {
-        print(metar)
+//        print(metar)
     }
     
     func hereAreTheTafs(_ taf: [Taf]?) {
-        print(taf)
+//        print(taf)
     }
     
     func hereIsTheBirdCondition(_ ahas: [Ahas]) {
-        print(ahas)
+//        print(ahas)
     }
     
     func hereAreTheNotams(_ notams: NotamList) {
-        print(notams)
+//        print(notams)
     }
     
     private var icao: String = ""
@@ -38,7 +38,12 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     private var tafs: [Taf]?
     private var ahas: [Ahas]?
     private var notams: NotamList?
-    private var airportStuff: (
+    
+    ///This provides compatable approaches based on the Aircraft's Capable approaches and Min runway Length
+    public var compatableApproaches: [TrmMin_CD] = []
+    
+    ///Returns All DAFIF pertaining to an ICAO; [Rwy_CD] is filtered by Min Runway Length.
+    public var airportData: (
     airport: Arpt_CD?,
     runways: [Rwy_CD]?,
     addRwy: [AddRwy_CD]?,
@@ -57,30 +62,28 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     ils: [Ils_CD]?,
     aGear: [Agear_CD]?)
     
-    // TODO: Fix AhasInput
-    ///Allow for the use of ICAO... thanks retards at AHAS... you have it in your webpage but dont allow for it.... Do you EVEN code?!
     init(icao: String,
          aircraft: Aircraft) {
         setDelegates()
         let moc = stack.moc
         let ahasSearchable = AHASInputs().findAhasSearchableFrom(icao: icao) ?? ""
         let dc = getDateComponents()
-        airportStuff = GeneralCDU.getAllAssociatedInfoFromIcao(icao, moc: moc)
+        airportData = GeneralCDU.getAllAssociatedInfoFromIcaoFilterdByRwyLength(icao, rwyL: aircraft.minRunwayLength, moc: moc)
+        compatableApproaches = compatableApproaches(aircraft: aircraft)
         notamF = NotamFetcher(icaos: [icao], delegate: self)
         metarDL = MetarDownLoader(icao: icao, delegate: self)
         tafDL = TafDownloader(icao: icao, delegate: self)
         ahasDL = AhasDownLoader(area: ahasSearchable, delegate: self, month: dc.month, day: dc.day, hourZ: dc.hourZ)
-        dafifTester()
     }
     
-    func setDelegates() {
+    private func setDelegates() {
         notamF?.delegate = self
         metarDL?.delagate = self
         tafDL?.delegate = self
         ahasDL?.delegate = self
     }
     
-    func getDateComponents() -> (month: String, day: String, hourZ: String) {
+    private func getDateComponents() -> (month: String, day: String, hourZ: String) {
         let now = Date()
         var cal = Calendar.current
         cal.timeZone = TimeZone(abbreviation: "UTC")!
@@ -90,12 +93,27 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
         return (month: month, day: day, hourZ: hourZ)
     }
     
-    func dafifTester() {
-        guard let runways = airportStuff.runways else {return}
-        for rwy in runways {
-            print(rwy.highIdent_CD)
-            print(rwy.lowIdent_CD)
-        }
-        
+    ///This provides compatable approaches based on the Aircraft's Capable approaches and Min runway Length
+    private func compatableApproaches(aircraft: Aircraft) -> [TrmMin_CD] {
+        var result: [TrmMin_CD] = []
+        var allRunwayIDs: [String] = []
+        guard let approaches = airportData.trmMin else {return result}
+        guard let runways = airportData.runways else {return result}
+        for runway in runways {
+            if let id = runway.lowIdent_CD {
+                allRunwayIDs.append(id)
+            }
+            if let id = runway.highIdent_CD {
+                allRunwayIDs.append(id)
+            }}
+        for capableApproach in aircraft.appTypeCapable {
+            for approach in approaches {
+                guard let approachID = approach.trmIdent_CD else {return result}
+                    if approachID.hasPrefix(capableApproach.rawValue) && allRunwayIDs.contains(approachID.runwayIdentifier) {
+                        result.append(approach)
+                        print(approach.trmIdent_CD.runwayIdentifier)
+                    }}}
+        return result
     }
+   
 }
