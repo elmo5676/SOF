@@ -23,8 +23,8 @@ struct T6A: Aircraft {
     ]
     
     var appCategory: [ApproachCategory] = [.B]
-    
     var minRunwayLength: Double = 3000
-    
+    var maxCrossWind: Double = 15
+    var maxSustainedWind: Double = 35
   
 }

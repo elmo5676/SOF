@@ -20,9 +20,9 @@ struct U2: Aircraft {
         .ILS_LOCALIZER_ONLY_CIRCLING_APPROACH,
         .ILS_BACK_COURSE_CIRCLING_APPROACH
     ]
-    
     var appCategory: [ApproachCategory] = [.B, .C]
-    
     var minRunwayLength: Double = 3000
+    var maxCrossWind: Double = 15
+    var maxSustainedWind: Double = 35
     
 }

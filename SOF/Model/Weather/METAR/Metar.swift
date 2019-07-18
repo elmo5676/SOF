@@ -48,7 +48,7 @@ public enum MetarField: String, CaseIterable {
     case elevationM = "elevation_m"
 }
 
-struct Metar {
+struct Metar: Loopable {
     var isNil: Bool = true
     var rawText: String?
     var stationId: String?

@@ -70,4 +70,18 @@ extension Optional where Wrapped == String {
         return String(returnCharecters)
     }
     
+    ///Returns an array of ceiling values from the Raw Metar Text. Ceilings: "OVC" "BKN" or "VV". Returns an empty array if String? = nil
+    func getCeilingFromRawMetar() -> [String] {
+        let metarCeiling = ["OVC", "BKN", "VV"]
+        var ceilingArray: [String] = []
+        for c in metarCeiling {
+            guard let metarRaw = self else {return ceilingArray}
+            if let startI = metarRaw.range(of: c)?.upperBound {
+                let endI = metarRaw.index(startI, offsetBy: 2)
+                let ceiling = metarRaw[startI...endI]
+                ceilingArray.append(String(ceiling))
+            }}
+        return ceilingArray
+    }
+    
 }

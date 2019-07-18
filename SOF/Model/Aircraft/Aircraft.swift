@@ -14,6 +14,8 @@ protocol Aircraft {
     var appTypeCapable: [TermAppType] { get set }
     var appCategory: [ApproachCategory] { get set }
     var minRunwayLength: Double { get set }
+    var maxCrossWind: Double { get set }
+    var maxSustainedWind: Double { get set }
 }
 
 
@@ -62,17 +64,21 @@ public enum ApproachCategory {
 struct NewAircraft: Aircraft {
     
     var appTypeCapable: [TermAppType]
-    
     var appCategory: [ApproachCategory]
-    
     var minRunwayLength: Double
+    var maxCrossWind: Double
+    var maxSustainedWind: Double
     
     init(appTypeCapable: [TermAppType],
          appCategory: [ApproachCategory],
-         minRunwayLength: Double) {
+         minRunwayLength: Double,
+         maxCrossWind: Double,
+         maxSustainedWind: Double) {
         self.appTypeCapable = appTypeCapable
         self.appCategory = appCategory
         self.minRunwayLength = minRunwayLength
+        self.maxCrossWind = maxCrossWind
+        self.maxSustainedWind = maxSustainedWind
     }
 }
 

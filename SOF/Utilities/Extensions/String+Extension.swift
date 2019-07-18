@@ -76,4 +76,23 @@ extension String {
         return String(rwyID)
     }
     
+    func subString(from: Int, to: Int) -> String {
+        let startIndex = self.index(self.startIndex, offsetBy: from)
+        let endIndex = self.index(self.startIndex, offsetBy: to)
+        return String(self[startIndex...endIndex])
+    }
+    
+    ///Returns an array of ceiling values from the Raw Metar Text. Ceilings: "OVC" "BKN" or "VV"
+    func getCeilingFromRawMetar() -> [String] {
+        let metarCeiling = ["OVC", "BKN", "VV"]
+        var ceilingArray: [String] = []
+        for c in metarCeiling {
+            if let startI = self.range(of: c)?.upperBound {
+                let endI = self.index(startI, offsetBy: 2)
+                let ceiling = self[startI...endI]
+                ceilingArray.append(String(ceiling))
+            }}
+        return ceilingArray
+    }
+    
 }

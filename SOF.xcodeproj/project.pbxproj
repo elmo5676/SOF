@@ -73,6 +73,7 @@
 		52E1ABC722E0AADA00BB6E74 /* U2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1ABC622E0AADA00BB6E74 /* U2.swift */; };
 		52E1ABC922E0AAE600BB6E74 /* T38A.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1ABC822E0AAE600BB6E74 /* T38A.swift */; };
 		52E1ABCB22E0C07700BB6E74 /* T6A.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1ABCA22E0C07700BB6E74 /* T6A.swift */; };
+		52E1ABCD22E0E68400BB6E74 /* Loopable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1ABCC22E0E68400BB6E74 /* Loopable.swift */; };
 		52E3BB6C22C477E60062E8F4 /* AHASInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */; };
 		52E3BB6E22C47DF90062E8F4 /* AhasAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */; };
 		52E3BB7022C483B00062E8F4 /* AhasDownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */; };
@@ -261,6 +262,7 @@
 		52E1ABC622E0AADA00BB6E74 /* U2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = U2.swift; sourceTree = "<group>"; };
 		52E1ABC822E0AAE600BB6E74 /* T38A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T38A.swift; sourceTree = "<group>"; };
 		52E1ABCA22E0C07700BB6E74 /* T6A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T6A.swift; sourceTree = "<group>"; };
+		52E1ABCC22E0E68400BB6E74 /* Loopable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loopable.swift; sourceTree = "<group>"; };
 		52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHASInputs.swift; sourceTree = "<group>"; };
 		52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasAPI.swift; sourceTree = "<group>"; };
 		52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasDownLoader.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				52D2D2D322D29B7B0030C79B /* SwiftyTimer.swift */,
 				52D2D2D122D299730030C79B /* SwiftyUserDefaults.swift */,
 				52F3BDBD22B62B9900F7F367 /* Observable.swift */,
+				52E1ABCC22E0E68400BB6E74 /* Loopable.swift */,
 				522BE33822BFD17100D31E36 /* Logging */,
 				5205743822BDF58700B79425 /* Calculations */,
 				5205742F22BDF51500B79425 /* Extensions */,
@@ -1062,6 +1065,7 @@
 				52F3BD3F22B6275A00F7F367 /* TrmRmkCDU.swift in Sources */,
 				52F3BD4522B6275A00F7F367 /* GenCDU.swift in Sources */,
 				52F3BD8322B6276B00F7F367 /* Agear_CD+CoreDataClass.swift in Sources */,
+				52E1ABCD22E0E68400BB6E74 /* Loopable.swift in Sources */,
 				52F3BDA222B6276B00F7F367 /* TrmSeg_CD+CoreDataProperties.swift in Sources */,
 				522BE34622BFD19100D31E36 /* GoogleCloudDestination.swift in Sources */,
 				52E3BB6E22C47DF90062E8F4 /* AhasAPI.swift in Sources */,
