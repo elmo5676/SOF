@@ -72,6 +72,7 @@
 		52E19DC722C9CE8200A06C54 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E19DC622C9CE8200A06C54 /* API.swift */; };
 		52E1ABC722E0AADA00BB6E74 /* U2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1ABC622E0AADA00BB6E74 /* U2.swift */; };
 		52E1ABC922E0AAE600BB6E74 /* T38A.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1ABC822E0AAE600BB6E74 /* T38A.swift */; };
+		52E1ABCB22E0C07700BB6E74 /* T6A.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1ABCA22E0C07700BB6E74 /* T6A.swift */; };
 		52E3BB6C22C477E60062E8F4 /* AHASInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */; };
 		52E3BB6E22C47DF90062E8F4 /* AhasAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */; };
 		52E3BB7022C483B00062E8F4 /* AhasDownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */; };
@@ -259,6 +260,7 @@
 		52E19DC622C9CE8200A06C54 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
 		52E1ABC622E0AADA00BB6E74 /* U2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = U2.swift; sourceTree = "<group>"; };
 		52E1ABC822E0AAE600BB6E74 /* T38A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T38A.swift; sourceTree = "<group>"; };
+		52E1ABCA22E0C07700BB6E74 /* T6A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T6A.swift; sourceTree = "<group>"; };
 		52E3BB6B22C477E60062E8F4 /* AHASInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHASInputs.swift; sourceTree = "<group>"; };
 		52E3BB6D22C47DF90062E8F4 /* AhasAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasAPI.swift; sourceTree = "<group>"; };
 		52E3BB6F22C483B00062E8F4 /* AhasDownLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasDownLoader.swift; sourceTree = "<group>"; };
@@ -608,6 +610,7 @@
 				52ECBE7222DF29A900990CF0 /* Aircraft.swift */,
 				52E1ABC622E0AADA00BB6E74 /* U2.swift */,
 				52E1ABC822E0AAE600BB6E74 /* T38A.swift */,
+				52E1ABCA22E0C07700BB6E74 /* T6A.swift */,
 			);
 			path = Aircraft;
 			sourceTree = "<group>";
@@ -1007,6 +1010,7 @@
 				52F3BD9F22B6276B00F7F367 /* AcomRmk_CD+CoreDataClass.swift in Sources */,
 				522BE34B22BFD19100D31E36 /* BaseDestination.swift in Sources */,
 				52F3BD0322B6268600F7F367 /* CoreDataStackCreator.swift in Sources */,
+				52E1ABCB22E0C07700BB6E74 /* T6A.swift in Sources */,
 				528F70DA22D50571004B1EFF /* T38A_TOLD.swift in Sources */,
 				52F3BD9222B6276B00F7F367 /* Anav_CD+CoreDataProperties.swift in Sources */,
 				52D2D2C922D266730030C79B /* GraphQLSelectionSet+Extension.swift in Sources */,

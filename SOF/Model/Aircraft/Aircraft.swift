@@ -59,29 +59,21 @@ public enum ApproachCategory {
 }
 
 
+struct NewAircraft: Aircraft {
+    
+    var appTypeCapable: [TermAppType]
+    
+    var appCategory: [ApproachCategory]
+    
+    var minRunwayLength: Double
+    
+    init(appTypeCapable: [TermAppType],
+         appCategory: [ApproachCategory],
+         minRunwayLength: Double) {
+        self.appTypeCapable = appTypeCapable
+        self.appCategory = appCategory
+        self.minRunwayLength = minRunwayLength
+    }
+}
 
-/*
- NAV_TYPE:
- 1 - VOR
- 2 - VORTAC
- 3 - TACAN
- 4 - VOR-DME
- 5 - NDB
- 7 - NDB-DME
- 8 - LOCATOR
- 9 - DME (EXCLUDING ILS-DME)
- 
- Found on : ACOM and HCOM
- Field:     SYM
- R - RADAR CAPABILITY
- V - VHF EMERGENCY FREQUENCY 121.5 MONITORED
- U - UHF EMERGENCY FREQUENCY 243.0 MONITORED
- E - VHF AND UHF EMERGENCY FREQUENCIES MONITORED
- 
- HF - 2100-28000 KHz
- VHF - 117.9750-137.0000 MHz
- UHF - 225.0000-399.9000 MHz
- 
- 
- */
 

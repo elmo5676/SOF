@@ -85,10 +85,15 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
     }
     
     @IBAction func b3(_ sender: UIButton) {
-        let ac = T38A()
+        let ac = T6A()
         let alt = Alternate(icao: "KSFO", aircraft: ac)
         for app in alt.compatableApproaches {
-            print(app.trmIdent_CD)
+            print("Identifier: \(app.trmIdent_CD!)")
+            print("Cat C Decision Height: \(app.catCDh_CD!)")
+            print("Cat C Height above Aerodrome: \(app.catCHa_CD!)")
+            print("Cat C Required Visability: \(app.catCRv_CD!)")
+            print("Cat C Ceiling: \(app.catCWxCl_CD!)")
+            print("Cat C Prevailing Vis: \(app.catCWxPv_CD!)")
         }
     }
     

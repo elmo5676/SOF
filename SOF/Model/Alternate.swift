@@ -12,19 +12,19 @@ import CoreData
 struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate {
     
     func hereIsTheMetar(_ metar: [Metar]?, metarLoc: MetarLoc, refreshUI: Bool) {
-//        print(metar)
+        print(metar)
     }
     
     func hereAreTheTafs(_ taf: [Taf]?) {
-//        print(taf)
+        print(taf)
     }
     
     func hereIsTheBirdCondition(_ ahas: [Ahas]) {
-//        print(ahas)
+        print(ahas)
     }
     
     func hereAreTheNotams(_ notams: NotamList) {
-//        print(notams)
+        print(notams)
     }
     
     private var icao: String = ""
@@ -111,7 +111,6 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
                 guard let approachID = approach.trmIdent_CD else {return result}
                     if approachID.hasPrefix(capableApproach.rawValue) && allRunwayIDs.contains(approachID.runwayIdentifier) {
                         result.append(approach)
-                        print(approach.trmIdent_CD.runwayIdentifier)
                     }}}
         return result
     }
