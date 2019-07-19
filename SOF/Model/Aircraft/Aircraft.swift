@@ -60,7 +60,6 @@ public enum ApproachCategory {
     case E
 }
 
-
 struct NewAircraft: Aircraft {
     
     var appTypeCapable: [TermAppType]

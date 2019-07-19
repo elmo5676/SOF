@@ -57,7 +57,7 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
 //    MINIMUM DESCENT ALTITUDE (MDA)
 //    THE HEIGHT, EXPRESSED IN FEET ABOVE MEAN SEA LEVEL (MSL), TO WHICH DESCENT IS AUTHORIZED ON FINAL APPROACH OR DURING CIRCLE-TO-LAND MANEUVERS IN EXECUTION OF A STANDARD APPROACH
 //    PROCEDURE WHERE NO ELECTRONIC GLIDESLOPE IS PROVIDED.
-    
+    private var aircraft: Aircraft
     private let stack = DAFIFCDStack()
     private var metarDL: MetarDownLoader?
     private var tafDL: TafDownloader?
@@ -95,10 +95,11 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     
     init(icao: String,
          aircraft: Aircraft) {
+        self.aircraft = aircraft
         setDelegates()
         let moc = stack.moc
         let ahasSearchable = AHASInputs().findAhasSearchableFrom(icao: icao) ?? ""
-        let dc = getDateComponents()
+        let dc = dh.getAhasDateComponents()
         airportData = GeneralCDU.getAllAssociatedInfoFromIcaoFilterdByRwyLength(icao, rwyL: aircraft.minRunwayLength, moc: moc)
         compatableApproaches = compatableApproaches(aircraft: aircraft)
         notamF = NotamFetcher(icaos: [icao], delegate: self)
@@ -112,17 +113,6 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
         metarDL?.delagate = self
         tafDL?.delegate = self
         ahasDL?.delegate = self
-    }
-    
-    ///Returns string date components for now to enter in ahasDownloader.
-    private func getDateComponents() -> (month: String, day: String, hourZ: String) {
-        let now = Date()
-        var cal = Calendar.current
-        cal.timeZone = TimeZone(abbreviation: "UTC")!
-        let month = String(cal.component(.month, from: now))
-        let day = String(cal.component(.day, from: now))
-        let hourZ = String(cal.component(.hour, from: now))
-        return (month: month, day: day, hourZ: hourZ)
     }
     
     ///This provides compatable approaches based on the Aircraft's Capable approaches and Min runway Length
@@ -147,19 +137,74 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
         return result
     }
     
-    ///Returns Bool based on if the current metar supprts the approach.
-    func metarSutableAlternate(approach: TrmMin_CD, metar: Metar) -> Bool {
-        var result = false
+    ///Returns Bool for each category based on if the current metar supprts the approach.
+    func metarSutableAlternate(approach: TrmMin_CD, metar: Metar, aircraft: Aircraft) -> (catA: Bool, catB: Bool, catC: Bool, catD: Bool, catE: Bool) {
+        var catA = false
+        var catB = false
+        var catC = false
+        var catD = false
+        var catE = false
+        var lowestCeiling: Double?
         let rawText = metar.rawText ?? ""
-        let ceilings = rawText.getCeilingFromRawMetar()
+        let ceilingsStr = rawText.getCeilingFromRawMetar()
+        var ceilingsDouble: [Double] = []
+        for ceiling in ceilingsStr {
+            if let ceilingD = Double(ceiling) {
+                ceilingsDouble.append(ceilingD * 100)
+            }}
+        if ceilingsDouble.sorted().isEmpty {
+            catA = true
+            catB = true
+            catC = true
+            catD = true
+            catE = true
+        } else {
+            lowestCeiling = ceilingsDouble.sorted().first
+        }
         
-        return result
+        for cat in aircraft.appCategory {
+            if let lowestCeiling = lowestCeiling {
+                switch cat {
+                case .A:
+                    if let minReqCeilingStr = approach.catAWxCl_CD {
+                        if let minReqCeiling = Double(minReqCeilingStr) {
+                            catA = lowestCeiling <= minReqCeiling
+                        }}
+                case .B:
+                    if let minReqCeilingStr = approach.catBWxCl_CD {
+                        if let minReqCeiling = Double(minReqCeilingStr) {
+                            catB = lowestCeiling <= minReqCeiling
+                        }}
+                case .C:
+                    if let minReqCeilingStr = approach.catCWxCl_CD {
+                        if let minReqCeiling = Double(minReqCeilingStr) {
+                            catC = lowestCeiling <= minReqCeiling
+                        }}
+                case .D:
+                    if let minReqCeilingStr = approach.catDWxCl_CD {
+                        if let minReqCeiling = Double(minReqCeilingStr) {
+                            catD = lowestCeiling <= minReqCeiling
+                        }}
+                case .E:
+                    if let minReqCeilingStr = approach.catEWxCl_CD {
+                        if let minReqCeiling = Double(minReqCeilingStr) {
+                            catE = lowestCeiling <= minReqCeiling
+                        }}
+                }
+            }
+        }
+        return (catA: catA, catB: catB, catC: catC, catD: catD, catE: catE)
     }
-    
     
 //  MARK: - Delegate Functions
     func hereIsTheMetar(_ metar: [Metar]?, metarLoc: MetarLoc, refreshUI: Bool) {
-//        print(metar)
+        guard let metars = metar else {return}
+        let metar = metars[0]
+        print(metar.rawText!)
+        for eachApp in compatableApproaches {
+            print(eachApp.trmIdent_CD!)
+            print(metarSutableAlternate(approach: eachApp, metar: metar, aircraft: self.aircraft))
+        }
     }
     
     func hereAreTheTafs(_ taf: [Taf]?) {
@@ -167,7 +212,7 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     }
     
     func hereIsTheBirdCondition(_ ahas: [Ahas]) {
-//        print(ahas)
+        print(ahas)
     }
     
     func hereAreTheNotams(_ notams: NotamList) {

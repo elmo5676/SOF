@@ -86,14 +86,19 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
     
     @IBAction func b3(_ sender: UIButton) {
         let ac = T6A()
-        let alt = Alternate(icao: "KFWA", aircraft: ac)
+        let alt = Alternate(icao: "KSBA", aircraft: ac)
         for app in alt.compatableApproaches {
             print("Identifier: \(app.trmIdent_CD!)")
-            print("Cat C TERMINAL MINIMA DESCENT HEIGHT: \(app.catCDh_CD!)")
-            print("Cat C TERMINAL MINIMA HAT/HAA/HAL: \(app.catCHa_CD!)")
+            print("Cat A TERMINAL MINIMA WEATHER CEILING: \(app.catAWxCl_CD!)")
+            print("Cat B TERMINAL MINIMA WEATHER CEILING: \(app.catBWxCl_CD!)")
             print("Cat C TERMINAL MINIMA WEATHER CEILING: \(app.catCWxCl_CD!)")
-            print("Cat C TERMINAL MINIMA RUNWAY VISIBILITY: \(app.catCRv_CD!)")
-            print("Cat C TERMINAL MINIMA PREVAILING WEATHER VISIBILITY: \(app.catCWxPv_CD!)")
+            print("Cat D TERMINAL MINIMA WEATHER CEILING: \(app.catDWxCl_CD!)")
+            print("Cat E TERMINAL MINIMA WEATHER CEILING: \(app.catEWxCl_CD!)")
+//            print("Cat C TERMINAL MINIMA DESCENT HEIGHT: \(app.catCDh_CD!)")
+//            print("Cat C TERMINAL MINIMA HAT/HAA/HAL: \(app.catCHa_CD!)")
+//            print("Cat C TERMINAL MINIMA WEATHER CEILING: \(app.catCWxCl_CD!)")
+//            print("Cat C TERMINAL MINIMA RUNWAY VISIBILITY: \(app.catCRv_CD!)")
+//            print("Cat C TERMINAL MINIMA PREVAILING WEATHER VISIBILITY: \(app.catCWxPv_CD!)")
         }
     }
     

@@ -60,8 +60,15 @@ struct DateHandler {
         return (now: today, endTime: endTime)
     }
     
-    func getAhasDateComponentsFrom(_ date: Date) {
-        
+    ///Returns string date components for now to enter in ahasDownloader.
+    func getAhasDateComponents() -> (month: String, day: String, hourZ: String) {
+        let now = Date()
+        var cal = Calendar.current
+        cal.timeZone = TimeZone(abbreviation: "UTC")!
+        let month = String(cal.component(.month, from: now))
+        let day = String(cal.component(.day, from: now))
+        let hourZ = String(cal.component(.hour, from: now))
+        return (month: month, day: day, hourZ: hourZ)
     }
     
 
