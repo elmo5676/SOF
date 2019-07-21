@@ -136,14 +136,14 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
         return result
     }
     
-    ///Brain Boggler!!
+    ///Ceiling:
     /**
      Case_1: No actual ceiling exists and required ceiling exists -> True (Approach available for that category)
      Case_2: No actual ceiling exists and no required ceiling exists -> False (Approach not available for that category)
      Case_3: actual ceiling exists and required ceiling exists -> True/False (True if actual > required + 500)
      Case_4: actual ceiling exists and no required ceiling exists -> False (Approach not available for that category)
      */
-    func compareActualCEILINGToRequired(actual: Double?, required: String?) -> Bool {
+    private func compareActualCEILINGToRequired(actual: Double?, required: String?) -> Bool {
         if let actual = actual {
             if let required = required.getDoubleFromWX() {
                 return actual >= required + 500
@@ -155,16 +155,20 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
             return true
         }}
     
-    func compareActualVISABILITYtoRequired(actual: String?, required: String?) -> Bool {
+    //TODO: - Verify
+    ///Visability:
+    /**
+     Case_1: No actual visability exists and required visability exists -> True (Approach available for that category)
+     Case_2: No actual visability exists and no required visability exists -> False (Approach not available for that category)
+     Case_3: actual visability exists and required visability exists -> True/False (True if actual > required and actual > 2.0)
+     Case_4: actual visability exists and no required visability exists -> False (Approach not available for that category)
+     */
+    private func compareActualVISABILITYtoRequired(actual: String?, required: String?) -> Bool {
         if let actual = actual.getDoubleFromWX() {
-            if let required = required?.getVisabilityFromNGA() {
-                if actual >= 2.0 && actual >= required {
-                    return true
-                }
-                return false
-            } else {
-                return false
-            }
+            guard let required = required?.getVisabilityFromNGA() else { return false }
+                if actual >= 2.0 {
+                    return actual >= required
+                } else { return false }
         } else {
             guard let _ = required else { return false }
             return true
@@ -183,25 +187,25 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
         for category in aircraft.appCategory {
             switch category {
             case .A:
-                let catA_Cl = compareActualCEILINGToRequired(actual: rawText.getLowestCeilingDoubleFromRawMetar(), required: approach.catAWxCl_CD)
-                let catA_Vis = compareActualVISABILITYtoRequired(actual: metar.visibilityStatuteMiles, required: approach.catARv_CD)
-                if catA_Cl && catA_Vis { catA = true }
+                let catA_Ceiling = compareActualCEILINGToRequired(actual: rawText.getLowestCeilingDoubleFromRawMetar(), required: approach.catAWxCl_CD)
+                let catA_Visability = compareActualVISABILITYtoRequired(actual: metar.visibilityStatuteMiles, required: approach.catARv_CD)
+                if catA_Ceiling && catA_Visability { catA = true }
             case .B:
-                let catB_Cl = compareActualCEILINGToRequired(actual: rawText.getLowestCeilingDoubleFromRawMetar(), required: approach.catBWxCl_CD)
-                let catB_Vis = compareActualVISABILITYtoRequired(actual: metar.visibilityStatuteMiles, required: approach.catBRv_CD)
-                if catB_Cl && catB_Vis { catB = true }
+                let catB_Ceiling = compareActualCEILINGToRequired(actual: rawText.getLowestCeilingDoubleFromRawMetar(), required: approach.catBWxCl_CD)
+                let catB_Visability = compareActualVISABILITYtoRequired(actual: metar.visibilityStatuteMiles, required: approach.catBRv_CD)
+                if catB_Ceiling && catB_Visability { catB = true }
             case .C:
-                let catC_Cl = compareActualCEILINGToRequired(actual: rawText.getLowestCeilingDoubleFromRawMetar(), required: approach.catCWxCl_CD)
-                let catC_Vis = compareActualVISABILITYtoRequired(actual: metar.visibilityStatuteMiles, required: approach.catCRv_CD)
-                if catC_Cl && catC_Vis { catC = true }
+                let catC_Ceiling = compareActualCEILINGToRequired(actual: rawText.getLowestCeilingDoubleFromRawMetar(), required: approach.catCWxCl_CD)
+                let catC_Visability = compareActualVISABILITYtoRequired(actual: metar.visibilityStatuteMiles, required: approach.catCRv_CD)
+                if catC_Ceiling && catC_Visability { catC = true }
             case .D:
-                let catD_Cl = compareActualCEILINGToRequired(actual: rawText.getLowestCeilingDoubleFromRawMetar(), required: approach.catDWxCl_CD)
-                let catD_Vis = compareActualVISABILITYtoRequired(actual: metar.visibilityStatuteMiles, required: approach.catDRv_CD)
-                if catD_Cl && catD_Vis { catD = true }
+                let catD_Ceiling = compareActualCEILINGToRequired(actual: rawText.getLowestCeilingDoubleFromRawMetar(), required: approach.catDWxCl_CD)
+                let catD_Visability = compareActualVISABILITYtoRequired(actual: metar.visibilityStatuteMiles, required: approach.catDRv_CD)
+                if catD_Ceiling && catD_Visability { catD = true }
             case .E:
-                let catE_Cl = compareActualCEILINGToRequired(actual: rawText.getLowestCeilingDoubleFromRawMetar(), required: approach.catEWxCl_CD)
-                let catE_Vis = compareActualVISABILITYtoRequired(actual: metar.visibilityStatuteMiles, required: approach.catERv_CD)
-                if catE_Cl && catE_Vis { catE = true }
+                let catE_Ceiling = compareActualCEILINGToRequired(actual: rawText.getLowestCeilingDoubleFromRawMetar(), required: approach.catEWxCl_CD)
+                let catE_Visability = compareActualVISABILITYtoRequired(actual: metar.visibilityStatuteMiles, required: approach.catERv_CD)
+                if catE_Ceiling && catE_Visability { catE = true }
             }
         }
         //Below returns the approach if any of the categories are true, meaning the approach is both compatable with the aircraft and the weather supports the approach.
