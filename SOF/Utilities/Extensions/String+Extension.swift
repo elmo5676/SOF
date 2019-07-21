@@ -72,7 +72,12 @@ extension String {
     var runwayIdentifier: String {
         let start = self.index(self.startIndex, offsetBy: 1)
         let end = self.index(self.startIndex, offsetBy: 4)
-        let rwyID = self[start..<end]
+        var rwyID = self[start..<end]
+        let removeSuffix = [" ","-"]
+        for i in removeSuffix {
+            if rwyID.hasSuffix(i) {
+                rwyID.removeLast()
+            }}
         return String(rwyID)
     }
     
@@ -82,17 +87,57 @@ extension String {
         return String(self[startIndex...endIndex])
     }
     
-    ///Returns an array of ceiling values from the Raw Metar Text. Ceilings: "OVC" "BKN" or "VV"
+    ///Returns an String array of ceiling values from the Raw Metar Text. Ceilings: "OVC" "BKN" or "VV"
     func getCeilingFromRawMetar() -> [String] {
         let metarCeiling = ["OVC", "BKN", "VV"]
         var ceilingArray: [String] = []
         for c in metarCeiling {
-            if let startI = self.range(of: c)?.upperBound {
+            let ranges = self.ranges(of: c)
+            for range in ranges {
+                let startI = range.upperBound
                 let endI = self.index(startI, offsetBy: 2)
                 let ceiling = self[startI...endI]
                 ceilingArray.append(String(ceiling))
-            }}
+            }
+        }
         return ceilingArray
     }
+    
+    ///Returns an Double array of ceiling values from the Raw Metar Text. Ceilings: "OVC" "BKN" or "VV"
+    func getCeilingDoublesFromRawMetar() -> [Double] {
+        var ceilingDoubleArray: [Double] = []
+        for c in self.getCeilingFromRawMetar() {
+            if let ceilingDouble = Double(c) {
+                ceilingDoubleArray.append(ceilingDouble * 100)
+            }}
+        return ceilingDoubleArray.sorted()
+    }
+    
+    ///Returns lowest ceiling value from the Raw Metar Text. Ceilings: "OVC" "BKN" or "VV"
+    func getLowestCeilingDoubleFromRawMetar() -> Double? {
+        return self.getCeilingDoublesFromRawMetar().sorted().first
+    }
+    
+    ///Returns the visibility in Statute miles from the NGA Value
+    func getVisabilityFromNGA() -> Double? {
+        var result = self
+        var resultDouble: Double?
+        if self.hasPrefix("/") {
+            result = self
+            let result = result.dropFirst()
+            resultDouble = Double(result)
+            resultDouble = resultDouble?.hundredthsOfFeetToStatuteMiles
+            return resultDouble
+        }
+        if self.hasPrefix("-") {
+            result = self
+            let result = result.dropFirst()
+            resultDouble = Double(result)
+            return resultDouble
+        }
+        return nil
+    }
+    
+    
     
 }

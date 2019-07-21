@@ -84,4 +84,29 @@ extension Optional where Wrapped == String {
         return ceilingArray
     }
     
+    ///Returns the visibility in Statute miles from the NGA Value
+    func getVisabilityFromNGA() -> Double? {
+        if let value = self {
+            var resultDouble: Double?
+            if value.hasPrefix("/") {
+                let result = value.dropFirst()
+                resultDouble = Double(result)
+                resultDouble = resultDouble?.hundredthsOfFeetToStatuteMiles
+                return resultDouble
+            }
+            if value.hasPrefix("-") {
+                let result = value.dropFirst()
+                resultDouble = Double(result)
+                return resultDouble
+            }}
+        return nil
+    }
+    
+    func getDoubleFromWX() -> Double? {
+        if let wxCriteria = self {
+            guard let wxCriteria = Double(wxCriteria) else {return nil}
+            return wxCriteria
+        } else {
+            return nil
+        }}
 }

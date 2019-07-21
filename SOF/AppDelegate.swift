@@ -38,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let splitViewController = tabBarController.viewControllers?[0] as! UISplitViewController
         if let masterVC = splitViewController.viewControllers.first {
             self.masterVC = masterVC
-            log.debug(masterVC.view.frame.width)
         }
         splitViewController.delegate = self
     }

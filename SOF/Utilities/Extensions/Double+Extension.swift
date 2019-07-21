@@ -19,6 +19,7 @@ public extension Double {
     var metersToNauticalMiles: Double   { return self * 0.0005396118248380001 }
     var nauticalMilesToMeters: Double   { return self * 1852 }
     var knotsPHrToNMperMin: Double      { return self/60.0}
+    var hundredthsOfFeetToStatuteMiles: Double      { return (self * 100) / 5280}
     
     func numberOfDecimalPlaces(_ decimalPlaces: Int) -> Double {
         let numberOfDecimalPlaces = String(decimalPlaces)

@@ -6,42 +6,6 @@
 //  Copyright © 2019 Matthew Elmore. All rights reserved.
 //
 
-// MARK: - Scrap:
-//        self.hideKeyboardWhenTappedAround()
-//        for tf in allTextFields {
-//            tf.delegate = self
-//        }
-////        sofOnDutyOutlet.inputView = PickerTextField<SetStatusModel.<#here#>>(hostTextField: sofOnDutyOutlet)
-
-
-//"SOF: "
-//"Status Updated: ",
-
-
-//"T-38 Status: ",
-//"T-38 Retrictions: ",
-//"T-38 Alternates: ",
-
-
-//"U-2 Status: ",
-//"U-2 Restrictions: ",
-//"U-2 Alternates: ",
-
-//"Airfield Restrictions: ",
-//"Active Runway: ",
-//"Runway Condition: ",
-//"Navaid Status: ",
-//"Approach Lights: ",
-//"Bird Status: ",
-//"FITS: ",
-
-//"Local Airfields: ",
-
-
-
-
-
-
 import UIKit
 import AWSAppSync
 import AWSMobileClient
@@ -76,8 +40,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        updateSunTimes()
-        animateSunTimes()
+        updateSunTimes()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -153,57 +116,11 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
         // TODO: add option to get ipad position
     }
     
-    
-    
-    func animateSunTimes() {
-        self.updateSunTimes1()
-        UIView.animateKeyframes(withDuration: 3.0,
-                                delay: 0,
-                                options: [.autoreverse, .repeat, .allowUserInteraction],
-                                animations: {animateAlert()})
-        
-        func animateAlert() {
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5) {
-                self.updateSunTimes2()
-            }
-//            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
-//                self.updateSunTimes2()
-//            }
-        }
-    }
-    
-    
-    
-    
-    func updateSunTimes1() {
+    func updateSunTimes() {
         let sun = TimeCalculations(latitude: 39.14, longitude: -121.44, date: today, timeZone: TimeZone(abbreviation: "PST")!)
         let start : CGPoint = CGPoint(x: 0.0, y: 0.0)
         let end : CGPoint = CGPoint(x: 1.0, y: 1.0)
         let colors: [CGColor] = [#colorLiteral(red: 0.6075459719, green: 0, blue: 0, alpha: 1),#colorLiteral(red: 0, green: 0.02883746661, blue: 0.5216178298, alpha: 1)]
-        
-        let gradientStart: [NSNumber] = [0.0,0.5,1.0]
-        
-        let gradient: CAGradientLayer = makeGradientLayer(for: sunTimesView, startPoint: start, endPoint: end, gradientLocations: nil, gradientColors: colors)
-        self.sunTimesView.layer.masksToBounds = true
-        self.sunTimesView.layer.insertSublayer(gradient, at: 0)
-        sunriseLabel.text = "\(sun.sunTimes().sunrise)"
-        sunSetLabel.text = "\(sun.sunTimes().sunset)"
-        julianDayLabel.text = "\(sun.julianDay())"
-        dayDurationLabel.text = "\(sun.sunTimes().durationFormatted)"
-        for sunLabel in sunTimesLabels {
-            sunLabel.adjustsFontSizeToFitWidth = true
-        }
-    }
-    
-    func updateSunTimes2() {
-        let sun = TimeCalculations(latitude: 39.14, longitude: -121.44, date: today, timeZone: TimeZone(abbreviation: "PST")!)
-        let start : CGPoint = CGPoint(x: 0.0, y: 1.0)
-        let end : CGPoint = CGPoint(x: 1.0, y: 1.0)
-        let colors: [CGColor] = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1),#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1),#colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)]
-        
-//        let gradientStart: [NSNumber] = [0.0,0.0,1.0]
-        let gradientEnd: [NSNumber] = [0.0,1.0,1.0]
-        
         let gradient: CAGradientLayer = makeGradientLayer(for: sunTimesView, startPoint: start, endPoint: end, gradientLocations: nil, gradientColors: colors)
         self.sunTimesView.layer.masksToBounds = true
         self.sunTimesView.layer.insertSublayer(gradient, at: 0)

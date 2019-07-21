@@ -18,10 +18,11 @@ struct T38A: Aircraft {
         .PAR,
         .TACAN,
         .ILS_LOCALIZER_ONLY_CIRCLING_APPROACH,
-        .ILS_BACK_COURSE_CIRCLING_APPROACH
+        .ILS_BACK_COURSE_CIRCLING_APPROACH,
     ]
-    var appCategory: [ApproachCategory] = [.A, .B, .C, .D, .E]
-    var minRunwayLength: Double = 3000
+    
+    var appCategory: [ApproachCategory] = [.D, .E]
+    var minRunwayLength: Double = 2000
     var maxCrossWind: Double = 15
     var maxSustainedWind: Double = 35
     
