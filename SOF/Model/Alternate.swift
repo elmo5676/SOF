@@ -56,6 +56,7 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     //    MINIMUM DESCENT ALTITUDE (MDA)
     //    THE HEIGHT, EXPRESSED IN FEET ABOVE MEAN SEA LEVEL (MSL), TO WHICH DESCENT IS AUTHORIZED ON FINAL APPROACH OR DURING CIRCLE-TO-LAND MANEUVERS IN EXECUTION OF A STANDARD APPROACH
     //    PROCEDURE WHERE NO ELECTRONIC GLIDESLOPE IS PROVIDED.
+    private var icao: String
     private var aircraft: Aircraft
     private let stack = DAFIFCDStack()
     private var metarDL: MetarDownLoader?
@@ -94,13 +95,14 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     
     init(icao: String,
          aircraft: Aircraft) {
+        self.icao = icao
         self.aircraft = aircraft
         setDelegates()
         let moc = stack.moc
         let ahasSearchable = AHASInputs().findAhasSearchableFrom(icao: icao) ?? ""
         let dc = dh.getAhasDateComponents()
         airportData = GeneralCDU.getAllAssociatedInfoFromIcaoFilterdByRwyLength(icao, rwyL: aircraft.minRunwayLength, moc: moc)
-        compatableApproaches = compatableApproaches(aircraft: aircraft)
+        compatableApproaches = compatableApproachesFilteredByRwyLength(aircraft: aircraft)
         notamF = NotamFetcher(icaos: [icao], delegate: self)
         metarDL = MetarDownLoader(icao: icao, delegate: self)
         tafDL = TafDownloader(icao: icao, delegate: self)
@@ -114,25 +116,62 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
         ahasDL?.delegate = self
     }
     
-    ///This provides compatable approaches based on the Aircraft's Capable approaches and Min runway Length
-    private func compatableApproaches(aircraft: Aircraft) -> [TrmMin_CD] {
-        var result: [TrmMin_CD] = []
-        var allRunwayIDs: [String] = []
-        guard let approaches = airportData.trmMin else {return result}
+    private func runwayIds() -> [String] {
+        var result: [String] = []
         guard let runways = airportData.runways else {return result}
         for runway in runways {
             if let id = runway.lowIdent_CD {
-                allRunwayIDs.append(id)
+                result.append(id)
             }
             if let id = runway.highIdent_CD {
-                allRunwayIDs.append(id)
+                result.append(id)
             }}
+        return result
+    }
+    
+    ///This provides compatable approaches based on the Aircraft's Capable approaches and Min runway Length
+    private func compatableApproachesFilteredByRwyLength(aircraft: Aircraft) -> [TrmMin_CD] {
+        var result: [TrmMin_CD] = []
+        let allRunwayIDs = runwayIds()
+        guard let approaches = airportData.trmMin else {return result}
         for capableApproach in aircraft.appTypeCapable {
             for approach in approaches {
                 if let approachID = approach.trmIdent_CD {
                     if approachID.hasPrefix(capableApproach.rawValue) && allRunwayIDs.contains(approachID.runwayIdentifier) {
                         result.append(approach)
                     }}}}
+        return result
+    }
+    
+    ///Returns list of closed runways from an array of notams
+    func getClosedRunways(notams: [String]) -> Set<String> {
+        var runways: [String] = []
+        for n in notams {
+            if let startIndex = n.range(of: "RWY ")?.upperBound {
+                if let endIndex = n.range(of: " CLSD")?.lowerBound {
+                    let closedRunway = n[startIndex...endIndex]
+                    let runway = String(closedRunway).components(separatedBy: "/")
+                    for rwy in runway {
+                        runways.append(rwy.trimmingCharacters(in: .whitespaces))
+                    }}}}
+        return Set(runways)
+    }
+    
+    ///This provides compatable approaches based on the Aircraft's Capable approaches and Min runway Length
+    private func compatableApproachesFilteredByClosedRunways(compatableApproaches: [TrmMin_CD], notams: [String]) -> [TrmMin_CD] {
+        var result: [TrmMin_CD] = []
+        let allRunwayIDs = runwayIds()
+        for capableApproach in aircraft.appTypeCapable {
+            for approach in compatableApproaches {
+                if let approachID = approach.trmIdent_CD {
+                    if approachID.hasPrefix(capableApproach.rawValue) {
+                        for rwy in getClosedRunways(notams: notams) {
+                            if allRunwayIDs.contains(rwy)  {
+                                print("Runway: \(rwy) is closed")
+                            } else { result.append(approach) }
+                        }
+                    }
+                }}}
         return result
     }
     
@@ -173,7 +212,6 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
             guard let _ = required else { return false }
             return true
         }}
-
     
     ///Returns Bool for each category based on if the current metar supprts the approach.
     private func metarSutableAlternate(approach: TrmMin_CD, metar: Metar, aircraft: Aircraft) -> (catA: Bool, catB: Bool, catC: Bool, catD: Bool, catE: Bool, compatableApproach: TrmMin_CD?) {
@@ -235,7 +273,12 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
         for app in approaches {
             log.debug(app.trmIdent_CD)
         }
-        
+    }
+    
+    func hereAreTheNotams(_ notams: NotamList) {
+        guard let notams = notams[self.icao] else { return }
+        print(compatableApproachesFilteredByClosedRunways(compatableApproaches: self.compatableApproaches, notams: notams))
+        // TODO: FilterOut the closed Runways
     }
     
     func hereAreTheTafs(_ taf: [Taf]?) {
@@ -243,11 +286,9 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     }
     
     func hereIsTheBirdCondition(_ ahas: [Ahas]) {
-        print(ahas)
+        //        print(ahas)
     }
     
-    func hereAreTheNotams(_ notams: NotamList) {
-        //        print(notams)
-    }
+    
     
 }
