@@ -18,6 +18,8 @@ enum DateSource: String {
     case swiftStandard = "yyyy'-'MM'-'dd' 'HH':'mm':'ss' 'Z'"
     case stringDisplay = "MMM d, hh:mm"
     case notamCreated = "dd MMM HH:mm yyyy"
+//    case notamUnprocessed = "dd MMM HH:mm yyyy" //12 JUL 19:01 2019
+    case notam = "ddMMMHH:mmyyyy" //16JUL07:392019
 }
 
 struct DateHandler {

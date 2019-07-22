@@ -59,7 +59,7 @@
 		52A7454A22CA5F5B0056F736 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52A7454922CA5F5A0056F736 /* Assets.xcassets */; };
 		52AD6D1A22B7C1DB0077FC91 /* NotamAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1922B7C1DB0077FC91 /* NotamAPI.swift */; };
 		52AD6D1C22B7C5C10077FC91 /* NotamDownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1B22B7C5C10077FC91 /* NotamDownLoader.swift */; };
-		52AD6D1E22B7C6770077FC91 /* Notam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1D22B7C6770077FC91 /* Notam.swift */; };
+		52AD6D1E22B7C6770077FC91 /* Notam_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD6D1D22B7C6770077FC91 /* Notam_.swift */; };
 		52AF2E6422C20FB200B5EE43 /* BealChecklistDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF2E6322C20FB200B5EE43 /* BealChecklistDefaults.swift */; };
 		52D0952B22AC3649008A236B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0952A22AC3649008A236B /* AppDelegate.swift */; };
 		52D0953322AC3649008A236B /* SOF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52D0953122AC3649008A236B /* SOF.xcdatamodeld */; };
@@ -81,6 +81,8 @@
 		52E3BB7422C484180062E8F4 /* AhasParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3BB7322C484180062E8F4 /* AhasParser.swift */; };
 		52ECBE7322DF29A900990CF0 /* Aircraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ECBE7222DF29A900990CF0 /* Aircraft.swift */; };
 		52ECBE7622DF2A0700990CF0 /* Alternate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ECBE7522DF2A0700990CF0 /* Alternate.swift */; };
+		52F0C03F22E571F800871C06 /* Notam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0C03E22E571F800871C06 /* Notam.swift */; };
+		52F0C04122E57F9300871C06 /* NotamHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0C04022E57F9300871C06 /* NotamHandler.swift */; };
 		52F0FBC222CC626400DBBCFC /* RestrictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0FBC122CC626400DBBCFC /* RestrictionsViewController.swift */; };
 		52F0FBC422CC63F300DBBCFC /* RestrictionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0FBC322CC63F300DBBCFC /* RestrictionsTableViewCell.swift */; };
 		52F0FBC922CCA35100DBBCFC /* UITableViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0FBC822CCA35100DBBCFC /* UITableViewController+Extension.swift */; };
@@ -246,7 +248,7 @@
 		52A7454922CA5F5A0056F736 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52AD6D1922B7C1DB0077FC91 /* NotamAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotamAPI.swift; sourceTree = "<group>"; };
 		52AD6D1B22B7C5C10077FC91 /* NotamDownLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotamDownLoader.swift; sourceTree = "<group>"; };
-		52AD6D1D22B7C6770077FC91 /* Notam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notam.swift; sourceTree = "<group>"; };
+		52AD6D1D22B7C6770077FC91 /* Notam_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notam_.swift; sourceTree = "<group>"; };
 		52AF2E6322C20FB200B5EE43 /* BealChecklistDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BealChecklistDefaults.swift; sourceTree = "<group>"; };
 		52D0952722AC3649008A236B /* SOF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D0952A22AC3649008A236B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -270,6 +272,8 @@
 		52E3BB7322C484180062E8F4 /* AhasParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhasParser.swift; sourceTree = "<group>"; };
 		52ECBE7222DF29A900990CF0 /* Aircraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aircraft.swift; sourceTree = "<group>"; };
 		52ECBE7522DF2A0700990CF0 /* Alternate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alternate.swift; sourceTree = "<group>"; };
+		52F0C03E22E571F800871C06 /* Notam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notam.swift; sourceTree = "<group>"; };
+		52F0C04022E57F9300871C06 /* NotamHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotamHandler.swift; sourceTree = "<group>"; };
 		52F0FBC122CC626400DBBCFC /* RestrictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionsViewController.swift; sourceTree = "<group>"; };
 		52F0FBC322CC63F300DBBCFC /* RestrictionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionsTableViewCell.swift; sourceTree = "<group>"; };
 		52F0FBC822CCA35100DBBCFC /* UITableViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -485,6 +489,8 @@
 			isa = PBXGroup;
 			children = (
 				528A1D9022DD9BBA001DF187 /* NotamFetcher.swift */,
+				52F0C04022E57F9300871C06 /* NotamHandler.swift */,
+				52F0C03E22E571F800871C06 /* Notam.swift */,
 			);
 			path = Notams;
 			sourceTree = "<group>";
@@ -512,7 +518,7 @@
 			children = (
 				52AD6D1922B7C1DB0077FC91 /* NotamAPI.swift */,
 				52AD6D1B22B7C5C10077FC91 /* NotamDownLoader.swift */,
-				52AD6D1D22B7C6770077FC91 /* Notam.swift */,
+				52AD6D1D22B7C6770077FC91 /* Notam_.swift */,
 			);
 			path = AviationWeatherServer_Paid;
 			sourceTree = "<group>";
@@ -1079,6 +1085,7 @@
 				5205743122BDF52400B79425 /* TimeCalculations.swift in Sources */,
 				52F3BD5A22B6275A00F7F367 /* Arpt.swift in Sources */,
 				52F3BDA622B6276B00F7F367 /* AddRwy_CD+CoreDataProperties.swift in Sources */,
+				52F0C03F22E571F800871C06 /* Notam.swift in Sources */,
 				522BE34822BFD19100D31E36 /* Base64.swift in Sources */,
 				528F70D822D45062004B1EFF /* CoreDataTesterViewController.swift in Sources */,
 				52277ACE22AEF83900CD45BE /* PickerTextField.swift in Sources */,
@@ -1101,6 +1108,7 @@
 				52E3BB7422C484180062E8F4 /* AhasParser.swift in Sources */,
 				52E1ABC722E0AADA00BB6E74 /* U2.swift in Sources */,
 				52F3BD5622B6275A00F7F367 /* TrmSeg.swift in Sources */,
+				52F0C04122E57F9300871C06 /* NotamHandler.swift in Sources */,
 				52F3BD4822B6275A00F7F367 /* TrmMsaCDU.swift in Sources */,
 				52F3BD3B22B6275A00F7F367 /* NavCDU.swift in Sources */,
 				52F3BD4E22B6275A00F7F367 /* AddRwy.swift in Sources */,
@@ -1115,7 +1123,7 @@
 				52F3BDB722B6295A00F7F367 /* MetarParser.swift in Sources */,
 				52D0953322AC3649008A236B /* SOF.xcdatamodeld in Sources */,
 				52F3BD5022B6275A00F7F367 /* Rwy.swift in Sources */,
-				52AD6D1E22B7C6770077FC91 /* Notam.swift in Sources */,
+				52AD6D1E22B7C6770077FC91 /* Notam_.swift in Sources */,
 				5232EC1922DCBF400002CA8D /* GeneralCDU.swift in Sources */,
 				52F3BD9C22B6276B00F7F367 /* SvcRmk_CD+CoreDataProperties.swift in Sources */,
 				52F3BD4022B6275A00F7F367 /* AnavCDU.swift in Sources */,

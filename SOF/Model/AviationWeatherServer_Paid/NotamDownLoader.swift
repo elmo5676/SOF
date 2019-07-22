@@ -11,7 +11,7 @@ import UIKit
 
 
 protocol NotamDelegate {
-    func getCurrentNotams(_ notams: [Notam]?)
+    func getCurrentNotams(_ notams: [Notam_]?)
 }
 
 struct NotamDownLoader {

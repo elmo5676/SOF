@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Notam {
+struct Notam_ {
     var stateCode: String	//ISO 3-Letter code of the State
     var stateName: String	//Name of the State
     var id: String			//ID of the NOTAM
@@ -30,5 +30,7 @@ struct Notam {
     var key: String			//Concatenation of ID and Location to form unique id for all NOTAMS
     var type: String		//Location type, either airspace or airport
     var criticality: Int	//The criticality level of the NOTAM as assessed by NORM. Criticality is a number between 0 (garbage) and 4 (critical). -1 if not assessed.
+    
+    
     
 }

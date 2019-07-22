@@ -63,11 +63,13 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     private var tafDL: TafDownloader?
     private var ahasDL: AhasDownLoader?
     private var notamF: NotamFetcher?
+    private var notamH = NotamHandler()
     private let dh = DateHandler()
     private var currentMetar: [Metar]?
     private var tafs: [Taf]?
     private var ahas: [Ahas]?
     private var notams: NotamList?
+    private var notamsProcessed: [Notam] = []
     
     
     ///This provides compatable approaches based on the Aircraft's Capable approaches and Min runway Length
@@ -277,6 +279,20 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     
     func hereAreTheNotams(_ notams: NotamList) {
         guard let notams = notams[self.icao] else { return }
+//        print(notams)
+        print(notamH.getClosedRunways(notams: notams))
+        var notamsProcessed: [Notam] = []
+        for notam in notams {
+            print(notam)
+            // TODO: Add DateHandler to this to make dates out of Start/End
+            let datesStr = notamH.getStartandEndTimes(notam: notam)
+            let startStr = datesStr.start
+            let endStr = datesStr.end
+            let start = dh.getDateFrom(startStr, ofType: .notam)
+            let end = dh.getDateFrom(endStr, ofType: .notam)
+            
+            notamsProcessed.append(Notam(startDate: start, endDate: end))
+        }
         print(compatableApproachesFilteredByClosedRunways(compatableApproaches: self.compatableApproaches, notams: notams))
         // TODO: FilterOut the closed Runways
     }

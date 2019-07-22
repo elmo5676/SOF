@@ -25,7 +25,7 @@ class SetStatusViewController: UIViewController, UITextFieldDelegate, MetarDeleg
     var ahas: [Ahas]? = []
     var metar: Metar? = nil
     var tafs: [Taf]? = []
-    var notams: [Notam]? = []
+    var notams: [Notam_]? = []
     var today = Date()
     
     override func viewDidLoad() {
