@@ -86,7 +86,7 @@ class CoreDataTesterViewController: UIViewController, JSONLoaderDelagate, JsonCo
     
     @IBAction func b3(_ sender: UIButton) {
         let ac = NewAircraft(appTypeCapable: [.WAAS_GPS, .RNAV, .ILS, .TACAN,.VOR_NO_DME, .VOR_BASED_ON_VORDME_OR_VORTAC], appCategory: [.A, .B, .C, .D, .E], minRunwayLength: 3000, maxCrossWind: 15, maxSustainedWind: 30)
-        let alt = Alternate(icao: "KBAB", aircraft: ac)
+        let alt = Alternate(icao: "KN38", aircraft: ac)
 //        for app in alt.compatableApproaches {
 //            print("Identifier: \(app.trmIdent_CD!)")
 //            print("Cat A TERMINAL MINIMA WEATHER CEILING: \(app.catAWxCl_CD!)")

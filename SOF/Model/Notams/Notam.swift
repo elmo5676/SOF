@@ -10,8 +10,12 @@ import Foundation
 
 struct Notam {
     
+    var creationDate: Date?
     var startDate: Date?
     var endDate: Date?
+    var closedRunways: Set<String>?
+    var rvrOutOfService: String?
+    
 //    var stateCode: String    //ISO 3-Letter code of the State
 //    var stateName: String    //Name of the State
 //    var id: String            //ID of the NOTAM

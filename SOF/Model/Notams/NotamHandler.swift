@@ -11,11 +11,20 @@ import Foundation
 
 struct NotamHandler {
     
-    ///Returns list of closed runways from an array of notams
-    func getClosedRunways(notams: [String]) -> Set<String> {
+    private func removeNewLinesAndSpaces(notam: String) -> String {
+        return notam.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
+    }
+    
+    ///Returns list of All closed runways from an array of notams
+    func getAllClosedRunways(notams: [String]) -> Set<String> {
         var runways: [String] = []
         for notam in notams {
-            let n = notam.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
+            var n = removeNewLinesAndSpaces(notam: notam)
+            if let twyStart = n.range(of: "TWY")?.upperBound {
+                if let clsdEnd = n.range(of: "CLSD")?.lowerBound{
+                    let range = twyStart...clsdEnd
+                    n.removeSubrange(range)
+                }}
             if let startIndex = n.range(of: "RWY")?.upperBound {
                 if let endIndex = n.range(of: "CLSD")?.lowerBound {
                     let closedRunway = n[startIndex..<endIndex]
@@ -26,11 +35,48 @@ struct NotamHandler {
         return Set(runways)
     }
     
+    ///Returns list of closed runways from a line of notams
+    func getClosedRunways(notam: String) -> Set<String> {
+        var runways: [String] = []
+        var n = removeNewLinesAndSpaces(notam: notam)
+        if let twyStart = n.range(of: "TWY")?.upperBound {
+            if let clsdEnd = n.range(of: "CLSD")?.lowerBound{
+                let range = twyStart...clsdEnd
+                n.removeSubrange(range)
+            }}
+        if let startIndex = n.range(of: "RWY")?.upperBound {
+            if let endIndex = n.range(of: "CLSD")?.lowerBound {
+                let closedRunway = n[startIndex..<endIndex]
+                let runway = String(closedRunway).components(separatedBy: "/")
+                for rwy in runway {
+                    runways.append(rwy)
+                }}}
+        return Set(runways)
+    }
+    
+    func getRVRoutOfServiceForRWYs(notam: String) -> String? {
+        let n = removeNewLinesAndSpaces(notam: notam)
+        guard let rvrRange = n.range(of: "RVROUTOFSERVICE") else { return nil }
+        let startIndex = n.index(rvrRange.lowerBound, offsetBy: -3)
+        let endIndex = rvrRange.lowerBound
+        return String(n[startIndex..<endIndex])
+    }
+    
+    func getSetOfRVRoutOfServiceForRWYs(notam: String) -> Set<String> {
+        var rvr: [String] = []
+        let n = removeNewLinesAndSpaces(notam: notam)
+        guard let rvrRange = n.range(of: "RVROUTOFSERVICE") else { return Set(rvr) }
+        let startIndex = n.index(rvrRange.lowerBound, offsetBy: -3)
+        let endIndex = rvrRange.lowerBound
+        rvr.append(String(n[startIndex..<endIndex]))
+        return Set(rvr)
+    }
+    
     ///Returns list of closed runways from an array of notams
     func getStartandEndTimes(notam: String) -> (start: String, end: String) {
         var start = ""
         var end = ""
-        let n = notam.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
+        let n = removeNewLinesAndSpaces(notam: notam)
         if let center = n.range(of: "UNTIL") {
             //Start:
             let sEndIndex = center.lowerBound
@@ -43,20 +89,13 @@ struct NotamHandler {
         return (start: start, end: end)
     }
     
-    ///This provides compatable approaches based on the Aircraft's Capable approaches and Min runway Length
-    func compatableApproachesFilteredByClosedRunways(allRunwayIDs: [String], aircraft: Aircraft, compatableApproaches: [TrmMin_CD], notams: [String]) -> [TrmMin_CD] {
-        var result: [TrmMin_CD] = []
-        for capableApproach in aircraft.appTypeCapable {
-            for approach in compatableApproaches {
-                if let approachID = approach.trmIdent_CD {
-                    if approachID.hasPrefix(capableApproach.rawValue) {
-                        for rwy in getClosedRunways(notams: notams) {
-                            if allRunwayIDs.contains(rwy)  {
-                                print("Runway: \(rwy) is closed")
-                            } else { result.append(approach) }
-                        }
-                    }
-                }}}
-        return result
+    ///Returns Creation Date String for a line of Notams
+    func getCreationDate(notam: String) -> String {
+        let n = removeNewLinesAndSpaces(notam: notam)
+        guard let creationRange = n.range(of: "CREATED:") else { return "" }
+        let startIndex = n.index(creationRange.upperBound, offsetBy: 0)
+        let endIndex = n.endIndex
+        return String(n[startIndex..<endIndex])
     }
+    
 }

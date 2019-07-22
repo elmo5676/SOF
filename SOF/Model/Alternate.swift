@@ -145,20 +145,6 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
         return result
     }
     
-    ///Returns list of closed runways from an array of notams
-    func getClosedRunways(notams: [String]) -> Set<String> {
-        var runways: [String] = []
-        for n in notams {
-            if let startIndex = n.range(of: "RWY ")?.upperBound {
-                if let endIndex = n.range(of: " CLSD")?.lowerBound {
-                    let closedRunway = n[startIndex...endIndex]
-                    let runway = String(closedRunway).components(separatedBy: "/")
-                    for rwy in runway {
-                        runways.append(rwy.trimmingCharacters(in: .whitespaces))
-                    }}}}
-        return Set(runways)
-    }
-    
     ///This provides compatable approaches based on the Aircraft's Capable approaches and Min runway Length
     private func compatableApproachesFilteredByClosedRunways(compatableApproaches: [TrmMin_CD], notams: [String]) -> [TrmMin_CD] {
         var result: [TrmMin_CD] = []
@@ -167,13 +153,27 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
             for approach in compatableApproaches {
                 if let approachID = approach.trmIdent_CD {
                     if approachID.hasPrefix(capableApproach.rawValue) {
-                        for rwy in getClosedRunways(notams: notams) {
-                            if allRunwayIDs.contains(rwy)  {
-                                print("Runway: \(rwy) is closed")
-                            } else { result.append(approach) }
-                        }
-                    }
-                }}}
+                        for rwy in notamH.getAllClosedRunways(notams: notams) {
+                            if allRunwayIDs.contains(rwy) == false { result.append(approach) }
+                        }}}}}
+        return result
+    }
+    
+    ///Creates Notam Object from an Array of Notams
+    private func createNotam(_ notams: [String]) -> [Notam] {
+        var result: [Notam] = []
+        for notam in notams {
+            let createdStr = notamH.getCreationDate(notam: notam)
+            let datesStr = notamH.getStartandEndTimes(notam: notam)
+            let startStr = datesStr.start
+            let endStr = datesStr.end
+            let created = dh.getDateFrom(createdStr, ofType: .notam)
+            let start = dh.getDateFrom(startStr, ofType: .notam)
+            let end = dh.getDateFrom(endStr, ofType: .notam)
+            let closedRwys = notamH.getClosedRunways(notam: notam)
+            let rvr = notamH.getRVRoutOfServiceForRWYs(notam: notam)
+            result.append(Notam(creationDate: created, startDate: start, endDate: end, closedRunways: closedRwys, rvrOutOfService: rvr))
+        }
         return result
     }
     
@@ -268,33 +268,26 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
         guard let metars = metar else {return}
         let metar = metars[0]
         log.debug(metar.rawText!)
-        log.debug(metar.visibilityStatuteMiles)
-        log.debug(metar.vertVisFt)
-        print("************************************")
+        log.debug(metar.visibilityStatuteMiles ?? "Vis Not Found")
+        log.debug(metar.vertVisFt ?? "Vertical Vis Not Found")
+        log.debug(metar.skyCondition ?? "Sky condition not found")
+        log.debug(metar.windSpeedKts ?? "Wind speed not found")
+        log.debug(metar.windDirDegrees ?? "Wind Dir not found")
         let approaches = filterCompatableApproachesByWeather(metar: metar)
         for app in approaches {
-            log.debug(app.trmIdent_CD)
+            log.debug(app.trmIdent_CD ?? "Approach Ident Not Found")
         }
     }
+    
+    
     
     func hereAreTheNotams(_ notams: NotamList) {
         guard let notams = notams[self.icao] else { return }
 //        print(notams)
-        print(notamH.getClosedRunways(notams: notams))
-        var notamsProcessed: [Notam] = []
-        for notam in notams {
-            print(notam)
-            // TODO: Add DateHandler to this to make dates out of Start/End
-            let datesStr = notamH.getStartandEndTimes(notam: notam)
-            let startStr = datesStr.start
-            let endStr = datesStr.end
-            let start = dh.getDateFrom(startStr, ofType: .notam)
-            let end = dh.getDateFrom(endStr, ofType: .notam)
-            
-            notamsProcessed.append(Notam(startDate: start, endDate: end))
-        }
-        print(compatableApproachesFilteredByClosedRunways(compatableApproaches: self.compatableApproaches, notams: notams))
-        // TODO: FilterOut the closed Runways
+        log.debug(notamH.getAllClosedRunways(notams: notams))
+        let notamsProcessed = createNotam(notams)
+        print(notamsProcessed)
+        print(compatableApproachesFilteredByClosedRunways(compatableApproaches: self.compatableApproaches, notams: notams).count)
     }
     
     func hereAreTheTafs(_ taf: [Taf]?) {
