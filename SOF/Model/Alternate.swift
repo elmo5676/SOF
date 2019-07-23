@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+
 struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate {
     
     //    MARK: - VISABILITY
@@ -283,7 +284,6 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     
     func hereAreTheNotams(_ notams: NotamList) {
         guard let notams = notams[self.icao] else { return }
-//        print(notams)
         log.debug(notamH.getAllClosedRunways(notams: notams))
         let notamsProcessed = createNotam(notams)
         print(notamsProcessed)
