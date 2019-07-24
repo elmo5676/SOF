@@ -11,6 +11,8 @@ import Foundation
 
 struct NotamHandler {
     
+    let dh = DateHandler()
+    
     private func removeNewLinesAndSpaces(notam: String) -> String {
         return notam.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
     }
@@ -98,4 +100,81 @@ struct NotamHandler {
         return String(n[startIndex..<endIndex])
     }
     
+    
+    ///Returns a set of RWY's with RVR out of service
+    func getRVRoutOfServiceForRWYs(notam: String) -> Set<String> {
+        var rvr: [String] = []
+        let n = removeNewLinesAndSpaces(notam: notam)
+        guard let rvrRange = n.range(of: "RVROUTOFSERVICE") else { return Set(rvr) }
+        let startIndex = n.index(rvrRange.lowerBound, offsetBy: -3)
+        let endIndex = rvrRange.lowerBound
+        rvr.append(String(n[startIndex..<endIndex]))
+        return Set(rvr)
+    }
+    
+    
+    ///Returns Created Date
+    func getCreationDate(notam: String) -> Date? {
+        let n = removeNewLinesAndSpaces(notam: notam)
+        guard let creationRange = n.range(of: "CREATED:") else { return nil }
+        let startIndex = n.index(creationRange.upperBound, offsetBy: 0)
+        let endIndex = n.endIndex
+        let created = String(n[startIndex..<endIndex])
+        return dh.getDateFrom(created, ofType: .notam)
+    }
+    
+    
+    ///Returns list of closed runways from an array of notams
+    func getRXClosedRwysFrom(notam: String) -> Set<String>? {
+        let n = removeNewLinesAndSpaces(notam: notam)
+        let regex = #"(RWY[0-9A-Z]{3}/[0-9A-Z]{3}CLSD)"#
+        if let range = n.range(of: regex, options: .regularExpression, range: nil, locale: nil) {
+            let startIndex = n.index(range.lowerBound, offsetBy: 3)
+            let endIndex = n.index(range.upperBound, offsetBy: -4)
+            return Set(String(n[startIndex..<endIndex]).components(separatedBy: "/"))
+        }
+        return nil
+    }
+    
+    ///Returns an array of Notam Creation numbers
+    func getRXNotamNumber(notam: String) -> Set<String>? {
+        let n = removeNewLinesAndSpaces(notam: notam)
+        let regex = #"(([A-Z][0-9]{4}/[0-9]{2}))"#
+        if let range = n.range(of: regex, options: .regularExpression, range: nil, locale: nil) {
+            let startIndex = n.index(range.lowerBound, offsetBy: 0)
+            let endIndex = n.index(range.upperBound, offsetBy: 0)
+            print(String(n[startIndex..<endIndex]).components(separatedBy: "/"))
+            return Set(String(n[startIndex..<endIndex]).components(separatedBy: "/"))
+        }
+        return nil
+    }
+    
+    ///Returns start end dates for notams
+    func getRXStartandEndTimes(notam: String) -> (start: Date?, end: Date?) {
+        let n = removeNewLinesAndSpaces(notam: notam)
+        let regex = #"(.{13}UNTIL.{13})"#
+        if let range = n.range(of: regex, options: .regularExpression, range: nil, locale: nil) {
+            let startIndex = n.index(range.lowerBound, offsetBy: 0)
+            let endIndex = n.index(range.upperBound, offsetBy: 0)
+            let times = (String(n[startIndex..<endIndex]).components(separatedBy: "UNTIL"))
+            let start = removeNewLinesAndSpaces(notam: times[0])
+            let end = removeNewLinesAndSpaces(notam: times[1])
+            return (start: dh.getDateFrom(start, ofType: .notam), end: dh.getDateFrom(end, ofType: .notam))
+        }
+        return (start: nil, end: nil)
+    }
+    
+    ///Returns RWY ID's for notamed wet RWY
+    func getRXWetRwy(notam: String) -> String? {
+        let n = removeNewLinesAndSpaces(notam: notam)
+        let regexWET = #"(RWY.{1,}FICON.{1,}WET)"#
+        let regexRWY = #"(RWY.{1,}FICON)"#
+        if let _ = n.range(of: regexWET, options: .regularExpression, range: nil, locale: nil) {
+            if let rangeRWY = n.range(of: regexRWY, options: .regularExpression, range: nil, locale: nil) {
+                let startIndex = n.index(rangeRWY.lowerBound, offsetBy: 3)
+                let endIndex = n.index(rangeRWY.upperBound, offsetBy: -5)
+                return String(n[startIndex..<endIndex])
+            }}
+        return nil
+    }
 }
