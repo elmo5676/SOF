@@ -164,11 +164,10 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     private func createNotam(_ notams: [String]) -> [Notam] {
         var result: [Notam] = []
         for notam in notams {
-            let createdStr = notamH.getCreationDate(notam: notam)
+            let created = notamH.getCreationDate(notam: notam)
             let datesStr = notamH.getStartandEndTimes(notam: notam)
             let startStr = datesStr.start
             let endStr = datesStr.end
-            let created = dh.getDateFrom(createdStr, ofType: .notam)
             let start = dh.getDateFrom(startStr, ofType: .notam)
             let end = dh.getDateFrom(endStr, ofType: .notam)
             let closedRwys = notamH.getClosedRunways(notam: notam)

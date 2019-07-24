@@ -91,27 +91,6 @@ struct NotamHandler {
         return (start: start, end: end)
     }
     
-    ///Returns Creation Date String for a line of Notams
-    func getCreationDate(notam: String) -> String {
-        let n = removeNewLinesAndSpaces(notam: notam)
-        guard let creationRange = n.range(of: "CREATED:") else { return "" }
-        let startIndex = n.index(creationRange.upperBound, offsetBy: 0)
-        let endIndex = n.endIndex
-        return String(n[startIndex..<endIndex])
-    }
-    
-    
-    ///Returns a set of RWY's with RVR out of service
-    func getRVRoutOfServiceForRWYs(notam: String) -> Set<String> {
-        var rvr: [String] = []
-        let n = removeNewLinesAndSpaces(notam: notam)
-        guard let rvrRange = n.range(of: "RVROUTOFSERVICE") else { return Set(rvr) }
-        let startIndex = n.index(rvrRange.lowerBound, offsetBy: -3)
-        let endIndex = rvrRange.lowerBound
-        rvr.append(String(n[startIndex..<endIndex]))
-        return Set(rvr)
-    }
-    
     
     ///Returns Created Date
     func getCreationDate(notam: String) -> Date? {
