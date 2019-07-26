@@ -154,9 +154,15 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
             for approach in compatableApproaches {
                 if let approachID = approach.trmIdent_CD {
                     if approachID.hasPrefix(capableApproach.rawValue) {
-                        for rwy in notamH.getAllClosedRunways(notams: notams) {
-                            if allRunwayIDs.contains(rwy) == false { result.append(approach) }
-                        }}}}}
+                        for notam in notams {
+                            if let rwys = notamH.getRXClosedRwysFrom(notam: notam) {
+                                for rwy in rwys {
+                                    if allRunwayIDs.contains(rwy) == false { result.append(approach) }
+                                }
+                            }
+                            
+                        }
+                        }}}}
         return result
     }
     
@@ -164,15 +170,7 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     private func createNotam(_ notams: [String]) -> [Notam] {
         var result: [Notam] = []
         for notam in notams {
-            let created = notamH.getCreationDate(notam: notam)
-            let datesStr = notamH.getStartandEndTimes(notam: notam)
-            let startStr = datesStr.start
-            let endStr = datesStr.end
-            let start = dh.getDateFrom(startStr, ofType: .notam)
-            let end = dh.getDateFrom(endStr, ofType: .notam)
-            let closedRwys = notamH.getClosedRunways(notam: notam)
-            let rvr = notamH.getRVRoutOfServiceForRWYs(notam: notam)
-            result.append(Notam(creationDate: created, startDate: start, endDate: end, closedRunways: closedRwys, rvrOutOfService: rvr))
+            result.append(Notam(notam: notam))
         }
         return result
     }
@@ -265,6 +263,7 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     
     //  MARK: - Delegate Functions
     func hereIsTheMetar(_ metar: [Metar]?, metarLoc: MetarLoc, refreshUI: Bool) {
+        // TODO: Filter out approaches based on METAR
         guard let metars = metar else {return}
         let metar = metars[0]
         log.debug(metar.rawText!)
@@ -282,18 +281,24 @@ struct Alternate: MetarDelegate, TafDelegate, AhasDelegate, NotamFetcherDelegate
     
     
     func hereAreTheNotams(_ notams: NotamList) {
+        // TODO: Filter out approaches based on NOTAMs
         guard let notams = notams[self.icao] else { return }
-        log.debug(notamH.getAllClosedRunways(notams: notams))
+        print(notams)
+        for notam in notams {
+            log.debug(notamH.getRXClosedRwysFrom(notam: notam))
+        }
         let notamsProcessed = createNotam(notams)
         print(notamsProcessed)
         print(compatableApproachesFilteredByClosedRunways(compatableApproaches: self.compatableApproaches, notams: notams).count)
     }
     
     func hereAreTheTafs(_ taf: [Taf]?) {
+        // TODO: Filter out approaches based on TAF +/- 1hr of arrival
         //        print(taf)
     }
     
     func hereIsTheBirdCondition(_ ahas: [Ahas]) {
+        // TODO: Filter out approaches based on BirdCondition Severe
         //        print(ahas)
     }
     

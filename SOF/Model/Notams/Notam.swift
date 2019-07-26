@@ -10,11 +10,21 @@ import Foundation
 
 struct Notam {
     
+    var nh = NotamHandler()
     var creationDate: Date?
     var startDate: Date?
     var endDate: Date?
     var closedRunways: Set<String>?
     var rvrOutOfService: String?
+    
+    init(notam: String) {
+        let times = nh.getRXStartandEndTimes(notam: notam)
+        creationDate = nh.getCreationDate(notam: notam)
+        startDate = times.start
+        endDate = times.end
+        closedRunways = nh.getRXClosedRwysFrom(notam: notam)
+        rvrOutOfService = nh.getRVRoutOfServiceForRWYs(notam: notam)
+    }
     
 //    var stateCode: String    //ISO 3-Letter code of the State
 //    var stateName: String    //Name of the State

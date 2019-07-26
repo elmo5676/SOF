@@ -37,24 +37,24 @@ struct NotamHandler {
         return Set(runways)
     }
     
-    ///Returns list of closed runways from a line of notams
-    func getClosedRunways(notam: String) -> Set<String> {
-        var runways: [String] = []
-        var n = removeNewLinesAndSpaces(notam: notam)
-        if let twyStart = n.range(of: "TWY")?.upperBound {
-            if let clsdEnd = n.range(of: "CLSD")?.lowerBound{
-                let range = twyStart...clsdEnd
-                n.removeSubrange(range)
-            }}
-        if let startIndex = n.range(of: "RWY")?.upperBound {
-            if let endIndex = n.range(of: "CLSD")?.lowerBound {
-                let closedRunway = n[startIndex..<endIndex]
-                let runway = String(closedRunway).components(separatedBy: "/")
-                for rwy in runway {
-                    runways.append(rwy)
-                }}}
-        return Set(runways)
-    }
+//    ///Returns list of closed runways from a line of notams
+//    func getClosedRunways(notam: String) -> Set<String> {
+//        var runways: [String] = []
+//        var n = removeNewLinesAndSpaces(notam: notam)
+//        if let twyStart = n.range(of: "TWY")?.upperBound {
+//            if let clsdEnd = n.range(of: "CLSD")?.lowerBound{
+//                let range = twyStart...clsdEnd
+//                n.removeSubrange(range)
+//            }}
+//        if let startIndex = n.range(of: "RWY")?.upperBound {
+//            if let endIndex = n.range(of: "CLSD")?.lowerBound {
+//                let closedRunway = n[startIndex..<endIndex]
+//                let runway = String(closedRunway).components(separatedBy: "/")
+//                for rwy in runway {
+//                    runways.append(rwy)
+//                }}}
+//        return Set(runways)
+//    }
     
     func getRVRoutOfServiceForRWYs(notam: String) -> String? {
         let n = removeNewLinesAndSpaces(notam: notam)
